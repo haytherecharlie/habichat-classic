@@ -6,7 +6,6 @@ export const HamburgerMenu = styled('div')({
   width: `20px`,
   position: `relative`,
   cursor: `pointer`,
-  margin: `0 20px`
 })
 
 const defaultLineStyle = {

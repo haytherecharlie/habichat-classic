@@ -4,6 +4,7 @@ const dState = {
   darkMode: false,
   keyboard: false,
   intialized: false,
+  dimensions: 'desktop',
   modal: 'test',
   nav: false
 }
@@ -12,6 +13,9 @@ const reducer = (state = dState, action) => {
   switch (action.type) {
     case A.INITIALIZE:
       return state
+
+    case A.SET_DIMENSIONS:
+      return { ...state, dimensions: action.value }
 
     case A.TOGGLE_DARK_MODE:
       return { ...state, darkMode: action.status }

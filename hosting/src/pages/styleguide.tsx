@@ -1,6 +1,6 @@
 import 'animate.css'
 import React from 'react'
-import Layout from 'templates/StyleguideLayout'
+import PageLayout from 'templates/PageLayout'
 import ButtonPill from 'atoms/ButtonPill'
 import Link from 'atoms/Link'
 import Logo from 'atoms/Logo'
@@ -10,7 +10,7 @@ import Modal from 'atoms/Modal'
 
 const Index = () => {
   return (
-    <Layout>
+    <PageLayout>
       <h2>ButtonPill</h2>
       <ButtonPill>Hello</ButtonPill>
       <ButtonPill invert={true}>Hello</ButtonPill>
@@ -30,7 +30,7 @@ const Index = () => {
       <Hamburger />
       <h2>Modal</h2>
       <Modal buttonText="Toggle Modal" name="test" body={<div>Hey Modal</div>} invert={true} />
-    </Layout>
+    </PageLayout>
   )
 }
 
