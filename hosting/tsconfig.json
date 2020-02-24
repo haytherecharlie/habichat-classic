@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "assets/*": ["./src/assets/*"],
+      "atoms/*": ["./src/atoms"],
+      "components/*": ["./src/components/*"],
+      "config/*": ["./src/config/*"],
+      "routes/*": ["./src/routes/*"],
+      "screens/*": ["./src/screens/*"],
+      "services/*": ["./src/services/*"],
+      "utils/*": ["./src/utils/*"]
+    },
+    "allowJs": true,
+    "skipLibCheck": true, // doesn't care about typings files for libraries
+    "esModuleInterop": true, // allows import charlie from 'charlie' instead of * as charlie
+    "allowSyntheticDefaultImports": true, // same as esModuleInterop
+    "strict": false, // The best.
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react"
+  },
+  "include": [
+    "src"
+  ]
+}
