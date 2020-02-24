@@ -1,8 +1,8 @@
 import React from 'react'
 import * as S from './Link.style'
 
-const Link = ({ href = '#', children = null }) => {
-  return <S.Link href={href}>{children}</S.Link>
+const Link = ({ to = '#', children = null }) => {
+  return <S.Link href={to}>{children}</S.Link>
 }
 
 export default Link

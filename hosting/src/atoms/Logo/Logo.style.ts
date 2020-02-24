@@ -5,19 +5,17 @@ export const Wrapper = styled('div')({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
-  justifyContent: 'center',
-  height: theme.HEADER_HEIGHT
+  justifyContent: 'flex-start',
 })
 
 export const Logo = styled('img')({
   height: 30,
-  width: 30
+  width: 30,
+  marginRight: 5
 })
 
-export const Text = styled('span')({
+export const Text = styled('div')({
   ...theme.SPECIAL_FONT,
-  color: theme.ACCENT_COLOR,
-  fontSize: 22,
-  marginTop: 3,
-  marginLeft: 2
+  color: theme.PRIMARY_COLOR,
+  fontSize: theme.FONT_LARGE,
 })

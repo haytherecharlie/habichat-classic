@@ -1,19 +1,23 @@
-import React, { Fragment } from 'react'
+import 'animate.css'
+import React from 'react'
+import Layout from 'templates/StyleguideLayout'
 import ButtonPill from 'atoms/ButtonPill'
 import Link from 'atoms/Link'
 import Logo from 'atoms/Logo'
 import Spinner from 'atoms/Spinner'
+import Hamburger from 'atoms/Hamburger'
+import Modal from 'atoms/Modal'
 
 const Index = () => {
   return (
-    <Fragment>
+    <Layout>
       <h2>ButtonPill</h2>
       <ButtonPill>Hello</ButtonPill>
-      <ButtonPill invert="true">Hello</ButtonPill>
+      <ButtonPill invert={true}>Hello</ButtonPill>
       <ButtonPill type="link" to="http://google.ca">
         Hello
       </ButtonPill>
-      <ButtonPill type="link" invert="true" to="http://google.ca">
+      <ButtonPill type="link" invert={true} to="http://google.ca">
         Hello
       </ButtonPill>
       <h2>Link</h2>
@@ -22,7 +26,11 @@ const Index = () => {
       <Logo />
       <h2>Spinner</h2>
       <Spinner />
-    </Fragment>
+      <h2>Hamburger</h2>
+      <Hamburger />
+      <h2>Modal</h2>
+      <Modal buttonText="Toggle Modal" name="test" body={<div>Hey Modal</div>} invert={true} />
+    </Layout>
   )
 }
 

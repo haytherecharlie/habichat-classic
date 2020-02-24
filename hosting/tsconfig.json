@@ -1,20 +1,17 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": "./",
     "paths": {
       "assets/*": ["./src/assets/*"],
-      "atoms/*": ["./src/atoms"],
+      "atoms/*": ["./src/atoms/*"],
       "components/*": ["./src/components/*"],
       "config/*": ["./src/config/*"],
       "routes/*": ["./src/routes/*"],
       "screens/*": ["./src/screens/*"],
       "services/*": ["./src/services/*"],
+      "templates/*": ["./src/templates/*"],
       "utils/*": ["./src/utils/*"]
     },
     "allowJs": true,
@@ -30,7 +27,5 @@
     "noEmit": true,
     "jsx": "react"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

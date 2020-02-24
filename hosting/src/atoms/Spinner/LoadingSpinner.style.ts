@@ -4,8 +4,8 @@ import theme from 'assets/styles/theme.style'
 export const Spinner = styled('svg')({
   viewBox: '0 0 50 50',
   animation: `rotate 2s linear infinite`,
-  width: 50,
-  height: 50,
+  width: theme.SPINNER_RADIUS,
+  height: theme.SPINNER_RADIUS,
   '@keyframes rotate': {
     '100%': {
       transform: 'rotate(360deg)'
@@ -28,7 +28,7 @@ export const Spinner = styled('svg')({
 })
 
 export const Circle = styled('circle')({
-  stroke: theme.ACCENT_COLOR,
+  stroke: theme.PRIMARY_COLOR,
   strokeLinecap: `round`,
   animation: `dash 1.5s ease-in-out infinite`,
   cx: 25,

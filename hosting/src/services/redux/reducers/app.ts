@@ -4,7 +4,7 @@ const dState = {
   darkMode: false,
   keyboard: false,
   intialized: false,
-  modal: '',
+  modal: 'test',
   nav: false
 }
 
