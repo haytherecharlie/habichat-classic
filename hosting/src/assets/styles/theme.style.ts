@@ -2,7 +2,7 @@ const darkMode = false
 
 const SMALL_VIEW = 400
 const MEDIUM_VIEW = 700
-const LARGE_VIEW = 1000
+const LARGE_VIEW = 924
 
 const BLACK = '#222222'
 const WHITE = '#FFFFFF'
