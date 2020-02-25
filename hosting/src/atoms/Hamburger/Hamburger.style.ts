@@ -1,17 +1,21 @@
 import styled from 'styled-components'
 import theme from 'assets/styles/theme.style'
 
-export const HamburgerMenu = styled('div')({
+export const HamburgerMenu = styled('button')({
   height: `17px`,
   width: `20px`,
   position: `relative`,
   cursor: `pointer`,
+  background: 'none',
+  border: 'none',
+  padding: 0,
+  ...theme.FOCUS_OUTLINE
 })
 
 const defaultLineStyle = {
   width: `100%`,
   height: `3px`,
-  background: `#181E38`,
+  background: theme.PRIMARY_COLOR,
   borderRadius: `5px`,
   position: `absolute`
 }

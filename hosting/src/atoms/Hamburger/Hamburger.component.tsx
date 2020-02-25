@@ -1,18 +1,20 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { TOGGLE_NAV } from 'services/redux/actions'
+import types from 'prop-types'
 import * as S from './Hamburger.style'
 
-const Hamburger = () => {
-  const dispatch = useDispatch()
-  const { nav } = useSelector((s) => s.app)
+const Hamburger = ({ onClick, nav }) => {
   return (
-    <S.HamburgerMenu onClick={() => dispatch({ type: TOGGLE_NAV })}>
+    <S.HamburgerMenu onClick={onClick} aria-expanded={nav}>
       <S.TopLine open={nav} />
       <S.MidLine open={nav} />
       <S.BottomLine open={nav} />
     </S.HamburgerMenu>
   )
+}
+
+Hamburger.propTypes = {
+  onClick: types.func.isRequired,
+  nav: types.bool.isRequired
 }
 
 export default Hamburger

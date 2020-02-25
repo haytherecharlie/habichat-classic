@@ -8,4 +8,5 @@ export const Wrapper = styled('div')({
   flexDirection: 'column',
   alignItems: 'flesx-start',
   justifyContent: 'flex-start',
+  paddingTop: theme.HEADER_HEIGHT
 })

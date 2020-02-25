@@ -5,7 +5,7 @@ const dState = {
   keyboard: false,
   intialized: false,
   dimensions: 'desktop',
-  modal: 'test',
+  modal: '',
   nav: false
 }
 

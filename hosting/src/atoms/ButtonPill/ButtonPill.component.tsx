@@ -20,12 +20,17 @@ const ButtonPill = ({ type, invert, children, ...props }) => {
 
 ButtonPill.defaultProps = {
   type: 'button',
-  invert: false
+  invert: false,
+  to: '/',
+  onClick: () => {}
 }
 
 ButtonPill.propTypes = {
   type: types.oneOf(['button', 'link']),
-  invert: types.bool
+  invert: types.bool,
+  to: types.string,
+  onClick: types.func,
+  children: types.node.isRequired
 }
 
 export default ButtonPill

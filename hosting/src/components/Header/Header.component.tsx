@@ -1,19 +1,21 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { TOGGLE_NAV } from 'services/redux/actions'
 import Link from 'atoms/Link'
 import Logo from 'atoms/Logo'
 import Hamburger from 'atoms/Hamburger'
 import * as S from './Header.style'
 
 const Header = () => {
-  const { dimensions } = useSelector((s) => s.app)
+  const dispatch = useDispatch()
+  const { dimensions, nav } = useSelector((s) => s.app)
 
   if (dimensions === 'mobile') {
     return (
       <S.Header>
         <S.Responsive>
           <Logo />
-          <Hamburger />
+          <Hamburger nav={nav} onClick={() => dispatch({ type: TOGGLE_NAV })} />
         </S.Responsive>
       </S.Header>
     )

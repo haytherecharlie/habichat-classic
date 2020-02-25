@@ -19,8 +19,9 @@ const linkStyle = {
 }
 
 export const AniLink = styled(TransitionLink)({
+  ...linkStyle,
   display: 'block',
-  ...linkStyle
+  width: `100%`
 })
 export const ButtonLink = styled('button')({
   width: '100%',

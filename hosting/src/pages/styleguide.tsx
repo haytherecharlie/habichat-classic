@@ -1,17 +1,25 @@
 import 'animate.css'
 import React from 'react'
-import PageLayout from 'templates/PageLayout'
+import { useDispatch, useSelector } from 'react-redux'
+import { TOGGLE_NAV } from 'services/redux/actions'
+import PageLayout from 'templates/StyleguideLayout'
 import ButtonPill from 'atoms/ButtonPill'
 import Link from 'atoms/Link'
 import Logo from 'atoms/Logo'
 import Spinner from 'atoms/Spinner'
 import Hamburger from 'atoms/Hamburger'
 import Modal from 'atoms/Modal'
+import Text from 'atoms/Text'
 
-const Index = () => {
+const Styleguide = () => {
+  const dispatch = useDispatch()
+  const { nav } = useSelector((s) => s.app)
   return (
     <PageLayout>
-      <h2>ButtonPill</h2>
+      <Text type="h1">Style Guide</Text>
+      <hr />
+      <Text type="h2">ButtonPill</Text>
+      <hr />
       <ButtonPill>Hello</ButtonPill>
       <ButtonPill invert={true}>Hello</ButtonPill>
       <ButtonPill type="link" to="http://google.ca">
@@ -20,18 +28,36 @@ const Index = () => {
       <ButtonPill type="link" invert={true} to="http://google.ca">
         Hello
       </ButtonPill>
-      <h2>Link</h2>
+      <hr />
+      <Text type="h2">Link</Text>
+      <hr />
       <Link to="http://google.ca">Google</Link>
-      <h2>Logo</h2>
+      <hr />
+      <Text type="h2">Logo</Text>
+      <hr />
       <Logo />
-      <h2>Spinner</h2>
+      <hr />
+      <Text type="h2">Spinner</Text>
+      <hr />
       <Spinner />
-      <h2>Hamburger</h2>
-      <Hamburger />
-      <h2>Modal</h2>
+      <hr />
+      <Text type="h2">Hamburger</Text>
+      <hr />
+      <Hamburger nav={nav} onClick={() => dispatch({ type: TOGGLE_NAV })} />
+      <hr />
+      <Text type="h2">Modal</Text>
+      <hr />
       <Modal buttonText="Toggle Modal" name="test" body={<div>Hey Modal</div>} invert={true} />
+      <hr />
+      <Text type="h2">Text</Text>
+      <hr />
+      <Text>I'm body text.</Text>
+      <Text type="p">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad provident nulla obcaecati, dolorum necessitatibus esse saepe quam porro totam
+        cupiditate quae, fuga voluptate optio consectetur in eaque, quod repudiandae inventore.
+      </Text>
     </PageLayout>
   )
 }
 
-export default Index
+export default Styleguide

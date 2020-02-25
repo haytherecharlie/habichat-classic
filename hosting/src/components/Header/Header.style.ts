@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import theme from 'assets/styles/theme.style'
 
 export const Header = styled('header')({
+  zIndex: 100,
   position: 'fixed',
   top: 0,
   left: 0,
