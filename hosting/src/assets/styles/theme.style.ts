@@ -4,7 +4,7 @@ const SMALL_VIEW = 400
 const MEDIUM_VIEW = 700
 const LARGE_VIEW = 924
 
-const BLACK = '#222222'
+const BLACK = '#000000'
 const WHITE = '#FFFFFF'
 const PINK = '#FF2353'
 const TWITTER = `#1A91DA`
@@ -26,7 +26,8 @@ export default {
   SHADOW_COLOR: darkMode ? SHADOW_DARK : SHADOW_LIGHT,
   BACKGROUND_COLOR: darkMode ? BLACK : WHITE,
   PRIMARY_COLOR: darkMode ? WHITE : BLACK,
-  HOVER_COLOR: PINK,
+  INVERSE_COLOR: darkMode ? BLACK : WHITE,
+  BRAND_COLOR: BLACK,
   TWITTER,
   GITHUB,
   LINKEDIN,

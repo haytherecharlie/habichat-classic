@@ -16,6 +16,6 @@ export const Logo = styled('img')({
 
 export const Text = styled('div')({
   ...theme.SPECIAL_FONT,
-  color: theme.PRIMARY_COLOR,
+  color: theme.BRAND_COLOR,
   fontSize: theme.FONT_LARGE,
 })

@@ -8,6 +8,6 @@ export const Link = styled('a')({
   fontWeight: theme.FONT_REGULAR,
   fontSize: theme.FONT_MEDIUM,
   '&:hover': {
-    color: theme.HOVER_COLOR
+    color: theme.BRAND_COLOR
   }
 })

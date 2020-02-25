@@ -14,3 +14,8 @@
 4. Go to app and run `firebase login`, `firebase init`
 5. Choose the project that was created and select services.
 
+## Branding the project
+
+1. perform a global search for `APP-CONFIG-`
+2. replace all values with the content you prefer.
+

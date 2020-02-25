@@ -9,8 +9,8 @@ export const Header = styled('header')({
   width: `100vw`,
   height: theme.HEADER_HEIGHT,
   background: theme.BACKGROUND_COLOR,
-  borderBottom: `1px solid ${theme.PRIMARY_COLOR}`,
-  borderTop: `5px solid ${theme.PRIMARY_COLOR}`,
+  borderBottom: `1px solid ${theme.BRAND_COLOR}`,
+  borderTop: `5px solid ${theme.BRAND_COLOR}`,
   display: 'flex',
   alignItems: `stretch`,
   justifyContent: 'center'

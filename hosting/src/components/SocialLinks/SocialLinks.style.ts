@@ -5,7 +5,7 @@ import LogoLinkedIn from 'react-ionicons/lib/LogoLinkedIn'
 import LogoGithub from 'react-ionicons/lib/LogoGithub'
 
 const iconStyle = {
-  background: theme.PRIMARY_COLOR,
+  background: theme.INVERSE_COLOR,
   borderRadius: `50%`,
   height: `18px`,
   width: `18px`,

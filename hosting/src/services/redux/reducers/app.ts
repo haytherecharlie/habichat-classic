@@ -2,9 +2,10 @@ import * as A from '../actions'
 
 const dState = {
   darkMode: false,
+  dimensions: 'desktop',
   keyboard: false,
   intialized: false,
-  dimensions: 'desktop',
+  language: 'en',
   modal: '',
   nav: false
 }
