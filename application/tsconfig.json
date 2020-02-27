@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "assets/*": ["./src/assets/*"],
+      "atoms/*": ["./src/atoms/*"],
+      "components/*": ["./src/components/*"],
+      "config/*": ["./src/config/*"],
+      "routes/*": ["./src/routes/*"],
+      "screens/*": ["./src/screens/*"],
+      "services/*": ["./src/services/*"],
+      "utils/*": ["./src/utils/*"]
+    },
+    "jsx": "react-native",
+    "lib": ["dom", "esnext"],
+    "module": "es6",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "strict": false,
+    "strictNullChecks": false
+  },
+  "exclude": ["node_modules"],
+  "include": ["./**/*.*.ts", "./**/*.*.tsx"]
+}
