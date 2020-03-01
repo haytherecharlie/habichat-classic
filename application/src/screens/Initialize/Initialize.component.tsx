@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import initialize from 'utils/api/initialize'
+import initialize from 'services/api/initialize'
 import Spinner from 'atoms/Spinner'
 import * as A from 'services/redux/actions'
 import * as S from './Initialize.style'
@@ -16,7 +16,7 @@ const Initialize = () => {
   }, [])
 
   useEffect(() => {
-    if(community && messages && members && application.initialized) {
+    if (community && messages && members && application.initialized) {
       alert('ready to roll')
     }
   }, [application])

@@ -1,0 +1,42 @@
+{
+  "community": {
+    "name": "Harbourview Estates",
+    "coordinates": {
+      "_latitude": 43.6393702,
+      "_longitude": -79.3917433
+    },
+    "members": "1",
+    "city": "Toronto"
+  },
+  "messages": [
+    {
+      "id": "deHl2wJCKsa5AjliuHqV",
+      "updated": {
+        "_seconds": 1583028000,
+        "_nanoseconds": 0
+      },
+      "image": null,
+      "created": {
+        "_seconds": 1583028000,
+        "_nanoseconds": 0
+      },
+      "text": "hello world!",
+      "author": "QB3zbwLUnTDdbzZWxdN4"
+    }
+  ],
+  "members": [
+    {
+      "id": "QB3zbwLUnTDdbzZWxdN4",
+      "photoUrl": "https://pbs.twimg.com/profile_images/378800000689182774/77612ed26b88698abc7536dc47767167.jpeg",
+      "name": "Marvin Jones",
+      "created": {
+        "_seconds": 1583029200,
+        "_nanoseconds": 0
+      },
+      "updated": {
+        "_seconds": 1583029200,
+        "_nanoseconds": 0
+      }
+    }
+  ]
+}

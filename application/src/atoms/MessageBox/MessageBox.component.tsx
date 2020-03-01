@@ -10,7 +10,7 @@ const MessageBox = ({ message, member, listRef }) => {
       <S.WhiteBox elevation={1}>
         <S.AuthorCircle source={{ uri: member.photoUrl }} alt="profile photo" />
         <S.Header>
-          <S.Name>{member.firstName}</S.Name>
+          <S.Name>{member.name}</S.Name>
           <S.Time>{`${formatDistance(member.updated._seconds, new Date().getTime(), { addSuffix: true })}`}</S.Time>
         </S.Header>
         <S.Body>

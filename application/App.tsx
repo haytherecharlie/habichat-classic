@@ -2,17 +2,17 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { KeyboardAvoidingView } from 'react-native'
 import { AppearanceProvider } from 'react-native-appearance'
-// import useBrowserStyle from './src/utils/hooks/useBrowserStyle'
+import usePreloading from 'utils/hooks/usePreloading'
 import store from 'services/redux'
 import Router from 'routes/Router'
 
 const App = () => {
-  // useBrowserStyle()
+  const preloaded = usePreloading()
   return (
     <AppearanceProvider>
       <Provider store={store}>
         <KeyboardAvoidingView behavior="height" style={{ flex: 1 }}>
-          <Router />
+          {preloaded && <Router />}
         </KeyboardAvoidingView>
       </Provider>
     </AppearanceProvider>

@@ -3,7 +3,7 @@ import { View, Text, Image } from 'react-native'
 
 export const MessageWrapper = styled(View)({
   padding: `10px 10px`,
-  minHeight: 100
+  minHeight: 80
 })
 
 export const WhiteBox = styled(View)({
