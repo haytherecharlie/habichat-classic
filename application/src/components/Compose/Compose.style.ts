@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 import theme from 'assets/styles/theme.style'
+import Ionicon from 'react-native-vector-icons/Ionicons'
 import { View } from 'react-native'
 
 export const Compose = styled(View)({
   height: 70,
   display: 'flex',
   flexDirection: 'row',
-  alignItems: 'flex-start',
+  alignItems: 'center',
   justifyContent: 'center',
   padding: `10px ${theme.DISPLAY_PADDING}px`,
   background: theme.INVERSE_COLOR,
@@ -19,15 +20,18 @@ export const TextInputWrapper = styled(View)({
   flexDirection: 'row',
   border: `2px solid ${theme.BRAND_COLOR}`,
   borderRadius: 20,
-  padding: 7,
+  padding: 5,
   marginRight: 5
 })
 
 export const ButtonWrapper = styled(View)({
-  height: 35,
-  width: 35,
+  height: 40,
+  width: 40,
   borderRadius: 20,
   background: theme.BRAND_COLOR,
   alignItems: 'center',
   justifyContent: 'center'
+})
+
+export const Icon = styled(Ionicon)({
 })

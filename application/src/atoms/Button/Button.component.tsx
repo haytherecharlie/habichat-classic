@@ -1,10 +1,10 @@
 import React from 'react'
 import * as S from './Button.style'
 
-const Button = ({ onPress }) => {
+const Button = ({ onPress, children }) => {
   return (
     <S.Button onPress={onPress}>
-      <S.Title>w</S.Title>
+      <S.Title>{children}</S.Title>
     </S.Button>
   )
 }

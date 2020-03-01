@@ -1,4 +1,5 @@
 export const INTIAILIZE_APP = 'INITIALIZE_APP'
+export const KEYBOARD_UP = 'KEYBOARD_UP'
 
 export const COMPOSE_TEXT_INPUT = 'COMPOSE_TEXT_INPUT'
 

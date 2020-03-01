@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { timestamp } from 'services/firebase'
 import TextInput from 'atoms/TextInput'
 import Button from 'atoms/Button'
+import theme from 'assets/styles/theme.style'
 import * as A from 'services/redux/actions'
 import * as S from './Compose.style'
 
@@ -34,7 +35,9 @@ const Compose = () => {
         <TextInput text={inputText} changeText={changeText} />
       </S.TextInputWrapper>
       <S.ButtonWrapper>
-        <Button onPress={sendMessage} />
+        <Button onPress={sendMessage}>
+          <S.Icon name="ios-send" color={theme.INVERSE_COLOR} size={18} />
+        </Button>
       </S.ButtonWrapper>
     </S.Compose>
   )

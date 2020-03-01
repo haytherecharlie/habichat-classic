@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux'
 import * as S from './MessageList.style'
 
 const MessagesList = () => {
+  
   useRealtimeDb('messages')
   const listRef = useRef(null)
   const { keyboardUp } = useSelector(s => s.application)

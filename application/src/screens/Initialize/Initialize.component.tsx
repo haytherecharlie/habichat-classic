@@ -15,12 +15,6 @@ const Initialize = () => {
       .catch(err => alert(err))
   }, [])
 
-  useEffect(() => {
-    if (community && messages && members && application.initialized) {
-      alert('ready to roll')
-    }
-  }, [application])
-
   return (
     <S.Wrapper>
       <Spinner />
