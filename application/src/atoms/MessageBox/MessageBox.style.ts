@@ -55,7 +55,7 @@ export const Time = styled(Text)({
   width: `100%`,
   color: `#ccc`,
   fontSize: 10,
-  padding: `0px 10px 10px 0`,
+  padding: `5px 10px 10px 0px`,
   textAlign: 'right'
 })
 

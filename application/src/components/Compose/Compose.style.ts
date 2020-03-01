@@ -11,7 +11,7 @@ export const Compose = styled(View)({
   justifyContent: 'center',
   padding: `10px ${theme.DISPLAY_PADDING}px`,
   background: theme.INVERSE_COLOR,
-  boxShadow: `0 0 5px rgba(0,0,0,0.2)`,
+  boxShadow: `0 0 5px rgba(0,0,0,0.2)`
 })
 
 export const TextInputWrapper = styled(View)({
@@ -33,5 +33,4 @@ export const ButtonWrapper = styled(View)({
   justifyContent: 'center'
 })
 
-export const Icon = styled(Ionicon)({
-})
+export const Icon = styled(Ionicon)({})

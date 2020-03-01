@@ -14,6 +14,7 @@ const Compose = () => {
   const sendMessage = () => {
     const value = newMessage(inputText)
     dispatch({ type: A.ADD_MESSAGES, value })
+    return setInputText('')
   }
 
   return (

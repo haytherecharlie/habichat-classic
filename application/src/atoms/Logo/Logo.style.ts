@@ -17,6 +17,7 @@ export const Icon = styled(Image)({
 export const Title = styled(Text)({
   marginTop: 5,
   fontSize: 25,
+  marginLeft: 2,
   letterSpacing: `-1px`,
   fontFamily: 'cocogoose',
   color: theme.BRAND_COLOR
