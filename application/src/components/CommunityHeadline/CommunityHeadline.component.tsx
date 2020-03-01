@@ -6,7 +6,7 @@ import * as S from './CommunityHeadline.style'
 const CommunityHeadline = () => {
   const { name, city } = useSelector(s => s.community)
   return (
-    <S.CommunityHeadline>
+    <S.CommunityHeadline elevation={3}>
       <Text size="h3">{`${name}, ${city}`}</Text>
     </S.CommunityHeadline>
   )

@@ -6,5 +6,6 @@ export const CommunityHeadline = styled(View)({
   display: 'flex',
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
-  padding: `0 20px`
+  padding: `0 20px 10px 20px`,
+  background: '#FFF',
 })

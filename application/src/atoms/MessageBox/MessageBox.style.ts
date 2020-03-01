@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Ionicon from 'react-native-vector-icons/Ionicons'
 import { View, Text, Image } from 'react-native'
 
 export const MessageWrapper = styled(View)({
@@ -41,7 +42,7 @@ export const Header = styled(View)({
 export const Body = styled(View)({
   width: `100%`,
   flex: 1,
-  padding: `0px 20px 10px 30px`
+  padding: `0px 20px 15px 30px`
 })
 
 export const ImageBody = styled(Image)({
@@ -54,3 +55,5 @@ export const Time = styled(Text)({
   color: `#ccc`,
   fontSize: 10
 })
+
+export const Icon = styled(Ionicon)({})

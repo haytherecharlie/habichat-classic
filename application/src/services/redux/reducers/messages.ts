@@ -8,6 +8,11 @@ const messages = (state = defaultState, action) => {
       return action.value.messages
     case A.ADD_MESSAGES:
       let newMessage = [...state]
+      const newMessageIndex = state.findIndex(x => x.id === action.value.id)
+      if (newMessageIndex !== -1) {
+        newMessage.splice(newMessageIndex, 1, action.value)
+        return newMessage
+      }
       newMessage.splice(newMessage.length, newMessage.length >= 50 ? 1 : 0, action.value)
       return newMessage
     case A.UPDATE_MESSAGES:

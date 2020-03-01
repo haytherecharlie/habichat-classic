@@ -1,9 +1,10 @@
 import styled from 'styled-components'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 
 export const Circle = styled(View)({
-  height: 30,
-  width: 30,
+  height: 35,
+  width: 35,
   marginTop: -3,
-  background: `orange`
+  background: `orange`,
+  borderRadius: 25
 })

@@ -11,15 +11,13 @@ export const Logo = styled(View)({
 
 export const Icon = styled(Image)({
   height: 30,
-  width: 30,
-  background: `orange`
+  width: 30
 })
 
 export const Title = styled(Text)({
   marginTop: 5,
   fontSize: 25,
   letterSpacing: `-1px`,
-  marginLeft: 3,
   fontFamily: 'cocogoose',
   color: theme.BRAND_COLOR
 })

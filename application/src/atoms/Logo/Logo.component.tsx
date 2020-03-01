@@ -1,11 +1,11 @@
 import React from 'react'
-// import habichatLogoBlack from 'assets/images/logo-habichat-black.png'
+import logoDark from 'assets/images/logo-dark.png'
 import * as S from './Logo.style'
 
 const Logo = () => {
   return (
     <S.Logo>
-      <S.Icon source={{}} alt="habichat logo" />
+      <S.Icon source={logoDark} alt="habichat logo" />
       <S.Title>habichat</S.Title>
     </S.Logo>
   )
