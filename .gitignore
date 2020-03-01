@@ -139,7 +139,7 @@ node_modules/
 .cache/
 
 node_modules/**/*
-.expo/*
+.expo
 npm-debug.*
 *.jks
 *.p8
@@ -149,6 +149,8 @@ npm-debug.*
 *.orig.*
 web-build/
 web-report/
+
+build
 
 # macOS
 .DS_Store

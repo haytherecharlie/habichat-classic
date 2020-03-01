@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 import theme from 'assets/styles/theme.style'
-import { View, Text } from 'react-native'
+import { TouchableOpacity, Text } from 'react-native'
 
-export const Wrapper = styled(View)({
+export const Button = styled(TouchableOpacity)({
   flex: 1,
+  width: `100%`,
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
-  background: `#F8F8F8`,
+  justifyContent: 'center'
 })
 
 export const Title = styled(Text)({
-  fontSize: 20
+  color: theme.INVERSE_COLOR
 })

@@ -1,10 +1,13 @@
 import React from 'react'
+import MessageList from 'components/MessageList'
+import Compose from 'components/Compose'
 import * as S from './Home.style'
 
 const Home = () => {
   return (
     <S.Wrapper>
-      <S.Title>Home</S.Title>
+      <MessageList />
+      <Compose />
     </S.Wrapper>
   )
 }
