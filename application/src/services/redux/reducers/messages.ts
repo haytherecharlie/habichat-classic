@@ -1,18 +1,11 @@
 import * as A from 'services/redux/actions'
 
-const defaultState = [
-  // {
-  //   id: 12344422,
-  //   author: '123456789',
-  //   image: false,
-  //   text: 'hello',
-  //   created: 12345232324,
-  //   updated: 12224353422
-  // }
-]
+const defaultState = null
 
 const messages = (state = defaultState, action) => {
   switch (action.type) {
+    case A.INTIAILIZE_APP:
+      return action.value.messages
     case A.ADD_MESSAGES:
       return [...state, action.value]
     default:

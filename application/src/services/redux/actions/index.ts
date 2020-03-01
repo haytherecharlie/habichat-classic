@@ -1,3 +1,5 @@
+export const INTIAILIZE_APP = 'INITIALIZE_APP'
+
 export const COMPOSE_TEXT_INPUT = 'COMPOSE_TEXT_INPUT'
 
 export const ADD_MESSAGES = 'ADD_MESSAGES'

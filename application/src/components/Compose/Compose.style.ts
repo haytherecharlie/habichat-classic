@@ -3,7 +3,7 @@ import theme from 'assets/styles/theme.style'
 import { View } from 'react-native'
 
 export const Compose = styled(View)({
-  height: 100,
+  height: 70,
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'flex-start',

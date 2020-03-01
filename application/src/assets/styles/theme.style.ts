@@ -44,7 +44,7 @@ export default {
 
   // Element Sizing
   BORDER_RADIUS: 25,
-  SPINNER_RADIUS: 50,
+  SPINNER_RADIUS: 40,
   HEADER_HEIGHT: `60px`,
 
   // Font Family
