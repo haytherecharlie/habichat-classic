@@ -7,7 +7,25 @@ const messages = (state = defaultState, action) => {
     case A.INTIAILIZE_APP:
       return action.value.messages
     case A.ADD_MESSAGES:
-      return [...state, action.value]
+      let newMessage = [...state]
+      newMessage.splice(newMessage.length, newMessage.length >= 50 ? 1 : 0, action.value)
+      return newMessage
+    case A.UPDATE_MESSAGES:
+      const updatedMessageIndex = state.findIndex(x => x.id === action.value.id)
+      if (updatedMessageIndex !== -1) {
+        let updatedMessage = state.slice()
+        updatedMessage.splice(updatedMessageIndex, 1, action.value)
+        return updatedMessage
+      }
+      return state
+    case A.DELETE_MESSAGES:
+      const deletedMessageIndex = state.findIndex(x => x.id === action.value.id)
+      if (deletedMessageIndex !== -1) {
+        let deletedMessage = state.slice()
+        deletedMessage.splice(deletedMessageIndex, 1)
+        return deletedMessage
+      }
+      return state
     default:
       return state
   }

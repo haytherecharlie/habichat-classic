@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { timestamp } from 'services/firebase'
 import TextInput from 'atoms/TextInput'
@@ -9,26 +9,29 @@ import * as S from './Compose.style'
 const Compose = () => {
   const dispatch = useDispatch()
   const { text } = useSelector(s => s.compose)
+  const [inputText, setInputText] = useState('')
 
-  const changeText = value => dispatch({ type: A.COMPOSE_TEXT_INPUT, value })
+  const changeText = value => setInputText(value)
 
-  const sendMessage = () =>
+  const sendMessage = () => {
+    const time = timestamp()
     dispatch({
       type: A.ADD_MESSAGES,
       value: {
         id: `${Math.random() * 100}`,
-        text,
-        author: '123456789',
-        image: false,
-        updated: { toDate: () => 12341223232 },
-        created: { toDate: () => 12341223232 }
+        text: inputText,
+        author: 'QB3zbwLUnTDdbzZWxdN4',
+        image: null,
+        updated: time,
+        created: time
       }
     })
+  }
 
   return (
     <S.Compose>
       <S.TextInputWrapper>
-        <TextInput text={text} changeText={changeText} />
+        <TextInput text={inputText} changeText={changeText} />
       </S.TextInputWrapper>
       <S.ButtonWrapper>
         <Button onPress={sendMessage} />

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import theme from 'assets/styles/theme.style'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 
 export const MessageList = styled(View)({
   flex: 1,
@@ -9,7 +9,6 @@ export const MessageList = styled(View)({
   background: theme.BACKGROUND_COLOR
 })
 
-export const Title = styled(Text)({
-  marginLeft: 10,
-  fontSize: 16
+export const Title = styled(View)({
+  marginLeft: 10
 })

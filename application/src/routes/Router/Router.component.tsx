@@ -22,7 +22,7 @@ function Router() {
           name="Messages"
           component={Home}
           options={{
-            headerStyle: { backgroundColor: theme.BACKGROUND_COLOR, shadowOpacity: 0 },
+            headerStyle: { backgroundColor: theme.BACKGROUND_COLOR, shadowOpacity: 0, elevation: 0 },
             headerLeftContainerStyle: { paddingLeft: theme.DISPLAY_PADDING },
             headerRightContainerStyle: { paddingRight: theme.DISPLAY_PADDING },
             headerTitle: '',

@@ -1,3 +1,4 @@
+import 'utils/helpers/base64'
 import React from 'react'
 import { Provider } from 'react-redux'
 import { KeyboardAvoidingView } from 'react-native'

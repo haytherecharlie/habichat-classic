@@ -3,7 +3,7 @@ import { View, Text, Image } from 'react-native'
 
 export const MessageWrapper = styled(View)({
   padding: `10px 10px`,
-  minHeight: 80
+  flex: 1
 })
 
 export const WhiteBox = styled(View)({
@@ -35,15 +35,13 @@ export const Header = styled(View)({
   flexDirection: `row`,
   alignItems: 'center',
   justifyContent: `space-between`,
-  padding: `10px 10px 0px 20px`
+  padding: `10px 10px 0px 30px`
 })
 
 export const Body = styled(View)({
   width: `100%`,
   flex: 1,
-  paddingBottom: 20,
-  display: `flex`,
-  alignItems: 'center'
+  padding: `0px 20px 10px 30px`
 })
 
 export const ImageBody = styled(Image)({
@@ -52,19 +50,7 @@ export const ImageBody = styled(Image)({
   margin: `0 20px`
 })
 
-export const Name = styled(Text)({
-  // fontFamily: 'habichat',
-  paddingLeft: 10,
-  fontSize: 16
-})
-
 export const Time = styled(Text)({
   color: `#ccc`,
   fontSize: 10
-})
-
-export const MessageText = styled(Text)({
-  width: `100%`,
-  fontSize: 20,
-  padding: `0 30px`
 })

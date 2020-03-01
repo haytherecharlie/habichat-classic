@@ -13,6 +13,7 @@ const GITHUB = `#562676`
 const LINKEDIN = `#0077B5`
 const SHADOW_DARK = `rgba(0,0,0,0.3)`
 const SHADOW_LIGHT = `rgba(0,0,0,0.3)`
+const HABICHAT = '#191D38'
 
 const FONT_LIGHT = 200
 const FONT_REGULAR = 600
@@ -29,7 +30,7 @@ export default {
   PRIMARY_COLOR: darkMode ? WHITE : BLACK,
   INVERSE_COLOR: darkMode ? BLACK : WHITE,
   DISPLAY_PADDING: 20,
-  BRAND_COLOR: BLACK,
+  BRAND_COLOR: HABICHAT,
   TWITTER,
   GITHUB,
   LINKEDIN,

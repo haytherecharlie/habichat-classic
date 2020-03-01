@@ -7,7 +7,7 @@ export const Button = styled(TouchableOpacity)({
   width: `100%`,
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
 })
 
 export const Title = styled(Text)({
