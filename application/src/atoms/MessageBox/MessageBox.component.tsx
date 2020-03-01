@@ -14,7 +14,6 @@ const MessageBox = ({ message, member, listRef }) => {
         <S.AuthorCircle source={{ uri: member.photoUrl }} alt="profile photo" />
         <S.Header>
           <Text size="h3">{member.name}</Text>
-          <S.Time>{`${formatDistance(message.updated, new Date().getTime(), { addSuffix: true })}`}</S.Time>
           {message.server ? (
             <S.Icon name="ios-checkmark-circle" color={theme.BRAND_COLOR} size={12} />
           ) : (
@@ -25,6 +24,7 @@ const MessageBox = ({ message, member, listRef }) => {
           <Text size="body">{message.text}</Text>
           {message.image && <S.ImageBody source={message.image} alt="image" />}
         </S.Body>
+        <S.Time>{`${formatDistance(message.updated, new Date().getTime(), { addSuffix: true })}`}</S.Time>
       </S.WhiteBox>
     </S.MessageWrapper>
   )

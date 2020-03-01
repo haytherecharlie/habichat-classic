@@ -42,7 +42,7 @@ export const Header = styled(View)({
 export const Body = styled(View)({
   width: `100%`,
   flex: 1,
-  padding: `0px 20px 15px 30px`
+  padding: `0px 20px 0px 30px`
 })
 
 export const ImageBody = styled(Image)({
@@ -52,8 +52,11 @@ export const ImageBody = styled(Image)({
 })
 
 export const Time = styled(Text)({
+  width: `100%`,
   color: `#ccc`,
-  fontSize: 10
+  fontSize: 10,
+  padding: `0px 10px 10px 0`,
+  textAlign: 'right'
 })
 
 export const Icon = styled(Ionicon)({})
