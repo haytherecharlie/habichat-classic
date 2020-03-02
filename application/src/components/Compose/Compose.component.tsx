@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import newMessage from 'services/api/newMessage'
 import TextInput from 'atoms/TextInput'
 import Button from 'atoms/Button'
@@ -18,15 +18,17 @@ const Compose = () => {
   }
 
   return (
-    <S.Compose elevation={5}>
-      <S.TextInputWrapper>
-        <TextInput text={inputText} changeText={setInputText} />
-      </S.TextInputWrapper>
-      <S.ButtonWrapper>
-        <Button onPress={sendMessage}>
-          <S.Icon name="ios-send" color={theme.INVERSE_COLOR} size={18} />
-        </Button>
-      </S.ButtonWrapper>
+    <S.Compose>
+      <S.BasicWrapper>
+        <S.TextInputWrapper elevation={1}>
+          <TextInput text={inputText} changeText={setInputText} />
+        </S.TextInputWrapper>
+        <S.ButtonWrapper>
+          <Button onPress={sendMessage}>
+            <S.Icon name="ios-send" color={theme.INVERSE_COLOR} size={20} />
+          </Button>
+        </S.ButtonWrapper>
+      </S.BasicWrapper>
     </S.Compose>
   )
 }

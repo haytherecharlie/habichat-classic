@@ -1,24 +1,7 @@
 import styled from 'styled-components'
-import theme from 'assets/styles/theme.style'
-import { View, Text, Image } from 'react-native'
+import { Image } from 'react-native'
 
-export const Logo = styled(View)({
-  display: 'flex',
-  flexDirection: `row`,
-  alignItems: 'center',
-  justifyContent: 'center'
-})
-
-export const Icon = styled(Image)({
+export const Logo = styled(Image)({
   height: 30,
-  width: 30
-})
-
-export const Title = styled(Text)({
-  marginTop: 5,
-  fontSize: 25,
-  marginLeft: 2,
-  letterSpacing: `-1px`,
-  fontFamily: 'cocogoose',
-  color: theme.BRAND_COLOR
+  width: 190
 })

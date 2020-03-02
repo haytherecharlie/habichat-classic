@@ -8,7 +8,7 @@ const useKeyboardUp = () => {
 
   useEffect(() => {
     const keyboardShown = Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow'
-    const keyboardHidden = Platform.OS === 'ios' ? 'keyboardWillHide' : 'keyboardDidHide'
+    const keyboardHidden = Platform.OS === 'ios' ? 'keyboardDidHide' : 'keyboardDidHide'
     const keyboardDidShowListener = Keyboard.addListener(keyboardShown, () => dispatch({ type: A.KEYBOARD_UP, status: true }))
     const keyboardDidHideListener = Keyboard.addListener(keyboardHidden, () => dispatch({ type: A.KEYBOARD_UP, status: false }))
 

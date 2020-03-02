@@ -27,5 +27,6 @@ export const p = styled(Text)({
 
 export const span = styled(Text)({
   fontSize: 14,
+  fontWeight: 500,
   color: theme.PRIMARY_COLOR
 })

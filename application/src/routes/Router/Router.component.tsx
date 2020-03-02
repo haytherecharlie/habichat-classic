@@ -3,8 +3,7 @@ import { useSelector } from 'react-redux'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import useKeyboardUp from 'utils/hooks/useKeyboardUp'
-import Logo from 'atoms/Logo'
-import ProfileCircle from 'atoms/ProfileCircle'
+import Header from 'components/Header'
 import theme from 'assets/styles/theme.style'
 import Initialize from 'screens/Initialize'
 import Home from 'screens/Home'
@@ -22,12 +21,10 @@ function Router() {
             name="Community"
             component={Home}
             options={{
-              headerStyle: { backgroundColor: '#FFF', shadowOpacity: 0, elevation: 0 },
-              headerLeftContainerStyle: { paddingLeft: theme.DISPLAY_PADDING },
-              headerRightContainerStyle: { paddingRight: theme.DISPLAY_PADDING },
+              headerStyle: { backgroundColor: theme.FOREGROUND_COLOR, shadowOpacity: 0, elevation: 0 },
               headerTitle: '',
-              headerLeft: () => <Logo />,
-              headerRight: () => <ProfileCircle />
+              headerLeft: () => <Header.Left />,
+              headerRight: () => <Header.Right />
             }}
           />
         ) : (

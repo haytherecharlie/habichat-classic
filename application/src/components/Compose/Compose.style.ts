@@ -4,32 +4,43 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 import { View } from 'react-native'
 
 export const Compose = styled(View)({
-  height: 70,
+  minHeight: 70,
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'flex-start',
+  justifyContent: 'flex-start',
+  padding: `0 10px`,
+  zIndex: 200,
+  boxShadow: `0 1px 1px rgba(0,0,0,0.2)`,
+})
+
+export const BasicWrapper = styled(View)({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
-  justifyContent: 'center',
-  padding: `10px ${theme.DISPLAY_PADDING}px`,
-  background: theme.INVERSE_COLOR,
-  boxShadow: `0 0 2px rgba(0,0,0,0.2)`,
-  zIndex: 200
+  margin: `5px 10px 0px 10px`
 })
 
 export const TextInputWrapper = styled(View)({
   flex: 1,
   display: 'flex',
   flexDirection: 'row',
-  border: `1px solid ${theme.BRAND_COLOR}`,
-  borderRadius: 20,
-  padding: 5,
-  marginRight: 5
+  alignItems: 'center',
+  justifyContent: 'center',
+  background: theme.FOREGROUND_COLOR,
+  border: `1px solid #CCC`,
+  borderRadius: 25,
+  padding: `10px 20px`,
+  marginRight: 10,
+  minHeight: 35,
 })
 
 export const ButtonWrapper = styled(View)({
-  height: 40,
-  width: 40,
-  borderRadius: 20,
+  height: 45,
+  width: 45,
+  borderRadius: 25,
   background: theme.BRAND_COLOR,
+  display: 'flex',
   alignItems: 'center',
   justifyContent: 'center'
 })

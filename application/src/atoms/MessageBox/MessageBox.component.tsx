@@ -4,8 +4,7 @@ import { formatTimestamp } from 'utils/helpers'
 import theme from 'assets/styles/theme.style'
 import * as S from './MessageBox.style'
 
-const MessageBox = ({ message, member, listRef }) => {
-  if (listRef && listRef.current) listRef.current.scrollToEnd({ animated: true })
+const MessageBox = ({ message, member }) => {
 
   const { server, text, image, updated } = message
   const timestamp = formatTimestamp(updated)

@@ -4,8 +4,10 @@ import * as Font from 'expo-font'
 const usePreloading = () => {
   const [loaded, setLoaded] = useState(false)
   useEffect(() => {
-    Font.loadAsync({ cocogoose: require('../../assets/fonts/cocogoose.otf') }).then(() => {
-      console.log('FONTS LOADED')
+    Promise.all([
+      Font.loadAsync({ cocogoose: require('../../assets/fonts/cocogoose.otf') }),
+      Font.loadAsync({ helvetica: require('../../assets/fonts/helvetica-regular.otf') })
+    ]).then(() => {
       setLoaded(true)
     })
   }, [])

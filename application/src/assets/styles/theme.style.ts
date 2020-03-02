@@ -7,6 +7,7 @@ const LARGE_VIEW = 924
 const F8 = '#F8F8F8'
 const BLACK = '#000000'
 const WHITE = '#FFFFFF'
+const BLACKISH = '#444444'
 const PINK = '#FF2353'
 const TWITTER = `#1A91DA`
 const GITHUB = `#562676`
@@ -25,8 +26,10 @@ const COCOGOOSE = 'cocogoose'
 
 export default {
   // Colors
+  DARK_MODE: darkMode,
   SHADOW_COLOR: darkMode ? SHADOW_DARK : SHADOW_LIGHT,
-  BACKGROUND_COLOR: darkMode ? BLACK : F8,
+  BACKGROUND_COLOR: darkMode ? BLACKISH : F8,
+  FOREGROUND_COLOR: darkMode ? BLACK : WHITE,
   PRIMARY_COLOR: darkMode ? WHITE : BLACK,
   INVERSE_COLOR: darkMode ? BLACK : WHITE,
   DISPLAY_PADDING: 20,

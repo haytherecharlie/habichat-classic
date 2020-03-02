@@ -3,12 +3,7 @@ import logoDark from 'assets/images/logo-dark.png'
 import * as S from './Logo.style'
 
 const Logo = () => {
-  return (
-    <S.Logo>
-      <S.Icon source={logoDark} alt="habichat logo" />
-      <S.Title>habichat</S.Title>
-    </S.Logo>
-  )
+  return <S.Logo source={logoDark} alt="habichat logo" />
 }
 
 export default Logo

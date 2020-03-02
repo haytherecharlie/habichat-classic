@@ -3,7 +3,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 import { View, Text, Image } from 'react-native'
 
 export const MessageWrapper = styled(View)({
-  padding: `5px 10px`,
+  padding: `0px 10px 10px 10px`,
   flex: 1
 })
 
@@ -12,12 +12,13 @@ export const WhiteBox = styled(View)({
   marginLeft: 20,
   background: `#fff`,
   borderRadius: 10,
-  boxShadow: `2px 2px 2px rgba(0,0,0,0.2)`,
+  boxShadow: `0 1px 1px rgba(0,0,0,0.2)`,
   display: `flex`,
   flexDirection: 'column',
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
-  position: 'relative'
+  position: 'relative',
+  border: `.5px solid rgba(0,0,0,0.01)`,
 })
 
 export const AuthorCircle = styled(Image)({
