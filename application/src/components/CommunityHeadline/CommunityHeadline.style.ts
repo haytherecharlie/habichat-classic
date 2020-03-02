@@ -8,4 +8,6 @@ export const CommunityHeadline = styled(View)({
   justifyContent: 'flex-start',
   padding: `0 20px 10px 20px`,
   background: '#FFF',
+  boxShadow: `0 0 2px rgba(0,0,0,0.2)`,
+  zIndex: 200
 })
