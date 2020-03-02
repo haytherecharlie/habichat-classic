@@ -6,11 +6,11 @@ import * as S from './Home.style'
 
 const Home = () => {
   return (
-    <S.Wrapper>
+    <S.Home>
       <SubHeader />
       <MessageList />
       <Compose />
-    </S.Wrapper>
+    </S.Home>
   )
 }
 

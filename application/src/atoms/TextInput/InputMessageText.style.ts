@@ -3,9 +3,10 @@ import { TextInput } from 'react-native'
 
 export const Input = styled(TextInput)({
   flex: 1,
+  width: `100%`,
   maxHeight: 60,
   fontWeight: 400,
   fontSize: 15,
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'center'
 })

@@ -2,7 +2,7 @@ import * as A from 'services/redux/actions'
 
 const defaultState = {
   initialized: false,
-  authenticated: true,
+  authenticated: false,
   keyboardUp: false
 }
 

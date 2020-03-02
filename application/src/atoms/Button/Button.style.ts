@@ -11,5 +11,6 @@ export const Button = styled(TouchableOpacity)({
 })
 
 export const Title = styled(Text)({
+  fontFamily: 'cocogoose',
   color: theme.INVERSE_COLOR
 })

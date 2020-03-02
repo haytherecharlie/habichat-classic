@@ -19,6 +19,7 @@ admin.initializeApp({
   databaseURL: 'https://habichat-75c78.firebaseio.com'
 })
 
+export const auth = admin.auth()
 export const db = admin.firestore()
 export const hd = admin.storage()
 export const timestamp = admin.firestore.FieldValue.serverTimestamp
