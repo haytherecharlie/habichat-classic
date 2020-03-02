@@ -3,7 +3,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 import { View, Text, Image } from 'react-native'
 
 export const MessageWrapper = styled(View)({
-  padding: `10px 10px`,
+  padding: `5px 10px`,
   flex: 1
 })
 

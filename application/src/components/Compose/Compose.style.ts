@@ -18,7 +18,7 @@ export const TextInputWrapper = styled(View)({
   flex: 1,
   display: 'flex',
   flexDirection: 'row',
-  border: `2px solid ${theme.BRAND_COLOR}`,
+  border: `1px solid ${theme.BRAND_COLOR}`,
   borderRadius: 20,
   padding: 5,
   marginRight: 5

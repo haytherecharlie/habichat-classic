@@ -7,24 +7,24 @@ import * as S from './MessageBox.style'
 const MessageBox = ({ message, member, listRef }) => {
   if (listRef && listRef.current) listRef.current.scrollToEnd({ animated: true })
 
-  // console.log(member.updated.toDate())
+  const { server, text, image, updated } = message
   return (
     <S.MessageWrapper>
       <S.WhiteBox elevation={1}>
         <S.AuthorCircle source={{ uri: member.photoUrl }} alt="profile photo" />
         <S.Header>
           <Text size="h3">{member.name}</Text>
-          {message.server ? (
+          {server ? (
             <S.Icon name="ios-checkmark-circle" color={theme.BRAND_COLOR} size={12} />
           ) : (
             <S.Icon name="ios-checkmark-circle-outline" color={theme.BRAND_COLOR} size={12} />
           )}
         </S.Header>
         <S.Body>
-          <Text size="body">{message.text}</Text>
-          {message.image && <S.ImageBody source={message.image} alt="image" />}
+          <Text size="body">{text}</Text>
+          {image && <S.ImageBody source={image} alt="image" />}
         </S.Body>
-        <S.Time>{`${formatDistance(message.updated, new Date().getTime(), { addSuffix: true })}`}</S.Time>
+        <S.Time>{server ? formatDistance(new Date(updated.seconds * 1000), new Date().getTime(), { addSuffix: true }) : 'just now'}</S.Time>
       </S.WhiteBox>
     </S.MessageWrapper>
   )

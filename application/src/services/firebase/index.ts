@@ -16,4 +16,4 @@ firebase.initializeApp({
 
 export const db = firebase.firestore()
 export const hd = firebase.storage().ref()
-export const timestamp = firebase.firestore.FieldValue.serverTimestamp
+export const timestamp = firebase.firestore.Timestamp
