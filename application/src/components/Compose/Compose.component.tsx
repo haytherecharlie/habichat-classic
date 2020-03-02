@@ -23,7 +23,7 @@ const Compose = () => {
         <S.TextInputWrapper elevation={1}>
           <TextInput text={inputText} changeText={setInputText} />
         </S.TextInputWrapper>
-        <S.ButtonWrapper>
+        <S.ButtonWrapper elevation={1}>
           <Button onPress={sendMessage}>
             <S.Icon name="ios-send" color={theme.INVERSE_COLOR} size={20} />
           </Button>
