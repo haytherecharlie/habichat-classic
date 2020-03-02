@@ -9,6 +9,10 @@ const RegisterForm = () => {
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
 
+  const submitForm = () => {
+    // submit the form then login
+  }
+
   return (
     <S.RegisterForm>
       <S.TitleWrapper>
@@ -33,7 +37,7 @@ const RegisterForm = () => {
         <TextInput text={lastName} changeText={setLastName} multiline={false} placeholder="McConaughey" />
       </S.InputWrapper>
       <S.ButtonWrapper>
-        <Button onPress={() => console.log('wpw')}>REGISTER NOW</Button>
+        <Button onPress={submitForm}>REGISTER NOW</Button>
       </S.ButtonWrapper>
     </S.RegisterForm>
   )

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import theme from 'assets/styles/theme.style'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 
 export const RegisterForm = styled(View)({
   width: `80%`,
