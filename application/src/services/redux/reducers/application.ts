@@ -1,4 +1,4 @@
-import * as A from 'services/redux/actions'
+import * as A from '../actions'
 
 const defaultState = {
   initialized: false,

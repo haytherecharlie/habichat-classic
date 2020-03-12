@@ -1,11 +1,11 @@
-import 'utils/helpers/base64'
+import './src/utils/helpers/base64'
 import React from 'react'
 import { Provider } from 'react-redux'
 import { KeyboardAvoidingView, Platform } from 'react-native'
 import { AppearanceProvider } from 'react-native-appearance'
-import usePreloading from 'utils/hooks/usePreloading'
-import store from 'services/redux'
-import Router from 'routes/Router'
+import usePreloading from './src/utils/hooks/usePreloading'
+import store from './src/services/redux'
+import Router from './src/routes/Router'
 
 const App = () => {
   const preloaded = usePreloading()

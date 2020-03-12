@@ -10,7 +10,7 @@ const RegisterForm = () => {
   const [email, setEmail] = useState('')
 
   const submitForm = () => {
-    // submit the form then login
+    alert(`firstName: ${firstName}, lastName: ${lastName}, email: ${email}`)
   }
 
   return (
@@ -22,19 +22,29 @@ const RegisterForm = () => {
         <Text size="h3">EMAIL ADDRESS</Text>
       </S.LabelWrapper>
       <S.InputWrapper>
-        <TextInput text={email} changeText={setEmail} multiline={false} placeholder="alrightalright@alright.com" />
+        <TextInput
+          clearButtonMode="while-editing"
+          value={email}
+          autoCorrect={false}
+          autoCapitalize="none"
+          autoFocus={true}
+          autoCompleteType="email"
+          onChangeText={setEmail}
+          multiline={false}
+          placeholder="alrightalright@alright.com"
+        />
       </S.InputWrapper>
       <S.LabelWrapper>
         <Text size="h3">FIRST NAME</Text>
       </S.LabelWrapper>
       <S.InputWrapper>
-        <TextInput text={firstName} changeText={setFirstName} multiline={false} placeholder="Matthew" autoFocus={true} />
+        <TextInput value={firstName} clearButtonMode="while-editing" onChangeText={setFirstName} multiline={false} placeholder="Matthew" />
       </S.InputWrapper>
       <S.LabelWrapper>
         <Text size="h3">LAST NAME</Text>
       </S.LabelWrapper>
       <S.InputWrapper>
-        <TextInput text={lastName} changeText={setLastName} multiline={false} placeholder="McConaughey" />
+        <TextInput clearButtonMode="while-editing" value={lastName} onChangeText={setLastName} multiline={false} placeholder="McConaughey" />
       </S.InputWrapper>
       <S.ButtonWrapper>
         <Button onPress={submitForm}>REGISTER NOW</Button>

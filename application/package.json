@@ -2,7 +2,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "build": "expo build:web",
-    "dev": "expo start",
+    "dev": "expo start -c",
     "ios": "expo start --ios",
     "optimize": "expo-optimize",
     "publish": "expo publish",
