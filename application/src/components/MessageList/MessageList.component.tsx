@@ -20,9 +20,10 @@ const MessagesList = () => {
   return (
     <S.MessageList>
       <S.ScrollList onContentSizeChange={scrollToEnd} ref={listRef} bounces={true} snapToEnd={true} showsVerticalScrollIndicator={false}>
-        {messages.map(m => {
-          return <MessageBox key={m.id} message={m} member={members.find(x => x.id === m.author)} />
-        })}
+        <S.Padding />
+        {messages.map(m => (
+          <MessageBox key={m.id} message={m} member={members.find(x => x.id === m.author)} />
+        ))}
       </S.ScrollList>
     </S.MessageList>
   )

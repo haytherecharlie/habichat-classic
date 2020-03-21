@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Text from 'atoms/Text'
 import TextInput from 'atoms/TextInput'
 import Button from 'atoms/Button'
+import PlacesAutoComplete from 'atoms/PlacesAutoComplete'
 import * as S from './RegisterForm.style'
 
 const RegisterForm = () => {
@@ -10,6 +11,9 @@ const RegisterForm = () => {
   const [email, setEmail] = useState('')
 
   const submitForm = () => {
+    if (email === '') return alert('Please include your email address.')
+    if (firstName === '') return alert('Please include your first name.')
+    if (lastName === '') return alert('Please include your last name.')
     alert(`firstName: ${firstName}, lastName: ${lastName}, email: ${email}`)
   }
 
@@ -19,20 +23,10 @@ const RegisterForm = () => {
         <Text size="h1">REGISTER</Text>
       </S.TitleWrapper>
       <S.LabelWrapper>
-        <Text size="h3">EMAIL ADDRESS</Text>
+        <Text size="h3">STREET ADDRESS</Text>
       </S.LabelWrapper>
-      <S.InputWrapper>
-        <TextInput
-          clearButtonMode="while-editing"
-          value={email}
-          autoCorrect={false}
-          autoCapitalize="none"
-          autoFocus={true}
-          autoCompleteType="email"
-          onChangeText={setEmail}
-          multiline={false}
-          placeholder="alrightalright@alright.com"
-        />
+      <S.InputWrapper style={{ zIndex: 4000, elevate: 2 }}>
+        <PlacesAutoComplete />
       </S.InputWrapper>
       <S.LabelWrapper>
         <Text size="h3">FIRST NAME</Text>
@@ -45,6 +39,21 @@ const RegisterForm = () => {
       </S.LabelWrapper>
       <S.InputWrapper>
         <TextInput clearButtonMode="while-editing" value={lastName} onChangeText={setLastName} multiline={false} placeholder="McConaughey" />
+      </S.InputWrapper>
+      <S.LabelWrapper>
+        <Text size="h3">EMAIL ADDRESS</Text>
+      </S.LabelWrapper>
+      <S.InputWrapper>
+        <TextInput
+          clearButtonMode="while-editing"
+          value={email}
+          autoCorrect={false}
+          autoCapitalize="none"
+          autoCompleteType="email"
+          onChangeText={setEmail}
+          multiline={false}
+          placeholder="alrightalright@alright.com"
+        />
       </S.InputWrapper>
       <S.ButtonWrapper>
         <Button onPress={submitForm}>REGISTER NOW</Button>

@@ -1,4 +1,5 @@
 import firebase from 'firebase/app'
+import 'firebase/auth'
 import 'firebase/firestore'
 import 'firebase/storage'
 import * as serviceAccount from 'config/service-account.json'
@@ -14,6 +15,7 @@ firebase.initializeApp({
   measurementId: serviceAccount.measurementId
 })
 
+export const auth = firebase.auth()
 export const db = firebase.firestore()
 export const hd = firebase.storage().ref()
 export const timestamp = firebase.firestore.Timestamp

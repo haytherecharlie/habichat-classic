@@ -28,7 +28,7 @@ function Router() {
       case `true | false`:
         return <Stack.Screen name="Initialize" component={Initialize} options={{ headerShown: false }} />
       default:
-        return <Stack.Screen name="Initialize" component={Register} options={{ headerShown: false }} />
+        return <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
     }
   }
 

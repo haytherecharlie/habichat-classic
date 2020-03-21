@@ -19,7 +19,8 @@ export const TitleWrapper = styled(View)({
 })
 
 export const LabelWrapper = styled(View)({
-  marginLeft: 20
+  marginLeft: 20,
+  zIndex: 0
 })
 
 export const InputWrapper = styled(View)({
