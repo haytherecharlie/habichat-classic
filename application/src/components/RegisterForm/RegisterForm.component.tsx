@@ -23,22 +23,30 @@ const RegisterForm = () => {
         <Text size="h1">REGISTER</Text>
       </S.TitleWrapper>
       <S.LabelWrapper>
-        <Text size="h3">STREET ADDRESS</Text>
-      </S.LabelWrapper>
-      <S.InputWrapper style={{ zIndex: 4000, elevate: 2 }}>
-        <PlacesAutoComplete />
-      </S.InputWrapper>
-      <S.LabelWrapper>
         <Text size="h3">FIRST NAME</Text>
       </S.LabelWrapper>
       <S.InputWrapper>
-        <TextInput value={firstName} clearButtonMode="while-editing" onChangeText={setFirstName} multiline={false} placeholder="Matthew" />
+        <TextInput
+          value={firstName}
+          autoCompleteType="off"
+          clearButtonMode="while-editing"
+          onChangeText={setFirstName}
+          multiline={false}
+          placeholder="Your First Name"
+        />
       </S.InputWrapper>
       <S.LabelWrapper>
         <Text size="h3">LAST NAME</Text>
       </S.LabelWrapper>
       <S.InputWrapper>
-        <TextInput clearButtonMode="while-editing" value={lastName} onChangeText={setLastName} multiline={false} placeholder="McConaughey" />
+        <TextInput
+          clearButtonMode="while-editing"
+          autoCompleteType="off"
+          value={lastName}
+          onChangeText={setLastName}
+          multiline={false}
+          placeholder="Your Last Name"
+        />
       </S.InputWrapper>
       <S.LabelWrapper>
         <Text size="h3">EMAIL ADDRESS</Text>
@@ -49,12 +57,16 @@ const RegisterForm = () => {
           value={email}
           autoCorrect={false}
           autoCapitalize="none"
-          autoCompleteType="email"
+          autoCompleteType="off"
           onChangeText={setEmail}
           multiline={false}
-          placeholder="alrightalright@alright.com"
+          placeholder="Your Email Address"
         />
       </S.InputWrapper>
+      <S.LabelWrapper>
+        <Text size="h3">STREET ADDRESS</Text>
+      </S.LabelWrapper>
+      <PlacesAutoComplete />
       <S.ButtonWrapper>
         <Button onPress={submitForm}>REGISTER NOW</Button>
       </S.ButtonWrapper>
