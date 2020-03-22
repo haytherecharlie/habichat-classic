@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useRegisterValidation from 'utils/hooks/useRegisterValidation'
 import Text from 'atoms/Text'
 import TextInput from 'atoms/TextInput'
@@ -8,26 +8,28 @@ import * as V from 'utils/helpers/validation'
 import * as S from './RegisterForm.style'
 
 const RegisterForm = () => {
+  const [error, setError] = useState('')
   const [state, dispatch] = useRegisterValidation()
 
   const onEndEditing = type => {
     switch (type) {
       case 'first':
-        return lastNameRef.current.focus()
+        return state.refs.last.current.focus()
       case 'last':
-        return emailRef.current.focus()
+        return state.refs.email.current.focus()
       case 'email':
-        return streetRef.current.triggerFocus()
+        return state.street.valid === 'valid' ? dispatch({ type: 'street', value: '' }) : state.refs.street.current.triggerFocus()
       default:
         return
     }
   }
 
   const submitForm = () => {
-    // if (email === '') return alert('Please include your email address.')
-    // if (firstName === '') return alert('Please include your first name.')
-    // if (lastName === '') return alert('Please include your last name.')
-    // alert(`firstName: ${firstName}, lastName: ${lastName}, email: ${email}`)
+    const { first, last, email, street } = state
+    if (first.valid && last.valid && email.valid && street.valid) {
+      return alert(`${first.value}, ${last.value}, ${email.value}, ${street.value}`)
+    }
+    return setError('Please correct errors above.')
   }
 
   return (
@@ -97,6 +99,7 @@ const RegisterForm = () => {
         value={state.street.value}
         ref={state.refs.street}
       />
+      <S.ErrorText>{error}</S.ErrorText>
       <S.ButtonWrapper>
         <Button onPress={submitForm}>REGISTER NOW</Button>
       </S.ButtonWrapper>

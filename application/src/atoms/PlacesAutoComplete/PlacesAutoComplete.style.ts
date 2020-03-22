@@ -44,6 +44,6 @@ export const DummyContainer = styled(TouchableOpacity)({
 export const DummyInput = styled(Text)({
   color: theme.PRIMARY_COLOR,
   height: 40,
-  padding: `10px 25px`,
+  padding: `9px 25px 11px 25px`,
   fontSize: theme.FONT_MEDIUM
 })

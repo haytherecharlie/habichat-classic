@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import theme from 'assets/styles/theme.style'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 
 export const RegisterForm = styled(View)({
   width: `100%`,
@@ -55,9 +55,16 @@ export const InputWrapper = styled(View)(p => {
   }
 })
 
+export const ErrorText = styled(Text)({
+  color: theme.INVALID_RED,
+  fontWeight: 600,
+  width: `100%`,
+  textAlign: 'center'
+})
+
 export const ButtonWrapper = styled(View)({
   background: theme.BRAND_COLOR,
   height: 40,
   borderRadius: 25,
-  marginTop: 20
+  marginTop: 40
 })

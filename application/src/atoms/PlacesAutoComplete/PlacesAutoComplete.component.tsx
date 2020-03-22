@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from 'react'
+import React, { useEffect, useState, forwardRef } from 'react'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import theme from 'assets/styles/theme.style'
 import * as V from 'utils/helpers/validation'
@@ -14,10 +14,8 @@ const PlacesAutoComplete = (props, ref) => {
     if (validation === 'invalid') return theme.INVALID_RED
   }
 
-  const pressDummy = () => {
-    onChangeText('')
-    setAutoFocus(true)
-  }
+  const pressDummy = () => onChangeText('')
+  useEffect(() => { setAutoFocus(true) }, [])
 
   if (validation !== 'valid')
     return (
@@ -50,7 +48,7 @@ const PlacesAutoComplete = (props, ref) => {
       />
     )
   return (
-    <S.DummyContainer borderColor={borderColor()} onPress={pressDummy}>
+    <S.DummyContainer ref={ref} borderColor={borderColor()} onPress={pressDummy}>
       <S.DummyInput>{value}</S.DummyInput>
     </S.DummyContainer>
   )
