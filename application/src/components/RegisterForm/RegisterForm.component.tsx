@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import useRegisterValidation from 'utils/hooks/useRegisterValidation'
 import Text from 'atoms/Text'
-import TextInput from 'atoms/TextInput'
 import Button from 'atoms/Button'
+import TextInput from 'atoms/TextInput'
 import PlacesAutoComplete from 'atoms/PlacesAutoComplete'
-import * as V from 'utils/helpers/validation'
+import geocoder from 'utils/helpers/geoCoder'
+import useRegisterValidation from 'utils/hooks/useRegisterValidation'
 import * as S from './RegisterForm.style'
 
-const RegisterForm = () => {
+const RegisterForm = ({ setUserData }) => {
   const [error, setError] = useState('')
   const [state, dispatch] = useRegisterValidation()
 
@@ -24,10 +24,17 @@ const RegisterForm = () => {
     }
   }
 
-  const submitForm = () => {
+  const submitForm = async () => {
     const { first, last, email, street } = state
     if (first.valid && last.valid && email.valid && street.valid) {
-      return alert(`${first.value}, ${last.value}, ${email.value}, ${street.value}`)
+      const latLng = await geocoder(street.value)
+      return setUserData({
+        latLng,
+        firstName: first.value,
+        lastName: last.value,
+        email: email.value,
+        street: street.value
+      })
     }
     return setError('Please correct errors above.')
   }

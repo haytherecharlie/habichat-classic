@@ -15,7 +15,10 @@ const PlacesAutoComplete = (props, ref) => {
   }
 
   const pressDummy = () => onChangeText('')
-  useEffect(() => { setAutoFocus(true) }, [])
+
+  useEffect(() => {
+    setAutoFocus(true)
+  }, [])
 
   if (validation !== 'valid')
     return (
@@ -25,10 +28,9 @@ const PlacesAutoComplete = (props, ref) => {
         placeholder="Your Street Address"
         minLength={2}
         returnKeyType={'default'}
-        fetchDetails={true}
         styles={{
-          container: { ...S.container },
-          textInputContainer: { ...S.textInputContainer },
+          container: S.container,
+          textInputContainer: S.textInputContainer,
           textInput: { ...S.textInput, borderColor: borderColor() }
         }}
         currentLocation={false}
@@ -43,8 +45,6 @@ const PlacesAutoComplete = (props, ref) => {
           language: 'en',
           types: 'address'
         }}
-        renderLeftButton={() => null}
-        renderRightButton={() => null}
       />
     )
   return (
