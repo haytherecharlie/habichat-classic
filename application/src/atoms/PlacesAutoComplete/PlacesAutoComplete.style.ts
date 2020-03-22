@@ -1,33 +1,49 @@
+import { TouchableOpacity, Text } from 'react-native'
+import styled from 'styled-components'
 import theme from 'assets/styles/theme.style'
 
-export const GooglePlacesAutocomplete = {
-  // container: {
-  //   width: `100%`,
-  //   overflow: 'hidden'
-  // },
-  // textInputContainer: {
-  //   padding: 10,
-  //   shadowOffset: { width: 0, height: 0 },
-  //   shadowColor: 'black',
-  //   shadowOpacity: 0.1
-  // },
-  // textInput: {
-  //   backgroundColor: theme.FOREGROUND_COLOR,
-  //   width: `100%`,
-  //   padding: 10,
-  //   borderRadius: 25,
-  //   color: theme.PRIMARY_COLOR
-  // },
-  // listView: {
-  //   background: 'red',
-  //   zIndex: 8000
-  // },
-  // description: {
-  //   color: 'red',
-  //   zIndex: 8000
-  // },
-  // row: {
-  //   backgroundColor: 'yellow',
-  //   zIndex: 5000
-  // }
+export const container = {
+  flex: 0,
+  width: `100%`
 }
+
+export const textInputContainer = {
+  backgroundColor: 'transparent',
+  height: 40,
+  width: `100%`,
+  marginTop: 10,
+  borderTopWidth: 0,
+  borderBottomWidth: 0
+}
+
+export const textInput = {
+  backgroundColor: theme.FOREGROUND_COLOR,
+  color: '#5d5d5d',
+  height: 40,
+  borderRadius: 25,
+  marginTop: 0,
+  marginRight: 0,
+  marginLeft: 0,
+  marginBottom: 0,
+  paddingLeft: 25,
+  paddingRight: 25,
+  fontSize: theme.FONT_MEDIUM,
+  borderWidth: 1
+}
+
+export const DummyContainer = styled(TouchableOpacity)({
+  height: 40,
+  width: `100%`,
+  marginTop: 10,
+  borderWidth: 1,
+  borderRadius: 20,
+  borderColor: p => p.borderColor,
+  backgroundColor: theme.FOREGROUND_COLOR
+})
+
+export const DummyInput = styled(Text)({
+  color: theme.PRIMARY_COLOR,
+  height: 40,
+  padding: `10px 25px`,
+  fontSize: theme.FONT_MEDIUM
+})

@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { forwardRef } from 'react'
 import * as S from './InputMessageText.style'
 
-const InputMessageText = props => {
+const InputMessageText = forwardRef((props, ref) => {
   const defaultProps = {
+    ref,
     multiline: true,
     numberOfLines: 1,
     value: '',
@@ -12,6 +13,6 @@ const InputMessageText = props => {
   }
 
   return <S.Input {...defaultProps} />
-}
+})
 
 export default InputMessageText

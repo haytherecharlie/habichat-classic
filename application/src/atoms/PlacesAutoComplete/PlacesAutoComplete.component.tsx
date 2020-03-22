@@ -1,62 +1,59 @@
-import React from 'react'
+import React, { useState, forwardRef } from 'react'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import theme from 'assets/styles/theme.style'
+import * as V from 'utils/helpers/validation'
 import * as S from './PlacesAutoComplete.style'
-import geoCoder from 'utils/helpers/geoCoder'
-const PlacesAutoComplete = () => {
-  const onPress = async data => {
-    const geo = await geoCoder(data)
-    alert(geo)
+
+const PlacesAutoComplete = (props, ref) => {
+  const [autoFocus, setAutoFocus] = useState(false)
+  const { onChangeText, validation, onPress, value } = props
+
+  const borderColor = () => {
+    if (validation === 'pending') return theme.PRIMARY_COLOR
+    if (validation === 'valid') return theme.VALID_GREEN
+    if (validation === 'invalid') return theme.INVALID_RED
   }
 
+  const pressDummy = () => {
+    onChangeText('')
+    setAutoFocus(true)
+  }
+
+  if (validation !== 'valid')
+    return (
+      <GooglePlacesAutocomplete
+        ref={ref}
+        autoFocus={autoFocus}
+        placeholder="Your Street Address"
+        minLength={2}
+        returnKeyType={'default'}
+        fetchDetails={true}
+        styles={{
+          container: { ...S.container },
+          textInputContainer: { ...S.textInputContainer },
+          textInput: { ...S.textInput, borderColor: borderColor() }
+        }}
+        currentLocation={false}
+        onPress={onPress}
+        textInputProps={{ clearButtonMode: 'never', onChangeText }}
+        query={{
+          sessionToken: `${Math.random() * 100000}`,
+          components: 'country:ca',
+          location: '43.7184038,-79.518142',
+          radius: '25000',
+          key: 'AIzaSyDchtR-tAGXxS--04z8bQCOKLdr9Wlhvds',
+          language: 'en',
+          types: 'address'
+        }}
+        renderLeftButton={() => null}
+        renderRightButton={() => null}
+      />
+    )
   return (
-    <GooglePlacesAutocomplete
-      placeholder="Your Street Address"
-      minLength={2}
-      autoFocus={false}
-      returnKeyType={'default'}
-      fetchDetails={true}
-      styles={{
-        container: {
-          flex: 0,
-          width: `100%`
-        },
-        textInputContainer: {
-          backgroundColor: theme.FOREGROUND_COLOR,
-          borderTopWidth: 0,
-          borderRadius: 25,
-          height: 38,
-          paddingLeft: 20,
-          paddingRight: 20,
-          marginTop: 10,
-          marginBottom: 10,
-          borderRightWidth: 1.5,
-          borderRightColor: 'rgba(0,0,0,0.1)',
-          borderBottomWidth: 1.5,
-          borderBottomColor: 'rgba(0,0,0,0.1)'
-        },
-        textInput: {
-          color: '#5d5d5d',
-          marginTop: 4,
-          paddingLeft: 0,
-          fontSize: theme.FONT_MEDIUM
-        },
-        predefinedPlacesDescription: {
-          color: '#1faadb'
-        }
-      }}
-      currentLocation={false}
-      query={{
-        sessionToken: `${Math.random() * 100000}`,
-        components: 'country:ca',
-        location: '43.7184038,-79.518142',
-        radius: '25000',
-        key: 'AIzaSyDchtR-tAGXxS--04z8bQCOKLdr9Wlhvds',
-        language: 'en',
-        types: 'address'
-      }}
-    />
+    <S.DummyContainer borderColor={borderColor()} onPress={pressDummy}>
+      <S.DummyInput>{value}</S.DummyInput>
+    </S.DummyContainer>
   )
 }
 
-export default PlacesAutoComplete
+export default forwardRef(PlacesAutoComplete)
