@@ -12,6 +12,10 @@ const application = (state = defaultState, action) => {
       return { ...state, initialized: true }
     case A.KEYBOARD_UP:
       return { ...state, keyboardUp: action.status }
+    case A.USER_SIGN_IN:
+      return { ...state, authenticated: true }
+    case A.USER_SIGN_OUT:
+      return { ...state, authenticated: false }
     default:
       return state
   }

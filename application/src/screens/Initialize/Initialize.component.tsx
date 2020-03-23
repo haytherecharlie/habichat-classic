@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { useNavigation } from '@react-navigation/native'
 import initialize from 'services/api/initialize'
 import Spinner from 'atoms/Spinner'
 import * as A from 'services/redux/actions'
@@ -7,12 +8,10 @@ import * as S from './Initialize.style'
 
 const Initialize = () => {
   const dispatch = useDispatch()
-  const { application, messages, members, community } = useSelector(s => s)
+  const navigation = useNavigation()
 
   useEffect(() => {
-    initialize()
-      .then(value => dispatch({ type: A.INTIAILIZE_APP, value }))
-      .catch(err => alert(err))
+    navigation.navigate('Community')
   }, [])
 
   return (

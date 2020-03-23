@@ -1,7 +1,6 @@
-// import inside from 'point-in-polygon'
 import fetch from 'node-fetch'
 
-function inside(point, vs) {
+function insidePolygon(point, vs) {
   const x = point[0]
   const y = point[1]
   let inside = false
@@ -21,11 +20,8 @@ const geoJsonLookup = async (city, { lat, lng }) => {
     console.log(typeof lat)
     const geoReq = await fetch(city)
     const geoJson = await geoReq.json()
-    const ward = geoJson.features.find(feature => inside([lng, lat], feature.geometry.coordinates[0]))
-    if (ward !== 'undefined') {
-      return ward.properties.AREA_NAME
-    }
-    return 'Location not available'
+    const ward = geoJson.features.find(feature => insidePolygon([lng, lat], feature.geometry.coordinates[0]))
+    return ward !== 'undefined' ? ward.properties.AREA_NAME : 'Location not available'
   } catch (err) {
     console.log(err)
     throw new Error('error loading geojson')

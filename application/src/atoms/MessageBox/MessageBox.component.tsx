@@ -5,15 +5,14 @@ import theme from 'assets/styles/theme.style'
 import * as S from './MessageBox.style'
 
 const MessageBox = ({ message, member }) => {
-
-  const { server, text, image, updated } = message
+  const { server = false, text = '', image = null, updated = undefined } = message
   const timestamp = formatTimestamp(updated)
   return (
     <S.MessageWrapper>
       <S.WhiteBox elevation={1}>
-        <S.AuthorCircle source={{ uri: member.photoUrl }} alt="profile photo" />
+        {member && <S.AuthorCircle source={{ uri: member.photoUrl }} alt="profile photo" />}
         <S.Header>
-          <Text size="h3">{member.name}</Text>
+          {member && <Text size="h3">{name}</Text>}
           {server ? (
             <S.Icon name="ios-checkmark-circle" color={theme.BRAND_COLOR} size={12} />
           ) : (

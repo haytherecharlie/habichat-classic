@@ -16,4 +16,4 @@ const reducer = combineReducers({
   user
 })
 
-export default __DEV__ ? createStore(reducer, composeWithDevTools()) : createStore(reducer)
+export default createStore(reducer, composeWithDevTools())

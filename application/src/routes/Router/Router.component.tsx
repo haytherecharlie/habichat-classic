@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
+import useAuthentication from 'utils/hooks/useAuthentication'
 import useKeyboardUp from 'utils/hooks/useKeyboardUp'
 import Header from 'components/Header'
 import theme from 'assets/styles/theme.style'
@@ -11,8 +12,9 @@ import Home from 'screens/Home'
 
 function Router() {
   useKeyboardUp()
+  useAuthentication()
   const Stack = createStackNavigator()
-  const { authenticated, initialized } = useSelector(s => s.application)
+  const { authenticated } = useSelector(s => s.application)
 
   const headerOptions = {
     headerStyle: { backgroundColor: theme.FOREGROUND_COLOR, shadowOpacity: 0, elevation: 0 },
@@ -21,22 +23,24 @@ function Router() {
     headerRight: () => <Header.Right />
   }
 
-  const routes = () => {
-    switch (`${authenticated} | ${initialized}`) {
-      case `true | true`:
-        return <Stack.Screen name="Community" component={Home} options={headerOptions} />
-      case `true | false`:
-        return <Stack.Screen name="Initialize" component={Initialize} options={{ headerShown: false }} />
-      default:
-        return <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
-    }
-  }
-
-  return (
+  const Authenticated = () => (
     <NavigationContainer>
-      <Stack.Navigator>{routes()}</Stack.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="Initialize" component={Initialize} options={{ headerShown: false }} />
+        <Stack.Screen name="Community" component={Home} options={headerOptions} />
+      </Stack.Navigator>
     </NavigationContainer>
   )
+
+  const Unauthenticated = () => (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+
+  return authenticated ? <Authenticated /> : <Unauthenticated />
 }
 
 export default Router

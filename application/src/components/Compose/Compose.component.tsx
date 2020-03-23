@@ -21,7 +21,7 @@ const Compose = () => {
     <S.Compose>
       <S.BasicWrapper>
         <S.TextInputWrapper elevation={1}>
-          <TextInput text={inputText} changeText={setInputText} />
+          <TextInput value={inputText} onChangeText={setInputText} />
         </S.TextInputWrapper>
         <S.ButtonWrapper elevation={1}>
           <Button onPress={sendMessage}>

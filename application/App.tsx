@@ -8,6 +8,7 @@ import store from './src/services/redux'
 import Router from './src/routes/Router'
 
 const App = () => {
+  console.disableYellowBox = true
   const preloaded = usePreloading()
   const props = Platform.OS === 'ios' ? { behavior: 'padding' } : {}
 

@@ -1,21 +1,14 @@
 import { https } from 'firebase-functions'
-import geoJsonLookup from 'utils/helpers/geoJsonLookup'
-// import point from 'point-in-polygon'
-import availableCities from 'config/available-cities'
-// import { db, timestamp, auth } from 'services/firebase'
+import dbCreateUserAsync from 'services/database/createUserAsync'
+import createCustomTokenAsync from 'services/authentication/createCustomTokenAsync'
 
 const register = async (req, res) => {
   try {
-    const { street, latLng } = req.body
-    const city = availableCities[street.split(', ')[1]]
-    if (city) {
-      const ward = await geoJsonLookup(city, latLng)
-      return res.status(200).json(ward)
-    }
-    return res.status(400).send('City Not Available')
+    const [uid, email] = await dbCreateUserAsync(req.body)
+    const token = await createCustomTokenAsync(uid)
+    return res.status(200).json({ uid, email, token })
   } catch (err) {
-    console.log(err)
-    res.status(400).send(err)
+    res.status(400).json({ message: err })
   }
 }
 

@@ -7,7 +7,7 @@ export const ADD_MESSAGES = 'ADD_MESSAGES'
 export const UPDATE_MESSAGES = 'UPDATE_MESSAGES'
 export const DELETE_MESSAGES = 'DELETE_MESSAGES'
 
-export const USER_ADDRESS = 'USER_ADDRESS'
-export const USER_EMAIL = 'USER_EMAIL'
-export const USER_FIRSTNAME = 'USER_FIRSTNAME'
-export const USER_LASTNAME = 'USER_LASTNAME'
+export const ADD_MEMBERS = 'ADD_MEMBERS'
+
+export const USER_SIGN_IN = 'USER_SIGN_IN'
+export const USER_SIGN_OUT = 'USER_SIGN_OUT'

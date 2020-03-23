@@ -6,7 +6,7 @@ const initialize = () => {
     return TEST_MODE
       ? resolve(mockData)
       : fetch(`https://us-central1-habichat-86de6.cloudfunctions.net/initialize?c=pyNBzg3V742S5v8gWfRB`)
-          .then(res => resolve(res.json()))
+          .then(res => resolve({ community: { name: '', city: '' }, members: [], messages: [] }))
           .catch(err => reject(err))
   })
 }

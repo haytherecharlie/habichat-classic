@@ -1,22 +1,30 @@
-import { TouchableOpacity, Text } from 'react-native'
+import { View, TouchableOpacity, Text } from 'react-native'
 import styled from 'styled-components'
 import theme from 'assets/styles/theme.style'
 
+export const PlacesAutoComplete = styled(View)({
+  zIndex: 5000,
+  border: `1px solid red`
+})
+
 export const container = {
+  zIndex: 5000,
   flex: 0,
   width: `100%`
 }
 
 export const textInputContainer = {
+  zIndex: 5000,
   backgroundColor: 'transparent',
   height: 40,
   width: `100%`,
-  marginTop: 10,
+  marginTop: 5,
   borderTopWidth: 0,
   borderBottomWidth: 0
 }
 
 export const textInput = {
+  zIndex: 5000,
   backgroundColor: theme.FOREGROUND_COLOR,
   color: '#5d5d5d',
   height: 40,
@@ -31,10 +39,18 @@ export const textInput = {
   borderWidth: 1
 }
 
+export const ListView = {
+  zIndex: 5000,
+  backgroundColor: theme.FOREGROUND_COLOR,
+  borderRadius: 10
+}
+
+export const PoweredContainer = { borderRadius: 10 }
+
 export const DummyContainer = styled(TouchableOpacity)({
   height: 40,
   width: `100%`,
-  marginTop: 10,
+  marginTop: 5,
   borderWidth: 1,
   borderRadius: 20,
   borderColor: p => p.borderColor,
@@ -44,6 +60,7 @@ export const DummyContainer = styled(TouchableOpacity)({
 export const DummyInput = styled(Text)({
   color: theme.PRIMARY_COLOR,
   height: 40,
-  padding: `9px 25px 11px 25px`,
-  fontSize: theme.FONT_MEDIUM
+  padding: `10px 25px 10px 25px`,
+  fontSize: theme.FONT_MEDIUM,
+  marginTop: -1
 })

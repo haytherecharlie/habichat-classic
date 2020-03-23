@@ -1,0 +1,9 @@
+{
+  "A001": "Error Signing User In",
+  "U001": "Error Creating New User.",
+  "V001": "Invalid Email Address.",
+  "V002": "Invalid Password.",
+  "V003": "Email already registered.",
+  "V004": "Invalid First Name.",
+  "V005": "Invalid Last Name"
+}

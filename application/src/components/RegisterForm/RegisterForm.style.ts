@@ -1,23 +1,24 @@
 import styled from 'styled-components'
 import theme from 'assets/styles/theme.style'
-import { View, Text } from 'react-native'
+import { ScrollView, View, Text } from 'react-native'
 
-export const RegisterForm = styled(View)({
+export const RegisterForm = styled(ScrollView)({
+  margin: 'auto',
   width: `100%`,
   display: 'flex',
-  alignItems: 'stretch',
-  justifyContent: 'center',
-  padding: `0 20px`
+  padding: `0px 20px`
 })
 
 export const TitleWrapper = styled(View)({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  marginBottom: 20
+  marginTop: 20,
+  marginBottom: -20
 })
 
 export const LabelWrapper = styled(View)({
+  marginTop: 30,
   marginLeft: 20,
   display: 'flex',
   alignItems: 'flex-start',
@@ -30,7 +31,7 @@ export const InputWrapper = styled(View)(p => {
     height: 40,
     borderRadius: 25,
     padding: `0% 25px`,
-    margin: `10px 0px 30px 0px`
+    marginTop: 5
   }
   if (p.validation === 'pending') {
     return {

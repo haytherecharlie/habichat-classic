@@ -1,6 +1,6 @@
 import * as A from '../actions'
 
-const defaultState = null
+const defaultState = []
 
 const members = (state = defaultState, action) => {
   switch (action.type) {
