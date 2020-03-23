@@ -4,6 +4,7 @@ const SMALL_VIEW = 400
 const MEDIUM_VIEW = 700
 const LARGE_VIEW = 924
 
+const F2 = '#F2F2F2'
 const F8 = '#F8F8F8'
 const BLACK = '#000000'
 const WHITE = '#FFFFFF'
@@ -27,6 +28,7 @@ const COCOGOOSE = 'cocogoose'
 export default {
   // Colors
   DARK_MODE: darkMode,
+  HEADER_FOREGROUND: darkMode ? BLACKISH : F2,
   SHADOW_COLOR: darkMode ? SHADOW_DARK : SHADOW_LIGHT,
   BACKGROUND_COLOR: darkMode ? BLACKISH : F8,
   FOREGROUND_COLOR: darkMode ? BLACK : WHITE,

@@ -4,8 +4,6 @@ const defaultState = []
 
 const messages = (state = defaultState, action) => {
   switch (action.type) {
-    case A.INTIAILIZE_APP:
-      return action.value.messages
     case A.ADD_MESSAGES:
       let newMessage = [...state]
       const newMessageIndex = state.findIndex(x => x.id === action.value.id)

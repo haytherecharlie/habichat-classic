@@ -1,16 +1,16 @@
 import React from 'react'
+import CenterLayout from 'layouts/CenterLayout'
 import SubHeader from 'components/SubHeader'
 import MessageList from 'components/MessageList'
 import Compose from 'components/Compose'
-import * as S from './Home.style'
 
 const Home = () => {
   return (
-    <S.Home>
+    <CenterLayout>
       <SubHeader />
       <MessageList />
       <Compose />
-    </S.Home>
+    </CenterLayout>
   )
 }
 

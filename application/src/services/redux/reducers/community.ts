@@ -7,8 +7,6 @@ const defaultState = {
 
 const community = (state = defaultState, action) => {
   switch (action.type) {
-    case A.INTIAILIZE_APP:
-      return action.value.community
     default:
       return state
   }

@@ -1,8 +1,8 @@
 import React from 'react'
+import CenterLayout from 'layouts/CenterLayout'
 import RegisterForm from 'components/RegisterForm'
 import RegisterSubmit from 'components/RegisterSubmit'
 import useRegisterValidation from 'utils/hooks/useRegisterValidation'
-import * as S from './Register.style'
 
 const Register = () => {
   const [state, dispatch] = useRegisterValidation()
@@ -10,15 +10,15 @@ const Register = () => {
   switch (state.page) {
     case 'RegisterSubmit':
       return (
-        <S.Wrapper>
+        <CenterLayout>
           <RegisterSubmit state={state} />
-        </S.Wrapper>
+        </CenterLayout>
       )
     default:
       return (
-        <S.Wrapper>
+        <CenterLayout>
           <RegisterForm state={state} dispatch={dispatch} />
-        </S.Wrapper>
+        </CenterLayout>
       )
   }
 }

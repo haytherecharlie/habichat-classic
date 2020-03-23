@@ -5,7 +5,6 @@ import TextInput from 'atoms/TextInput'
 import * as S from './RegisterForm.style'
 
 const RegisterForm = ({ state, dispatch }) => {
-
   const onEndEditing = type => {
     if (type === 'first') return state.refs.last.current.focus()
     if (type === 'last ') return state.refs.email.current.focus()
@@ -31,9 +30,6 @@ const RegisterForm = ({ state, dispatch }) => {
 
   return (
     <S.RegisterForm contentContainerStyle={{ paddingTop: 20, paddingBottom: 20 }}>
-      <S.TitleWrapper>
-        <Text size="h1">REGISTER</Text>
-      </S.TitleWrapper>
       <S.LabelWrapper>
         <Text size="h3">FIRST NAME</Text>
       </S.LabelWrapper>

@@ -11,7 +11,7 @@ export const Compose = styled(View)({
   justifyContent: 'flex-start',
   padding: `0 10px`,
   zIndex: 200,
-  boxShadow: `0 1px 1px rgba(0,0,0,0.2)`,
+  // boxShadow: `0 1px 1px rgba(0,0,0,0.2)`,
 })
 
 export const BasicWrapper = styled(View)({

@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react'
-import useRealtimeDb from 'utils/hooks/useRealtimeDb'
-import MessageBox from 'atoms/MessageBox'
 import { useSelector } from 'react-redux'
+import MessageBox from 'atoms/MessageBox'
+import Text from 'atoms/Text'
+import useRealtimeDb from 'utils/hooks/useRealtimeDb'
+import theme from 'assets/styles/theme.style'
 import * as S from './MessageList.style'
 
 const MessagesList = () => {
@@ -16,6 +18,8 @@ const MessagesList = () => {
   useEffect(() => {
     scrollToEnd()
   }, [keyboardUp, messages])
+
+  useEffect(() => {}, [])
 
   return (
     <S.MessageList>

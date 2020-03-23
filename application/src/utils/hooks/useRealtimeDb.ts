@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { db } from 'services/firebase'
-import { atob, bota } from 'base-64'
 
 const useRealtimeDb = type => {
   let listen = false

@@ -20,10 +20,10 @@ const Compose = () => {
   return (
     <S.Compose>
       <S.BasicWrapper>
-        <S.TextInputWrapper elevation={1}>
+        <S.TextInputWrapper>
           <TextInput value={inputText} onChangeText={setInputText} />
         </S.TextInputWrapper>
-        <S.ButtonWrapper elevation={1}>
+        <S.ButtonWrapper>
           <Button onPress={sendMessage}>
             <S.Icon name="ios-send" color={theme.INVERSE_COLOR} size={20} />
           </Button>
