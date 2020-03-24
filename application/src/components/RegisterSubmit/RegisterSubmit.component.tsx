@@ -20,7 +20,6 @@ const RegisterSubmit = ({ state, dispatch }) => {
         displayName: `${state.last.value}, ${state.first.value}`,
         photoURL: avatar
       })
-      return rDispatch({ type: A.USER_SIGN_IN })
     } catch (err) {
       if (err.code === 'auth/weak-password') return dispatch({ type: 'weak-password' })
       if (err.code === 'auth/email-already-in-use') return dispatch({ type: 'email-taken' })

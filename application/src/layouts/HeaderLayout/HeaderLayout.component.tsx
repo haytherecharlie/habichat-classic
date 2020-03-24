@@ -3,13 +3,12 @@ import { StatusBar } from 'react-native'
 import theme from 'assets/styles/theme.style'
 import * as S from './HeaderLayout.style'
 
-const HeaderLayout = ({children}) => {
+const HeaderLayout = ({ children }) => {
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" backgroundColor={theme.HEADER_BACKGROUND} />
       <S.StatusBar />
-      <S.Header>{children}
-      </S.Header>
+      <S.Header>{children}</S.Header>
     </Fragment>
   )
 }

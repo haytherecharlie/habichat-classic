@@ -1,5 +1,6 @@
-export const INTIAILIZE_APP = 'INITIALIZE_APP'
+export const INITIALIZATION = 'INITIALIZATION'
 export const KEYBOARD_UP = 'KEYBOARD_UP'
+export const NAVIGATE = 'NAVIGATE'
 
 export const COMPOSE_TEXT_INPUT = 'COMPOSE_TEXT_INPUT'
 
@@ -9,6 +10,6 @@ export const DELETE_MESSAGES = 'DELETE_MESSAGES'
 
 export const ADD_MEMBERS = 'ADD_MEMBERS'
 
-export const USER_SIGN_IN = 'USER_SIGN_IN'
-export const USER_SIGN_OUT = 'USER_SIGN_OUT'
+export const SIGN_IN = 'SIGN_IN'
+export const SIGN_OUT = 'SIGN_OUT'
 export const USER_REGISTER = 'USER_REGISTER'

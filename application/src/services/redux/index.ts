@@ -1,6 +1,6 @@
 import { createStore, combineReducers } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import application from './reducers/application'
+import app from './reducers/app'
 import community from './reducers/community'
 import compose from './reducers/compose'
 import messages from './reducers/messages'
@@ -8,7 +8,7 @@ import members from './reducers/members'
 import user from './reducers/user'
 
 const reducer = combineReducers({
-  application,
+  app,
   community,
   compose,
   messages,

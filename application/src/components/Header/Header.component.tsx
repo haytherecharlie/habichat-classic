@@ -7,7 +7,7 @@ import Text from 'atoms/Text'
 // import * as A from 'services/redux/actions'
 // import * as S from './Header.style'
 
-const Register = () => {
+const Header = () => {
   return (
     <HeaderLayout>
       <Text size="h1">REGISTER</Text>
@@ -15,6 +15,4 @@ const Register = () => {
   )
 }
 
-export default {
-  Register
-}
+export default Header
