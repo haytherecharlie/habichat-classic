@@ -1,5 +1,4 @@
 import React from 'react'
-import CenterLayout from 'layouts/CenterLayout'
 import RegisterForm from 'components/RegisterForm'
 import RegisterSubmit from 'components/RegisterSubmit'
 import useRegisterValidation from 'utils/hooks/useRegisterValidation'
@@ -7,19 +6,12 @@ import useRegisterValidation from 'utils/hooks/useRegisterValidation'
 const Register = () => {
   const [state, dispatch] = useRegisterValidation()
 
+  const props = { state, dispatch }
   switch (state.page) {
     case 'RegisterSubmit':
-      return (
-        <CenterLayout>
-          <RegisterSubmit state={state} />
-        </CenterLayout>
-      )
+      return <RegisterSubmit {...props} />
     default:
-      return (
-        <CenterLayout>
-          <RegisterForm state={state} dispatch={dispatch} />
-        </CenterLayout>
-      )
+      return <RegisterForm {...props} />
   }
 }
 

@@ -1,29 +1,25 @@
 import { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { auth } from 'services/firebase'
 import * as A from 'services/redux/actions'
 
 const useAuthentication = () => {
   const dispatch = useDispatch()
+  const { authentication } = useSelector(s => s.user)
   const [currentUser, setCurrentUser] = useState(undefined)
-  const [authState, setAuthState] = useState('pending')
 
+  // auth.signOut()
   useEffect(() => {
-    auth.signOut()
-    const authListener = auth.onAuthStateChanged(user => {
-      if (user !== currentUser) {
-        setCurrentUser(user)
-        if (user) {
-          dispatch({ type: A.USER_SIGN_IN, value: user })
-          return setAuthState('success')
-        }
-        return setAuthState('failed')
+    const user = auth.currentUser
+    if (user !== currentUser) {
+      setCurrentUser(user)
+      if (user) {
+        dispatch({ type: A.USER_SIGN_IN, value: user })
+      } else {
+        dispatch({ type: A.USER_SIGN_OUT })
       }
-    })
-    return () => authListener()
-  }, [])
-
-  return authState
+    }
+  }, [authentication])
 }
 
 export default useAuthentication

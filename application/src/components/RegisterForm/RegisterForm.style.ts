@@ -6,7 +6,8 @@ export const RegisterForm = styled(ScrollView)({
   margin: 'auto',
   width: `100%`,
   display: 'flex',
-  padding: `0px 20px`
+  padding: `0px 20px`,
+  background: theme.BACKGROUND_COLOR
 })
 
 export const LabelWrapper = styled(View)({
@@ -60,4 +61,5 @@ export const ButtonWrapper = styled(View)({
   background: theme.BRAND_COLOR,
   height: 40,
   borderRadius: 25,
+  marginTop: 10
 })

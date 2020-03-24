@@ -6,7 +6,7 @@ import * as S from './HeaderLayout.style'
 const HeaderLayout = ({children}) => {
   return (
     <Fragment>
-      <StatusBar barStyle="dark-content" backgroundColor={theme.HEADER_FOREGROUND} />
+      <StatusBar barStyle="dark-content" backgroundColor={theme.HEADER_BACKGROUND} />
       <S.StatusBar />
       <S.Header>{children}
       </S.Header>

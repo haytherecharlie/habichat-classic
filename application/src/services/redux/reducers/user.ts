@@ -1,7 +1,7 @@
 import * as A from '../actions'
 
 const defaultState = {
-  auth: 'pending',
+  authentication: 'pending',
   profile: {
     displayName: null,
     email: null,
@@ -15,9 +15,9 @@ const defaultState = {
 const user = (state = defaultState, action) => {
   switch (action.type) {
     case A.USER_SIGN_IN:
-      return { ...state, auth: 'success', profile: action.value }
+      return { ...state, authentication: 'success', profile: action.value }
     case A.USER_SIGN_OUT:
-      return { ...defaultState, auth: 'failed' }
+      return { ...defaultState, authentication: 'failed' }
     default:
       return state
   }

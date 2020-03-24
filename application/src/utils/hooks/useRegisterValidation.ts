@@ -31,9 +31,13 @@ const useRegisterValidation = () => {
       case 'pass':
         return V.pass(value) === 'valid'
           ? { ...state, pass: { value, valid: valid ? valid : 'valid', error: null } }
-          : { ...state, pass: { value, valid: 'invalid', error: 'Passwords are minimum eight characters.' } }
+          : { ...state, pass: { value, valid: 'invalid', error: 'Passwords are minimum six characters.' } }
       case 'validate':
         return { ...state, ...action.value }
+      case 'email-taken':
+        return { ...state, page: 'RegisterForm', email: { value, valid: 'invalid', error: 'Email address already registered.' } }
+      case 'weak-password':
+        return { ...state, page: 'RegisterForm', pass: { value, valid: 'invalid', error: 'Try using a stronger password.' } }
       default:
         return state
     }

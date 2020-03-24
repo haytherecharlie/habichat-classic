@@ -6,12 +6,12 @@ import theme from 'assets/styles/theme.style'
 export const StatusBar = styled(View)({
   height: getStatusBarHeight(true),
   width: `100%`,
-  background: theme.HEADER_FOREGROUND
+  background: theme.HEADER_BACKGROUND
 })
 
 export const Header = styled(View)({
   height: 45,
-  background: theme.HEADER_FOREGROUND,
+  background: theme.HEADER_BACKGROUND,
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',

@@ -1,4 +1,5 @@
-const darkMode = false
+import { Appearance } from 'react-native-appearance'
+const darkMode = Appearance.getColorScheme() === 'dark'
 
 const SMALL_VIEW = 400
 const MEDIUM_VIEW = 700
@@ -8,7 +9,7 @@ const F2 = '#F2F2F2'
 const F8 = '#F8F8F8'
 const BLACK = '#000000'
 const WHITE = '#FFFFFF'
-const BLACKISH = '#444444'
+const BLACKISH = '#222222'
 const PINK = '#FF2353'
 const TWITTER = `#1A91DA`
 const GITHUB = `#562676`
@@ -28,7 +29,7 @@ const COCOGOOSE = 'cocogoose'
 export default {
   // Colors
   DARK_MODE: darkMode,
-  HEADER_FOREGROUND: darkMode ? BLACKISH : F2,
+  HEADER_BACKGROUND: darkMode ? BLACKISH : F2,
   SHADOW_COLOR: darkMode ? SHADOW_DARK : SHADOW_LIGHT,
   BACKGROUND_COLOR: darkMode ? BLACKISH : F8,
   FOREGROUND_COLOR: darkMode ? BLACK : WHITE,
@@ -37,7 +38,7 @@ export default {
   VALID_GREEN: '#23DC3D',
   INVALID_RED: 'red',
   DISPLAY_PADDING: 20,
-  BRAND_COLOR: HABICHAT,
+  BRAND_COLOR: darkMode ? WHITE : HABICHAT,
   TWITTER,
   GITHUB,
   LINKEDIN,

@@ -11,3 +11,4 @@ export const ADD_MEMBERS = 'ADD_MEMBERS'
 
 export const USER_SIGN_IN = 'USER_SIGN_IN'
 export const USER_SIGN_OUT = 'USER_SIGN_OUT'
+export const USER_REGISTER = 'USER_REGISTER'

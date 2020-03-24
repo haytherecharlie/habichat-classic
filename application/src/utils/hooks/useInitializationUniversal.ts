@@ -3,7 +3,7 @@ import { loadAsync } from 'expo-font'
 import cocogoose from 'assets/fonts/cocogoose.otf'
 import helvetica from 'assets/fonts/helvetica-regular.otf'
 
-const useUniversalInitialization = () => {
+const useInitializationUniversal = () => {
   const [initialzation, setInitialization] = useState('pending')
   console.disableYellowBox = true
 
@@ -23,4 +23,4 @@ const useUniversalInitialization = () => {
   return initialzation
 }
 
-export default useUniversalInitialization
+export default useInitializationUniversal
