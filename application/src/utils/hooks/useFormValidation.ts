@@ -1,7 +1,7 @@
 import { useReducer, useRef } from 'react'
 import * as V from 'utils/helpers/validation'
 
-const useRegisterValidation = () => {
+const useFormValidation = () => {
   const defaultState = {
     page: 'RegisterForm',
     first: { value: '', valid: 'pending', error: null },
@@ -52,4 +52,4 @@ const useRegisterValidation = () => {
   return useReducer(reducer, defaultState)
 }
 
-export default useRegisterValidation
+export default useFormValidation

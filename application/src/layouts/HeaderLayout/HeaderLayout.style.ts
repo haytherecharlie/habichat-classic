@@ -16,7 +16,8 @@ export const Header = styled(View)({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
-  justifyContent: 'center',
+  justifyContent: 'space-between',
   borderBottomWidth: 1,
-  borderBottomColor: theme.PRIMARY_COLOR
+  borderBottomColor: theme.PRIMARY_COLOR,
+  padding: `0px 20px`
 })

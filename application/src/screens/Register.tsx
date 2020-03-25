@@ -6,7 +6,7 @@ import TopLayout from 'layouts/TopLayout'
 const Register = () => {
   return (
     <TopLayout>
-      <Header />
+      <Header.Register />
       <RegisterForm />
     </TopLayout>
   )

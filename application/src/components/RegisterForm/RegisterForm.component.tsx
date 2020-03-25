@@ -4,12 +4,13 @@ import Button from 'atoms/Button'
 import Spinner from 'atoms/Spinner'
 import TextInput from 'atoms/TextInput'
 import CenterLayout from 'layouts/CenterLayout'
+import { auth } from 'services/firebase'
 import { postOptions } from 'utils/helpers/options'
-import useRegisterValidation from 'utils/hooks/useRegisterValidation'
+import useFormValidation from 'utils/hooks/useFormValidation'
 import * as S from './RegisterForm.style'
 
 const RegisterForm = () => {
-  const [state, dispatch] = useRegisterValidation()
+  const [state, dispatch] = useFormValidation()
   const [stage, setStage] = useState('form')
 
   const onEndEditing = type => {
@@ -36,8 +37,7 @@ const RegisterForm = () => {
         setStage('form')
         return dispatch({ type: 'email-taken' })
       }
-      console.log('response', json)
-      return setStage('success')
+      return auth.signInWithEmailAndPassword(email, password)
     } catch (err) {
       console.log(err)
     }
@@ -51,15 +51,7 @@ const RegisterForm = () => {
   if (stage === 'failed') {
     return (
       <CenterLayout>
-        <Text>Failed</Text>
-      </CenterLayout>
-    )
-  }
-
-  if (stage === 'success') {
-    return (
-      <CenterLayout>
-        <Text>Success</Text>
+        <Text>Something went wrong!</Text>
       </CenterLayout>
     )
   }
