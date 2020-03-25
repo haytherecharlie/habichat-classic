@@ -11,7 +11,7 @@ export const RegisterForm = styled(ScrollView)({
 })
 
 export const LabelWrapper = styled(View)({
-  marginTop: 0,
+  marginTop: 15,
   marginLeft: 20,
   display: 'flex',
   alignItems: 'flex-start',
@@ -25,7 +25,7 @@ export const InputWrapper = styled(View)(p => {
     borderRadius: 25,
     padding: `0% 25px`,
     marginTop: 5,
-    marginBottom: 30
+    marginBottom: 5
   }
   if (p.validation === 'pending') {
     return {
@@ -61,5 +61,5 @@ export const ButtonWrapper = styled(View)({
   background: theme.BRAND_COLOR,
   height: 40,
   borderRadius: 25,
-  marginTop: 10
+  marginTop: 20
 })
