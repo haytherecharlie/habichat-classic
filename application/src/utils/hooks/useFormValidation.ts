@@ -40,10 +40,14 @@ const useFormValidation = () => {
           email: state.email.value === '' ? { ...state.email, valid: 'invalid', error: 'Please include a valid email name.' } : state.email,
           pass: state.pass.value === '' ? { ...state.pass, valid: 'invalid', error: 'Passwords are minimum eight characters.' } : state.pass
         }
+      case 'email-not-found':
+        return { ...state, page: 'RegisterForm', email: { value, valid: 'invalid', error: 'Email address not registered.' } }
       case 'email-taken':
         return { ...state, page: 'RegisterForm', email: { value, valid: 'invalid', error: 'Email address already registered.' } }
       case 'weak-password':
         return { ...state, page: 'RegisterForm', pass: { value, valid: 'invalid', error: 'Try using a stronger password.' } }
+      case 'wrong-password':
+        return { ...state, page: 'RegisterForm', pass: { value, valid: 'invalid', error: 'Incorrect password.' } }
       default:
         return state
     }

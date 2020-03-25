@@ -11,7 +11,6 @@ import * as S from './Header.style'
 
 const Register = () => {
   const dispatch = useDispatch()
-
   return (
     <HeaderLayout>
       <S.BackButton onPress={() => dispatch({ type: A.NAVIGATE, screen: 'landing' })}>
@@ -24,6 +23,21 @@ const Register = () => {
   )
 }
 
+const SignIn = () => {
+  const dispatch = useDispatch()
+  return (
+    <HeaderLayout>
+      <S.BackButton onPress={() => dispatch({ type: A.NAVIGATE, screen: 'landing' })}>
+        <Entypo {...S.IconStyle} />
+        <Text size="h1">Back</Text>
+      </S.BackButton>
+      <Text size="h1">SIGN IN</Text>
+      <S.Placeholder />
+    </HeaderLayout>
+  )
+}
+
 export default {
-  Register
+  Register,
+  SignIn
 }
