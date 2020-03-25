@@ -1,7 +1,7 @@
 import { formatDistance } from 'date-fns'
 
 export const formatTimestamp = time => {
-  if(typeof time === 'undefined') {
+  if (typeof time === 'undefined') {
     return 'error'
   }
   if (typeof time === 'object' && time.hasOwnProperty('_seconds')) {

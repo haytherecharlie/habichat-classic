@@ -1,25 +1,15 @@
 import React from 'react'
 import Header from 'components/Header'
 import RegisterForm from 'components/RegisterForm'
-import CenterLayout from 'layouts/CenterLayout'
-import useRegisterValidation from 'utils/hooks/useRegisterValidation'
+import TopLayout from 'layouts/TopLayout'
 
 const Register = () => {
-  const [state, dispatch] = useRegisterValidation()
-
   return (
-    <>
+    <TopLayout>
       <Header />
-      <RegisterForm {...{ state, dispatch }} />
-    </>
+      <RegisterForm />
+    </TopLayout>
   )
-  // const props = { state, dispatch }
-  // switch (state.page) {
-  //   case 'RegisterSubmit':
-  //     return <RegisterSubmit {...props} />
-  //   default:
-  //     return <RegisterForm {...props} />
-  // }
 }
 
 export default Register

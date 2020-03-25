@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { Platform, Keyboard } from 'react-native'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { loadAsync } from 'expo-font'
-import { auth } from 'services/firebase'
+import { auth, db } from 'services/firebase'
 import cocogoose from 'assets/fonts/cocogoose.otf'
 import helvetica from 'assets/fonts/helvetica-regular.otf'
 import * as A from 'services/redux/actions'
@@ -10,6 +10,7 @@ import * as A from 'services/redux/actions'
 const useInitialization = () => {
   console.disableYellowBox = true
   const dispatch = useDispatch()
+  const { profile } = useSelector(s => s.user)
 
   const keyboardUp = () => {
     Keyboard.addListener(Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow', () => {
@@ -33,12 +34,18 @@ const useInitialization = () => {
   }
 
   const checkAuthState = () => {
-    auth.onAuthStateChanged(user => {
+    auth.onAuthStateChanged(async user => {
       if (user) {
-        console.log('signedIn')
+        const userData = user.providerData[0]
+        const { displayName } = userData
+        const { last, first, avatar } = profile
+        if (displayName === null) {
+          const updatedProfile = { displayName: `${last}, ${first}`, photoURL: avatar }
+          await user.updateProfile(updatedProfile)
+          dispatch({ type: A.SIGN_IN, profile: { ...profile, ...updatedProfile } })
+        }
         return dispatch({ type: A.SIGN_IN, profile: user })
       }
-      console.log('signOut')
       return dispatch({ type: A.SIGN_OUT, profile: user })
     })
   }

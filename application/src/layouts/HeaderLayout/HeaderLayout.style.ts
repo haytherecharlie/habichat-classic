@@ -11,6 +11,7 @@ export const StatusBar = styled(View)({
 
 export const Header = styled(View)({
   height: 45,
+  width: `100%`,
   background: theme.HEADER_BACKGROUND,
   display: 'flex',
   flexDirection: 'row',

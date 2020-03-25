@@ -1,21 +1,18 @@
-# Firebase-Core
-
 ---
+[![alt text](https://github.com/haytherecharlie/habichat-firebase/blob/master/design/images/github-banner.jpg "Logo Title Text 1")](https://habi.chat)
 
-## Table of Contents:
+---### TABLE OF CONTENTS
 
-- [Project Setup](#project-setup)
+| Topic                       | Date       | Created By  |
+| --------------------------- | ---------- | ----------- |
+| [Getting Started](#Topic01) | 26-01-2020 | Charles Hay |
 
-## Project Setup
+<a name="Topic01"></a>
 
-1. Create a project in Firebase:
-2. Enable Authentication, Database, etc.
-3. Choose your region - for functions. [More Info](https://firebase.google.com/docs/functions/locations)
-4. Go to app and run `firebase login`, `firebase init`
-5. Choose the project that was created and select services.
+## Getting Started:
 
-## Branding the project
+### Clone Repo.
 
-1. perform a global search for `APP-CONFIG-`
-2. replace all values with the content you prefer.
-
+```
+git clone git@github.com:haytherecharlie/habichat.git
+```

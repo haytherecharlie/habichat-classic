@@ -11,6 +11,12 @@ const defaultState = {
     uid: null
   }
 }
+// "displayName": null,
+// "email": "charlie.hay@outlook.com",
+// "phoneNumber": null,
+// "photoURL": null,
+// "providerId": "password",
+// "uid": "charlie.hay@outlook.com",
 
 const user = (state = defaultState, action) => {
   switch (action.type) {
@@ -18,6 +24,8 @@ const user = (state = defaultState, action) => {
       return { ...state, authentication: 'success', profile: action.profile }
     case A.SIGN_IN:
       return { ...defaultState, authentication: 'failed' }
+    case A.PROFILE:
+      return { type: '', profile: action.profile }
     default:
       return state
   }

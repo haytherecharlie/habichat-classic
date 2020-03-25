@@ -1,10 +1,9 @@
 import errors from 'config/errors.json'
 
-const nameRegex = /^([a-zA-Z ]){2,30}$/
-const validateName = (name, type) => {
+const nameRegex = /^[A-Za-z0-9_']+\s?,\s?[A-Za-z0-9_']+$/
+const validateName = name => {
   try {
-    if (nameRegex.test(name)) return name
-    throw errors[type === 'first' ? 'V004' : 'V005'] // Invalid Name
+    if (!nameRegex.test(name)) throw { code: 'V004', message: errors['V004'] } // Invalid Name
   } catch (err) {
     throw err
   }

@@ -1,9 +1,9 @@
 {
-  "A001": "Error Signing User In",
-  "U001": "Error Creating New User.",
-  "V001": "Invalid Email Address.",
-  "V002": "Invalid Password.",
-  "V003": "Email already registered.",
-  "V004": "Invalid First Name.",
-  "V005": "Invalid Last Name"
+  "A001": "auth/sign-in-error",
+  "U001": "auth/new-user/error",
+  "V001": "auth/invalid-email",
+  "V002": "auth/invalid-password",
+  "V003": "auth/email-registerd",
+  "V004": "auth/invalid-display-name",
+  "V005": "auth/error-assigning-avatar"
 }

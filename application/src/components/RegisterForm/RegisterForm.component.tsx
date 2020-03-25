@@ -2,9 +2,15 @@ import React from 'react'
 import Text from 'atoms/Text'
 import Button from 'atoms/Button'
 import TextInput from 'atoms/TextInput'
+import { auth } from 'services/firebase'
+import { randomAvatar } from 'utils/helpers'
+import useRegisterValidation from 'utils/hooks/useRegisterValidation'
+import * as A from 'services/redux/actions'
 import * as S from './RegisterForm.style'
 
-const RegisterForm = ({ state, dispatch }) => {
+const RegisterForm = () => {
+  const [state, dispatch] = useRegisterValidation()
+
   const onEndEditing = type => {
     if (type === 'first') return state.refs.last.current.focus()
     if (type === 'last ') return state.refs.email.current.focus()
@@ -12,20 +18,21 @@ const RegisterForm = ({ state, dispatch }) => {
     if (type === 'pass') return submitForm()
   }
 
+  const signIn = async () => {
+    try {
+      const avatar = randomAvatar()
+      dispatch({ type: A.PROFILE, displayName: `${state.last.value}, ${state.first.value}`, photoURL: avatar })
+      return await auth.createUserWithEmailAndPassword(state.email.value, state.pass.value)
+    } catch (err) {
+      if (err.code === 'auth/weak-password') return dispatch({ type: 'weak-password' })
+      if (err.code === 'auth/email-already-in-use') return dispatch({ type: 'email-taken' })
+      console.log(err)
+    }
+  }
+
   const submitForm = async () => {
     const { first, last, email, pass } = state
-    if ([first, last, email, pass].some(o => o.value === '' && o.valid !== 'valid')) {
-      return dispatch({
-        type: 'validate',
-        value: {
-          first: state.first.value === '' ? { ...state.first, valid: 'invalid', error: 'Please include a valid first name.' } : state.first,
-          last: state.last.value === '' ? { ...state.last, valid: 'invalid', error: 'Please include a valid last name.' } : state.last,
-          email: state.email.value === '' ? { ...state.email, valid: 'invalid', error: 'Please include a valid email name.' } : state.email,
-          pass: state.pass.value === '' ? { ...state.pass, valid: 'invalid', error: 'Passwords are minimum eight characters.' } : state.pass
-        }
-      })
-    }
-    return dispatch({ type: 'page', value: 'RegisterSubmit' })
+    return [first, last, email, pass].some(o => o.value === '' && o.valid !== 'valid') ? dispatch({ type: 'validate' }) : signIn()
   }
 
   return (
