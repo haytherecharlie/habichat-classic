@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import CenterLayout from 'layouts/CenterLayout'
 import Spinner from 'atoms/Spinner'
 
-const Loading = () => {
+const CommunityLoading = () => {
   const { message } = useSelector(s => s.app.initialization)
   return (
     <CenterLayout>
@@ -14,4 +14,4 @@ const Loading = () => {
   )
 }
 
-export default Loading
+export default CommunityLoading

@@ -1,14 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import AppSplash from 'screens/AppSplash'
 import Community from 'screens/Community'
 import Landing from 'screens/Landing'
 import SignIn from 'screens/SignIn'
 import Register from 'screens/Register'
-import Splash from 'screens/Splash'
-import useInitialization from 'utils/hooks/useInitialization'
+import useInitApplication from 'utils/hooks/useInitApplication'
 
 function Router() {
-  useInitialization()
+  useInitApplication()
   const { screen } = useSelector(s => s.app)
 
   switch (screen) {
@@ -21,7 +21,7 @@ function Router() {
     case 'community':
       return <Community />
     default:
-      return <Splash />
+      return <AppSplash />
   }
 }
 

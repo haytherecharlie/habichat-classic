@@ -6,7 +6,7 @@ import TopLayout from 'layouts/TopLayout'
 const SignIn = () => {
   return (
     <TopLayout>
-      <Header.SignIn />
+      <Header.Auth title="SIGN IN" />
       <SignInForm />
     </TopLayout>
   )

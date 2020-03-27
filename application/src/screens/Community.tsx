@@ -13,7 +13,7 @@ const Home = () => {
     <CenterLayout>
       <Text>{profile.displayName}</Text>
       <TouchableOpacity onPress={() => auth.signOut()}>
-        <Text>Log Out</Text>
+        <Text>Sign Out</Text>
       </TouchableOpacity>
       {/* <SubHeader />
       <MessageList />

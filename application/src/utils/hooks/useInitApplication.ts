@@ -2,23 +2,21 @@ import { useEffect } from 'react'
 import { Platform, Keyboard } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadAsync } from 'expo-font'
-import { auth, db } from 'services/firebase'
+import { auth } from 'services/firebase'
 import cocogoose from 'assets/fonts/cocogoose.otf'
 import helvetica from 'assets/fonts/helvetica-regular.otf'
 import * as A from 'services/redux/actions'
 
-const useInitialization = () => {
+const usePreparation = () => {
   console.disableYellowBox = true
   const dispatch = useDispatch()
   const { profile } = useSelector(s => s.user)
 
   const keyboardUp = () => {
     Keyboard.addListener(Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow', () => {
-      console.log('keyboard up listener.')
       return dispatch({ type: A.KEYBOARD_UP, status: true })
     })
     Keyboard.addListener(Platform.OS === 'ios' ? 'keyboardDidHide' : 'keyboardDidHide', () => {
-      console.log('keyboard down listener.')
       return dispatch({ type: A.KEYBOARD_UP, status: false })
     })
   }
@@ -26,7 +24,6 @@ const useInitialization = () => {
   const loadFonts = async () => {
     try {
       await Promise.all([loadAsync({ cocogoose }), loadAsync({ helvetica })])
-      console.log('fonts loaded')
       return dispatch({ type: A.INITIALIZATION, message: 'Checking Auth State.' })
     } catch (err) {
       return alert('THERE WAS A CRITICAL ERROR!')
@@ -55,4 +52,4 @@ const useInitialization = () => {
   }, [])
 }
 
-export default useInitialization
+export default usePreparation

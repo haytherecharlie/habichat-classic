@@ -6,7 +6,7 @@ import TopLayout from 'layouts/TopLayout'
 const Register = () => {
   return (
     <TopLayout>
-      <Header.Register />
+      <Header.Auth title="REGISTER" />
       <RegisterForm />
     </TopLayout>
   )
