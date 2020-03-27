@@ -7,11 +7,11 @@ import SubHeader from 'components/SubHeader'
 import MessageList from 'components/MessageList'
 import Compose from 'components/Compose'
 
-const Home = () => {
-  const { profile } = useSelector(s => s.user)
+const Community = () => {
+  const { displayName } = useSelector(s => s.user.providerData)
   return (
     <CenterLayout>
-      <Text>{profile.displayName}</Text>
+      <Text>{displayName}</Text>
       <TouchableOpacity onPress={() => auth.signOut()}>
         <Text>Sign Out</Text>
       </TouchableOpacity>
@@ -22,4 +22,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Community

@@ -1,4 +1,4 @@
-import { postOptions } from 'utils/helpers/options'
+import { postOptions } from 'utils/helpers'
 
 const register = async (email, firstname, lastname) => {
   const body = { email, firstname, lastname }

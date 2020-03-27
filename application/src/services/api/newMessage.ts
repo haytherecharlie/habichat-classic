@@ -1,4 +1,4 @@
-import { postOptions } from 'utils/helpers/options'
+import { postOptions } from 'utils/helpers'
 import { db } from 'services/firebase'
 
 const newMessage = text => {

@@ -5,7 +5,7 @@ import Spinner from 'atoms/Spinner'
 import TextInput from 'atoms/TextInput'
 import CenterLayout from 'layouts/CenterLayout'
 import { auth } from 'services/firebase'
-import { postOptions } from 'utils/helpers/options'
+import { postOptions } from 'utils/helpers'
 import useFormValidation from 'utils/hooks/useFormValidation'
 import * as S from './SignInForm.style'
 

@@ -1,5 +1,5 @@
 import { useReducer, useRef } from 'react'
-import * as V from 'utils/helpers/validation'
+import { vName, vEmail, vPass } from 'utils/helpers'
 
 const useFormValidation = () => {
   const defaultState = {
@@ -17,19 +17,19 @@ const useFormValidation = () => {
       case 'page':
         return { ...state, page: action.value }
       case 'first':
-        return V.name(value) === 'valid'
+        return vName(value) === 'valid'
           ? { ...state, first: { value, valid: valid ? valid : 'valid', error: null } }
           : { ...state, first: { value, valid: 'invalid', error: 'Please include a valid first name.' } }
       case 'last':
-        return V.name(value) === 'valid'
+        return vName(value) === 'valid'
           ? { ...state, last: { value, valid: valid ? valid : 'valid', error: null } }
           : { ...state, last: { value, valid: 'invalid', error: 'Please include a valid last Name.' } }
       case 'email':
-        return V.email(value) === 'valid'
+        return vEmail(value) === 'valid'
           ? { ...state, email: { value, valid: valid ? valid : 'valid', error: null } }
           : { ...state, email: { value, valid: 'invalid', error: 'Please include a valid email address.' } }
       case 'pass':
-        return V.pass(value) === 'valid'
+        return vPass(value) === 'valid'
           ? { ...state, pass: { value, valid: valid ? valid : 'valid', error: null } }
           : { ...state, pass: { value, valid: 'invalid', error: 'Passwords are minimum six characters.' } }
       case 'validate':
