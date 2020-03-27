@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import AppSplash from 'screens/AppSplash'
+import Error from 'screens/Error'
 import Community from 'screens/Community'
 import Landing from 'screens/Landing'
 import SignIn from 'screens/SignIn'
@@ -21,7 +21,7 @@ function Router() {
     case 'community':
       return <Community />
     default:
-      return <AppSplash />
+      return <Error />
   }
 }
 

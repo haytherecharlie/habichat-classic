@@ -2,17 +2,14 @@ import * as A from '../actions'
 
 const defaultState = {
   screen: null,
-  initialization: {
-    status: 'pending',
-    message: 'loading fonts...'
-  },
+  initialization: 'pending',
   keyboardUp: false
 }
 
 const application = (state = defaultState, action) => {
   switch (action.type) {
     case A.INITIALIZATION:
-      return { ...state, initialization: { status: action.status || state.status, message: action.message || state.message } }
+      return { ...state, initialization: action.status }
     case A.KEYBOARD_UP:
       return { ...state, keyboardUp: action.status }
     case A.SIGN_IN:

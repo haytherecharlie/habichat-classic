@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { SplashScreen } from 'expo'
 import { Platform, Keyboard } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadAsync } from 'expo-font'
@@ -24,7 +25,7 @@ const usePreparation = () => {
   const loadFonts = async () => {
     try {
       await Promise.all([loadAsync({ cocogoose }), loadAsync({ helvetica })])
-      return dispatch({ type: A.INITIALIZATION, message: 'Checking Auth State.' })
+      return dispatch({ type: A.INITIALIZATION, status: 'success' })
     } catch (err) {
       return alert('THERE WAS A CRITICAL ERROR!')
     }
@@ -39,7 +40,7 @@ const usePreparation = () => {
         if (displayName === null) {
           const updatedProfile = { displayName: `${last}, ${first}`, photoURL: avatar }
           await user.updateProfile(updatedProfile)
-          dispatch({ type: A.SIGN_IN, profile: { ...profile, ...updatedProfile } })
+          return dispatch({ type: A.SIGN_IN, profile: { ...profile, ...updatedProfile } })
         }
         return dispatch({ type: A.SIGN_IN, profile: user })
       }
@@ -48,7 +49,10 @@ const usePreparation = () => {
   }
 
   useEffect(() => {
+    SplashScreen.preventAutoHide()
     Promise.all([keyboardUp(), loadFonts(), checkAuthState()])
+      .then(() => SplashScreen.hide())
+      .catch(err => console.log(err))
   }, [])
 }
 
