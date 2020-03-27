@@ -152,6 +152,8 @@ web-build/
 web-report/
 
 build
+.expo-shared
 
 # macOS
 .DS_Store
+

@@ -4,7 +4,7 @@
     "build": "expo build:web",
     "dev": "expo start -c",
     "ios": "expo start --ios",
-    "optimize": "expo-optimize",
+    "optimize": "npx expo-optimize",
     "publish": "expo publish",
     "setup": "npm ci",
     "update": "npx npm-check-updates",

@@ -45,7 +45,7 @@ const RegisterForm = () => {
 
   const submitForm = async () => {
     const { first, last, email, pass } = state
-    return [first, last, email, pass].some(o => o.value === '' && o.valid !== 'valid') ? dispatch({ type: 'validate' }) : signIn()
+    return [first, last, email, pass].some(o => o.valid !== 'valid') ? dispatch({ type: 'validate' }) : signIn()
   }
 
   if (stage === 'failed') {

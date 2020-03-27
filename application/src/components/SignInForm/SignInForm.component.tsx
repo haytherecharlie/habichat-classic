@@ -5,7 +5,6 @@ import Spinner from 'atoms/Spinner'
 import TextInput from 'atoms/TextInput'
 import CenterLayout from 'layouts/CenterLayout'
 import { auth } from 'services/firebase'
-import { postOptions } from 'utils/helpers'
 import useFormValidation from 'utils/hooks/useFormValidation'
 import * as S from './SignInForm.style'
 
@@ -33,12 +32,13 @@ const SignInForm = () => {
         setStage('form')
         return dispatch({ type: 'wrong-password' })
       }
+      console.log(error.code)
     }
   }
 
   const submitForm = async () => {
     const { email, pass } = state
-    return [email, pass].some(o => o.value === '' && o.valid !== 'valid') ? dispatch({ type: 'validate' }) : signIn()
+    return [email, pass].some(o => o.valid !== 'valid') ? dispatch({ type: 'validate' }) : signIn()
   }
 
   if (stage === 'failed') {

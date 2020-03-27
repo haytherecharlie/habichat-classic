@@ -19,35 +19,35 @@ const useFormValidation = () => {
       case 'first':
         return vName(value) === 'valid'
           ? { ...state, first: { value, valid: valid ? valid : 'valid', error: null } }
-          : { ...state, first: { value, valid: 'invalid', error: 'Please include a valid first name.' } }
+          : { ...state, first: { value, valid: 'invalid', error: null } }
       case 'last':
         return vName(value) === 'valid'
           ? { ...state, last: { value, valid: valid ? valid : 'valid', error: null } }
-          : { ...state, last: { value, valid: 'invalid', error: 'Please include a valid last Name.' } }
+          : { ...state, last: { value, valid: 'invalid', error: null } }
       case 'email':
         return vEmail(value) === 'valid'
           ? { ...state, email: { value, valid: valid ? valid : 'valid', error: null } }
-          : { ...state, email: { value, valid: 'invalid', error: 'Please include a valid email address.' } }
+          : { ...state, email: { value, valid: 'invalid', error: null } }
       case 'pass':
         return vPass(value) === 'valid'
           ? { ...state, pass: { value, valid: valid ? valid : 'valid', error: null } }
-          : { ...state, pass: { value, valid: 'invalid', error: 'Passwords are minimum six characters.' } }
+          : { ...state, pass: { value, valid: 'invalid', error: null } }
       case 'validate':
         return {
           ...state,
-          first: state.first.value === '' ? { ...state.first, valid: 'invalid', error: 'Please include a valid first name.' } : state.first,
-          last: state.last.value === '' ? { ...state.last, valid: 'invalid', error: 'Please include a valid last name.' } : state.last,
-          email: state.email.value === '' ? { ...state.email, valid: 'invalid', error: 'Please include a valid email name.' } : state.email,
-          pass: state.pass.value === '' ? { ...state.pass, valid: 'invalid', error: 'Passwords are minimum eight characters.' } : state.pass
+          first: vName(state.first.value) !== 'valid' ? { ...state.first, valid: 'invalid', error: 'Please include a valid first name.' } : state.first,
+          last: vName(state.last.value) !== 'valid' ? { ...state.last, valid: 'invalid', error: 'Please include a valid last name.' } : state.last,
+          email: vEmail(state.email.value) !== 'valid' ? { ...state.email, valid: 'invalid', error: 'Please include a valid email address.' } : state.email,
+          pass: vPass(state.pass.value) !== 'valid' ? { ...state.pass, valid: 'invalid', error: 'Passwords are minimum eight characters.' } : state.pass
         }
       case 'email-not-found':
-        return { ...state, page: 'RegisterForm', email: { value, valid: 'invalid', error: 'Email address not registered.' } }
+        return { ...state, page: 'RegisterForm', email: { value: state.email.value, valid: 'invalid', error: 'Email address not registered.' } }
       case 'email-taken':
-        return { ...state, page: 'RegisterForm', email: { value, valid: 'invalid', error: 'Email address already registered.' } }
+        return { ...state, page: 'RegisterForm', email: { value: state.email.value, valid: 'invalid', error: 'Email address already registered.' } }
       case 'weak-password':
-        return { ...state, page: 'RegisterForm', pass: { value, valid: 'invalid', error: 'Try using a stronger password.' } }
+        return { ...state, page: 'RegisterForm', pass: { value: state.pass.value, valid: 'invalid', error: 'Try using a stronger password.' } }
       case 'wrong-password':
-        return { ...state, page: 'RegisterForm', pass: { value, valid: 'invalid', error: 'Incorrect password.' } }
+        return { ...state, page: 'RegisterForm', pass: { value: state.pass.value, valid: 'invalid', error: 'Incorrect password.' } }
       default:
         return state
     }
