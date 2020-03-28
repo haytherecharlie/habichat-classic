@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { View, Text } from 'react-native'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/styles'
 
 export const Spinner = styled(View)({
   display: 'flex',

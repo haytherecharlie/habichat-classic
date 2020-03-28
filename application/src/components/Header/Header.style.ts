@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import theme from 'assets/styles/theme.style'
 import { TouchableOpacity, View } from 'react-native'
+import Text from 'atoms/Text'
+import theme from 'assets/styles'
 
 export const BackButton = styled(TouchableOpacity)({
   display: 'flex',
@@ -8,9 +9,13 @@ export const BackButton = styled(TouchableOpacity)({
   alignItems: 'center'
 })
 
+export const BackText = styled(Text)({
+  color: theme.BRAND_COLOR
+})
+
 export const IconStyle = {
   name: 'chevron-left',
-  color: theme.PRIMARY_COLOR,
+  color: theme.BRAND_COLOR,
   size: 22,
   style: {
     marginLeft: -6

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Animated } from 'react-native'
 import Svg, { Circle } from 'react-native-svg'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/styles'
 import * as S from './Spinner.style'
 
 const Spinner = ({ text = '' }) => {

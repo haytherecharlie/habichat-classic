@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/styles'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import { View } from 'react-native'
 

@@ -60,7 +60,7 @@ const SignInForm = () => {
 
   if (stage === 'form') {
     return (
-      <S.SignInForm contentContainerStyle={{ paddingTop: 10, paddingBottom: 20 }}>
+      <S.SignInForm>
         <S.LabelWrapper>
           <Text size="h3">EMAIL ADDRESS</Text>
         </S.LabelWrapper>

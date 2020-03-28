@@ -1,7 +1,7 @@
 import React from 'react'
 import Text from 'atoms/Text'
 import { formatTimestamp } from 'utils/helpers'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/styles'
 import * as S from './MessageBox.style'
 
 const MessageBox = ({ message, member }) => {

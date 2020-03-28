@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { View } from 'react-native'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/styles'
 
 export const CenterLayout = styled(View)({
   background: theme.BACKGROUND_COLOR,
@@ -8,5 +8,8 @@ export const CenterLayout = styled(View)({
   width: `100%`,
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  borderLeftWidth: 2,
+  borderRightWidth: 2,
+  borderColor: theme.BRAND_COLOR
 })

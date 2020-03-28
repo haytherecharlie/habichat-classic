@@ -1,6 +1,6 @@
 import { View, TouchableOpacity, Text } from 'react-native'
 import styled from 'styled-components'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/styles'
 
 export const PlacesAutoComplete = styled(View)({
   zIndex: 5000,

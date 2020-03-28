@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/styles'
 import { ScrollView, View, Text } from 'react-native'
 
 export const SignInForm = styled(ScrollView)({
   margin: 'auto',
   width: `100%`,
   display: 'flex',
-  padding: `0px 20px`,
+  padding: `0px 25px`,
   background: theme.BACKGROUND_COLOR
 })
 
@@ -20,7 +20,7 @@ export const LabelWrapper = styled(View)({
 
 export const InputWrapper = styled(View)(p => {
   const style = {
-    background: theme.FOREGROUND_COLOR,
+    background: theme.OPAQUE_BRAND,
     height: 40,
     borderRadius: 25,
     padding: `0% 25px`,
@@ -30,7 +30,7 @@ export const InputWrapper = styled(View)(p => {
   if (p.validation === 'pending') {
     return {
       borderWidth: 1,
-      borderColor: theme.PRIMARY_COLOR,
+      borderColor: theme.BRAND_COLOR,
       ...style
     }
   }

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { StatusBar } from 'react-native'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/styles'
 import * as S from './HeaderLayout.style'
 
 const HeaderLayout = ({ children }) => {

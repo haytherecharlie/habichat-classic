@@ -67,7 +67,7 @@ const RegisterForm = () => {
 
   if (stage === 'form') {
     return (
-      <S.RegisterForm contentContainerStyle={{ paddingTop: 10, paddingBottom: 20 }}>
+      <S.RegisterForm contentContainerStyle={{ marginBottom: 20 }}>
         <S.LabelWrapper>
           <Text size="h3">FIRST NAME</Text>
         </S.LabelWrapper>
@@ -78,6 +78,7 @@ const RegisterForm = () => {
             blurOnSubmit={false}
             value={state.first.value}
             autoCompleteType="off"
+            autoCorrect={false}
             clearButtonMode="while-editing"
             onChangeText={t => dispatch({ type: 'first', value: t })}
             onSubmitEditing={() => onEndEditing('first')}
@@ -96,6 +97,7 @@ const RegisterForm = () => {
             blurOnSubmit={false}
             onSubmitEditing={() => onEndEditing('last')}
             clearButtonMode="while-editing"
+            autoCorrect={false}
             autoCompleteType="off"
             value={state.last.value}
             onChangeText={t => dispatch({ type: 'last', value: t })}

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/styles'
 import { View, ScrollView, Text } from 'react-native'
 
 export const Padding = styled(View)({

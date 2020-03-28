@@ -1,6 +1,6 @@
 import React, { useEffect, useState, forwardRef } from 'react'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/styles'
 import * as S from './PlacesAutoComplete.style'
 
 const PlacesAutoComplete = (props, ref) => {

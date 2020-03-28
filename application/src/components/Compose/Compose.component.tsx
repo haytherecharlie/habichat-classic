@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import newMessage from 'services/api/newMessage'
 import TextInput from 'atoms/TextInput'
 import Button from 'atoms/Button'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/styles'
 import * as A from 'services/redux/actions'
 import * as S from './Compose.style'
 

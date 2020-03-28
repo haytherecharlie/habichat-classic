@@ -14,7 +14,7 @@ const Auth = ({ title }) => {
     <HeaderLayout>
       <S.BackButton onPress={() => dispatch({ type: A.NAVIGATE, screen: 'landing' })}>
         <Entypo {...S.IconStyle} />
-        <Text size="h1">Back</Text>
+        <S.BackText size="h1">Back</S.BackText>
       </S.BackButton>
       <Text size="h1">{title}</Text>
       <S.Placeholder />

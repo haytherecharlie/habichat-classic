@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { TextInput } from 'react-native'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/styles'
 
 export const Input = styled(TextInput)({
   flex: 1,
@@ -9,5 +9,6 @@ export const Input = styled(TextInput)({
   fontWeight: 400,
   fontSize: theme.FONT_MEDIUM,
   display: 'flex',
-  alignItems: 'center'
+  alignItems: 'center',
+  color: theme.PRIMARY_COLOR
 })

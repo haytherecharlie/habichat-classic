@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { TouchableOpacity, Text } from 'react-native'
+import Text from 'atoms/Text'
+import { TouchableOpacity } from 'react-native'
 import CenterLayout from 'layouts/CenterLayout'
 import * as A from 'services/redux/actions'
 

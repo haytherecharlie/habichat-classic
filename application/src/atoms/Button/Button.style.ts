@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/styles'
 import { TouchableOpacity, Text } from 'react-native'
 
 export const Button = styled(TouchableOpacity)({
@@ -12,5 +12,5 @@ export const Button = styled(TouchableOpacity)({
 
 export const Title = styled(Text)({
   fontFamily: 'cocogoose',
-  color: theme.INVERSE_COLOR
+  color: '#FFF'
 })
