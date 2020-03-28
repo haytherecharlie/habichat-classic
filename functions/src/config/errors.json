@@ -1,9 +1,9 @@
 {
-  "A001": "auth/sign-in-error",
-  "U001": "auth/new-user/error",
   "V001": "auth/invalid-email",
   "V002": "auth/invalid-password",
   "V003": "auth/email-registerd",
   "V004": "auth/invalid-display-name",
-  "V005": "auth/error-assigning-avatar"
+  "V005": "auth/error-assigning-avatar",
+  "V006": "auth/create-auth-user-failed",
+  "V007": "auth/create-db-user-failed"
 }

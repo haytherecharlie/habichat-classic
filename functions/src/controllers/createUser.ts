@@ -1,28 +1,37 @@
 import { https } from 'firebase-functions'
-import { auth } from 'services/firebase'
-import randomAvatarAsync from 'utils/helpers/randomAvatarAsync'
-import validateName from 'utils/helpers/validateName'
-import validateEmail from 'utils/helpers/validateUniqueEmailAsync'
-import validatePass from 'utils/helpers/validatePass'
+import { db, auth, timestamp } from 'services/firebase'
+import errors from 'config/errors.json'
+import { vName, vPass, vEmail, getAvatarAsync } from 'utils/helpers'
+
+const authCreateUserAsync = async user => {
+  try {
+    return await auth.createUser({ ...user, disabled: false, emailVerified: false })
+  } catch (err) {
+    throw errors['V006']
+  }
+}
+
+const dbCreateUserAsync = async (ref, user) => {
+  try {
+    return await ref.set({ ...user, joined: timestamp() })
+  } catch (err) {
+    throw errors['V007']
+  }
+}
 
 const createUser = async (req, res) => {
   try {
-    const { email, password, displayName } = req.body
-    validateName(displayName)
-    validateEmail(email)
-    validatePass(password)
-    const photoURL = await randomAvatarAsync()
-    const profile = await auth.createUser({
-      displayName,
-      email,
-      password,
-      photoURL,
-      emailVerified: false,
-      disabled: false
-    })
-    return res.status(200).json({ code: 'S001', message: 'Successfully created new user:', data: profile })
-  } catch ({ code, message }) {
-    return res.status(400).json({ code, message, data: {} })
+    const { email, password, displayName, community = 'pyNBzg3V742S5v8gWfRB' } = req.body
+    const [photoURL] = await Promise.all([getAvatarAsync(), vName(displayName), vEmail(email), vPass(password)])
+    const ref = db.collection(`users`).doc()
+    const [user] = await Promise.all([
+      authCreateUserAsync({ displayName, email, password, photoURL, uid: ref.id }),
+      dbCreateUserAsync(ref, { displayName, photoURL, community })
+    ])
+    return res.status(200).json({ code: 'auth/register-success', data: { user } })
+  } catch (err) {
+    console.log(err)
+    return res.status(400).json({ code: err, data: {} })
   }
 }
 
