@@ -18,6 +18,13 @@ const SHADOW_DARK = `rgba(0,0,0,0.3)`
 const SHADOW_LIGHT = `rgba(0,0,0,0.3)`
 const HABICHAT = '#191D38'
 
+// https://coolors.co/11151c-212d40-364156-7d4e57-d66853
+const EERIE = '#11151C'
+const YANKEE = '#212D40'
+const CHARCOAL = '#364156'
+const TUSCAN = '#7D4E57'
+const JELLYBEAN = '#D66853'
+
 const FONT_LIGHT = 200
 const FONT_REGULAR = 600
 const FONT_HEAVY = 800
