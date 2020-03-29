@@ -69,6 +69,8 @@ const RegisterForm = () => {
     return (
       <S.RegisterForm>
         <FormInput
+          autoCompleteType="name"
+          autoCapitalize="words"
           autoFocus={true}
           error={state.first.error}
           onChangeText={t => dispatch({ type: 'first', value: t })}
@@ -78,8 +80,11 @@ const RegisterForm = () => {
           title="first name"
           validation={state.first.valid}
           value={state.first.value}
+          style={{ clearButton: { background: 'red' } }}
         />
         <FormInput
+          autoCompleteType="name"
+          autoCapitalize="words"
           error={state.last.error}
           onChangeText={t => dispatch({ type: 'last', value: t })}
           onSubmitEditing={() => onEndEditing('last')}
@@ -90,6 +95,7 @@ const RegisterForm = () => {
           value={state.last.value}
         />
         <FormInput
+          autoCompleteType="email"
           autoFocus={true}
           error={state.email.error}
           onChangeText={t => dispatch({ type: 'email', value: t })}
@@ -101,6 +107,7 @@ const RegisterForm = () => {
           value={state.email.value}
         />
         <FormInput
+          autoCompleteType="password"
           error={state.pass.error}
           onChangeText={t => dispatch({ type: 'pass', value: t })}
           onSubmitEditing={() => onEndEditing('pass')}

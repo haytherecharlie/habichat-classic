@@ -9,10 +9,11 @@ const FormInput = (props, ref) => {
   const defaultProps = {
     ref,
     autoFocus: false,
+    clearButtonMode: 'off',
     blurOnSubmit: false,
     multiline: false,
-    clearButtonMode: 'while-editing',
-    autoCorrect: false,
+    autoCorrect: true,
+    spellCheck: false,
     autoCapitalize: 'none',
     autoCompleteType: 'off',
     returnKeyType: 'next',
