@@ -1,14 +1,13 @@
 import React, { Fragment } from 'react'
-import { StatusBar } from 'react-native'
+import StatusBar from 'atoms/StatusBar'
 import theme from 'assets/theme'
 import * as S from './HeaderLayout.style'
 
-const HeaderLayout = ({ children }) => {
+const HeaderLayout = ({ children = null }) => {
   return (
     <Fragment>
-      <StatusBar barStyle="dark-content" backgroundColor={theme.HEADER_BACKGROUND} />
-      <S.StatusBar />
-      <S.Header>{children}</S.Header>
+      <StatusBar />
+      {children && <S.Header>{children}</S.Header>}
     </Fragment>
   )
 }

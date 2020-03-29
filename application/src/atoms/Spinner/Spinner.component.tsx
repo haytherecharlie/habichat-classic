@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Animated } from 'react-native'
 import Svg, { Circle } from 'react-native-svg'
+import Text from 'atoms/Text'
 import theme from 'assets/theme'
 import * as S from './Spinner.style'
 
@@ -32,7 +33,7 @@ const Spinner = ({ text = '' }) => {
           />
         </Svg>
       </Animated.View>
-      <S.Title>{text}</S.Title>
+      <Text size="h3">{text}</Text>
     </S.Spinner>
   )
 }

@@ -3,6 +3,7 @@ import { View } from 'react-native'
 import theme from 'assets/theme'
 
 export const TopLayout = styled(View)({
+  width: `100%`,
   flex: 1,
   display: 'flex',
   alignItems: 'flex-start',

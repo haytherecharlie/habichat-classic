@@ -4,16 +4,21 @@ import BackButton from 'atoms/BackButton'
 import Text from 'atoms/Text'
 import * as S from './Header.style'
 
-const Auth = ({ title }) => {
+const Auth = ({ title = '' }) => {
   return (
     <HeaderLayout>
       <BackButton screen="landing" />
-      <Text size="h1">{title}</Text>
+      <Text size="h1">{title.toUpperCase()}</Text>
       <S.Placeholder />
     </HeaderLayout>
   )
 }
 
+const Blank = () => {
+  return <HeaderLayout />
+}
+
 export default {
-  Auth
+  Auth,
+  Blank
 }
