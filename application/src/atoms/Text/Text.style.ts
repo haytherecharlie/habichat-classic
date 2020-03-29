@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Text } from 'react-native'
-import theme from 'assets/styles'
+import theme from 'assets/theme'
 
 export const h1 = styled(Text)(({ style }) => ({
   fontSize: 18,

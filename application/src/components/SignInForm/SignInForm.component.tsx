@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Text from 'atoms/Text'
-import Button from 'atoms/Button'
+import PillButton from 'atoms/PillButton'
 import Spinner from 'atoms/Spinner'
-import TextInput from 'atoms/TextInput'
+import FormInput from 'atoms/FormInput'
 import CenterLayout from 'layouts/CenterLayout'
 import { auth } from 'services/firebase'
 import useFormValidation from 'utils/hooks/useFormValidation'
@@ -61,51 +61,30 @@ const SignInForm = () => {
   if (stage === 'form') {
     return (
       <S.SignInForm>
-        <S.LabelWrapper>
-          <Text size="h3">EMAIL ADDRESS</Text>
-        </S.LabelWrapper>
-        <S.InputWrapper validation={state.email.valid}>
-          <TextInput
-            ref={state.refs.email}
-            autoFocus={true}
-            blurOnSubmit={false}
-            onSubmitEditing={() => onEndEditing('email')}
-            clearButtonMode="while-editing"
-            value={state.email.value}
-            autoCorrect={false}
-            autoCapitalize="none"
-            autoCompleteType="off"
-            onChangeText={t => dispatch({ type: 'email', value: t })}
-            multiline={false}
-            placeholder="Your Email Address"
-            returnKeyType="next"
-          />
-        </S.InputWrapper>
-        {state.email.error && <S.ErrorText>{state.email.error}</S.ErrorText>}
-        <S.LabelWrapper>
-          <Text size="h3">PASSWORD</Text>
-        </S.LabelWrapper>
-        <S.InputWrapper validation={state.pass.valid}>
-          <TextInput
-            ref={state.refs.pass}
-            blurOnSubmit={false}
-            onSubmitEditing={() => onEndEditing('pass')}
-            clearButtonMode="while-editing"
-            value={state.pass.value}
-            autoCorrect={false}
-            autoCapitalize="none"
-            autoCompleteType="off"
-            onChangeText={t => dispatch({ type: 'pass', value: t })}
-            multiline={false}
-            secureTextEntry
-            placeholder="Create a Password"
-            returnKeyType="done"
-          />
-        </S.InputWrapper>
-        {state.pass.error && <S.ErrorText>{state.pass.error}</S.ErrorText>}
-        <S.ButtonWrapper>
-          <Button onPress={submitForm}>SIGN IN</Button>
-        </S.ButtonWrapper>
+        <FormInput
+          autoFocus={true}
+          error={state.email.error}
+          onChangeText={t => dispatch({ type: 'email', value: t })}
+          onSubmitEditing={() => onEndEditing('email')}
+          placeholder="Your Email Address"
+          ref={state.refs.email}
+          title="email address"
+          validation={state.email.valid}
+          value={state.email.value}
+        />
+        <FormInput
+          error={state.pass.error}
+          onChangeText={t => dispatch({ type: 'pass', value: t })}
+          onSubmitEditing={() => onEndEditing('pass')}
+          placeholder="Create a Password"
+          ref={state.refs.pass}
+          returnKeyType="done"
+          secureTextEntry
+          title="password"
+          validation={state.pass.valid}
+          value={state.pass.value}
+        />
+        <PillButton onPress={submitForm}>SIGN IN</PillButton>
       </S.SignInForm>
     )
   }

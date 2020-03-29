@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from 'assets/styles'
+import theme from 'assets/theme'
 import { ScrollView, View, Text } from 'react-native'
 
 export const RegisterForm = styled(ScrollView)({

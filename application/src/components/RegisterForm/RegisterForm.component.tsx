@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Text from 'atoms/Text'
-import Button from 'atoms/Button'
+import PillButton from 'atoms/PillButton'
 import Spinner from 'atoms/Spinner'
-import TextInput from 'atoms/TextInput'
+import FormInput from 'atoms/FormInput'
 import CenterLayout from 'layouts/CenterLayout'
 import { auth } from 'services/firebase'
 import { postOptions } from 'utils/helpers'
@@ -67,90 +67,52 @@ const RegisterForm = () => {
 
   if (stage === 'form') {
     return (
-      <S.RegisterForm contentContainerStyle={{ marginBottom: 20 }}>
-        <S.LabelWrapper>
-          <Text size="h3">FIRST NAME</Text>
-        </S.LabelWrapper>
-        <S.InputWrapper validation={state.first.valid}>
-          <TextInput
-            ref={state.refs.first}
-            autoFocus={true}
-            blurOnSubmit={false}
-            value={state.first.value}
-            autoCompleteType="off"
-            autoCorrect={false}
-            clearButtonMode="while-editing"
-            onChangeText={t => dispatch({ type: 'first', value: t })}
-            onSubmitEditing={() => onEndEditing('first')}
-            multiline={false}
-            placeholder="Your First Name"
-            returnKeyType="next"
-          />
-        </S.InputWrapper>
-        {state.first.error && <S.ErrorText>{state.first.error}</S.ErrorText>}
-        <S.LabelWrapper>
-          <Text size="h3">LAST NAME</Text>
-        </S.LabelWrapper>
-        <S.InputWrapper validation={state.last.valid}>
-          <TextInput
-            ref={state.refs.last}
-            blurOnSubmit={false}
-            onSubmitEditing={() => onEndEditing('last')}
-            clearButtonMode="while-editing"
-            autoCorrect={false}
-            autoCompleteType="off"
-            value={state.last.value}
-            onChangeText={t => dispatch({ type: 'last', value: t })}
-            multiline={false}
-            placeholder="Your Last Name"
-            returnKeyType="next"
-          />
-        </S.InputWrapper>
-        {state.last.error && <S.ErrorText>{state.last.error}</S.ErrorText>}
-        <S.LabelWrapper>
-          <Text size="h3">EMAIL ADDRESS</Text>
-        </S.LabelWrapper>
-        <S.InputWrapper validation={state.email.valid}>
-          <TextInput
-            ref={state.refs.email}
-            blurOnSubmit={false}
-            onSubmitEditing={() => onEndEditing('email')}
-            clearButtonMode="while-editing"
-            value={state.email.value}
-            autoCorrect={false}
-            autoCapitalize="none"
-            autoCompleteType="off"
-            onChangeText={t => dispatch({ type: 'email', value: t })}
-            multiline={false}
-            placeholder="Your Email Address"
-            returnKeyType="next"
-          />
-        </S.InputWrapper>
-        {state.email.error && <S.ErrorText>{state.email.error}</S.ErrorText>}
-        <S.LabelWrapper>
-          <Text size="h3">PASSWORD</Text>
-        </S.LabelWrapper>
-        <S.InputWrapper validation={state.pass.valid}>
-          <TextInput
-            ref={state.refs.pass}
-            blurOnSubmit={false}
-            onSubmitEditing={() => onEndEditing('pass')}
-            clearButtonMode="while-editing"
-            value={state.pass.value}
-            autoCorrect={false}
-            autoCapitalize="none"
-            autoCompleteType="off"
-            onChangeText={t => dispatch({ type: 'pass', value: t })}
-            multiline={false}
-            secureTextEntry
-            placeholder="Create a Password"
-            returnKeyType="done"
-          />
-        </S.InputWrapper>
-        {state.pass.error && <S.ErrorText>{state.pass.error}</S.ErrorText>}
-        <S.ButtonWrapper>
-          <Button onPress={submitForm}>REGISTER NOW</Button>
-        </S.ButtonWrapper>
+      <S.RegisterForm>
+        <FormInput
+          autoFocus={true}
+          error={state.first.error}
+          onChangeText={t => dispatch({ type: 'first', value: t })}
+          onSubmitEditing={() => onEndEditing('first')}
+          placeholder="Your First Name"
+          ref={state.refs.first}
+          title="first name"
+          validation={state.first.valid}
+          value={state.first.value}
+        />
+        <FormInput
+          error={state.last.error}
+          onChangeText={t => dispatch({ type: 'last', value: t })}
+          onSubmitEditing={() => onEndEditing('last')}
+          placeholder="Your Last Name"
+          ref={state.refs.last}
+          title="last name"
+          validation={state.last.valid}
+          value={state.last.value}
+        />
+        <FormInput
+          autoFocus={true}
+          error={state.email.error}
+          onChangeText={t => dispatch({ type: 'email', value: t })}
+          onSubmitEditing={() => onEndEditing('email')}
+          placeholder="Your Email Address"
+          ref={state.refs.email}
+          title="email address"
+          validation={state.email.valid}
+          value={state.email.value}
+        />
+        <FormInput
+          error={state.pass.error}
+          onChangeText={t => dispatch({ type: 'pass', value: t })}
+          onSubmitEditing={() => onEndEditing('pass')}
+          placeholder="Create a Password"
+          ref={state.refs.pass}
+          returnKeyType="done"
+          secureTextEntry
+          title="password"
+          validation={state.pass.valid}
+          value={state.pass.value}
+        />
+        <PillButton onPress={submitForm}>REGISTER NOW</PillButton>
       </S.RegisterForm>
     )
   }

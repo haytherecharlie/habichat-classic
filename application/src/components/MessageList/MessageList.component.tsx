@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import MessageBox from 'atoms/MessageBox'
 import Text from 'atoms/Text'
 import useRealtimeDb from 'utils/hooks/useRealtimeDb'
-import theme from 'assets/styles'
+import theme from 'assets/theme'
 import * as S from './MessageList.style'
 
 const MessagesList = () => {

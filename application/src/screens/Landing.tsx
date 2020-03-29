@@ -1,8 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import Text from 'atoms/Text'
-import { TouchableOpacity } from 'react-native'
 import CenterLayout from 'layouts/CenterLayout'
+import PillButton from 'atoms/PillButton'
 import * as A from 'services/redux/actions'
 
 const Landing = () => {
@@ -10,12 +9,8 @@ const Landing = () => {
 
   return (
     <CenterLayout>
-      <TouchableOpacity onPress={() => dispatch({ type: A.NAVIGATE, screen: 'sign-in' })}>
-        <Text>Sign In</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => dispatch({ type: A.NAVIGATE, screen: 'register' })}>
-        <Text>Register</Text>
-      </TouchableOpacity>
+      <PillButton onPress={() => dispatch({ type: A.NAVIGATE, screen: 'sign-in' })}>Sign In</PillButton>
+      <PillButton onPress={() => dispatch({ type: A.NAVIGATE, screen: 'register' })}>Register</PillButton>
     </CenterLayout>
   )
 }

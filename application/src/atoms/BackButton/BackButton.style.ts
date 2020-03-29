@@ -1,16 +1,12 @@
 import styled from 'styled-components'
-import { TouchableOpacity, View } from 'react-native'
-import Text from 'atoms/Text'
+import { TouchableOpacity } from 'react-native'
 import theme from 'assets/theme'
 
 export const BackButton = styled(TouchableOpacity)({
   display: 'flex',
   flexDirection: 'row',
-  alignItems: 'center'
-})
-
-export const BackText = styled(Text)({
-  color: theme.BRAND_COLOR
+  alignItems: 'center',
+  justifyContent: 'center'
 })
 
 export const IconStyle = {
@@ -21,7 +17,3 @@ export const IconStyle = {
     marginLeft: -6
   }
 }
-
-export const Placeholder = styled(View)({
-  width: 65
-})

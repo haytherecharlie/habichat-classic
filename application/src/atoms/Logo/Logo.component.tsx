@@ -1,9 +1,10 @@
 import React from 'react'
-import logoDark from 'assets/images/logo-dark.png'
+import theme from 'assets/theme'
 import * as S from './Logo.style'
 
 const Logo = () => {
-  return <S.Logo source={logoDark} alt="habichat logo" />
+  const logo = theme.DARK_MODE ? require('assets/images/logo-light.png') : require('assets/images/logo-dark.png')
+  return <S.Logo source={logo} alt="habichat logo" />
 }
 
 export default Logo
