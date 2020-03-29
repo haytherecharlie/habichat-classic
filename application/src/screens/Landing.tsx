@@ -13,8 +13,8 @@ const Landing = () => {
     <TopLayout>
       <Header.Blank />
       <CenterLayout>
-        <PillButton onPress={() => dispatch({ type: A.NAVIGATE, screen: 'sign-in' })}>Sign In</PillButton>
-        <PillButton onPress={() => dispatch({ type: A.NAVIGATE, screen: 'register' })}>Register</PillButton>
+        <PillButton onPress={() => dispatch({ type: A.NAVIGATE, screen: 'sign-in' })}>SIGN IN</PillButton>
+        <PillButton onPress={() => dispatch({ type: A.NAVIGATE, screen: 'register' })}>REGISTER</PillButton>
       </CenterLayout>
     </TopLayout>
   )
