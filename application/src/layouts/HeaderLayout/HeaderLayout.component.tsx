@@ -5,10 +5,10 @@ import * as S from './HeaderLayout.style'
 
 const HeaderLayout = ({ children = null }) => {
   return (
-    <Fragment>
+    <S.HeaderLayout>
       <StatusBar />
       {children && <S.Header>{children}</S.Header>}
-    </Fragment>
+    </S.HeaderLayout>
   )
 }
 

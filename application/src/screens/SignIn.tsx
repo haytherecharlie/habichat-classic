@@ -1,15 +1,15 @@
 import React from 'react'
 import Header from 'components/Header'
-import SignInForm from 'components/SignInForm'
+import Captcha from 'atoms/Captcha'
 import TopLayout from 'layouts/TopLayout'
 
-const SignIn = () => {
+const Landing = () => {
   return (
     <TopLayout>
-      <Header.Auth title="SIGN IN" />
-      <SignInForm />
+      <Header.Auth />
+      <Captcha />
     </TopLayout>
   )
 }
 
-export default SignIn
+export default Landing

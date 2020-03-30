@@ -1,22 +1,21 @@
 import { useEffect, useState } from 'react'
 import firebase from 'firebase/app'
 import 'firebase/auth'
-import * as serviceAccount from '../config/service-account.json'
 
 const useFirebase = () => {
   const [fb, setFb] = useState(null)
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && fb === null) {
       firebase.initializeApp({
-        apiKey: serviceAccount.apiKey,
-        authDomain: serviceAccount.authDomain,
-        databaseURL: serviceAccount.databaseURL,
-        projectId: serviceAccount.projectId,
-        storageBucket: serviceAccount.storageBucket,
-        messagingSenderId: serviceAccount.messagingSenderId,
-        appId: serviceAccount.appId,
-        measurementId: serviceAccount.measurementId
+        apiKey: 'AIzaSyC8Kwa-4RTaJO0VTW9aWnO6h8nh3guJP90',
+        authDomain: 'habichat-86de6.firebaseapp.com',
+        databaseURL: 'https://habichat-86de6.firebaseio.com',
+        projectId: 'habichat-86de6',
+        storageBucket: 'habichat-86de6.appspot.com',
+        messagingSenderId: '523407045659',
+        appId: '1:523407045659:web:9f6ada73d3f0f9ed16f4be',
+        measurementId: 'G-Z90V46ZEDM'
       })
       setFb(firebase)
     }

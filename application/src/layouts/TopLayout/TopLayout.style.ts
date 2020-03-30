@@ -3,11 +3,12 @@ import { View } from 'react-native'
 import theme from 'assets/theme'
 
 export const TopLayout = styled(View)({
-  width: `100%`,
   flex: 1,
+  background: theme.BACKGROUND_COLOR,
+  width: `100%`,
   display: 'flex',
-  alignItems: 'flex-start',
-  justifyContent: 'center',
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
   borderLeftWidth: 1,
   borderRightWidth: 1,
   borderColor: theme.BRAND_COLOR

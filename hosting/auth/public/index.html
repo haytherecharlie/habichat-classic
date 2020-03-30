@@ -1,1 +1,26 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 2.17.11"/><title data-react-helmet="true"></title><script id="redux-ssr">window['__PRELOADED_STATE__'] = {}</script><link rel="icon" href="/icons/icon-48x48.png?v=008654519ce705ac7bc44303a9014606"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#FFFFFF"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=008654519ce705ac7bc44303a9014606"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=008654519ce705ac7bc44303a9014606"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=008654519ce705ac7bc44303a9014606"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=008654519ce705ac7bc44303a9014606"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=008654519ce705ac7bc44303a9014606"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=008654519ce705ac7bc44303a9014606"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=008654519ce705ac7bc44303a9014606"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=008654519ce705ac7bc44303a9014606"/><link as="script" rel="preload" href="/webpack-runtime-30477ceeae26dd70eef2.js"/><link as="script" rel="preload" href="/commons-889cded3a0fb05abd1af.js"/><link as="script" rel="preload" href="/app-70d846299a0460a71942.js"/><link as="script" rel="preload" href="/component---src-pages-index-tsx-1c221c19d6b9b6e3a8c2.js"/><link as="fetch" rel="preload" href="/page-data/index/page-data.json" crossorigin="anonymous"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><div style="height:100px;width:100px"><input type="phone" value="+14388805966"/><button id="sign-in-button">Sign In</button></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-70d846299a0460a71942.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-bfe6c733f3570a0a7f3e.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-1c221c19d6b9b6e3a8c2.js"]};/*]]>*/</script><script src="/component---src-pages-index-tsx-1c221c19d6b9b6e3a8c2.js" async=""></script><script src="/app-70d846299a0460a71942.js" async=""></script><script src="/commons-889cded3a0fb05abd1af.js" async=""></script><script src="/webpack-runtime-30477ceeae26dd70eef2.js" async=""></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link defer rel="stylesheet" href="/reset.css">
+    <link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+    <script defer src="/format.js"></script>
+    <script defer src="/script.js"></script>
+  </head>
+  <body>
+    <section id="phoneSection" class="active">
+      <div id="phoneLabel" class="label">PHONE NUMBER</div>
+      <input id="phoneInput" class="input" placeholder="(XXX) XXX-XXXX" autocomplete="off" pattern="[0-9]" type="tel" required>
+      <div id="captcha"></div>
+    </section>
+    <section id="codeSection" class="inactive">
+      <div id="codeLabel" class="label">TEXT VERIFICATION CODE</div>
+      <input id="codeInput" class="input" placeholder="· · · · · ·" autocomplete="off" pattern="[0-9]" type="tel" maxlength="6" size="6" required>
+      <p id="codeMessage">We texted you a six digit verification code.<br> Please enter it above.</p>
+      <div id="captcha"></div>
+    </section>
+  </body>
+</html>

@@ -3,16 +3,20 @@ import styled from 'styled-components'
 import { View } from 'react-native'
 import theme from 'assets/theme'
 
+export const HeaderLayout = styled(View)({
+  display: 'flex',
+  flexDirection: 'column'
+})
+
 export const StatusBar = styled(View)({
   height: getStatusBarHeight(true),
   width: `100%`,
-  background: theme.BACKGROUND_COLOR
+  background: 'theme.BACKGROUND_COLOR'
 })
 
 export const Header = styled(View)({
   height: 45,
   width: `100%`,
-  background: theme.BACKGROUND_COLOR,
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
