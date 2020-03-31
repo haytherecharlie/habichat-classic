@@ -6,6 +6,5 @@ export const Captcha = styled(View)({
   height: 530,
   background: theme.BACKGROUND_COLOR,
   opacity: p => (p.loaded ? 1 : 0),
-  border: `1px solid #000`,
   paddingTop: 20
 })

@@ -5,18 +5,18 @@ import * as S from './Captcha.style'
 
 const Captcha = ({ webView, onMessage }) => {
   const [loaded, setLoaded] = useState(false)
-  const darkMode = theme.DARK_MODE ? 'dark' : 'light'
-
+  console.log(theme.DARK_MODE)
+  
   return (
     <S.Captcha loaded={loaded}>
       <WebView
         ref={webView}
         keyboardDisplayRequiresUserAction={false}
-        source={{ uri: `https://habi.chat/app-captcha/?mode=${darkMode}&webview=true`, baseUrl: 'https://habi.chat/app-captcha/' }}
+        source={{ uri: `https://habi.chat/app-captcha/?darkMode=${theme.DARK_MODE}`, baseUrl: 'https://habi.chat/app-captcha/' }}
         javaScriptEnabled={true}
         onMessage={msg => onMessage(msg.nativeEvent.data)}
         domStorageEnabled
-        onLoad={() => setLoaded(true)}
+        onLoad={() => setTimeout(() => setLoaded(true), 1000)}
         automaticallyAdjustContentInsets={false}
         allowFileAccessFromFileURLs={true}
         scalesPageToFit={false}
