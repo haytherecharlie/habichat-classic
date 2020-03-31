@@ -15,7 +15,7 @@ const application = (state = defaultState, action) => {
     case A.SIGN_IN:
       return { ...state, screen: 'community' }
     case A.SIGN_OUT:
-      return { ...state, screen: 'landing' }
+      return { ...state, screen: 'sign-in' }
     case A.NAVIGATE:
       return { ...state, screen: action.screen }
     default:
