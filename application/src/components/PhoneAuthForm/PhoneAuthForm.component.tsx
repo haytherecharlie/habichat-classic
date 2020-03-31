@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { auth } from 'services/firebase'
+import React, { useState, useRef } from 'react'
+import { fb, auth } from 'services/firebase'
 import Captcha from 'atoms/Captcha'
 import PhoneInput from 'atoms/PhoneInput'
 import CodeInput from 'atoms/CodeInput'
@@ -7,50 +7,49 @@ import PillButton from 'atoms/PillButton'
 import * as S from './PhoneAuthForm.style'
 
 const PhoneAuthForm = () => {
-  const [step, setStep] = useState('phone')
+  const webView = useRef(null)
   const [phone, setPhone] = useState('')
   const [code, setCode] = useState('')
-  const [token, setToken] = useState('')
-  const [result, setResult] = useState(null)
+  const [step, setStep] = useState('phone')
+  const [token, setToken] = useState(null)
 
-  const sendPhoneCode = async () => {
-    try {
-      const verify = { type: 'recaptcha', verify: () => Promise.resolve(token) }
-      setResult(await auth.signInWithPhoneNumber(phone, verify))
-      return setStep('code')
-    } catch (err) {
-      console.log(err)
+  const onMessage = stringData => {
+    const data = JSON.parse(stringData)
+    if (data.code === 'txtMsgSent') {
+      setToken(data.id)
+      setStep('code')
     }
   }
 
-  const loginUser = async () => {
+  const onCodeChange = code => {
+    setCode(code)
     if (code.length === 6) {
-      try {
-        await result.confirm(code)
-      } catch (err) {
-        console.log(err)
-      }
+      auth.signInWithCredential(fb.auth.PhoneAuthProvider.credential(token, code)).catch(err => console.log(err))
     }
   }
 
-  useEffect(() => {
-    if (phone.length === 14 && token.length > 0 && result === null) sendPhoneCode()
-  }, [phone, token])
+  const onPhoneChange = number => {
+    setPhone(number)
+    if (number.length === 14) {
+      webView.current.injectJavaScript(`window.triggerCaptcha('+1${number.replace(/\D/g, '')}')`)
+    }
+  }
 
-  if (step === 'phone')
+  if (step === 'phone') {
     return (
       <S.PhoneAuthForm>
-        <PhoneInput value={phone} onNumberChange={setPhone} />
-        <Captcha setToken={setToken} />
+        <PhoneInput value={phone} onNumberChange={onPhoneChange} />
+        <Captcha webView={webView} onMessage={onMessage} />
       </S.PhoneAuthForm>
     )
-  if (step === 'code')
+  }
+  if (step === 'code') {
     return (
       <S.PhoneAuthForm>
-        <CodeInput value={code} onTextChange={setCode} />
-        <PillButton onPress={loginUser}>VERIFY</PillButton>
+        <CodeInput value={code} onTextChange={onCodeChange} />
       </S.PhoneAuthForm>
     )
+  }
 }
 
 export default PhoneAuthForm

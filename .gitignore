@@ -10,8 +10,8 @@ firebase-debug.log*
 .firebase/
 
 ## Compiled JavaScript files
-**/*.js
-**/*.js.map
+functions/**/*.js
+functions/**/*.js.map
 !babel.config.js
 
 # Typescript v1 declaration files

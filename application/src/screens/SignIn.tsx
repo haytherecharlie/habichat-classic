@@ -1,13 +1,13 @@
 import React from 'react'
 import Header from 'components/Header'
-import Captcha from 'atoms/Captcha'
+import PhoneAuthForm from 'components/PhoneAuthForm'
 import TopLayout from 'layouts/TopLayout'
 
 const Landing = () => {
   return (
     <TopLayout>
       <Header.Auth />
-      <Captcha />
+      <PhoneAuthForm />
     </TopLayout>
   )
 }

@@ -15,8 +15,8 @@ const PhoneInput = ({ value, onNumberChange }) => {
         placeholderTextColor={theme.INPUT_PLACEHOLDER}
         autoFocus
         value={value}
-        onNumberChange={num => onNumberChange(num)}
-      />
+        onNumberChange={num => onNumberChange(num)}></PhoneNumberMask>
+      <S.CountryCode>🇨🇦+1</S.CountryCode>
     </S.PhoneInput>
   )
 }

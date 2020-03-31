@@ -1,11 +1,20 @@
 import styled from 'styled-components'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 import theme from 'assets/theme'
 
 export const PhoneInput = styled(View)({
   display: 'flex',
   flexDirection: 'column',
-  paddingTop: 20
+  paddingTop: 20,
+  position: 'relative'
+})
+
+export const CountryCode = styled(Text)({
+  position: 'absolute',
+  bottom: 11.5,
+  left: 20,
+  color: theme.PRIMARY_COLOR,
+  fontSize: 14
 })
 
 export const Label = {
@@ -26,5 +35,5 @@ export const inputStyle = {
   borderColor: theme.BRAND_COLOR,
   backgroundColor: theme.OPAQUE_BRAND,
   color: theme.PRIMARY_COLOR,
-  paddingLeft: 20
+  paddingLeft: 60,
 }
