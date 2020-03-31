@@ -16,7 +16,7 @@ const PhoneInput = ({ value, onNumberChange }) => {
         autoFocus
         value={value}
         onNumberChange={num => onNumberChange(num)}></PhoneNumberMask>
-      <S.CountryCode>🇨🇦+1</S.CountryCode>
+      <S.CountryCode>🇨🇦 +1</S.CountryCode>
     </S.PhoneInput>
   )
 }

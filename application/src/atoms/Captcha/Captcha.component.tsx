@@ -5,8 +5,7 @@ import * as S from './Captcha.style'
 
 const Captcha = ({ webView, onMessage }) => {
   const [loaded, setLoaded] = useState(false)
-  console.log(theme.DARK_MODE)
-  
+
   return (
     <S.Captcha loaded={loaded}>
       <WebView
