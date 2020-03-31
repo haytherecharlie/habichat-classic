@@ -8,7 +8,7 @@ const Index = () => {
   return (
     <CenterLayout>
       <Helmet title="Home" path="home" />
-      <Habichat />
+      {/* <Habichat /> */}
       <Text size="h3">-Connect with your Neighbours-</Text>
     </CenterLayout>
   )

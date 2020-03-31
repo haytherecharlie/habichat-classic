@@ -1,11 +1,11 @@
-import styled from 'styled-components'
-import theme from 'assets/theme'
+import styled from "styled-components"
+import theme from "assets/theme"
 
 export const TopLayout = styled("div")({
-  background: theme.BACKGROUND_COLOR,
   flex: 1,
   display: "flex",
-  flexDirection: 'column',
+  flexDirection: "column",
   alignItems: "center",
-  justifyContent: "flex-start"
+  justifyContent: "flex-start",
+  background: theme.BACKGROUND_COLOR,
 })
