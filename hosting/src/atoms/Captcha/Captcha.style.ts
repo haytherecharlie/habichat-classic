@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import theme from 'assets/theme'
 
 export const Captcha = styled("div")({
   height:  '100%',

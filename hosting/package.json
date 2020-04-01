@@ -1,45 +1,48 @@
 {
   "name": "hosting",
-  "private": true,
-  "version": "0.1.0",
-  "author": "Charlie Hay",
+  "scripts": {
+    "build": "gatsby build",
+    "deploy": "firebase deploy --only hosting",
+    "dev": "rm -rf public && set DEBUG=SSG* && gatsby develop -H 0.0.0.0",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
+    "serve": "gatsby serve -p 3000"
+  },
   "dependencies": {
+    "animate.css": "^3.7.2",
+    "babel-plugin-styled-components": "^1.10.7",
     "firebase": "^7.13.1",
-    "gatsby": "^2.19.45",
-    "gatsby-image": "^2.2.44",
+    "gatsby": "2.20.9",
+    "gatsby-image": "^2.3.1",
     "gatsby-plugin-firebase": "^0.2.0-beta.4",
-    "gatsby-plugin-manifest": "^2.2.48",
-    "gatsby-plugin-offline": "^3.0.41",
-    "gatsby-plugin-react-helmet": "^3.1.24",
+    "gatsby-plugin-intl": "^0.3.3",
+    "gatsby-plugin-manifest": "^2.3.3",
+    "gatsby-plugin-offline": "^3.1.2",
+    "gatsby-plugin-react-helmet": "^3.2.1",
     "gatsby-plugin-react-redux": "^1.1.0-0",
     "gatsby-plugin-root-import": "^2.0.5",
-    "gatsby-plugin-sharp": "^2.4.13",
+    "gatsby-plugin-sharp": "^2.5.3",
     "gatsby-plugin-styled-components": "^3.2.1",
+    "gatsby-plugin-transition-link": "^1.18.0",
     "gatsby-plugin-typescript": "^2.3.1",
-    "gatsby-source-filesystem": "^2.1.56",
-    "gatsby-transformer-sharp": "^2.3.19",
+    "gatsby-remark-prismjs": "^3.4.1",
+    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-remark": "^2.7.1",
+    "gatsby-transformer-sharp": "^2.4.3",
+    "gsap": "^3.2.6",
+    "prismjs": "^1.19.0",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
+    "react-ionicons": "^3.1.4",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8",
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "dev": "gatsby develop -H 0.0.0.0",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "firebase-tools": "^8.0.0",
+    "prettier": "^2.0.2",
+    "redux-devtools-extension": "^2.13.8",
+    "typescript": "^3.8.3"
   }
 }

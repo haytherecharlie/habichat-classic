@@ -1,9 +1,6 @@
 import C from "./colors.style"
 
-const DARK_MODE =
-  typeof window !== "undefined"
-    ? new URLSearchParams(window.location.search).get("darkMode") === "true"
-    : false
+const DARK_MODE = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("darkMode") === "true" : false
 
 const SMALL_VIEW = 400
 const MEDIUM_VIEW = 700
