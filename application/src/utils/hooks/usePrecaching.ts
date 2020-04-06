@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Keyboard } from 'react-native'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { SplashScreen } from 'expo'
 import { loadAsync } from 'expo-font'
 import { kShow, kHide } from 'utils/helpers'
@@ -12,8 +12,7 @@ import * as A from 'services/redux/actions'
 const usePrecaching = () => {
   console.disableYellowBox = true
   const dispatch = useDispatch()
-  const { providerData } = useSelector(s => s.user)
-
+  
   const keyboardUp = () => {
     try {
       Keyboard.addListener(kShow, () => dispatch({ type: A.KEYBOARD_UP, status: true }))
