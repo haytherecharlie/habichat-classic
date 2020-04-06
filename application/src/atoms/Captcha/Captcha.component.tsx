@@ -15,7 +15,7 @@ const Captcha = ({ webView, onMessage }) => {
         javaScriptEnabled={true}
         onMessage={msg => onMessage(msg.nativeEvent.data)}
         domStorageEnabled
-        onLoad={() => setTimeout(() => setLoaded(true), 1000)}
+        onLoad={() => setTimeout(() => setLoaded(true), 50)}
         automaticallyAdjustContentInsets={false}
         allowFileAccessFromFileURLs={true}
         scalesPageToFit={false}

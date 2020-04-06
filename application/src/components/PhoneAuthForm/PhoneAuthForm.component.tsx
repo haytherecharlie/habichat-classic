@@ -3,7 +3,6 @@ import { fb, auth } from 'services/firebase'
 import Captcha from 'atoms/Captcha'
 import PhoneInput from 'atoms/PhoneInput'
 import CodeInput from 'atoms/CodeInput'
-import PillButton from 'atoms/PillButton'
 import * as S from './PhoneAuthForm.style'
 
 const PhoneAuthForm = () => {
