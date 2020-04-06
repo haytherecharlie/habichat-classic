@@ -1,6 +1,6 @@
-import C from "./colors.style"
+import C from './colors.style'
 
-const DARK_MODE = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("darkMode") === "true" : false
+const DARK_MODE = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('dm') === 'true' : false
 
 const SMALL_VIEW = 400
 const MEDIUM_VIEW = 700
@@ -11,8 +11,8 @@ const FONT_LIGHT = 200
 const FONT_REGULAR = 600
 const FONT_HEAVY = 800
 
-const HELVETICA = "helvetica"
-const COCOGOOSE = "cocogoose"
+const HELVETICA = 'helvetica'
+const COCOGOOSE = 'cocogoose'
 
 export default {
   // Dark Mode
@@ -22,10 +22,8 @@ export default {
   BACKGROUND_COLOR: DARK_MODE ? C.DARK_BACKGROUND : C.LIGHT_BACKGROUND,
   FOREGROUND_COLOR: DARK_MODE ? C.DARK_FOREGROUND : C.LIGHT_FOREGROUND,
   PRIMARY_COLOR: DARK_MODE ? C.DARK_PRIMARY : C.LIGHT_PRIMARY,
-  INVERSE_COLOR: DARK_MODE ? C.DARK_INVERSE : C.LIGHT_INVERSE,
-  INPUT_PLACEHOLDER: DARK_MODE
-    ? C.DARK_INPUT_PLACEHOLDER
-    : C.LIGHT_INPUT_PLACEHOLDER,
+  INVERSE_COLOR: DARK_MODE ? C.LIGHT_INVERSE : C.DARK_INVERSE,
+  INPUT_PLACEHOLDER: DARK_MODE ? C.DARK_INPUT_PLACEHOLDER : C.LIGHT_INPUT_PLACEHOLDER,
   WHITE: C.WHITE,
   BLACK: C.BLACK,
   BRAND_COLOR: C.BRAND_COLOR,
@@ -48,6 +46,7 @@ export default {
   BORDER_RADIUS: 25,
   SPINNER_RADIUS: 40,
   HEADER_HEIGHT: `60px`,
+  FOOTER_HEIGHT: `100px`,
 
   // Font Family
   FONT_BODY: HELVETICA,
@@ -65,13 +64,13 @@ export default {
 
   SPECIAL_FONT: {
     fontFamily: COCOGOOSE,
-    letterSpacing: -1,
+    letterSpacing: -1
   },
 
   HOVER_TEXT: {
-    "&:hover": {
-      transition: "font-weight .2s",
-      fontWeight: FONT_HEAVY,
-    },
-  },
+    '&:hover': {
+      transition: 'font-weight .2s',
+      fontWeight: FONT_HEAVY
+    }
+  }
 }

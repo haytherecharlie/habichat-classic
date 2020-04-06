@@ -1,0 +1,44 @@
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { TOGGLE_NAV } from 'services/redux/actions'
+import Link from 'atoms/Link'
+import Logo from 'atoms/Logo'
+import ChangeLocale from 'atoms/ChangeLocale'
+import Hamburger from 'atoms/Hamburger'
+import * as S from './Header.style'
+
+const Header = () => {
+  const dispatch = useDispatch()
+  const { dimensions, nav } = useSelector(s => s.app)
+
+  if (dimensions === 'mobile') {
+    return (
+      <S.Header>
+        <S.Responsive>
+          <Logo />
+          <Hamburger nav={nav} onClick={() => dispatch({ type: TOGGLE_NAV })} />
+        </S.Responsive>
+      </S.Header>
+    )
+  }
+
+  if (dimensions === 'desktop') {
+    return (
+      <S.Header>
+        <S.Responsive>
+          <S.Responsive justify="space-between" flex={3}>
+            <Logo />
+            <Link href="/" translation="header-home" />
+            <Link href="/terms" translation="header-terms" />
+            <Link href="/privacy" translation="header-privacy" />
+          </S.Responsive>
+          <S.Responsive justify="flex-end" flex={2}>
+            <ChangeLocale />
+          </S.Responsive>
+        </S.Responsive>
+      </S.Header>
+    )
+  }
+}
+
+export default Header

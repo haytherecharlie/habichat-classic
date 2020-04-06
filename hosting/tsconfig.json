@@ -8,10 +8,10 @@
       "atoms/*": ["./src/atoms/*"],
       "components/*": ["./src/components/*"],
       "config/*": ["./src/config/*"],
-      "layouts/*": ["./src/layouts/*"],
       "routes/*": ["./src/routes/*"],
       "screens/*": ["./src/screens/*"],
       "services/*": ["./src/services/*"],
+      "templates/*": ["./src/templates/*"],
       "utils/*": ["./src/utils/*"]
     },
     "allowJs": true,

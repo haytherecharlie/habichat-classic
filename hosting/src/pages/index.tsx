@@ -1,12 +1,20 @@
-import React from "react"
-import Helmet from "components/Helmet"
-import CenterLayout from "layouts/CenterLayout"
+import React from 'react'
+import PageLayout from 'templates/PageLayout'
+import Helmet from 'atoms/Helmet'
+import Header from 'components/Header'
+import Subscribe from 'components/Subscribe'
+import HeroBanner from 'components/HeroBanner'
+import Footer from 'components/Footer'
 
 const Index = () => {
   return (
-    <CenterLayout>
-      <Helmet title="Home" path="home" />
-    </CenterLayout>
+    <PageLayout>
+      <Helmet title="Home" />
+      <Header />
+      <HeroBanner />
+      <Subscribe />
+      <Footer />
+    </PageLayout>
   )
 }
 
