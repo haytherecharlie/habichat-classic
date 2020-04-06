@@ -6,7 +6,7 @@ import TopLayout from 'layouts/TopLayout'
 const Landing = () => {
   return (
     <TopLayout>
-      <Header.Auth />
+      <Header.Auth title="SIGN IN" />
       <PhoneAuthForm />
     </TopLayout>
   )

@@ -9,7 +9,7 @@ import cocogoose from 'assets/fonts/cocogoose.otf'
 import helvetica from 'assets/fonts/helvetica-regular.otf'
 import * as A from 'services/redux/actions'
 
-const useInitApplication = () => {
+const usePrecaching = () => {
   console.disableYellowBox = true
   const dispatch = useDispatch()
   const { providerData } = useSelector(s => s.user)
@@ -35,7 +35,7 @@ const useInitApplication = () => {
 
   const checkAuthState = () => {
     auth.onAuthStateChanged(async user => {
-      user ? dispatch({ type: A.SIGN_IN, providerData: user.providerData[0] }) : dispatch({ type: A.SIGN_OUT, providerData })
+      user ? dispatch({ type: A.SIGN_IN, value: user }) : dispatch({ type: A.SIGN_OUT })
       return SplashScreen.hide()
     })
   }
@@ -48,4 +48,4 @@ const useInitApplication = () => {
   }, [])
 }
 
-export default useInitApplication
+export default usePrecaching

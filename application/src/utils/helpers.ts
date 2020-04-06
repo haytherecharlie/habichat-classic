@@ -1,5 +1,6 @@
-import { formatDistance } from 'date-fns'
 import { Platform } from 'react-native'
+import { formatDistance } from 'date-fns'
+import avatars from 'config/avatars.json'
 
 // Fetch headers.
 const headers = { 'Content-type': 'application/json', Accept: 'application/json' }
@@ -12,6 +13,14 @@ export const formatTimestamp = time => {
   ? formatDistance(new Date(time.hasOwnProperty('_seconds') ? time._seconds * 1000 : time.seconds * 1000), new Date().getTime(), { addSuffix: true })
   : 'just now'
 }
+
+// Random Avatar
+export const randomAvatar = () => {
+  const max = avatars.length - 1
+  const min = 0
+  return avatars[Math.floor(Math.random() * (max - min + 1) + min)]
+}
+
 
 // Validate strings.
 export const vName = n => (/^([a-zA-Z]+\s)*[a-zA-Z]+$/.test(n) ? 'valid' : 'invalid')

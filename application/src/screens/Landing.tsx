@@ -14,7 +14,6 @@ const Landing = () => {
       <Header.Blank />
       <CenterLayout>
         <PillButton onPress={() => dispatch({ type: A.NAVIGATE, screen: 'sign-in' })}>SIGN IN</PillButton>
-        <PillButton onPress={() => dispatch({ type: A.NAVIGATE, screen: 'register' })}>REGISTER</PillButton>
       </CenterLayout>
     </TopLayout>
   )

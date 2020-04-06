@@ -1,15 +1,15 @@
 import React, { forwardRef } from 'react'
 import Text from 'atoms/Text'
-import * as S from './FormInput.style'
+import * as S from './NameInput.style'
 
-const FormInput = (props, ref) => {
+const NameInput = (props, ref) => {
   const error = props.error
   const title = (props.title || '').toUpperCase()
 
   const defaultProps = {
     ref,
     autoFocus: false,
-    clearButtonMode: 'off',
+    clearButtonMode: 'never',
     blurOnSubmit: false,
     multiline: false,
     autoCorrect: true,
@@ -22,12 +22,12 @@ const FormInput = (props, ref) => {
   }
 
   return (
-    <S.FormInput>
+    <S.NameInput>
       <Text {...S.Title}>{title}</Text>
       <S.Input {...defaultProps} />
       {error && <S.ErrorText>{error}</S.ErrorText>}
-    </S.FormInput>
+    </S.NameInput>
   )
 }
 
-export default forwardRef(FormInput)
+export default forwardRef(NameInput)

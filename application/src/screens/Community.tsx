@@ -8,7 +8,7 @@ import MessageList from 'components/MessageList'
 import Compose from 'components/Compose'
 
 const Community = () => {
-  const { displayName } = useSelector(s => s.user.providerData)
+  const { displayName } = useSelector(s => s.user.account)
   return (
     <CenterLayout>
       <Text>{displayName}</Text>

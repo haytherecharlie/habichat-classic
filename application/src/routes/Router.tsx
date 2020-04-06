@@ -1,25 +1,28 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import Error from 'screens/Error'
 import Community from 'screens/Community'
+import Error from 'screens/Error'
+import Initialization from 'screens/Initialization'
 import Landing from 'screens/Landing'
-import SignIn from 'screens/SignIn'
 import Register from 'screens/Register'
-import useInitApplication from 'utils/hooks/useInitApplication'
+import SignIn from 'screens/SignIn'
+import usePrecaching from 'utils/hooks/usePrecaching'
 
 function Router() {
-  useInitApplication()
+  usePrecaching()
   const { screen } = useSelector(s => s.app)
 
   switch (screen) {
+    case 'community':
+      return <Community />
+    case 'initialization':
+      return <Initialization />
     case 'landing':
       return <Landing />
     case 'sign-in':
       return <SignIn />
     case 'register':
       return <Register />
-    case 'community':
-      return <Community />
     default:
       return <Error />
   }

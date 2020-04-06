@@ -11,7 +11,7 @@ const Captcha = ({ webView, onMessage }) => {
       <WebView
         ref={webView}
         keyboardDisplayRequiresUserAction={false}
-        source={{ uri: `https://habi.chat/app-captcha/?darkMode=${theme.DARK_MODE}`, baseUrl: 'https://habi.chat/app-captcha/' }}
+        source={{ uri: `https://habi.chat/recaptcha/?dm=${theme.DARK_MODE}`, baseUrl: 'https://habi.chat/app-captcha/' }}
         javaScriptEnabled={true}
         onMessage={msg => onMessage(msg.nativeEvent.data)}
         domStorageEnabled

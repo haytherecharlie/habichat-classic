@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { View, TextInput, Text } from 'react-native'
 import theme from 'assets/theme'
 
-export const FormInput = styled(View)({
+export const NameInput = styled(View)({
   width: `100%`,
   marginTop: 20
 })

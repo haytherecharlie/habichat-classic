@@ -26,7 +26,7 @@ const Spinner = ({ text = '' }) => {
             cy={20}
             r={18}
             strokeWidth={4}
-            stroke={theme.PRIMARY_COLOR}
+            stroke={theme.BRAND_COLOR}
             fill="transparent"
             strokeDasharray={Math.PI * 25}
             strokeLinecap="round"
