@@ -15,8 +15,7 @@ firebase.initializeApp({
   measurementId: serviceAccount.measurementId
 })
 
-export const fb = firebase
-export const auth = firebase.auth()
-export const db = firebase.firestore()
-export const hd = firebase.storage().ref()
-export const timestamp = firebase.firestore.Timestamp
+export const auth = firebase.auth
+export const db = firebase.firestore
+export const hd = firebase.storage
+export const timestamp = db.Timestamp

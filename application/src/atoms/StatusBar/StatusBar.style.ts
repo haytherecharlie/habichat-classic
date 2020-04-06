@@ -9,7 +9,7 @@ export const StatusBar = styled(View)({
   background: theme.BACKGROUND_COLOR
 })
 
-export const SBar = {
+export const RnStatusBar = {
   barStyle: theme.DARK_MODE ? 'light-content' : 'dark-content',
   backgroundColor: theme.BACKGROUND_COLOR
 }

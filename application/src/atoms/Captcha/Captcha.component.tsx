@@ -3,17 +3,17 @@ import WebView from 'react-native-webview'
 import theme from 'assets/theme'
 import * as S from './Captcha.style'
 
-const Captcha = ({ webView, onMessage }) => {
+const Captcha = ({ webRef, update }) => {
   const [loaded, setLoaded] = useState(false)
 
   return (
     <S.Captcha loaded={loaded}>
       <WebView
-        ref={webView}
+        ref={webRef}
         keyboardDisplayRequiresUserAction={false}
-        source={{ uri: `https://habi.chat/recaptcha/?dm=${theme.DARK_MODE}`, baseUrl: 'https://habi.chat/app-captcha/' }}
+        source={{ uri: `https://habi.chat/recaptcha/?dm=${theme.DARK_MODE}` }}
         javaScriptEnabled={true}
-        onMessage={msg => onMessage(msg.nativeEvent.data)}
+        onMessage={({ nativeEvent }) => update({ type: 'token', value: JSON.parse(nativeEvent.data) })}
         domStorageEnabled
         onLoad={() => setTimeout(() => setLoaded(true), 50)}
         automaticallyAdjustContentInsets={false}

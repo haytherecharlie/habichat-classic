@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { View, TextInput, Text } from 'react-native'
+import { View, TextInput } from 'react-native'
 import theme from 'assets/theme'
 
 export const NameInput = styled(View)({
@@ -25,16 +25,4 @@ export const Input = styled(TextInput)({
     if (p.validation === 'valid') return `1px solid ${theme.VALID_GREEN}`
     if (p.validation === 'invalid') return `1px solid ${theme.INVALID_RED}`
   }
-})
-
-export const Title = {
-  size: 'h3',
-  style: { paddingLeft: 20 }
-}
-
-export const ErrorText = styled(Text)({
-  color: theme.INVALID_RED,
-  fontWeight: 600,
-  width: `100%`,
-  textAlign: 'center'
 })

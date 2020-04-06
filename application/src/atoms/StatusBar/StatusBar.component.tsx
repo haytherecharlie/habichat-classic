@@ -1,11 +1,11 @@
 import React from 'react'
-import { StatusBar as SBar } from 'react-native'
+import { StatusBar as RnStatusBar } from 'react-native'
 import * as S from './StatusBar.style'
 
 const StatusBar = () => {
   return (
     <S.StatusBar>
-      <SBar {...S.SBar} />
+      <RnStatusBar { ...S.RnStatusBar } />
     </S.StatusBar>
   )
 }

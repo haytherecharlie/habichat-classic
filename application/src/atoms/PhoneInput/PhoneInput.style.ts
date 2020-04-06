@@ -2,8 +2,6 @@ import styled from 'styled-components'
 import { View, Text, Platform } from 'react-native'
 import theme from 'assets/theme'
 
-const android = Platform.OS === 'android'
-
 export const PhoneInput = styled(View)({
   display: 'flex',
   flexDirection: 'column',
@@ -13,29 +11,31 @@ export const PhoneInput = styled(View)({
 
 export const CountryCode = styled(Text)({
   position: 'absolute',
-  bottom: android ? 9 : 12,
+  top: Platform.OS === 'android' ? 60 : 58,
   left: 20,
   color: theme.PRIMARY_COLOR,
   fontSize: 14
 })
 
-export const Label = {
-  size: 'h3',
-  style: { paddingLeft: 15, marginBottom: 5 }
-}
-
-export const containerStyle = {
-  width: `100%`,
-  height: 40
-}
-
-export const inputStyle = {
-  flex: 1,
-  width: `100%`,
-  borderWidth: 1,
+export const InputBorder = styled(View)({
+  marginTop: 5,
   borderRadius: 25,
-  borderColor: theme.BRAND_COLOR,
-  backgroundColor: theme.OPAQUE_BRAND,
-  color: theme.PRIMARY_COLOR,
-  paddingLeft: 65
+  border: 1,
+  borderColor: p => theme[p.valid.toUpperCase()],
+  overflow: 'hidden'
+})
+
+export const PhoneNumberMask = {
+  containerStyle: {
+    width: `100%`,
+    height: 40,
+  },
+  style: {
+    flex: 1,
+    width: `100%`,
+    backgroundColor: theme.OPAQUE_BRAND,
+    color: theme.PRIMARY_COLOR,
+    paddingLeft: 65
+  },
+  placeholderTextColor: theme.INPUT_PLACEHOLDER
 }

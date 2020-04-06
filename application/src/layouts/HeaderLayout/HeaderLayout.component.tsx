@@ -1,6 +1,5 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import StatusBar from 'atoms/StatusBar'
-import theme from 'assets/theme'
 import * as S from './HeaderLayout.style'
 
 const HeaderLayout = ({ children = null }) => {

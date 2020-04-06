@@ -1,46 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PinCode from 'react-native-smooth-pincode-input'
-import { View } from 'react-native'
 import Text from 'atoms/Text'
-import theme from 'assets/theme'
+import { auth } from 'services/firebase'
 import * as S from './CodeInput.style'
 
-const CodeInput = ({ value, onTextChange }) => {
+const CodeInput = ({ code, token, update }) => {
+  useEffect(() => {
+    if (code.valid === 'valid') {
+      auth()
+        .signInWithCredential(auth.PhoneAuthProvider.credential(token.value, code.value))
+        .catch(err => console.log(err.code))
+    }
+  }, [code])
+
   return (
     <S.CodeInput>
-      <Text {...S.Label}>Enter Verification Code</Text>
+      <Text size="label">Enter Verification Code</Text>
       <PinCode
         autoFocus
         cellSize={36}
         codeLength={6}
         restrictToNumbers
-        cellStyle={{
-          borderBottomWidth: 1,
-          borderColor: theme.INPUT_PLACEHOLDER
-        }}
-        cellStyleFocused={{
-          borderColor: theme.BRAND_COLOR
-        }}
-        textStyle={{
-          fontSize: 24,
-          color: theme.INPUT_PLACEHOLDER
-        }}
-        textStyleFocused={{
-          color: theme.INPUT_PLACEHOLDER
-        }}
-        value={value}
-        onTextChange={c => onTextChange(c)}
-        placeholder={
-          <View
-            style={{
-              width: 10,
-              height: 10,
-              borderRadius: 25,
-              opacity: 0.3,
-              backgroundColor: theme.BRAND_COLOR
-            }}></View>
-        }
+        value={code.value}
+        onTextChange={code => update({ type: 'code', value: code })}
+        placeholder={<S.Dot />}
+        {...S.PinCode}
       />
+      {code.error && <S.ErrorText>{code.error}</S.ErrorText>}
     </S.CodeInput>
   )
 }

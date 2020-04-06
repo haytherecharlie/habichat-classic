@@ -7,25 +7,25 @@ const NameInput = (props, ref) => {
   const title = (props.title || '').toUpperCase()
 
   const defaultProps = {
-    ref,
-    autoFocus: false,
-    clearButtonMode: 'never',
-    blurOnSubmit: false,
-    multiline: false,
+    autoCapitalize: 'words',
+    autoCompleteType: 'name',
     autoCorrect: true,
-    spellCheck: false,
-    autoCapitalize: 'none',
-    autoCompleteType: 'off',
-    returnKeyType: 'next',
+    autoFocus: false,
+    blurOnSubmit: false,
+    clearButtonMode: 'never',
+    multiline: false,
     placeholderTextColor: `#999`,
+    returnKeyType: 'next',
+    spellCheck: false,
+    ref,
     ...props
   }
 
   return (
     <S.NameInput>
-      <Text {...S.Title}>{title}</Text>
+      <Text size="label" style={{ marginLeft: 20 }}>{title}</Text>
       <S.Input {...defaultProps} />
-      {error && <S.ErrorText>{error}</S.ErrorText>}
+      {error && <Text size="error">{error}</Text>}
     </S.NameInput>
   )
 }

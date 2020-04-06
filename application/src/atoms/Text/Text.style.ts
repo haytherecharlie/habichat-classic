@@ -23,6 +23,19 @@ export const h3 = styled(Text)(({ style }) => ({
   ...style
 }))
 
+export const Label = styled(Text)({
+  fontSize: 14,
+  fontFamily: 'cocogoose',
+  color: theme.PRIMARY_COLOR
+})
+
+export const Error = styled(Text)({
+  color: theme.INVALID_RED,
+  fontWeight: 600,
+  width: `100%`,
+  textAlign: 'center'
+})
+
 export const p = styled(Text)(({ style }) => ({
   fontSize: 14,
   color: theme.PRIMARY_COLOR,

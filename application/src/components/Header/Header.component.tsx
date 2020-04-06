@@ -14,11 +14,22 @@ const Auth = ({ title = '' }) => {
   )
 }
 
+const CreateProfile = ({ title = '' }) => {
+  return (
+    <HeaderLayout>
+      <S.Placeholder />
+      <Text size="h1">{title.toUpperCase()}</Text>
+      <S.Placeholder />
+    </HeaderLayout>
+  )
+}
+
 const Blank = () => {
   return <HeaderLayout />
 }
 
 export default {
   Auth,
-  Blank
+  Blank,
+  CreateProfile
 }

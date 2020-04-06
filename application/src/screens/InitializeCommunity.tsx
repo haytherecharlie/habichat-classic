@@ -1,10 +1,10 @@
 import React from 'react'
 import CenterLayout from 'layouts/CenterLayout'
 import Spinner from 'atoms/Spinner'
-import useInitialization from 'utils/hooks/useInitialization'
+import useCommunityInitialization from 'utils/hooks/useCommunityInitialization'
 
-const Initialization = () => {
-  useInitialization()
+const InitializeCommunity = () => {
+  useCommunityInitialization()
 
   return (
     <CenterLayout>
@@ -13,4 +13,4 @@ const Initialization = () => {
   )
 }
 
-export default Initialization
+export default InitializeCommunity

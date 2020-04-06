@@ -4,9 +4,9 @@ import { useDispatch } from 'react-redux'
 import { SplashScreen } from 'expo'
 import { loadAsync } from 'expo-font'
 import { kShow, kHide } from 'utils/helpers'
-import { auth } from 'services/firebase'
 import cocogoose from 'assets/fonts/cocogoose.otf'
 import helvetica from 'assets/fonts/helvetica-regular.otf'
+import { auth } from 'services/firebase'
 import * as A from 'services/redux/actions'
 
 const usePrecaching = () => {
@@ -33,7 +33,7 @@ const usePrecaching = () => {
   }
 
   const checkAuthState = () => {
-    auth.onAuthStateChanged(async user => {
+    auth().onAuthStateChanged(async user => {
       user ? dispatch({ type: A.SIGN_IN, value: user }) : dispatch({ type: A.SIGN_OUT })
       return SplashScreen.hide()
     })
