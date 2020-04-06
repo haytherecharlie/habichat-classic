@@ -8,7 +8,7 @@ const Auth = ({ title = '' }) => {
   return (
     <HeaderLayout>
       <BackButton screen="landing" />
-      <Text size="h1">{title.toUpperCase()}</Text>
+      <Text type="h2" style={S.TitleStyle} text={title}></Text>
       <S.Placeholder />
     </HeaderLayout>
   )
@@ -18,7 +18,7 @@ const CreateProfile = ({ title = '' }) => {
   return (
     <HeaderLayout>
       <S.Placeholder />
-      <Text size="h1">{title.toUpperCase()}</Text>
+      <Text type="h2" style={S.TitleStyle} text={title}></Text>
       <S.Placeholder />
     </HeaderLayout>
   )

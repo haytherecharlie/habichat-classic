@@ -13,7 +13,7 @@ const Community = () => {
   return (
     <CenterLayout>
       <Avatar source={{ uri: photoURL }} onPress={() => auth().signOut()} />
-      <Text size="h3">{displayName}</Text>
+      <Text type="h3" text={displayName} unique></Text>
       {/* <SubHeader /> */}
       {/* <MessageList />
       <Compose /> */}

@@ -1,10 +1,10 @@
 import React, { forwardRef } from 'react'
 import Text from 'atoms/Text'
+import translate from 'language/translate'
 import * as S from './NameInput.style'
 
 const NameInput = (props, ref) => {
-  const error = props.error
-  const title = (props.title || '').toUpperCase()
+  const { error, title, placeholder } = props
 
   const defaultProps = {
     autoCapitalize: 'words',
@@ -18,14 +18,15 @@ const NameInput = (props, ref) => {
     returnKeyType: 'next',
     spellCheck: false,
     ref,
-    ...props
+    ...props,
+    placeholder: translate.t(placeholder)
   }
 
   return (
     <S.NameInput>
-      <Text size="label" style={{ marginLeft: 20 }}>{title}</Text>
+      <Text type="label" style={{ marginLeft: 20 }} text={title} />
       <S.Input {...defaultProps} />
-      {error && <Text size="error">{error}</Text>}
+      {error && <Text type="error" text={error} />}
     </S.NameInput>
   )
 }

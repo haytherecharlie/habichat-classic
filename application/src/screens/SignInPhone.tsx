@@ -12,7 +12,7 @@ const SignInPhone = () => {
 
   return (
     <TopLayout>
-      <Header.Auth title="SIGN IN" />
+      <Header.Auth title="sign-in" />
       {field.step.value === 'phone' && (
         <ScrollLayout>
           <PhoneInput phone={field.phone} update={update} webRef={field.webview.ref} />

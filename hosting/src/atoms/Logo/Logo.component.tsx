@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <S.Logo>
       <S.Icon src={habichat} alt="habichat logo" />
-      <S.Text size="h2">habichat</S.Text>
+      <S.Text type="h2">habichat</S.Text>
     </S.Logo>
   )
 }

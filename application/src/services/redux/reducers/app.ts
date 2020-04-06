@@ -1,9 +1,10 @@
 import * as A from '../actions'
 
 const defaultState = {
-  screen: null,
   initialization: 'pending',
-  keyboardUp: false
+  keyboardUp: false,
+  language: 'en',
+  screen: null,
 }
 
 const application = (state = defaultState, action) => {

@@ -3,12 +3,10 @@ import Text from 'atoms/Text'
 import theme from 'assets/theme'
 import * as S from './PillButton.style'
 
-const PillButton = ({ onPress, children }) => {
+const PillButton = ({ onPress, text = '', style = {} }) => {
   return (
-    <S.PillButton onPress={onPress}>
-      <Text size="h3" style={{ color: theme.WHITE }}>
-        {children}
-      </Text>
+    <S.PillButton onPress={onPress} style={style}>
+      <Text text={text} type="h3" style={{ color: theme.WHITE, textTransform: 'uppercase' }}></Text>
     </S.PillButton>
   )
 }

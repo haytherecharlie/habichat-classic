@@ -24,11 +24,11 @@ const useCreateProfileReducer = () => {
         return {
           first:
             vName(state.first.value) !== 'valid'
-              ? { ...state.first, valid: 'invalid', error: 'Please include a valid first name.' }
+              ? { ...state.first, valid: 'invalid', error: 'first-name-error' }
               : state.first,
           last:
             vName(state.last.value) !== 'valid'
-              ? { ...state.last, valid: 'invalid', error: 'Please include a valid last name.' }
+              ? { ...state.last, valid: 'invalid', error: 'last-name-error' }
               : state.last
         }
       default:

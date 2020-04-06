@@ -22,7 +22,7 @@ const useFormValidation = () => {
           : { ...state, code: { ...state.code, value, valid: 'invalid', error: null } }
       case 'phone':
         if (value.length >= 3 && !vPhone(value.substring(0, 3))) {
-          return { ...state, phone: { ...state.phone, value, valid: 'invalid', error: 'Invalide canadaian number' } }
+          return { ...state, phone: { ...state.phone, value, valid: 'invalid', error: 'canadian-phone-error' } }
         }
         return value.length === 10
           ? { ...state, phone: { ...state.phone, value, valid: valid ? valid : 'valid', error: null } }
@@ -32,7 +32,7 @@ const useFormValidation = () => {
 
       // Firebase Auth Errors.
       case 'auth/invalid-verification-code':
-        return { ...state, code: { ...state.code, valid: 'invalid', error: 'Incorrect verification code.' } }
+        return { ...state, code: { ...state.code, valid: 'invalid', error: 'verification-code-error' } }
       default:
         return state
     }

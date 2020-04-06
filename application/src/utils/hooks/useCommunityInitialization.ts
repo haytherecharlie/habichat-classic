@@ -8,7 +8,7 @@ const useInitialization = () => {
 
   useEffect(() => {
     if (!displayName || !photoURL) {
-      dispatch({ type: A.NAVIGATE, screen: 'register' })
+      dispatch({ type: A.NAVIGATE, screen: 'create-profile' })
     } else {
       dispatch({ type: A.NAVIGATE, screen: 'community' })
     }

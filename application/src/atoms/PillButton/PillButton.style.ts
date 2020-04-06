@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import theme from 'assets/theme'
 import { TouchableOpacity } from 'react-native'
 
-export const PillButton = styled(TouchableOpacity)({
+export const PillButton = styled(TouchableOpacity)(({ style }) => ({
   width: `100%`,
   display: 'flex',
   alignItems: 'center',
@@ -10,5 +10,5 @@ export const PillButton = styled(TouchableOpacity)({
   background: theme.BRAND_COLOR,
   height: 40,
   borderRadius: 25,
-  marginTop: 30
-})
+  ...style
+}))

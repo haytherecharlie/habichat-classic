@@ -15,7 +15,7 @@ const Captcha = ({ webRef, update }) => {
         javaScriptEnabled={true}
         onMessage={({ nativeEvent }) => update({ type: 'token', value: JSON.parse(nativeEvent.data) })}
         domStorageEnabled
-        onLoad={() => setTimeout(() => setLoaded(true), 50)}
+        onLoad={() => setTimeout(() => setLoaded(true), 75)}
         automaticallyAdjustContentInsets={false}
         allowFileAccessFromFileURLs={true}
         scalesPageToFit={false}

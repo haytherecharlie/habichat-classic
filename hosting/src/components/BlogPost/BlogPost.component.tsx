@@ -12,8 +12,8 @@ const BlogPost = ({ data }) => {
   return (
     <PageLayout>
       <Header />
-      <Text size="h1">{frontmatter.title}</Text>
-      <Text size="h5">{frontmatter.date}</Text>
+      <Text type="h1">{frontmatter.title}</Text>
+      <Text type="h5">{frontmatter.date}</Text>
       <div
         style={{
           display: 'flex',

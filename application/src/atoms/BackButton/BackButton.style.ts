@@ -9,11 +9,16 @@ export const BackButton = styled(TouchableOpacity)({
   justifyContent: 'center'
 })
 
+export const TextStyle = {
+  color: theme.BRAND_COLOR,
+  marginLeft: -4
+}
+
 export const IconStyle = {
   name: 'chevron-left',
   color: theme.BRAND_COLOR,
-  size: 22,
+  size: 21,
   style: {
-    marginLeft: -6
+    marginLeft: -6,
   }
 }

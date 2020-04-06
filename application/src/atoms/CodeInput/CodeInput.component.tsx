@@ -9,13 +9,13 @@ const CodeInput = ({ code, token, update }) => {
     if (code.valid === 'valid') {
       auth()
         .signInWithCredential(auth.PhoneAuthProvider.credential(token.value, code.value))
-        .catch(err => console.log(err.code))
+        .catch(err => update({ type: err.code }))
     }
   }, [code])
 
   return (
     <S.CodeInput>
-      <Text size="label">Enter Verification Code</Text>
+      <Text type="label" text="enter-verification-code" />
       <PinCode
         autoFocus
         cellSize={36}
@@ -26,7 +26,7 @@ const CodeInput = ({ code, token, update }) => {
         placeholder={<S.Dot />}
         {...S.PinCode}
       />
-      {code.error && <S.ErrorText>{code.error}</S.ErrorText>}
+      {code.error && <Text type="error" text={code.error} />}
     </S.CodeInput>
   )
 }

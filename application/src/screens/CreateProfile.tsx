@@ -15,32 +15,29 @@ const CreateProfile = () => {
 
   const submitForm = async () => {
     if ([first, last].some(o => o.valid === 'valid')) {
-      try {
-        await auth.currentUser.updateProfile({
+      await auth().currentUser.updateProfile({
           displayName: `${city.value}, ${last.value}, ${first.value}`,
           photoURL: avatar.value
         })
-        return dispatch({ type: A.SIGN_IN, value: auth.currentUser })
-      } catch (err) {
-        console.log(err)
-      }
+        .catch(err => console.log(err))
+      return dispatch({ type: A.SIGN_IN, value: auth().currentUser })
     }
     return update({ type: 'find-errors' })
   }
 
   return (
     <TopLayout>
-      <Header.CreateProfile title="CREATE PROFILE" />
+      <Header.CreateProfile title="create-profile" />
       <ScrollLayout>
         <NameInput
           autoFocus={true}
           error={first.error}
-          onChangeText={t => update({ type: 'first', value: t })}
+          onChangeText={value => update({ type: 'first', value })}
           onSubmitEditing={() => last.ref.current.focus()}
-          placeholder="Your First Name"
+          placeholder="your-first-name"
           ref={first.ref}
           returnKeyType="next"
-          title="first name"
+          title="first-name"
           validation={first.valid}
           value={first.value}
         />
@@ -49,15 +46,15 @@ const CreateProfile = () => {
           autoCapitalize="words"
           blurOnSubmit={true}
           error={last.error}
-          onChangeText={t => update({ type: 'last', value: t })}
-          placeholder="Your Last Name"
+          onChangeText={value => update({ type: 'last', value })}
+          placeholder="your-last-name"
           ref={last.ref}
           returnKeyType="done"
-          title="last name"
+          title="last-name"
           validation={last.valid}
           value={last.value}
         />
-        <PillButton onPress={submitForm}>NEXT</PillButton>
+        <PillButton onPress={submitForm} text="next" style={{ marginTop: 30 }}></PillButton>
       </ScrollLayout>
     </TopLayout>
   )

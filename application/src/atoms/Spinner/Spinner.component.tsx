@@ -33,7 +33,7 @@ const Spinner = ({ text = '' }) => {
           />
         </Svg>
       </Animated.View>
-      <Text size="h3">{text}</Text>
+      <Text type="h3">{text}</Text>
     </S.Spinner>
   )
 }

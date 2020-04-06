@@ -8,12 +8,11 @@ import * as A from 'services/redux/actions'
 
 const Landing = () => {
   const dispatch = useDispatch()
-
   return (
     <TopLayout>
       <Header.Blank />
       <CenterLayout>
-        <PillButton onPress={() => dispatch({ type: A.NAVIGATE, screen: 'sign-in' })}>SIGN IN</PillButton>
+        <PillButton text="sign-in" onPress={() => dispatch({ type: A.NAVIGATE, screen: 'sign-in' })} />
       </CenterLayout>
     </TopLayout>
   )

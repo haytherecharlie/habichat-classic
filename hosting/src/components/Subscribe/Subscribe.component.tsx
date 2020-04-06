@@ -22,8 +22,8 @@ const Subscribe = () => {
 
   return (
     <S.Subscribe>
-      <Text size="h2">BE THE FIRST TO GET ACCESS TO HABICHAT</Text>
-      <Text size="p">Subscribe to receive updates and join our beta list.</Text>
+      <Text type="h2">BE THE FIRST TO GET ACCESS TO HABICHAT</Text>
+      <Text type="p">Subscribe to receive updates and join our beta list.</Text>
       <S.InputContainer>
         <S.Input ref={emailRef} type="email" placeholder={inputText} required />
         <S.Button onClick={saveEmailToFirebase}>Subscribe</S.Button>

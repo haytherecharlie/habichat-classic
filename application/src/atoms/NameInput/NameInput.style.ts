@@ -17,8 +17,6 @@ export const Input = styled(TextInput)({
   height: 40,
   borderRadius: 25,
   padding: `0% 25px`,
-  marginTop: 5,
-  marginBottom: 5,
   background: theme.OPAQUE_BRAND,
   border: p => {
     if (p.validation === 'pending') return `1px solid ${theme.BRAND_COLOR}`

@@ -10,7 +10,7 @@ const PhoneInput = ({ phone, webRef, update }) => {
 
   return (
     <S.PhoneInput>
-      <Text size="label" style={{ marginLeft: 15 }}>Phone Number</Text>
+      <Text type="label" style={{ marginLeft: 15 }} text="phone-number" />
       <S.InputBorder valid={phone.valid}>
         <PhoneNumberMask
           placeholder="(XXX) XXX-XXXX"
@@ -22,7 +22,7 @@ const PhoneInput = ({ phone, webRef, update }) => {
         />
       </S.InputBorder>
       <S.CountryCode>🇨🇦 +1</S.CountryCode>
-      {phone.error && <Text size="error">OH NOE</Text>}
+      {phone.error && <Text type="error" text={phone.error} />}
     </S.PhoneInput>
   )
 }

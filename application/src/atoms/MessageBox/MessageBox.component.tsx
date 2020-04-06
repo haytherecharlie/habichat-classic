@@ -12,7 +12,7 @@ const MessageBox = ({ message, member }) => {
       <S.WhiteBox elevation={1}>
         {member && <S.AuthorCircle source={{ uri: member.photoUrl }} alt="profile photo" />}
         <S.Header>
-          {member && <Text size="h3">{name}</Text>}
+          {member && <Text type="h3">{name}</Text>}
           {server ? (
             <S.Icon name="ios-checkmark-circle" color={theme.BRAND_COLOR} size={12} />
           ) : (
@@ -20,7 +20,7 @@ const MessageBox = ({ message, member }) => {
           )}
         </S.Header>
         <S.Body>
-          <Text size="body">{text}</Text>
+          <Text type="body">{text}</Text>
           {image && <S.ImageBody source={image} alt="image" />}
         </S.Body>
         <S.Time>{timestamp}</S.Time>

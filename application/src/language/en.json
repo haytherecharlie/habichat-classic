@@ -1,0 +1,16 @@
+{
+  "sign-in": "Sign In",
+  "back-button": "Back",
+  "phone-number": "Phone Number",
+  "canadian-phone-error": "Please enter a Canadian phone number.",
+  "enter-verification-code": "Enter Verification Code",
+  "verification-code-error": "Incorrect verification code.",
+  "create-profile": "Create Profile",
+  "first-name": "First Name",
+  "your-first-name": "Your First Name",
+  "first-name-error": "Invalid first name.",
+  "last-name": "Last Name",
+  "your-last-name": "Your Last Name",
+  "last-name-error": "Invalid last name.",
+  "next": "Next"
+}

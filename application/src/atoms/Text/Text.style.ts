@@ -30,6 +30,7 @@ export const Label = styled(Text)({
 })
 
 export const Error = styled(Text)({
+  marginTop: 5,
   color: theme.INVALID_RED,
   fontWeight: 600,
   width: `100%`,
