@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/theme'
 
 export const HamburgerMenu = styled('button')({
   height: `17px`,

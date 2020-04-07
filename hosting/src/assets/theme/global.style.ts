@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle({
     fontFamily:
       "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'",
     color: theme.PRIMARY_COLOR,
-    backgroundColor: theme.BACKGROUND_COLOR,
+    backgroundColor: theme.BACKGROUND_COLOR
   },
   '#gatsby-focus-wrapper': {
     minHeight: `100vh`,
@@ -67,7 +67,12 @@ const GlobalStyle = createGlobalStyle({
   },
   ms_viewport: { width: 'device-width' },
   tabindex___1___focus: { outline: '0!important' },
-  abbr_data_original_title: { WebkitTextDecoration: 'none dotted', textDecoration: 'none dotted', cursor: 'help', borderBottom: '0' },
+  abbr_data_original_title: {
+    WebkitTextDecoration: 'none dotted',
+    textDecoration: 'none dotted',
+    cursor: 'help',
+    borderBottom: '0'
+  },
   abbr_title: { WebkitTextDecoration: 'none dotted', textDecoration: 'none dotted', cursor: 'help', borderBottom: '0' },
   ol_ol: { marginBottom: '0' },
   ol_ul: { marginBottom: '0' },

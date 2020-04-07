@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/theme'
 export const Slide = styled('div')({
   flex: 6,
   alignSelf: `stretch`,

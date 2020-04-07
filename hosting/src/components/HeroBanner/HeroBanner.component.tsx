@@ -1,16 +1,17 @@
 import React from 'react'
 import habichatShadow from 'assets/images/habichat-shadow.png'
+import Text from 'atoms/Text'
 import * as S from './HeroBanner.style'
 
 const HeroBanner = () => {
   return (
-    <S.Wrapper>
-      <S.Image src={habichatShadow} alt=""/>
-      <S.Title>WELCOME TO THE COMMUNITY!</S.Title>
-      <S.Paragraph>
-        {`There's a lot going on in your neighbourhood, habichat makes it easy to connect, share and stay informed about everything happening in your community.`}
-      </S.Paragraph>
-    </S.Wrapper>
+    <S.HeroBanner>
+      <S.Content>
+        <S.Image src={habichatShadow} alt="habichat logo" />
+        <Text size="h2" text="welcome-to-the-community" style={{ textTransform: 'uppercase', color: '#FFF', textAlign: 'center'  }} />
+        <Text size="p" text="welcome-subtext" style={{ color: '#FFF', textAlign: 'center' }} />
+      </S.Content>
+    </S.HeroBanner>
   )
 }
 

@@ -1,14 +1,14 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { SET_DIMENSIONS } from 'services/redux/actions'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/theme'
 
 const useDimensions = () => {
   const dispatch = useDispatch()
   const breakPoint = theme.LARGE_VIEW
   
   useEffect(() => {
-    let previous = 'desktop'
+    let previous = 'mobile'
     const getSize = () => {
       if (window.innerWidth > breakPoint && previous !== 'desktop') {
         previous = 'desktop'

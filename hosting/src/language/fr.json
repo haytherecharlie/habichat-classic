@@ -1,6 +1,9 @@
 {
+  "placeholder": "placeholder",
   "brand-name": "Mon Appli",
   "header-home": "D'accueil",
-  "header-terms": "Conditions d'Utilisation",
-  "header-privacy": "Politique de Confidentialité"
+  "header-terms": "Les Conditions",
+  "header-privacy": "La Confidentialité",
+  "welcome-to-the-community": "BIENVENUE DANS LA COMMUNAUTÉ!",
+  "welcome-subtext": "Il se passe beaucoup de choses dans votre quartier, habichat vous permet de vous connecter, de partager et de rester informé de tout ce qui se passe dans votre communauté."
 }

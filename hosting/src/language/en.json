@@ -1,6 +1,9 @@
 {
+  "placeholder": "placeholder",
   "brand-name": "My App",
   "header-home": "Home",
   "header-terms": "Terms of Service",
-  "header-privacy": "Privacy Policy"
+  "header-privacy": "Privacy Policy",
+  "welcome-to-the-community": "WELCOME TO THE COMMUNITY!",
+  "welcome-subtext": "There is a lot going on in your neighborhood, habichat allows you to connect, share and stay informed about everything that is happening in your community."
 }

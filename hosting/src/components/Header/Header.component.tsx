@@ -28,9 +28,9 @@ const Header = () => {
         <S.Responsive>
           <S.Responsive justify="space-between" flex={3}>
             <Logo />
-            <Link href="/" translation="header-home" />
-            <Link href="/terms" translation="header-terms" />
-            <Link href="/privacy" translation="header-privacy" />
+            <Link href="/" text="header-home" />
+            <Link href="/terms" text="header-terms" />
+            <Link href="/privacy" text="header-privacy" />
           </S.Responsive>
           <S.Responsive justify="flex-end" flex={2}>
             <ChangeLocale />

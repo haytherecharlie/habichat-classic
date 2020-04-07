@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import TransitionLink from 'gatsby-plugin-transition-link/AniLink'
-import theme from 'assets/styles/theme.style'
+import theme from 'assets/theme'
 
 const linkStyle = {
   ...theme.FOCUS_OUTLINE,
