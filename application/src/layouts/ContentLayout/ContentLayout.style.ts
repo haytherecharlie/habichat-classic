@@ -1,14 +1,34 @@
 import styled from 'styled-components'
-import { View } from 'react-native'
+import { ScrollView, View } from 'react-native'
 
-export const ContentLayout = styled(View)(p => ({
+export const Center = styled(View)(({ style }) => ({
   flex: 1,
   width: `100%`,
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  justifyContent: p.justify || 'center',
-  paddingLeft: 20,
-  paddingRight: 20,
-  ...p.style
+  justifyContent: 'center',
+  paddingLeft: 18,
+  paddingRight: 18,
+  ...style
+}))
+
+export const Top = styled(View)(({ style }) => ({
+  flex: 1,
+  width: `100%`,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  paddingLeft: 18,
+  paddingRight: 18,
+  ...style
+}))
+
+export const Scroll = styled(ScrollView)(({ style }) => ({
+  margin: 'auto',
+  width: `100%`,
+  display: 'flex',
+  padding: `0px 25px`,
+  ...style
 }))

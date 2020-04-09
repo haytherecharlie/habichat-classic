@@ -1,15 +1,20 @@
 import React from 'react'
-import CenterLayout from 'layouts/CenterLayout'
 import Spinner from 'atoms/Spinner'
+import Header from 'components/Header'
+import ContentLayout from 'layouts/ContentLayout'
+import ScreenLayout from 'layouts/ScreenLayout'
 import useCommunityInitialization from 'utils/hooks/useCommunityInitialization'
 
 const InitializeCommunity = () => {
   useCommunityInitialization()
 
   return (
-    <CenterLayout>
-      <Spinner />
-    </CenterLayout>
+    <ScreenLayout>
+      <Header.Basic />
+      <ContentLayout>
+        <Spinner />
+      </ContentLayout>
+    </ScreenLayout>
   )
 }
 

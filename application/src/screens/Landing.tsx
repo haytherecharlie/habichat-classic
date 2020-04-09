@@ -8,13 +8,13 @@ import * as A from 'services/redux/actions'
 
 const Landing = () => {
   const dispatch = useDispatch()
-  
+
   return (
     <ScreenLayout>
       <Header.Basic />
-      <ContentLayout justify="center">
+      <ContentLayout.Center>
         <PillButton text="sign-in" onPress={() => dispatch({ type: A.NAVIGATE, screen: 'sign-in' })} />
-      </ContentLayout>
+      </ContentLayout.Center>
     </ScreenLayout>
   )
 }

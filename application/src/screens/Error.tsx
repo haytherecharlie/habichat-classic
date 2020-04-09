@@ -1,13 +1,21 @@
 import React from 'react'
+import { Image } from 'react-native'
+import spiltMilk from 'assets/images/spilt-milk.png'
 import Text from 'atoms/Text'
-import CenterLayout from 'layouts/CenterLayout'
+import Header from 'components/Header'
+import ScreenLayout from 'layouts/ScreenLayout'
+import ContentLayout from 'layouts/ContentLayout'
 
-const AppSplash = () => {
+const Error = () => {
   return (
-    <CenterLayout>
-      <Text text="error" />
-    </CenterLayout>
+    <ScreenLayout>
+      <Header.Basic />
+      <ContentLayout.Center>
+        <Image source={spiltMilk} style={{ width: 250, height: 100 }} />
+        <Text text="error" style={{ textAlign: 'center' }} />
+      </ContentLayout.Center>
+    </ScreenLayout>
   )
 }
 
-export default AppSplash
+export default Error

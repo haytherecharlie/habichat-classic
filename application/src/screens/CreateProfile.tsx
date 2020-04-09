@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux'
 import NameInput from 'atoms/NameInput'
 import PillButton from 'atoms/PillButton'
 import Header from 'components/Header'
-import ScrollLayout from 'layouts/ScrollLayout'
-import TopLayout from 'layouts/TopLayout'
+import ContentLayout from 'layouts/ContentLayout'
+import ScreenLayout from 'layouts/ScreenLayout'
 import { auth } from 'services/firebase'
 import * as A from 'services/redux/actions'
 import useCreateProfileReducer from 'utils/hooks/useCreateProfileReducer'
@@ -15,7 +15,8 @@ const CreateProfile = () => {
 
   const submitForm = async () => {
     if ([first, last].some(o => o.valid === 'valid')) {
-      await auth().currentUser.updateProfile({
+      await auth()
+        .currentUser.updateProfile({
           displayName: `${city.value}, ${last.value}, ${first.value}`,
           photoURL: avatar.value
         })
@@ -26,9 +27,9 @@ const CreateProfile = () => {
   }
 
   return (
-    <TopLayout>
+    <ScreenLayout>
       <Header.CreateProfile title="create-profile" />
-      <ScrollLayout>
+      <ContentLayout.Scroll>
         <NameInput
           autoFocus={true}
           error={first.error}
@@ -55,8 +56,8 @@ const CreateProfile = () => {
           value={last.value}
         />
         <PillButton onPress={submitForm} text="next" style={{ marginTop: 30 }}></PillButton>
-      </ScrollLayout>
-    </TopLayout>
+      </ContentLayout.Scroll>
+    </ScreenLayout>
   )
 }
 

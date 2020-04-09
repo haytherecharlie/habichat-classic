@@ -3,28 +3,28 @@ import Captcha from 'atoms/Captcha'
 import PhoneInput from 'atoms/PhoneInput'
 import CodeInput from 'atoms/CodeInput'
 import Header from 'components/Header'
-import ScrollLayout from 'layouts/ScrollLayout'
-import TopLayout from 'layouts/TopLayout'
+import ContentLayout from 'layouts/ContentLayout'
+import ScreenLayout from 'layouts/ScreenLayout'
 import usePhoneAuthReducer from 'utils/hooks/usePhoneAuthReducer'
 
 const SignInPhone = () => {
   const [field, update] = usePhoneAuthReducer()
 
   return (
-    <TopLayout>
+    <ScreenLayout>
       <Header.Auth title="sign-in" />
       {field.step.value === 'phone' && (
-        <ScrollLayout>
+        <ContentLayout.Scroll>
           <PhoneInput phone={field.phone} update={update} webRef={field.webview.ref} />
           <Captcha update={update} webRef={field.webview.ref} />
-        </ScrollLayout>
+        </ContentLayout.Scroll>
       )}
       {field.step.value === 'code' && (
-        <ScrollLayout>
+        <ContentLayout.Scroll>
           <CodeInput code={field.code} token={field.token} update={update} />
-        </ScrollLayout>
+        </ContentLayout.Scroll>
       )}
-    </TopLayout>
+    </ScreenLayout>
   )
 }
 
