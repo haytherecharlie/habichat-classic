@@ -68,7 +68,7 @@ export const GooglePlacesAutocomplete = {
     padding: 0,
     margin: 13,
     marginLeft: 10,
-    height: 15,
+    height: 20,
     flexDirection: 'row',
   },
   description: {
