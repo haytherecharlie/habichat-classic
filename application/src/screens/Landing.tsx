@@ -10,7 +10,7 @@ const Landing = () => {
   const dispatch = useDispatch()
   return (
     <TopLayout>
-      <Header.Blank />
+      <Header.Basic />
       <CenterLayout>
         <PillButton text="sign-in" onPress={() => dispatch({ type: A.NAVIGATE, screen: 'sign-in' })} />
       </CenterLayout>

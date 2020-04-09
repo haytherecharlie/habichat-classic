@@ -12,7 +12,7 @@ import * as A from 'services/redux/actions'
 const usePrecaching = () => {
   console.disableYellowBox = true
   const dispatch = useDispatch()
-  
+
   const keyboardUp = () => {
     try {
       Keyboard.addListener(kShow, () => dispatch({ type: A.KEYBOARD_UP, status: true }))
@@ -34,7 +34,17 @@ const usePrecaching = () => {
 
   const checkAuthState = () => {
     auth().onAuthStateChanged(async user => {
-      user ? dispatch({ type: A.SIGN_IN, value: user }) : dispatch({ type: A.SIGN_OUT })
+      if (user) {
+        const { uid, phoneNumber, photoURL, displayName } = user
+        if (displayName !== null) {
+          const { first, last, city, community } = JSON.parse(displayName)
+          dispatch({ type: A.SIGN_IN, value: { uid, first, last, city, community, phoneNumber, photoURL } })
+        } else {
+          dispatch({ type: A.SIGN_IN, value: { uid, phoneNumber } })
+        }
+      } else {
+        dispatch({ type: A.SIGN_OUT })
+      }
       return SplashScreen.hide()
     })
   }

@@ -4,10 +4,10 @@ import * as A from 'services/redux/actions'
 
 const useInitialization = () => {
   const dispatch = useDispatch()
-  const { displayName, photoURL } = useSelector(s => s.user.account)
+  const { city, community, first, last, photoURL } = useSelector(s => s.user.account)
 
   useEffect(() => {
-    if (!displayName || !photoURL) {
+    if (!city || !community || !first || !last || !photoURL) {
       dispatch({ type: A.NAVIGATE, screen: 'create-profile' })
     } else {
       dispatch({ type: A.NAVIGATE, screen: 'community' })

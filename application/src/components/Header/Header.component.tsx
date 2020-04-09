@@ -24,12 +24,12 @@ const CreateProfile = ({ title = '' }) => {
   )
 }
 
-const Blank = () => {
+const Basic = () => {
   return <HeaderLayout />
 }
 
 export default {
   Auth,
-  Blank,
+  Basic,
   CreateProfile
 }
