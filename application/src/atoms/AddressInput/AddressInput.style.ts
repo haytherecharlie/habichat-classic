@@ -5,7 +5,6 @@ import theme from 'assets/theme'
 export const AddressInput = styled(View)({
   display: 'flex',
   flexDirection: 'column',
-  paddingTop: 20,
   position: 'relative'
 })
 
@@ -60,15 +59,15 @@ export const GooglePlacesAutocomplete = {
     tintColor: theme.BRAND_COLOR
   },
   listView: {
-    marginLeft: 15,
-    marginRight: 15,
+    marginLeft: 0,
+    marginRight: 0,
   },
   row: {
     overflow: 'hidden',
     width: `85%`,
     padding: 0,
     margin: 13,
-    marginLeft: 7,
+    marginLeft: 10,
     height: 15,
     flexDirection: 'row',
   },

@@ -8,5 +8,7 @@ export const CenterLayout = styled(View)({
   flex: 1,
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
+  paddingLeft: 20,
+  paddingRight: 20
 })

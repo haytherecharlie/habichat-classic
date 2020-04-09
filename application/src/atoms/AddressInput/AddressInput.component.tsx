@@ -7,7 +7,6 @@ const AddressInput = () => {
   const { uid } = useSelector(s => s.user.account)
 
   return (
-    <S.AddressInput>
       <GooglePlacesAutocomplete
         autoFocus={true}
         placeholder="Your Street Address"
@@ -26,7 +25,6 @@ const AddressInput = () => {
           types: 'address'
         }}
       />
-    </S.AddressInput>
   )
 }
 

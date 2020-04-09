@@ -15,7 +15,7 @@ const Community = () => {
   return (
     <CenterLayout>
       <Header.Basic />
-      {/* <Avatar source={{ uri: photoURL }} onPress={() => auth().signOut()} /> */}
+      <Avatar source={{ uri: photoURL }} onPress={() => auth().signOut()} />
       {/* <Text type="h3" text={displayName} unique></Text> */}
       <AddressInput />
       {/* <SubHeader /> */}
