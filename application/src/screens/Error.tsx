@@ -5,7 +5,7 @@ import CenterLayout from 'layouts/CenterLayout'
 const AppSplash = () => {
   return (
     <CenterLayout>
-      <Text>Error</Text>
+      <Text text="error" />
     </CenterLayout>
   )
 }

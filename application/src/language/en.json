@@ -12,5 +12,9 @@
   "last-name": "Last Name",
   "your-last-name": "Your Last Name",
   "last-name-error": "Invalid last name.",
-  "next": "Next"
+  "street-address": "Street Address",
+  "your-street-address": "Your Street Address",
+  "use-current-location": "⚲ Use Current Location",
+  "next": "Next",
+  "error": "🚨SOMETHING WENT WRONG! 🚨"
 }

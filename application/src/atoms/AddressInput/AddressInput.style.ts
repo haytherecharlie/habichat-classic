@@ -1,9 +1,13 @@
 import styled from 'styled-components'
-import { View } from 'react-native'
+import { Platform, View } from 'react-native'
 import theme from 'assets/theme'
 
+const android = Platform.OS === 'android'
+
 export const AddressInput = styled(View)({
+  flex: 1,
   display: 'flex',
+  width: `100%`,
   flexDirection: 'column',
   position: 'relative'
 })
@@ -33,7 +37,7 @@ export const GooglePlacesAutocomplete = {
     borderLeftWidth: 1,
     borderRightWidth: 1,
     display: 'flex',
-    backgroundColor: theme.OPAQUE_BRAND,
+    backgroundColor: theme.OPAQUE_BRAND
   },
   textInput: {
     backgroundColor: 'transparent',
@@ -43,7 +47,7 @@ export const GooglePlacesAutocomplete = {
     paddingBottom: 0,
     paddingLeft: 0,
     paddingRight: 0,
-    marginTop: 0,
+    marginTop: android ? 0 : -1,
     marginLeft: 20,
     marginRight: 20,
     fontSize: 15,
@@ -60,7 +64,7 @@ export const GooglePlacesAutocomplete = {
   },
   listView: {
     marginLeft: 0,
-    marginRight: 0,
+    marginRight: 0
   },
   row: {
     overflow: 'hidden',
@@ -69,16 +73,16 @@ export const GooglePlacesAutocomplete = {
     margin: 13,
     marginLeft: 10,
     height: 20,
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   description: {
     color: theme.PRIMARY_COLOR
   },
   separator: {
     height: 1,
-    backgroundColor: theme.OPAQUE_BRAND,
+    backgroundColor: theme.OPAQUE_BRAND
   },
   predefinedPlacesDescription: {
     color: theme.BRAND_COLOR
-  },
+  }
 }

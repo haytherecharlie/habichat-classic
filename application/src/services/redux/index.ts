@@ -8,9 +8,11 @@ import members from './reducers/members'
 import user from './reducers/user'
 import * as A from './actions'
 
+const display = false
+
 const logger = createLogger({
   predicate: (getState, action) => {
-    if(action.type === A.SIGN_IN) {
+    if (action.type === '') {
       console.log(action)
     }
   }
@@ -25,4 +27,4 @@ const reducer = combineReducers({
   user
 })
 
-export default createStore(reducer, applyMiddleware(logger))
+export default display ? createStore(reducer, applyMiddleware(logger)) : createStore(reducer)
