@@ -3,9 +3,9 @@ import Text from 'atoms/Text'
 import theme from 'assets/theme'
 import * as S from './PillButton.style'
 
-const PillButton = ({ onPress, text = '', white = false }) => {
+const PillButton = ({ onPress, text = '', white = false, style = {} }) => {
   return (
-    <S.PillButton onPress={onPress} white={white}>
+    <S.PillButton onPress={onPress} white={white} style={style}>
       <Text
         text={text}
         type="h3"
