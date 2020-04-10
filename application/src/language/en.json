@@ -14,7 +14,14 @@
   "last-name-error": "Invalid last name.",
   "street-address": "Street Address",
   "your-street-address": "Your Street Address",
+  "email-address": "Email Address",
+  "your-email-address": "Your Email Address",
   "use-current-location": "⚲ Use Current Location",
   "next": "Next",
-  "error": "Uh oh! \n Something went wrong."
+  "error": "Uh oh! \n Something went wrong.",
+  "howdy-there-partner": "HOWDY THERE PARTNER,",
+  "habichat-not-available": "Habichat hasn't launched in your community, but we're working on it. Promise!",
+  "join-our-mailing-list": "JOIN OUR MAILING LIST BELOW,",
+  "never-miss-an-update": "and we'll let you know as soon as we launch!",
+  "join": "JOIN"
 }

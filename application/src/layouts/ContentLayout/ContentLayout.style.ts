@@ -8,8 +8,6 @@ export const Center = styled(View)(({ style }) => ({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  paddingLeft: 18,
-  paddingRight: 18,
   ...style
 }))
 
@@ -20,8 +18,6 @@ export const Top = styled(View)(({ style }) => ({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  paddingLeft: 18,
-  paddingRight: 18,
   ...style
 }))
 
@@ -29,6 +25,5 @@ export const Scroll = styled(ScrollView)(({ style }) => ({
   margin: 'auto',
   width: `100%`,
   display: 'flex',
-  padding: `0px 25px`,
   ...style
 }))

@@ -12,7 +12,7 @@ const Landing = () => {
   return (
     <ScreenLayout>
       <Header.Basic />
-      <ContentLayout.Center>
+      <ContentLayout.Center style={{ paddingLeft: 20, paddingRight: 20 }}>
         <PillButton text="sign-in" onPress={() => dispatch({ type: A.NAVIGATE, screen: 'sign-in' })} />
       </ContentLayout.Center>
     </ScreenLayout>

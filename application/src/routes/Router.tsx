@@ -4,13 +4,15 @@ import Community from 'screens/Community'
 import Error from 'screens/Error'
 import InitializeCommunity from 'screens/InitializeCommunity'
 import Landing from 'screens/Landing'
+import CityComingSoon from 'screens/CityComingSoon'
 import CreateProfile from 'screens/CreateProfile'
 import SignInPhone from 'screens/SignInPhone'
 import useAppInitialization from 'utils/hooks/useAppInitialization'
 
 function Router() {
-  useAppInitialization()
+  const loaded = useAppInitialization()
   const { screen } = useSelector(s => s.app)
+  if (!loaded) return null
 
   switch (screen) {
     case 'community':
@@ -23,8 +25,12 @@ function Router() {
       return <SignInPhone />
     case 'create-profile':
       return <CreateProfile />
-    default:
+    case 'city-coming-soon':
+      return <CityComingSoon />
+    case 'error':
       return <Error />
+    default:
+      return null
   }
 }
 

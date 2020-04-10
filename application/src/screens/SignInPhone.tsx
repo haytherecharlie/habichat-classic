@@ -14,13 +14,13 @@ const SignInPhone = () => {
     <ScreenLayout>
       <Header.Auth title="sign-in" />
       {field.step.value === 'phone' && (
-        <ContentLayout.Scroll>
+        <ContentLayout.Scroll style={{ paddingLeft: 20, paddingRight: 20 }}>
           <PhoneInput phone={field.phone} update={update} webRef={field.webview.ref} />
           <Captcha update={update} webRef={field.webview.ref} />
         </ContentLayout.Scroll>
       )}
       {field.step.value === 'code' && (
-        <ContentLayout.Scroll>
+        <ContentLayout.Scroll style={{ paddingLeft: 20, paddingRight: 20 }}>
           <CodeInput code={field.code} token={field.token} update={update} />
         </ContentLayout.Scroll>
       )}

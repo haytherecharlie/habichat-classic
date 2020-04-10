@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { View } from 'react-native'
+import { KeyboardAvoidingView } from 'react-native'
 import theme from 'assets/theme'
 
-export const AppLayout = styled(View)({
+export const AppLayout = styled(KeyboardAvoidingView)({
   flex: 1,
   width: `100%`,
   display: 'flex',

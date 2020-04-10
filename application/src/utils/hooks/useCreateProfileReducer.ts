@@ -1,16 +1,18 @@
 import { useReducer, useRef } from 'react'
-import { vName, randomAvatar } from 'utils/helpers'
+import { vAddress, vName, randomAvatar } from 'utils/helpers'
 
 const useCreateProfileReducer = () => {
   const defaultState = {
+    step: { value: 'address' },
     avatar: { value: randomAvatar() },
-    city: { value: `UCzo17XTeHoki6bHcy2B` },
+    address: { value: '', valid: 'pending', error: null },
     first: { value: '', valid: 'pending', error: null, ref: useRef() },
     last: { value: '', valid: 'pending', error: null, ref: useRef() }
   }
 
   const reducer = (state, action) => {
     const { value = state.value, valid } = action
+    console.log(vAddress(value) === 'valid')
     switch (action.type) {
       case 'first':
         return vName(value) === 'valid'
@@ -20,6 +22,10 @@ const useCreateProfileReducer = () => {
         return vName(value) === 'valid'
           ? { ...state, last: { ...state.last, value, valid: valid ? valid : 'valid', error: null } }
           : { ...state, last: { ...state.last, value, valid: 'invalid', error: null } }
+      case 'address':
+        return vAddress(value) === 'valid'
+          ? { ...state, step: 'name', address: { ...state.address, value, valid: valid ? valid : 'valid', error: null } }
+          : { ...state, address: { ...state.address, value, valid: 'invalid', error: null } }
       case 'find-errors':
         return {
           first:

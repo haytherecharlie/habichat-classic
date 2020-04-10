@@ -11,9 +11,9 @@ const InitializeCommunity = () => {
   return (
     <ScreenLayout>
       <Header.Basic />
-      <ContentLayout>
+      <ContentLayout.Center>
         <Spinner />
-      </ContentLayout>
+      </ContentLayout.Center>
     </ScreenLayout>
   )
 }
