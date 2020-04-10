@@ -1,5 +1,8 @@
 {
   "sign-in": "Sign In / Register",
+  "learn-more": "Learn More",
+  "privacy-policy": "Privacy Policy",
+  "terms-of-service": "Terms of Service",
   "back-button": "Back",
   "phone-number": "Phone Number",
   "canadian-phone-error": "Please enter a Canadian phone number.",

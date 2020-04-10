@@ -2,9 +2,7 @@ import styled from 'styled-components'
 import { ScrollView, View } from 'react-native'
 
 export const Center = styled(View)(({ style }) => ({
-  flex: 1,
   width: `100%`,
-  display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
@@ -12,18 +10,22 @@ export const Center = styled(View)(({ style }) => ({
 }))
 
 export const Top = styled(View)(({ style }) => ({
-  flex: 1,
   width: `100%`,
-  display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  justifyContent: 'center',
+  justifyContent: 'flex-start',
   ...style
 }))
 
 export const Scroll = styled(ScrollView)(({ style }) => ({
   margin: 'auto',
   width: `100%`,
-  display: 'flex',
   ...style
 }))
+
+export const Padding = styled(View)({
+  paddingLeft: 20,
+  paddingRight: 20,
+  width: `100%`,
+  flex: 1
+})
