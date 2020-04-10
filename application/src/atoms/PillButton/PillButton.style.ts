@@ -10,5 +10,7 @@ export const PillButton = styled(TouchableOpacity)(({ style }) => ({
   background: theme.BRAND_COLOR,
   height: 40,
   borderRadius: 25,
+  borderWidth: 2,
+  borderColor: theme.WHITE,
   ...style
 }))

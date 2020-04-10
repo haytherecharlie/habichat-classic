@@ -2,8 +2,8 @@
 
 export default {
   // Background Colors
-  DARK_BACKGROUND: `#000A18`,
-  LIGHT_BACKGROUND: `#EFF3F8`,
+  DARK_BACKGROUND: `#14002f`,
+  LIGHT_BACKGROUND: `#14002f`,
 
   // Foreground Colors
   DARK_FOREGROUND: `#000000`,

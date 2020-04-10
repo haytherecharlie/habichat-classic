@@ -1,7 +1,7 @@
 import { Appearance } from 'react-native-appearance'
 import C from './colors.style'
 
-const DARK_MODE = Appearance.getColorScheme() === 'dark'
+const DARK_MODE = Appearance.getColorScheme() !== 'dark'
 
 const SMALL_VIEW = 400
 const MEDIUM_VIEW = 700
