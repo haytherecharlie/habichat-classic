@@ -26,13 +26,13 @@ const Header = () => {
     return (
       <S.Header>
         <S.Responsive>
-          <S.Responsive justify="space-between" flex={3}>
+          <S.Responsive justify="space-between" flex={1.5}>
             <Logo />
             <Link href="/" text="header-home" />
             <Link href="/terms" text="header-terms" />
             <Link href="/privacy" text="header-privacy" />
           </S.Responsive>
-          <S.Responsive justify="flex-end" flex={2}>
+          <S.Responsive justify="flex-end" flex={1}>
             <ChangeLocale />
           </S.Responsive>
         </S.Responsive>

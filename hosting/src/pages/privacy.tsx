@@ -1,8 +1,9 @@
 import React from 'react'
+import TopLayout from 'layouts/TopLayout'
 import Helmet from 'atoms/Helmet'
 
 const Privacy = () => (
-  <React.Fragment>
+  <TopLayout>
     <Helmet title="Privacy Policy" path="privacy" />
     <h2>Our Privacy Policy</h2>
     <p>
@@ -36,7 +37,7 @@ const Privacy = () => (
     </p>
     <p>This policy is effective as of 1 August 2019.</p>
     <p>- Team Habichat</p>
-  </React.Fragment>
+  </TopLayout>
 )
 
 export default Privacy

@@ -5,13 +5,13 @@ import LogoGithub from 'react-ionicons/lib/LogoGithub'
 import theme from 'assets/theme'
 
 export const Footer = styled('header')({
+  height: 100,
   width: `100%`,
   display: `flex`,
   alignItems: `center`,
   justifyContent: `stretch`,
-  background: '#222',
+  background: theme.BACKGROUND_COLOR,
   padding: `0 15px`,
-  height: theme.FOOTER_HEIGHT,
   borderTop: `1px solid ${theme.BRAND_COLOR}`
 })
 

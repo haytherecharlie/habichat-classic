@@ -18,6 +18,7 @@ export const Header = styled('header')({
 
 export const Responsive = styled('div')({
   flex: p => p.flex || 1,
+  height: `100%`,
   maxWidth: theme.LARGE_VIEW,
   display: `flex`,
   flexDirection: 'row',

@@ -5,7 +5,7 @@ export const Logo = styled('div')({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
-  justifyContent: 'center',
+  justifyContent: 'center'
 })
 
 export const Icon = styled('img')({
@@ -14,11 +14,10 @@ export const Icon = styled('img')({
 })
 
 export const Text = styled('div')({
-  color: theme.BRAND_COLOR,
+  color: theme.PRIMARY_COLOR,
   letterSpacing: -1,
   marginTop: 6,
   marginLeft: 2,
   fontSize: 25,
-  fontFamily: 'cocogoose',
-  // textShadow: `-1px -1px 0 ${theme.BRAND_COLOR}, 1px -1px 0 ${theme.BRAND_COLOR}, -1px 1px 0 ${theme.BRAND_COLOR}, 1px 1px 0 ${theme.BRAND_COLOR}`
+  fontFamily: 'cocogoose'
 })

@@ -1,7 +1,9 @@
+// https://coolors.co/11151c-212d40-364156-7d4e57-d66853
+
 export default {
   // Background Colors
-  DARK_BACKGROUND: `#000A18`,
-  LIGHT_BACKGROUND: `#EFF3F8`,
+  DARK_BACKGROUND: `#14002f`,
+  LIGHT_BACKGROUND: `#14002f`,
 
   // Foreground Colors
   DARK_FOREGROUND: `#000000`,
