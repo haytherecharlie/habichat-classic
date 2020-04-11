@@ -3,7 +3,7 @@
   "scripts": {
     "build": "gatsby build",
     "deploy": "firebase deploy --only hosting",
-    "dev": "rm -rf public && set DEBUG=SSG* && gatsby develop -H 0.0.0.0",
+    "dev": "gatsby develop --host localhost --port 8000",
     "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
     "serve": "gatsby serve -p 3000"
   },
@@ -14,11 +14,13 @@
     "gatsby": "2.19.35",
     "gatsby-image": "^2.2.43",
     "gatsby-plugin-firebase": "^0.2.0-beta.4",
+    "gatsby-plugin-google-analytics": "^2.2.2",
     "gatsby-plugin-intl": "^0.3.3",
     "gatsby-plugin-manifest": "^2.2.45",
     "gatsby-plugin-offline": "^3.0.38",
     "gatsby-plugin-react-helmet": "^3.1.23",
     "gatsby-plugin-react-redux": "^1.1.0-0",
+    "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-sharp": "^2.5.3",
     "gatsby-plugin-sitemap": "^2.3.1",

@@ -6,6 +6,10 @@ const SMALL_VIEW = 400
 const MEDIUM_VIEW = 700
 const LARGE_VIEW = 924
 
+const SMALL_QUERY = `@media only screen and (max-width: ${SMALL_VIEW}px)`
+const MEDIUM_QUERY = `@media only screen and (max-width: ${MEDIUM_VIEW}px)`
+const LARGE_QUERY = `@media only screen and (max-width: ${LARGE_VIEW}px)`
+
 // https://coolors.co/11151c-212d40-364156-7d4e57-d66853
 const FONT_LIGHT = 200
 const FONT_REGULAR = 600
@@ -44,9 +48,9 @@ export default {
   SMALL_VIEW,
   MEDIUM_VIEW,
   LARGE_VIEW,
-  SMALL_QUERY: `@media only screen and (max-width: ${SMALL_VIEW}px)`,
-  MEDIUM_QUERY: `@media only screen and (max-width: ${MEDIUM_VIEW}px)`,
-  LARGE_QUERY: `@media only screen and (max-width: ${LARGE_VIEW}px)`,
+  SMALL_QUERY,
+  MEDIUM_QUERY,
+  LARGE_QUERY,
 
   // Element Sizing
   BORDER_RADIUS: 25,

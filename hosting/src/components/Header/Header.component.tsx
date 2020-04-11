@@ -1,10 +1,9 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { TOGGLE_NAV } from 'services/redux/actions'
-import Link from 'atoms/Link'
 import Logo from 'atoms/Logo'
-import ChangeLocale from 'atoms/ChangeLocale'
 import Hamburger from 'atoms/Hamburger'
+import Nav from 'components/Nav'
 import * as S from './Header.style'
 
 const Header = () => {
@@ -17,6 +16,7 @@ const Header = () => {
         <S.Responsive>
           <Logo />
           <Hamburger nav={nav} onClick={() => dispatch({ type: TOGGLE_NAV })} />
+          <Nav />
         </S.Responsive>
       </S.Header>
     )
@@ -26,15 +26,8 @@ const Header = () => {
     return (
       <S.Header>
         <S.Responsive>
-          <S.Responsive justify="space-between" flex={1.5}>
-            <Logo />
-            <Link to="/" text="header-home" />
-            <Link to="/terms" text="header-terms" />
-            <Link to="/privacy" text="header-privacy" />
-          </S.Responsive>
-          <S.Responsive justify="flex-end" flex={1}>
-            <ChangeLocale />
-          </S.Responsive>
+          <Logo />
+          <Nav />
         </S.Responsive>
       </S.Header>
     )
