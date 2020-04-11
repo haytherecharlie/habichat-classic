@@ -1,14 +1,14 @@
 import React from 'react'
 import Helmet from 'atoms/Helmet'
 import Captcha from 'atoms/Captcha'
-import CenterLayout from 'layouts/CenterLayout'
+import ScreenLayout from 'layouts/ScreenLayout'
 
 const Recaptcha = () => {
   return (
-    <CenterLayout>
+    <ScreenLayout>
       <Helmet title="Recaptcha" path="recaptcha" />
       <Captcha />
-    </CenterLayout>
+    </ScreenLayout>
   )
 }
 
