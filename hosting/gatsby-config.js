@@ -20,21 +20,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        output: `/sitemap.xml`,
-        exclude: [`/category/*`, `/path/to/page`],
-        serialize: ({ site, allSitePage }) =>
-          allSitePage.nodes.map(node => {
-            return {
-              url: `${site.wp.generalSettings.siteUrl}${node.path}`,
-              changefreq: `daily`,
-              priority: 0.7
-            }
-          })
-      }
-    },
-    {
       resolve: 'gatsby-plugin-firebase',
       options: {
         credentials: {
@@ -55,7 +40,7 @@ module.exports = {
         path: `${__dirname}/src/language`,
         languages: [`en`, `fr`],
         defaultLanguage: `en`,
-        redirect: false
+        redirect: true
       }
     },
     {
@@ -162,7 +147,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
-        exclude: [`/**/styleguide`, `/**/recaptcha`, `**/avatars/**`]
+        exclude: [`**/styleguide`, `**/recaptcha`, `**/avatars`]
       }
     }
   ]

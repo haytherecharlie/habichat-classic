@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import theme from 'assets/theme'
+import { Link as iLink } from 'gatsby-plugin-intl'
 
-export const Link = styled('a')({
-  ...theme.FOCUS_OUTLINE,
+export const Link = styled(iLink)({
   color: theme.BRAND_COLOR,
   fontFamily: theme.FONT_BODY,
   fontWeight: theme.FONT_REGULAR,
