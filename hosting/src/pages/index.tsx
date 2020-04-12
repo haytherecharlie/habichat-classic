@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from 'atoms/Helmet'
+import SEO from 'atoms/SEO'
 import Header from 'components/Header'
 import HeroBanner from 'components/HeroBanner'
 import Footer from 'components/Footer'
@@ -8,7 +8,7 @@ import PageLayout from 'layouts/PageLayout'
 const Index = () => {
   return (
     <PageLayout>
-      <Helmet title="Home" path="/" />
+      <SEO page="home" path="/" crawl={true} />
       <Header />
       <HeroBanner />
       <Footer />

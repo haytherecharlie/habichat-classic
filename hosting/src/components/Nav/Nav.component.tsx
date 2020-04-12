@@ -19,9 +19,9 @@ const Nav = () => {
   return open ? (
     <S.Nav open={open}>
       <S.Links>
-        <Link to="/" text="header-home" onClick={onClick} />
-        <Link to="/terms" text="header-terms" onClick={onClick} />
-        <Link to="/privacy" text="header-privacy" onClick={onClick} />
+        <Link to="/" text="nav-home" onClick={onClick} />
+        <Link to="/terms" text="nav-terms" onClick={onClick} />
+        <Link to="/privacy" text="nav-privacy" onClick={onClick} />
       </S.Links>
       <S.Locale>
         <ChangeLocale onClick={onClick} />

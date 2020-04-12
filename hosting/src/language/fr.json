@@ -1,13 +1,33 @@
 {
   "en": "EN",
   "fr": "FR",
-  "placeholder": "placeholder",
-  "brand-name": "Mon Appli",
-  "header-home": "D'accueil",
-  "header-terms": "Les Conditions",
-  "header-privacy": "La Confidentialité",
-  "welcome-to-the-community": "BIENVENUE DANS LA COMMUNAUTÉ!",
-  "welcome-subtext": "Il se passe beaucoup de choses dans votre quartier, habichat vous permet de vous connecter, de partager et de rester informé de tout ce qui se passe dans votre communauté.",
+
+  "home-seo-title": "habichat | Discutez avec vos voisins",
+  "home-seo-description": "Il se passe beaucoup de choses dans votre quartier, habichat vous permet de vous connecter, de partager et de rester informé de tout ce qui se passe dans votre communauté.",
+  "home-title": "BIENVENUE DANS LA COMMUNAUTÉ!",
+  "home-subtext": "Il se passe beaucoup de choses dans votre quartier, habichat vous permet de vous connecter, de partager et de rester informé de tout ce qui se passe dans votre communauté.",
+
+  "nav-home": "D'accueil",
+  "nav-terms": "Les Conditions",
+  "nav-privacy": "La Confidentialité",
+
+  "privacy-seo-title": "habichat | Politique de confidentialité",
+  "privacy-seo-description": "Comment habichat recueille, utilise, divulgue et gère vos données.",
+  "privacy-1": "Politique de confidentialité",
+  "privacy-2": "Votre vie privée est importante pour nous. La politique d'habichat est de respecter votre vie privée concernant toute information que nous pouvons collecter auprès de vous sur notre site Web, https://habi.chat et notre application.",
+  "privacy-3": "Nous ne demandons des informations personnelles que lorsque nous en avons vraiment besoin pour vous fournir un service. Nous le collectons par des moyens justes et légaux, avec votre connaissance et votre consentement. Nous vous informons également pourquoi nous les collectons et comment ils seront utilisés.",
+  "privacy-4": "Nous ne conservons les informations collectées que le temps nécessaire pour vous fournir le service demandé. Quelles données nous stockons, nous les protégerons dans des moyens commercialement acceptables pour empêcher la perte et le vol, ainsi que l'accès, la divulgation, la copie, l'utilisation ou la modification non autorisés.",
+  "privacy-5": "Nous ne partageons aucune information d'identification personnelle publiquement ou avec des tiers, sauf lorsque la loi l'exige.",
+  "privacy-6": "Notre site Web peut renvoyer vers des sites externes qui ne sont pas exploités par nous. Veuillez noter que nous n'avons aucun contrôle sur le contenu et les pratiques de ces sites, et ne pouvons pas accepter la responsabilité de leurs politiques de confidentialité respectives.",
+  "privacy-7": "Vous êtes libre de refuser notre demande de vos informations personnelles, étant entendu que nous ne pourrons peut-être pas vous fournir certains de vos services souhaités.",
+  "privacy-8": "Votre utilisation continue de notre application et / ou de notre site Web sera considérée comme une acceptation de nos pratiques en matière de confidentialité et d'informations personnelles. Si vous avez des questions sur la façon dont nous traitons les données des utilisateurs et les informations personnelles, n'hésitez pas à nous contacter.",
+  "privacy-9": "Cette politique entre en vigueur le 12 avril 2020.",
+
+  "recaptcha-seo-title": "habichat | Recaptcha",
+  "recaptcha-seo-description": "Un test de Turing pour distinguer les humains et les robots.",
+
+  "terms-seo-title": "habichat | Conditions d'utilisation",
+  "terms-seo-description": "Notre contrat d'utilisation acceptable du site Web habichat et / ou de l'application mobile.",
   "terms-1": "Conditions d'utilisation",
   "terms-2": "1. Conditions:",
   "terms-3": "En accédant à l'habichat d'application iOS ou Android ou au site Web à https://habi.chat, vous acceptez d'être lié par ces conditions de service, toutes les lois et réglementations applicables, et acceptez que vous êtes responsable du respect des toutes les lois locales applicables. Si vous n'êtes pas d'accord avec l'une de ces conditions, il vous est interdit d'utiliser ou d'accéder à ce site. Les éléments contenus dans ce site Web sont protégés par le droit d'auteur et les marques applicables.",
@@ -31,14 +51,5 @@
   "terms-21": "7. Modifications",
   "terms-22": "habichat peut réviser ces conditions de service pour son application et / ou son site Web à tout moment sans préavis. En utilisant cette application et / ou ce site Web, vous acceptez d'être lié par la version alors en vigueur de ces conditions de service.",
   "terms-23": "8. Loi applicable",
-  "terms-24": "Ces termes et conditions sont régis et interprétés conformément aux lois des États-Unis et du Canada et vous vous soumettez irrévocablement à la juridiction exclusive des tribunaux de cet État ou de cet endroit.",
-  "privacy-1": "Politique de confidentialité",
-  "privacy-2": "Votre vie privée est importante pour nous. La politique d'habichat est de respecter votre vie privée concernant toute information que nous pouvons collecter auprès de vous sur notre site Web, https://habi.chat et notre application.",
-  "privacy-3": "Nous ne demandons des informations personnelles que lorsque nous en avons vraiment besoin pour vous fournir un service. Nous le collectons par des moyens justes et légaux, avec votre connaissance et votre consentement. Nous vous informons également pourquoi nous les collectons et comment ils seront utilisés.",
-  "privacy-4": "Nous ne conservons les informations collectées que le temps nécessaire pour vous fournir le service demandé. Quelles données nous stockons, nous les protégerons dans des moyens commercialement acceptables pour empêcher la perte et le vol, ainsi que l'accès, la divulgation, la copie, l'utilisation ou la modification non autorisés.",
-  "privacy-5": "Nous ne partageons aucune information d'identification personnelle publiquement ou avec des tiers, sauf lorsque la loi l'exige.",
-  "privacy-6": "Notre site Web peut renvoyer vers des sites externes qui ne sont pas exploités par nous. Veuillez noter que nous n'avons aucun contrôle sur le contenu et les pratiques de ces sites, et ne pouvons pas accepter la responsabilité de leurs politiques de confidentialité respectives.",
-  "privacy-7": "Vous êtes libre de refuser notre demande de vos informations personnelles, étant entendu que nous ne pourrons peut-être pas vous fournir certains de vos services souhaités.",
-  "privacy-8": "Votre utilisation continue de notre application et / ou de notre site Web sera considérée comme une acceptation de nos pratiques en matière de confidentialité et d'informations personnelles. Si vous avez des questions sur la façon dont nous traitons les données des utilisateurs et les informations personnelles, n'hésitez pas à nous contacter.",
-  "privacy-9": "Cette politique entre en vigueur le 12 avril 2020."
+  "terms-24": "Ces termes et conditions sont régis et interprétés conformément aux lois des États-Unis et du Canada et vous vous soumettez irrévocablement à la juridiction exclusive des tribunaux de cet État ou de cet endroit."
 }

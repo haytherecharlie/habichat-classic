@@ -1,12 +1,12 @@
 import React from 'react'
-import Helmet from 'atoms/Helmet'
+import SEO from 'atoms/SEO'
 import Captcha from 'atoms/Captcha'
 import PageLayout from 'layouts/PageLayout'
 
 const Recaptcha = () => {
   return (
     <PageLayout>
-      <Helmet title="Recaptcha" path="recaptcha" />
+      <SEO page="recaptcha" path="/recaptcha" crawl={false} />
       <Captcha />
     </PageLayout>
   )
