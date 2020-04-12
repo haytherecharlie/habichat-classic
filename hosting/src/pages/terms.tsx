@@ -3,7 +3,7 @@ import Helmet from 'atoms/Helmet'
 import Text from 'atoms/Text'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
-import PageLayout from 'templates/PageLayout'
+import PageLayout from 'layouts/PageLayout'
 import ContentLayout from 'layouts/ContentLayout'
 
 const Terms = () => (

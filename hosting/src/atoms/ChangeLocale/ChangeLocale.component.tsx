@@ -3,14 +3,19 @@ import { changeLocale } from 'gatsby-plugin-intl'
 import Text from 'atoms/Text'
 import * as S from './ChangeLocale.style'
 
-const ChangeLocale = () => {
+const ChangeLocale = ({ onClick = () => null }) => {
+  const handleClick = lang => {
+    onClick()
+    changeLocale(lang)
+  }
+
   return (
     <S.ChangeLocale>
-      <S.FlagLink onClick={() => changeLocale('en')}>
+      <S.FlagLink onClick={() => handleClick('en')}>
         <Text text="en" />
       </S.FlagLink>
       <S.Divider />
-      <S.FlagLink onClick={() => changeLocale('fr')}>
+      <S.FlagLink onClick={() => handleClick('fr')}>
         <Text text="fr" />
       </S.FlagLink>
     </S.ChangeLocale>

@@ -3,7 +3,7 @@ import Helmet from 'atoms/Helmet'
 import Header from 'components/Header'
 import HeroBanner from 'components/HeroBanner'
 import Footer from 'components/Footer'
-import PageLayout from 'templates/PageLayout'
+import PageLayout from 'layouts/PageLayout'
 
 const Index = () => {
   return (

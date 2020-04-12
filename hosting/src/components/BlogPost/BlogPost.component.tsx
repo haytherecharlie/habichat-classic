@@ -1,5 +1,5 @@
 import React from 'react'
-import PageLayout from 'templates/PageLayout'
+import PageLayout from 'layouts/PageLayout'
 import Header from 'components/Header'
 import Text from 'atoms/Text'
 import { graphql } from 'gatsby'

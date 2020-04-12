@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Link from 'atoms/Link'
 import ChangeLocale from 'atoms/ChangeLocale'
 import * as S from './Nav.style'
 
 const Nav = () => {
+  const dispatch = useDispatch()
   const [open, setOpen] = useState(false)
   const { nav, dimensions } = useSelector(s => s.app)
 
@@ -13,15 +14,17 @@ const Nav = () => {
     return setOpen(true)
   }, [dimensions, nav])
 
+  const onClick = () => dispatch({ type: 'TOGGLE_NAV' })
+
   return open ? (
     <S.Nav open={open}>
       <S.Links>
-        <Link to="/" text="header-home" />
-        <Link to="/terms" text="header-terms" />
-        <Link to="/privacy" text="header-privacy" />
+        <Link to="/" text="header-home" onClick={onClick} />
+        <Link to="/terms" text="header-terms" onClick={onClick} />
+        <Link to="/privacy" text="header-privacy" onClick={onClick} />
       </S.Links>
       <S.Locale>
-        <ChangeLocale />
+        <ChangeLocale onClick={onClick} />
       </S.Locale>
     </S.Nav>
   ) : null
