@@ -3,22 +3,37 @@ import theme from 'assets/theme'
 
 export const ChangeLocale = styled('div')({
   display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center'
+  alignItems: 'flex-end',
+  justifyContent: 'flex-end'
+})
+
+export const Divider = styled('div')({
+  width: 1,
+  height: `15px`,
+  background: theme.BRAND_COLOR,
+  margin: `0 3px`
 })
 
 export const FlagLink = styled('button')({
-  border: 'none',
-  background: 'none',
-  fontSize: theme.FONT_LARGE,
+  border: 0,
+  background: 'transparent',
+  cursor: 'pointer',
+  position: 'relative',
   padding: 0,
-  margin: 5,
-  cursor: 'pointer'
-})
-
-export const Image = styled('img')({
-  height: 12,
-  width: 'auto',
-  borderRadius: 2,
-  boxShadow: `2px 2px 2px rgba(0, 0, 0, 0.1)`
+  margin: `0 5px`,
+  '&:after': {
+    transition: 'bottom .2s',
+    content: '""',
+    position: 'absolute',
+    bottom: 1,
+    left: 0,
+    width: `100%`,
+    height: 1,
+    background: theme.BRAND_COLOR
+  },
+  '&:hover': {
+    '&:after': {
+      bottom: -2
+    }
+  }
 })

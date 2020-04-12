@@ -9,7 +9,8 @@ export const Nav = styled('nav')({
   flexDirection: 'row',
   alignItems: 'stretch',
   justifyContent: 'space-between',
-  paddingLeft: 20,
+  paddingLeft: 50,
+  paddingTop: 5,
   [theme.LARGE_QUERY]: {
     position: 'absolute',
     top: `calc(${theme.HEADER_HEIGHT} - 5px)`,
@@ -20,6 +21,7 @@ export const Nav = styled('nav')({
     justifyContent: 'center',
     background: theme.BACKGROUND_COLOR,
     paddingLeft: 0,
+    paddingTop: 0
   }
 })
 

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import enable from 'iphone-inline-video'
 import habichatIcon from 'assets/images/logo-icon.png'
 import aerials from 'assets/videos/aerials.webm'
+import placeholder from 'assets/videos/aerials.jpg'
 import Text from 'atoms/Text'
 import * as S from './HeroBanner.style'
 
@@ -14,7 +15,7 @@ const HeroBanner = () => {
   return (
     <S.HeroBanner>
       <S.Content>
-        <S.Video playsInline muted autoPlay loop src={aerials} ref={video} />
+        <S.Video playsInline muted autoPlay loop src={aerials} ref={video} poster={placeholder} />
         <S.Image src={habichatIcon} alt="habichat logo" />
         <Text
           size="h2"

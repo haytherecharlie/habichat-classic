@@ -1,17 +1,17 @@
 import React from 'react'
 import { changeLocale } from 'gatsby-plugin-intl'
-import quebec from 'assets/images/quebec.jpg'
-import canada from 'assets/images/canada.jpg'
+import Text from 'atoms/Text'
 import * as S from './ChangeLocale.style'
 
 const ChangeLocale = () => {
   return (
     <S.ChangeLocale>
       <S.FlagLink onClick={() => changeLocale('en')}>
-        <S.Image height="12px" src={canada} alt="english" />
+        <Text text="en" />
       </S.FlagLink>
+      <S.Divider />
       <S.FlagLink onClick={() => changeLocale('fr')}>
-        <S.Image height="12px" src={quebec} alt="québécois" />
+        <Text text="fr" />
       </S.FlagLink>
     </S.ChangeLocale>
   )

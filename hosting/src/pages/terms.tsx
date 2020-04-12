@@ -1,13 +1,16 @@
 import React from 'react'
 import Helmet from 'atoms/Helmet'
 import Text from 'atoms/Text'
-import ScreenLayout from 'layouts/ScreenLayout'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
+import PageLayout from 'templates/PageLayout'
 import ContentLayout from 'layouts/ContentLayout'
 
 const Terms = () => (
-  <ScreenLayout>
+  <PageLayout>
+    <Helmet title="Terms of Service" path="terms" />
+    <Header />
     <ContentLayout.Padding>
-      <Helmet title="Terms of Service" path="terms" />
       <Text size="h1" text="terms-1" />
       <Text size="h2" text="terms-2" />
       <Text size="p" text="terms-3" />
@@ -77,7 +80,8 @@ const Terms = () => (
         </li>
       </ol>
     </ContentLayout.Padding>
-  </ScreenLayout>
+    <Footer />
+  </PageLayout>
 )
 
 export default Terms

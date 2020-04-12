@@ -31,8 +31,8 @@ export const Image = styled('img')({
 
 export const Video = styled('video')({
   zIndex: 1,
+  height: `100%`,
   position: 'absolute',
-  height: `calc(100vh - 160px)`,
   width: `100vw`,
   objectFit: 'cover',
   top: 0, 
