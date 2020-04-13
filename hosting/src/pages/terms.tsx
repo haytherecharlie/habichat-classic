@@ -8,7 +8,7 @@ import ContentLayout from 'layouts/ContentLayout'
 
 const Terms = () => (
   <PageLayout>
-    <SEO page="terms" path="/terms" crawl={true} />
+    <SEO page="terms" crawl={true} />
     <Header />
     <ContentLayout.Padding>
       <Text size="h1" text="terms-1" />

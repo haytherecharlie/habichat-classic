@@ -9,13 +9,12 @@ export const HamburgerMenu = styled('button')({
   background: 'none',
   border: 'none',
   padding: 0,
-  ...theme.FOCUS_OUTLINE
 })
 
 const defaultLineStyle = {
   width: `100%`,
   height: `3px`,
-  background: theme.PRIMARY_COLOR,
+  background: theme.WHITE,
   borderRadius: `5px`,
   position: `absolute`
 }

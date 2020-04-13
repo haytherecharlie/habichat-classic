@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import enable from 'iphone-inline-video'
 import habichat from 'assets/images/habichat.png'
-import aerials from 'assets/videos/aerials.webm'
+import aerials from 'assets/videos/aerials.mp4'
 import placeholder from 'assets/videos/aerials.jpg'
 import Text from 'atoms/Text'
 import * as S from './HeroBanner.style'

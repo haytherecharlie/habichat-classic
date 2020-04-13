@@ -1,18 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
+import { useLocation } from '@reach/router'
 import { useIntl } from 'gatsby-plugin-intl'
-import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 
-const SEO = ({ page, path, crawl }) => {
+const SEO = ({ page, crawl }) => {
+  const { pathname } = useLocation()
   const { locale, formatMessage } = useIntl()
-
-  useEffect(() => {
-    trackCustomEvent({
-      category: 'page',
-      action: 'view',
-      label: page
-    })
-  }, [])
 
   return (
     <Helmet>
@@ -23,20 +16,20 @@ const SEO = ({ page, path, crawl }) => {
       <title>{formatMessage({ id: `${page}-seo-title` })}</title>
       <meta name="title" content={formatMessage({ id: `${page}-seo-title` })} />
       <meta name="description" content={formatMessage({ id: `${page}-seo-description` })} />
-      <link rel="canonical" href={`https://habi.chat/${locale}${path}`} />
+      <link rel="canonical" href={`https://habi.chat${pathname}`} />
       <meta name="robots" content={crawl ? 'index, follow' : 'noindex, follow'} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`https://habi.chat/${locale}${path}`} />
+      <meta property="og:url" content={`https://habi.chat${pathname}`} />
       <meta property="og:title" content={formatMessage({ id: `${page}-seo-title` })} />
       <meta property="og:description" content={formatMessage({ id: `${page}-seo-description` })} />
       <meta property="og:image" content="https://habi.chat/social/og-image.jpg" />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={`https://habi.chat/${locale}${path}`} />
+      <meta property="twitter:url" content={`https://habi.chat${pathname}`} />
       <meta property="twitter:title" content={formatMessage({ id: `${page}-seo-title` })} />
       <meta property="twitter:description" content={formatMessage({ id: `${page}-seo-description` })} />
       <meta property="twitter:image" content="https://habi.chat/social/og-image.jpg" />

@@ -6,7 +6,7 @@ import PageLayout from 'layouts/PageLayout'
 const Recaptcha = () => {
   return (
     <PageLayout>
-      <SEO page="recaptcha" path="/recaptcha" crawl={false} />
+      <SEO page="recaptcha" crawl={false} />
       <Captcha />
     </PageLayout>
   )

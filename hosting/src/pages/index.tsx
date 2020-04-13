@@ -8,7 +8,7 @@ import PageLayout from 'layouts/PageLayout'
 const Index = () => {
   return (
     <PageLayout>
-      <SEO page="home" path="/" crawl={true} />
+      <SEO page="home" crawl={true} />
       <Header />
       <HeroBanner />
       <Footer />

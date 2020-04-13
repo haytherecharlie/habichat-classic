@@ -8,7 +8,7 @@ import PageLayout from 'layouts/PageLayout'
 
 const Privacy = () => (
   <PageLayout>
-    <SEO page="privacy" path="/privacy" crawl={true} />
+    <SEO page="privacy" crawl={true} />
     <Header />
     <ContentLayout.Padding>
       <Text size="h2" text="privacy-1" />
