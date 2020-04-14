@@ -1,6 +1,6 @@
 ---
-path: '/fr/blog/welcome'
-lang: 'fr'
+path: '/blog/welcome'
+lang: 'en'
 date: '2019-11-12'
 title: 'My first blog post'
 ---

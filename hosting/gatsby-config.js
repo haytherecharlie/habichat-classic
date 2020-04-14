@@ -35,12 +35,13 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-intl`,
+      resolve: `gatsby-plugin-locale`,
       options: {
         path: `${__dirname}/src/language`,
         languages: [`en`, `fr`],
         defaultLanguage: `en`,
-        redirect: false
+        redirect: false,
+        ignoredPaths: [`/blog/`, `/recaptcha/`]
       }
     },
     {
@@ -134,7 +135,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
-        exclude: [`**/styleguide`, `**/recaptcha`, `**/avatars`]
+        exclude: [`**/styleguide`, `**/recaptcha`, `**/avatars`, `**/blog/**`]
       }
     },
     {

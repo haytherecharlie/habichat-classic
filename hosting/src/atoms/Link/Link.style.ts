@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import theme from 'assets/theme'
-import { Link as iLink } from 'gatsby-plugin-intl'
+import { Link as iLink } from 'gatsby-plugin-locale'
 
 export const Link = styled(iLink)({
   color: theme.BRAND_COLOR,

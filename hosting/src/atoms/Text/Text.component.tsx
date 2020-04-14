@@ -1,5 +1,5 @@
 import React from 'react'
-import { useIntl } from 'gatsby-plugin-intl'
+import { useIntl } from 'gatsby-plugin-locale'
 import * as S from './Text.style'
 
 const Text = ({ size = null, text = 'placeholder', style = {}, unique = false }) => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { changeLocale } from 'gatsby-plugin-intl'
+import { changeLocale } from 'gatsby-plugin-locale'
 import Text from 'atoms/Text'
 import * as S from './ChangeLocale.style'
 
