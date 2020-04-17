@@ -12,7 +12,6 @@ module.exports = {
     }
   },
   plugins: [
-    `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-root-import`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-typescript`,

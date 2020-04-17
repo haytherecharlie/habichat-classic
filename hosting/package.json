@@ -44,7 +44,6 @@
   },
   "devDependencies": {
     "firebase-tools": "^7.14.0",
-    "gatsby-plugin-remove-trailing-slashes": "^2.2.3",
     "prettier": "^1.19.1",
     "redux-devtools-extension": "^2.13.8",
     "typescript": "^3.8.3"
