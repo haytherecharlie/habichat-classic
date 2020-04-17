@@ -10,6 +10,8 @@
     "public": "hosting/public",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "trailingSlash": false,
+    "cleanUrls": true,
+    "appAssociation": "AUTO",
     "headers": [
       {
         "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
