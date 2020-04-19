@@ -2,14 +2,16 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import PillButton from 'atoms/PillButton'
 import WebBrowser from 'atoms/WebBrowser'
+import translate from 'language/translate'
 import * as A from 'services/redux/actions'
-import * as S from './LandingForm.style'
+import * as S from './LandingLinks.style'
 
-const LandingForm = () => {
+const LandingLinks = () => {
   const dispatch = useDispatch()
+  const lang = translate.t('lang')
 
   return (
-    <S.LandingForm>
+    <S.LandingLinks>
       <PillButton
         style={{ marginBottom: 10 }}
         text="sign-in"
@@ -17,11 +19,11 @@ const LandingForm = () => {
       />
       <PillButton text="learn-more" white={true} onPress={() => dispatch({ type: A.NAVIGATE, screen: 'sign-in' })} />
       <S.Links>
-        <WebBrowser text="privacy-policy" url="https://habi.chat/privacy" />
-        <WebBrowser text="terms-of-service" url="https://habi.chat/terms" />
+        <WebBrowser text="privacy-policy" url={`https://habi.chat/${lang}/privacy/`} />
+        <WebBrowser text="terms-of-service" url={`https://habi.chat/${lang}/terms/`} />
       </S.Links>
-    </S.LandingForm>
+    </S.LandingLinks>
   )
 }
 
-export default LandingForm
+export default LandingLinks

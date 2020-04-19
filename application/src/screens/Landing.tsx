@@ -1,7 +1,7 @@
 import React from 'react'
 import VideoBackground from 'atoms/VideoBackground'
 import Logo from 'atoms/Logo'
-import LandingForm from 'components/LandingForm'
+import LandingLinks from 'components/LandingLinks'
 import ScreenLayout from 'layouts/ScreenLayout'
 import ContentLayout from 'layouts/ContentLayout'
 
@@ -15,7 +15,7 @@ const Landing = () => {
           <Logo />
         </ContentLayout.Center>
         <ContentLayout.Center style={{ flex: 1 }}>
-          <LandingForm />
+          <LandingLinks />
         </ContentLayout.Center>
       </ContentLayout.Padding>
     </ScreenLayout>

@@ -5,7 +5,7 @@ import * as S from './StatusBar.style'
 const StatusBar = () => {
   return (
     <S.StatusBar>
-      <RnStatusBar { ...S.RnStatusBar } />
+      <RnStatusBar barStyle="light-content" />
     </S.StatusBar>
   )
 }

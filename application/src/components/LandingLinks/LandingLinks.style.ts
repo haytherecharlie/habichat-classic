@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { View } from 'react-native'
 
-export const LandingForm = styled(View)({
+export const LandingLinks = styled(View)({
   width: `100%`,
   alignItems: 'center',
   justifyContent: 'flex-start'
