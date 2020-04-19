@@ -1,14 +1,14 @@
 import React from 'react'
 import SEO from 'atoms/SEO'
 import Captcha from 'atoms/Captcha'
-import PageLayout from 'layouts/PageLayout'
+import TopLayout from 'layouts/TopLayout'
 
 const Recaptcha = () => {
   return (
-    <PageLayout>
+    <TopLayout>
       <SEO page="recaptcha" crawl={false} />
       <Captcha />
-    </PageLayout>
+    </TopLayout>
   )
 }
 

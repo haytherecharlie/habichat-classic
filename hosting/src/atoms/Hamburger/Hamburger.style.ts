@@ -6,8 +6,8 @@ export const HamburgerMenu = styled('button')({
   width: `20px`,
   position: `relative`,
   cursor: `pointer`,
-  background: 'none',
-  border: 'none',
+  background: 'transparent',
+  border: 0,
   padding: 0,
 })
 
@@ -16,7 +16,8 @@ const defaultLineStyle = {
   height: `3px`,
   background: theme.WHITE,
   borderRadius: `5px`,
-  position: `absolute`
+  position: `absolute`,
+  opacity: 1
 }
 
 const midLine = `7px`
