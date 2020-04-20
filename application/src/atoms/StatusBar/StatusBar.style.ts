@@ -8,8 +8,3 @@ export const StatusBar = styled(View)({
   width: `100%`,
   background: theme.BACKGROUND_COLOR
 })
-
-export const RnStatusBar = {
-  barStyle: theme.DARK_MODE ? 'light-content' : 'dark-content',
-  backgroundColor: theme.BACKGROUND_COLOR
-}

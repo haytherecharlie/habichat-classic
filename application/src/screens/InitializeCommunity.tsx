@@ -7,7 +7,6 @@ import useCommunityInitialization from 'utils/hooks/useCommunityInitialization'
 
 const InitializeCommunity = () => {
   useCommunityInitialization()
-
   return (
     <ScreenLayout>
       <Header.Basic />

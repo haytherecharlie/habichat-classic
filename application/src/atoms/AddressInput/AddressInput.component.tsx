@@ -31,7 +31,7 @@ const AddressInput = () => {
         autoFocus={true}
         placeholder={translate.t('your-street-address')}
         currentLocationLabel={translate.t('use-current-location')}
-        minLength={4}
+        minLength={1}
         returnKeyType="search"
         fetchDetails={true}
         styles={S.GooglePlacesAutocomplete}
@@ -44,7 +44,7 @@ const AddressInput = () => {
           radius: '2000',
           key: 'AIzaSyC8Kwa-4RTaJO0VTW9aWnO6h8nh3guJP90',
           language: 'en',
-          types: ['address']
+          types: ['(regions)']
         }}
       />
     </S.AddressInput>

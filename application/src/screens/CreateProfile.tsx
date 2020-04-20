@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import AddressInput from 'atoms/AddressInput'
+import PostalCodeInput from 'atoms/PostalCodeInput'
 import NameInput from 'atoms/NameInput'
 import PillButton from 'atoms/PillButton'
 import Header from 'components/Header'
@@ -27,13 +27,12 @@ const CreateProfile = () => {
     return update({ type: 'find-errors' })
   }
 
-
   return (
-    <ScreenLayout>
+    <ScreenLayout statusBarStyle="light-content" showStatusBar={true}>
       <Header.CreateProfile title="create-profile" />
       {state.step.value === 'address' && (
         <ContentLayout.Top style={{ paddingTop: 20, paddingLeft: 20, paddingRight: 20 }}>
-          <AddressInput />
+          <PostalCodeInput />
         </ContentLayout.Top>
       )}
 

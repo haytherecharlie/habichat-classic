@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 
 export const ScreenLayout = styled(View)({
   flex: 1,

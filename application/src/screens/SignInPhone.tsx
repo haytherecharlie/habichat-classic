@@ -9,9 +9,8 @@ import usePhoneAuthReducer from 'utils/hooks/usePhoneAuthReducer'
 
 const SignInPhone = () => {
   const [field, update] = usePhoneAuthReducer()
-
   return (
-    <ScreenLayout>
+    <ScreenLayout statusBarStyle="light-content" showStatusBar={true}>
       <Header.Auth title="sign-in" />
       {field.step.value === 'phone' && (
         <ContentLayout.Scroll style={{ paddingLeft: 20, paddingRight: 20 }}>

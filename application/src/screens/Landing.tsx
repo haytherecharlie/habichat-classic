@@ -7,14 +7,14 @@ import ContentLayout from 'layouts/ContentLayout'
 
 const Landing = () => {
   return (
-    <ScreenLayout statusBarStyle="light-content" showStatusBar={true}>
+    <ScreenLayout>
       <VideoBackground />
       <ContentLayout.Padding>
-        <ContentLayout.Center style={{ flex: 1 }} />
-        <ContentLayout.Center style={{ flex: 1 }}>
+        <ContentLayout.Center />
+        <ContentLayout.Center>
           <Logo />
         </ContentLayout.Center>
-        <ContentLayout.Center style={{ flex: 1 }}>
+        <ContentLayout.Center>
           <LandingLinks />
         </ContentLayout.Center>
       </ContentLayout.Padding>
