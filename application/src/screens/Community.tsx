@@ -8,7 +8,8 @@ import ContentLayout from 'layouts/ContentLayout'
 import { auth } from 'services/firebase'
 
 const Community = () => {
-  const { photoURL } = useSelector(s => s.user.account)
+  const { photoURL } = useSelector(s => s.user.profile)
+  auth().signOut()
   return (
     <ScreenLayout>
       <Header.Basic />

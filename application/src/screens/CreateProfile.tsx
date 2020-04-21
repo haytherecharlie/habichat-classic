@@ -6,8 +6,8 @@ import PillButton from 'atoms/PillButton'
 import Header from 'components/Header'
 import ContentLayout from 'layouts/ContentLayout'
 import ScreenLayout from 'layouts/ScreenLayout'
-import dbCreateProfile from 'services/api/dbCreateProfile'
-import * as A from 'services/redux/actions'
+import dbCreateProfile from 'services/firebase/database/createProfile'
+// import * as A from 'services/redux/actions'
 import useCreateProfileReducer from 'utils/hooks/useCreateProfileReducer'
 
 const CreateProfile = () => {
@@ -15,15 +15,9 @@ const CreateProfile = () => {
   const [state, update] = useCreateProfileReducer()
 
   const submitForm = async () => {
-    const { first, last, postalCode } = state
-    if ([first, last, postalCode].some(o => o.valid === 'valid')) {
-      try {
-        dbCreateProfile(first, last, postalCode)
-        console.log('yesss')
-      } catch (err) {
-        console.log('ohhh shit')
-      }
-      // return dispatch({ type: A.SIGN_IN, value: auth().currentUser })
+    if ([state.first, state.last, state.postalCode].some(o => o.valid === 'valid')) {
+      await dbCreateProfile(state).catch(err => console.log(err))
+      // do something. 
     }
     return update({ type: 'find-errors' })
   }

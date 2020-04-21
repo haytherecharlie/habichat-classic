@@ -9,7 +9,7 @@ import * as S from './AddressInput.style'
 const AddressInput = () => {
   const dispatch = useDispatch()
   const [permission, setPermission] = useState('pending')
-  const { uid } = useSelector(s => s.user.account)
+  const { uid } = useSelector(s => s.user.profile)
 
   const onPress = async ({ structured_formatting }, { geometry }) => {
     try {

@@ -30,9 +30,8 @@ const usePrecaching = () => {
     auth().onAuthStateChanged(async user => {
       if (user) {
         const { uid, phoneNumber, photoURL, displayName } = user
-        if (displayName !== null) {
-          const { first, last, city, community } = JSON.parse(displayName)
-          return dispatch({ type: A.SIGN_IN, value: { uid, first, last, city, community, phoneNumber, photoURL } })
+        if (displayName !== null && photoURL !== null) {
+          return dispatch({ type: A.SIGN_IN, value: user })
         }
         return dispatch({ type: A.SIGN_IN, value: { uid, phoneNumber } })
       }

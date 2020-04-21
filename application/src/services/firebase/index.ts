@@ -15,6 +15,7 @@ firebase.initializeApp({
   measurementId: serviceAccount.measurementId
 })
 
+export const dbSet = (path, data) => db().doc(path).set(data)
 export const auth = firebase.auth
 export const db = firebase.firestore
 export const hd = firebase.storage

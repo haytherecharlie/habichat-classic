@@ -4,7 +4,7 @@ import * as A from 'services/redux/actions'
 
 const useInitialization = () => {
   const dispatch = useDispatch()
-  const { city, community, first, last, photoURL } = useSelector(s => s.user.account)
+  const { city, community, first, last, photoURL } = useSelector(s => s.user.profile)
 
   useEffect(() => {
     if (!city || !community || !first || !last || !photoURL) {
