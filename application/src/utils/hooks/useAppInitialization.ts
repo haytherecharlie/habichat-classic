@@ -41,10 +41,7 @@ const usePrecaching = () => {
   }
 
   useEffect(() => {
-    if (fontsLoaded === true)
-      Promise.all([keyboardUp(), checkAuthState()]).then(() => {
-        SplashScreen.hide()
-      })
+    if (fontsLoaded === true) Promise.all([keyboardUp(), checkAuthState()]).then(SplashScreen.hide)
   }, [fontsLoaded])
 
   return fontsLoaded

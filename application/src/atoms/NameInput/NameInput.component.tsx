@@ -9,7 +9,7 @@ const NameInput = (props, ref) => {
   const defaultProps = {
     autoCapitalize: 'words',
     autoCompleteType: 'name',
-    autoCorrect: true,
+    autoCorrect: false,
     autoFocus: false,
     blurOnSubmit: false,
     clearButtonMode: 'never',
@@ -26,7 +26,7 @@ const NameInput = (props, ref) => {
     <S.NameInput>
       <Text type="label" style={{ marginLeft: 20 }} text={title} />
       <S.Input {...defaultProps} />
-      {error && <Text type="error" text={error} />}
+      {error && <Text type="error" text={error} style={{ marginBottom: -10 }} />}
     </S.NameInput>
   )
 }

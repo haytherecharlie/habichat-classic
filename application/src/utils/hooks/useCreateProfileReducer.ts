@@ -1,18 +1,16 @@
 import { useReducer, useRef } from 'react'
-import { vAddress, vName, randomAvatar } from 'utils/helpers'
+import { vPostalCode, vName, randomAvatar } from 'utils/helpers'
 
 const useCreateProfileReducer = () => {
   const defaultState = {
-    step: { value: 'address' },
     avatar: { value: randomAvatar() },
-    address: { value: '', valid: 'pending', error: null },
+    postalCode: { value: '', valid: 'pending', error: null, ref: useRef() },
     first: { value: '', valid: 'pending', error: null, ref: useRef() },
     last: { value: '', valid: 'pending', error: null, ref: useRef() }
   }
 
   const reducer = (state, action) => {
     const { value = state.value, valid } = action
-    console.log(vAddress(value) === 'valid')
     switch (action.type) {
       case 'first':
         return vName(value) === 'valid'
@@ -22,10 +20,10 @@ const useCreateProfileReducer = () => {
         return vName(value) === 'valid'
           ? { ...state, last: { ...state.last, value, valid: valid ? valid : 'valid', error: null } }
           : { ...state, last: { ...state.last, value, valid: 'invalid', error: null } }
-      case 'address':
-        return vAddress(value) === 'valid'
-          ? { ...state, step: 'name', address: { ...state.address, value, valid: valid ? valid : 'valid', error: null } }
-          : { ...state, address: { ...state.address, value, valid: 'invalid', error: null } }
+      case 'postal-code':
+        return vPostalCode(value) === 'valid'
+          ? { ...state, postalCode: { ...state.postalCode, value, valid: valid ? valid : 'valid', error: null } }
+          : { ...state, postalCode: { ...state.postalCode, value, valid: 'invalid', error: null } }
       case 'find-errors':
         return {
           first:
@@ -35,7 +33,11 @@ const useCreateProfileReducer = () => {
           last:
             vName(state.last.value) !== 'valid'
               ? { ...state.last, valid: 'invalid', error: 'last-name-error' }
-              : state.last
+              : state.last,
+          postalCode:
+            vPostalCode(state.postalCode.value) !== 'valid'
+              ? { ...state.postalCode, valid: 'invalid', error: 'postal-code-error' }
+              : state.postalCode
         }
       default:
         return state

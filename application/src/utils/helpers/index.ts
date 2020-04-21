@@ -2,6 +2,7 @@ import { Platform } from 'react-native'
 import { formatDistance } from 'date-fns'
 import avatars from 'config/avatars.json'
 import areaCodes from 'config/area-codes.json'
+import postalCodes from 'config/postal-codes.json'
 
 // Fetch headers.
 const headers = { 'Content-type': 'application/json', Accept: 'application/json' }
@@ -23,7 +24,9 @@ export const randomAvatar = () => {
 }
 
 // Validate strings.
-export const vAddress = a => (/^(\d{1,6}) [a-zA-Z\s\,]+ [a-zA-Z]+(\,)? (N[BLSTU]|[AMN]B|[BQ]C|ON|PE|SK)+(\,) (Canada)+$/.test(a)? 'valid' : 'invalid')
+const prefixArray = Object.keys(postalCodes)
+export const vPostalCode = p => (/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/).test(p) ? prefixArray.some(c => c === p.substring(0, 3)) ? 'valid' : 'invalid' : 'invalid'
+export const vAddress = a => (/^(\d{1,6}) [a-zA-Z\s\,]+ [a-zA-Z]+(\,)? (N[BLSTU]|[AMN]B|[BQ]C|ON|PE|SK)+(\,) (Canada)+$/.test(a) ? 'valid' : 'invalid')
 export const vName = n => (/^([a-zA-Z]+\s)*[a-zA-Z]+$/.test(n) ? 'valid' : 'invalid')
 export const vEmail = e => (/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(e) ? 'valid' : 'invalid')
 export const vPass = p => (/^.{6,}$/.test(p) ? 'valid' : 'invalid')

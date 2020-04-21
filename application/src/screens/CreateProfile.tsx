@@ -6,7 +6,7 @@ import PillButton from 'atoms/PillButton'
 import Header from 'components/Header'
 import ContentLayout from 'layouts/ContentLayout'
 import ScreenLayout from 'layouts/ScreenLayout'
-import { auth } from 'services/firebase'
+import dbCreateProfile from 'services/api/dbCreateProfile'
 import * as A from 'services/redux/actions'
 import useCreateProfileReducer from 'utils/hooks/useCreateProfileReducer'
 
@@ -15,14 +15,15 @@ const CreateProfile = () => {
   const [state, update] = useCreateProfileReducer()
 
   const submitForm = async () => {
-    if ([state.first, state.last].some(o => o.valid === 'valid')) {
-      await auth()
-        .currentUser.updateProfile({
-          displayName: `${state.city.value}, ${state.last.value}, ${state.first.value}`,
-          photoURL: state.avatar.value
-        })
-        .catch(err => console.log(err))
-      return dispatch({ type: A.SIGN_IN, value: auth().currentUser })
+    const { first, last, postalCode } = state
+    if ([first, last, postalCode].some(o => o.valid === 'valid')) {
+      try {
+        dbCreateProfile(first, last, postalCode)
+        console.log('yesss')
+      } catch (err) {
+        console.log('ohhh shit')
+      }
+      // return dispatch({ type: A.SIGN_IN, value: auth().currentUser })
     }
     return update({ type: 'find-errors' })
   }
@@ -30,13 +31,7 @@ const CreateProfile = () => {
   return (
     <ScreenLayout statusBarStyle="light-content" showStatusBar={true}>
       <Header.CreateProfile title="create-profile" />
-      {state.step.value === 'address' && (
-        <ContentLayout.Top style={{ paddingTop: 20, paddingLeft: 20, paddingRight: 20 }}>
-          <PostalCodeInput />
-        </ContentLayout.Top>
-      )}
-
-      {state.step.value === 'name' && (
+      <ContentLayout.Padding>
         <ContentLayout.Scroll>
           <NameInput
             autoFocus={true}
@@ -51,21 +46,30 @@ const CreateProfile = () => {
             value={state.first.value}
           />
           <NameInput
-            autoCompleteType="name"
-            autoCapitalize="words"
-            blurOnSubmit={true}
             error={state.last.error}
             onChangeText={value => update({ type: 'last', value })}
+            onSubmitEditing={() => state.postalCode.ref.current.focus()}
             placeholder="your-last-name"
             ref={state.last.ref}
-            returnKeyType="done"
+            returnKeyType="next"
             title="last-name"
             validation={state.last.valid}
             value={state.last.value}
           />
+          <PostalCodeInput
+            error={state.postalCode.error}
+            onChangeText={value => update({ type: 'postal-code', value })}
+            onSubmitEditing={submitForm}
+            placeholder="your-postal-code"
+            ref={state.postalCode.ref}
+            returnKeyType="done"
+            title="postal-code"
+            validation={state.postalCode.valid}
+            value={state.postalCode.value}
+          />
           <PillButton onPress={submitForm} text="next" style={{ marginTop: 30 }}></PillButton>
         </ContentLayout.Scroll>
-      )}
+      </ContentLayout.Padding>
     </ScreenLayout>
   )
 }

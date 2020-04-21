@@ -4,7 +4,6 @@ import { requestPermissionsAsync } from 'expo-location'
 import { useSelector, useDispatch } from 'react-redux'
 import Text from 'atoms/Text'
 import translate from 'language/translate'
-import geoLocateAsync from 'utils/helpers/geoLocateAsync'
 import * as S from './AddressInput.style'
 
 const AddressInput = () => {
@@ -14,7 +13,7 @@ const AddressInput = () => {
 
   const onPress = async ({ structured_formatting }, { geometry }) => {
     try {
-      await geoLocateAsync(structured_formatting, geometry)
+      // await geoLocateAsync(structured_formatting, geometry)
     } catch (err) {
       if (err === '404') dispatch({ type: 'NAVIGATE', screen: 'city-coming-soon' })
     }
