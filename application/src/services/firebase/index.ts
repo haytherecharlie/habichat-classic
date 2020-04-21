@@ -16,6 +16,7 @@ firebase.initializeApp({
 })
 
 export const dbSet = (path, data) => db().doc(path).set(data)
+export const dbGet = (path) => db().doc(path).get()
 export const auth = firebase.auth
 export const db = firebase.firestore
 export const hd = firebase.storage

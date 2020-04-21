@@ -8,13 +8,11 @@ import members from './reducers/members'
 import user from './reducers/user'
 import * as A from './actions'
 
-const display = false
+const display = true
 
 const logger = createLogger({
   predicate: (getState, action) => {
-    if (action.type === '') {
-      console.log(action)
-    }
+    // console.log(getState())
   }
 })
 

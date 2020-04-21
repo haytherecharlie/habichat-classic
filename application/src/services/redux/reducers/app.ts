@@ -14,7 +14,7 @@ const application = (state = defaultState, action) => {
     case A.KEYBOARD_UP:
       return { ...state, keyboardUp: action.status }
     case A.SIGN_IN:
-      return { ...state, screen: 'initialize-community' }
+      return { ...state, screen: action.screen }
     case A.SIGN_OUT:
       return { ...state, screen: 'landing' }
     case A.NAVIGATE:

@@ -1,5 +1,4 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
 import PostalCodeInput from 'atoms/PostalCodeInput'
 import NameInput from 'atoms/NameInput'
 import PillButton from 'atoms/PillButton'
@@ -7,19 +6,15 @@ import Header from 'components/Header'
 import ContentLayout from 'layouts/ContentLayout'
 import ScreenLayout from 'layouts/ScreenLayout'
 import dbCreateProfile from 'services/firebase/database/createProfile'
-// import * as A from 'services/redux/actions'
 import useCreateProfileReducer from 'utils/hooks/useCreateProfileReducer'
 
 const CreateProfile = () => {
-  const dispatch = useDispatch()
   const [state, update] = useCreateProfileReducer()
 
   const submitForm = async () => {
-    if ([state.first, state.last, state.postalCode].some(o => o.valid === 'valid')) {
-      await dbCreateProfile(state).catch(err => console.log(err))
-      // do something. 
-    }
-    return update({ type: 'find-errors' })
+    return [state.first, state.last, state.postalCode].some(o => o.valid === 'valid')
+      ? dbCreateProfile(state).catch(err => console.log(err))
+      : update({ type: 'find-errors' })
   }
 
   return (
