@@ -3,8 +3,8 @@ import { Image, Text, View } from 'react-native'
 import theme from 'assets/theme'
 
 export const Logomark = styled(Image)({
-  height: 150,
-  width: 150
+  height: theme.LOGO_DIAMETER,
+  width: theme.LOGO_DIAMETER
 })
 
 export const Logotype = styled(Text)({

@@ -12,7 +12,7 @@ const Landing = () => {
       <ContentLayout.Padding>
         <ContentLayout.Center />
         <ContentLayout.Center>
-          <Logo />
+          <Logo type="logomark" />
         </ContentLayout.Center>
         <ContentLayout.Center>
           <LandingLinks />

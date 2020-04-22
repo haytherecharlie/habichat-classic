@@ -1,0 +1,6 @@
+export default {
+  LOGO_LARGE: 150,
+  LOGO_SMALL: 125,
+  PILL_BUTTON_RADIUS: 25,
+  SPINNER_RADIUS: 40
+}
