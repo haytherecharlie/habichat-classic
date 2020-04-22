@@ -6,7 +6,7 @@ const formatUser = (currentUser, profile) => ({
   displayName: `${profile.first.value} ${profile.last.value}`,
   firstName: profile.first.value,
   lastName: profile.last.value,
-  photoUrl: profile.avatar.value,
+  photoURL: profile.avatar.value,
   uid: currentUser.uid
 })
 
@@ -16,12 +16,12 @@ const createDbUser = async user => {
 
 const updateAuthUser = async (currentUser, user) => {
   return await currentUser
-    .updateProfile({ displayName: user.displayName, photoUrl: user.photoUrl })
+    .updateProfile({ displayName: user.displayName, photoURL: user.photoURL })
     .catch(err => console.log(err))
 }
 
 const updateReduxUser = async user => {
-  return store.dispatch({ type: A.UPDATE_USER_PROFILE, value: user })
+  return store.dispatch({ type: A.UPDATE_USER_PROFILE, value: user, screen: 'community' })
 }
 
 const dbCreateProfile = async profile => {

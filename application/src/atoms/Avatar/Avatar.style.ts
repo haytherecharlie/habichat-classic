@@ -9,7 +9,7 @@ export const Avatar = styled(TouchableOpacity)({
 })
 
 export const Photo = styled(Image)({
-  height: 40,
-  width: 40,
+  height: 30,
+  width: 30,
   borderRadius: 20
 })
