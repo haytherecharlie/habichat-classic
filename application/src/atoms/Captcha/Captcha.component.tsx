@@ -3,11 +3,11 @@ import WebView from 'react-native-webview'
 import theme from 'assets/theme'
 import * as S from './Captcha.style'
 
-const Captcha = ({ webRef, update }) => {
+const Captcha = ({ webRef, update, fullHeight }) => {
   const [loaded, setLoaded] = useState(false)
 
   return (
-    <S.Captcha loaded={loaded}>
+    <S.Captcha loaded={loaded} fullHeight={fullHeight}>
       <WebView
         ref={webRef}
         keyboardDisplayRequiresUserAction={false}
