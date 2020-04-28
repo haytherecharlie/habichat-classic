@@ -8,7 +8,9 @@ const Auth = ({ title = '' }) => {
   return (
     <HeaderLayout>
       <BackButton screen="landing" />
-      <Text type="h2" style={{ textTransform: 'uppercase' }} text={title}></Text>
+      <S.TitleWrapper>
+        <Text type="h2" style={{ textTransform: 'uppercase' }} text={title}></Text>
+      </S.TitleWrapper>
       <S.Placeholder />
     </HeaderLayout>
   )
@@ -19,9 +21,9 @@ const Basic = () => <HeaderLayout />
 const CreateProfile = ({ title = '' }) => {
   return (
     <HeaderLayout>
-      <S.Placeholder />
-      <Text type="h2" style={{ textTransform: 'uppercase' }} text={title}></Text>
-      <S.Placeholder />
+      <S.TitleWrapper>
+        <Text type="h2" style={{ textTransform: 'uppercase' }} text={title}></Text>
+      </S.TitleWrapper>
     </HeaderLayout>
   )
 }

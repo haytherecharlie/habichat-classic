@@ -20,8 +20,10 @@ const PhoneInput = ({ phone, webRef, update }) => {
           {...S.PhoneNumberMask}
           editable={phone.valid !== 'valid'}
         />
+        <S.CountryCodeWrapper>
+          <S.CountryCode>🇨🇦 +1</S.CountryCode>
+        </S.CountryCodeWrapper>
       </S.InputBorder>
-      <S.CountryCode>🇨🇦 +1</S.CountryCode>
       {phone.error && <Text type="error" text={phone.error} />}
     </S.PhoneInput>
   )

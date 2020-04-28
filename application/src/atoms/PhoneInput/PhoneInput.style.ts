@@ -5,14 +5,19 @@ import theme from 'assets/theme'
 export const PhoneInput = styled(View)({
   display: 'flex',
   flexDirection: 'column',
-  paddingTop: 20,
-  position: 'relative'
+  paddingTop: 20
+})
+
+export const CountryCodeWrapper = styled(View)({
+  position: 'absolute',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: `100%`,
+  left: 20
 })
 
 export const CountryCode = styled(Text)({
-  position: 'absolute',
-  top: Platform.OS === 'android' ? 60 : 58,
-  left: 20,
   color: theme.PRIMARY_COLOR,
   fontSize: 14
 })
@@ -28,7 +33,7 @@ export const InputBorder = styled(View)({
 export const PhoneNumberMask = {
   containerStyle: {
     width: `100%`,
-    height: 40,
+    height: 40
   },
   style: {
     flex: 1,
