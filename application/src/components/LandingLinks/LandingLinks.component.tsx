@@ -17,7 +17,7 @@ const LandingLinks = () => {
         text="sign-in"
         onPress={() => dispatch({ type: A.NAVIGATE, screen: 'sign-in' })}
       />
-      <PillButton text="learn-more" white={true} onPress={() => dispatch({ type: A.NAVIGATE, screen: 'sign-in' })} />
+      <PillButton text="learn-more" white={true} onPress={() => dispatch({ type: A.MODAL, value: 'onboarding' })} />
       <S.Links>
         <WebBrowser text="privacy-policy" url={`https://habi.chat/${lang}/privacy/`} />
         <WebBrowser text="terms-of-service" url={`https://habi.chat/${lang}/terms/`} />

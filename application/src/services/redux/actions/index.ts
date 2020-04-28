@@ -2,6 +2,7 @@
 export const INITIALIZATION = 'INITIALIZATION'
 export const KEYBOARD_UP = 'KEYBOARD_UP'
 export const NAVIGATE = 'NAVIGATE'
+export const MODAL = 'MODAL'
 
 // Compose
 export const COMPOSE_TEXT_INPUT = 'COMPOSE_TEXT_INPUT'

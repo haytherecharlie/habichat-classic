@@ -1,5 +1,6 @@
 import React from 'react'
 import StatusBar from 'atoms/StatusBar'
+import ContentLayout from 'layouts/ContentLayout'
 import * as S from './HeaderLayout.style'
 
 const HeaderLayout = ({ children = null }) => {

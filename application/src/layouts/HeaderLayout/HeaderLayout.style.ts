@@ -1,6 +1,7 @@
 import { getStatusBarHeight } from 'react-native-status-bar-height'
-import styled from 'styled-components'
 import { View } from 'react-native'
+import { isSmallScreen } from 'utils/helpers'
+import styled from 'styled-components'
 import theme from 'assets/theme'
 
 export const HeaderLayout = styled(View)({
@@ -8,7 +9,7 @@ export const HeaderLayout = styled(View)({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  justifyContent: 'center',
+  justifyContent: 'center'
 })
 
 export const StatusBar = styled(View)({
@@ -26,5 +27,6 @@ export const Header = styled(View)({
   justifyContent: 'space-between',
   borderBottomWidth: 1,
   borderBottomColor: theme.OPAQUE_BRAND,
-  padding: `0 20px`
+  paddingLeft: isSmallScreen ? 12 : 22,
+  paddingRight: isSmallScreen ? 12 : 22
 })

@@ -4,7 +4,8 @@ import theme from 'assets/theme'
 
 export const BackButton = styled(TouchableOpacity)({
   display: 'flex',
-  minWidth: 30,
+  minWidth: 40,
+  height: `100%`,
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'flex-start',
