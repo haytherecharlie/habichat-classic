@@ -1,6 +1,10 @@
 import React from 'react'
 import * as S from './ContentLayout.style'
 
+const Bottom = ({ children = null, style = {} }) => {
+  return <S.Bottom style={style}>{children}</S.Bottom>
+}
+
 const Center = ({ children = null, style = {} }) => {
   return <S.Center style={style}>{children}</S.Center>
 }
@@ -18,6 +22,7 @@ const Top = ({ children = null, style = {} }) => {
 }
 
 export default {
+  Bottom,
   Center,
   Padding,
   Scroll,

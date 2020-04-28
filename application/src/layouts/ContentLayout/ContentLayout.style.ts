@@ -2,6 +2,15 @@ import styled from 'styled-components'
 import { ScrollView, View } from 'react-native'
 import { isSmallScreen } from 'utils/helpers'
 
+export const Bottom = styled(View)(({ style }) => ({
+  flex: 1,
+  width: `100%`,
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+  ...style
+}))
+
 export const Center = styled(View)(({ style }) => ({
   flex: 1,
   width: `100%`,

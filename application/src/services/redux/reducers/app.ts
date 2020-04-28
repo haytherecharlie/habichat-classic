@@ -17,7 +17,7 @@ const application = (state = defaultState, action) => {
     case A.MODAL:
       return { ...state, modal: action.value }
     case A.NAVIGATE:
-      return { ...state, screen: action.screen }
+      return { ...state, screen: action.screen, modal: null }
     case A.SIGN_IN:
       return { ...state, screen: action.screen }
     case A.SIGN_OUT:
