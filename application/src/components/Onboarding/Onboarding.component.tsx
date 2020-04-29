@@ -16,18 +16,18 @@ const Onboarding = () => {
 
   const close = () => {
     setPage(1)
-    return dispatch({ type: 'NAVIGATE', screen: 'sign-in' })
+    return dispatch({ type: 'MODAL', value: null })
   }
 
-  const Page = ({ onPress, btnTxt, source, body }) => (
+  const Page = ({ onPress, btnTxt, source, name }) => (
     <ContentLayout.Padding>
-      <ContentLayout.Center style={{ flex: `0 0 100px`}} />
+      <ContentLayout.Center style={{ flex: 0, flexBasis: 100 }} />
       <ContentLayout.Center style={{ flex: 4 }}>
         <S.Picture source={source} alt="onboarding image" />
-        <Text type="h1" text="howdy-there-partner" style={{ textAlign: 'center', marginTop: 15 }} />
-        <Text type="p" text={body} style={{ textAlign: 'center', margin: 20, marginBottom: 40 }} />
+        <Text type="h1" text={`${name}-title`} style={{ textAlign: 'center', marginTop: 15 }} />
+        <Text type="p" text={`${name}-body`} style={{ textAlign: 'center', margin: 20, marginBottom: 40 }} />
       </ContentLayout.Center>
-      <ContentLayout.Bottom style={{ flex: `0 0 100px`, paddingBottom: 35 }}>
+      <ContentLayout.Bottom style={{ flexBasis: 100, flex: 0, paddingBottom: 35 }}>
         <PillButton onPress={onPress} text={btnTxt} />
       </ContentLayout.Bottom>
     </ContentLayout.Padding>
@@ -35,9 +35,9 @@ const Onboarding = () => {
 
   return (
     <ModalLayout visible={modal === 'onboarding'}>
-      {page === 1 && <Page btnTxt="next" body="habichat-not-available" source={onboard1} onPress={() => setPage(page + 1)} />}
-      {page === 2 && <Page btnTxt="next" body="habichat-not-available" source={onboard2} onPress={() => setPage(page + 1)} />}
-      {page === 3 && <Page btnTxt="sign-in" body="habichat-not-available" source={onboard3} onPress={close} />}
+      {page === 1 && <Page btnTxt="next" name="onboard-1" source={onboard1} onPress={() => setPage(page + 1)} />}
+      {page === 2 && <Page btnTxt="next" name="onboard-2" source={onboard2} onPress={() => setPage(page + 1)} />}
+      {page === 3 && <Page btnTxt="welcome" name="onboard-3" source={onboard3} onPress={close} />}
     </ModalLayout>
   )
 }
