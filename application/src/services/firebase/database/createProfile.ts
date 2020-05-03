@@ -1,36 +1,51 @@
-import { auth, dbSet } from 'services/firebase'
+import { auth, db } from 'services/firebase'
 import store from 'services/redux'
 import * as A from 'services/redux/actions'
 
-const formatUser = (currentUser, profile) => ({
-  displayName: `${profile.first.value} ${profile.last.value}`,
-  firstName: profile.first.value,
-  lastName: profile.last.value,
-  photoURL: profile.avatar.value,
-  uid: currentUser.uid
-})
+const createDbUser = async (uid, profile) => {
+  try {
+    const communityRef = db().doc(`communities/${profile.postalCode.value.substr(0, 3)}`)
+    const userRef = db().doc(`users/${uid}`)
+    const formattedUser = {
+      communities: [communityRef],
+      displayName: `${profile.first.value} ${profile.last.value}`,
+      firstName: profile.first.value,
+      lastName: profile.last.value,
+      photoURL: profile.avatar.value,
+      postalCode: profile.postalCode.value
+    }
 
-const createDbUser = async user => {
-  return await dbSet(`users/${user.uid}`, user).catch(err => console.log(err))
+    await db().runTransaction(async transaction => {
+      const communityDoc = await transaction.get(communityRef)
+      transaction.set(userRef, formattedUser, { merge: true })
+      communityDoc.exists
+        ? transaction.set(communityRef, { members: [...communityDoc.members, userRef] }, { merge: true })
+        : transaction.set(communityRef, { displayName: 'Ville Émard', members: [userRef] })
+    })
+  } catch (err) {
+    throw 'Error running create new user transaction.'
+  }
 }
 
-const updateAuthUser = async (currentUser, user) => {
-  return await currentUser
-    .updateProfile({ displayName: user.displayName, photoURL: user.photoURL })
-    .catch(err => console.log(err))
-}
-
-const updateReduxUser = async user => {
-  return store.dispatch({ type: A.UPDATE_USER_PROFILE, value: user, screen: 'community' })
+const updateAuthUser = async (currentUser, profile) => {
+  try {
+    return await currentUser.updateProfile({
+      displayName: `${profile.first.value} ${profile.last.value}`,
+      photoURL: profile.avatar.value
+    })
+  } catch (err) {
+    throw 'Error updating auth user profile.'
+  }
 }
 
 const dbCreateProfile = async profile => {
-  const currentUser = auth().currentUser
-  const user = formatUser(currentUser, profile)
-  await Promise.all([createDbUser(user), updateAuthUser(currentUser, user), updateReduxUser(user)]).catch(() => {
-    throw 'error creating user profile'
-  })
-  return store.dispatch({ type: A.NAVIGATE, screen: 'initialize-community' })
+  try {
+    const currentUser = auth().currentUser
+    await Promise.all([createDbUser(currentUser.uid, profile), updateAuthUser(currentUser, profile)])
+    return store.dispatch({ type: A.NAVIGATE, screen: 'community' })
+  } catch (err) {
+    throw 'Error creating db profile'
+  }
 }
 
 export default dbCreateProfile

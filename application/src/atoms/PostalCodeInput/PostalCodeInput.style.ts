@@ -20,7 +20,7 @@ export const Input = styled(TextInput)({
   background: theme.OPAQUE_BRAND,
   border: p => {
     if (p.validation === 'pending') return `1px solid ${theme.BRAND_COLOR}`
-    if (p.validation === 'valid') return `1px solid ${theme.VALID_GREEN}`
-    if (p.validation === 'invalid') return `1px solid ${theme.INVALID_RED}`
+    if (p.validation === 'valid') return `1px solid ${theme.VALID}`
+    if (p.validation === 'invalid') return `1px solid ${theme.INVALID}`
   }
 })

@@ -24,7 +24,7 @@ const Onboarding = () => {
       <ContentLayout.Center style={{ flex: 0, flexBasis: 100 }} />
       <ContentLayout.Center style={{ flex: 4 }}>
         <S.Picture source={source} alt="onboarding image" />
-        <Text type="h1" text={`${name}-title`} style={{ textAlign: 'center', marginTop: 15 }} />
+        <Text type="h2" text={`${name}-title`} style={{ textAlign: 'center', marginTop: 15 }} />
         <Text type="p" text={`${name}-body`} style={{ textAlign: 'center', margin: 20, marginBottom: 40 }} />
       </ContentLayout.Center>
       <ContentLayout.Bottom style={{ flexBasis: 100, flex: 0, paddingBottom: 35 }}>

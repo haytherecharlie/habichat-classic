@@ -22,8 +22,6 @@ const application = (state = defaultState, action) => {
       return { ...state, screen: action.screen }
     case A.SIGN_OUT:
       return { ...state, screen: 'landing' }
-    case A.UPDATE_USER_PROFILE:
-      return { ...state, screen: action.screen }
     default:
       return state
   }
