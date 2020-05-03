@@ -1,7 +1,6 @@
 import React from 'react'
-// import { useSelector } from 'react-redux'
-// import Text from 'atoms/Text'
-// import CommunityNav from 'components/CommunityNav'
+import { auth } from 'services/firebase'
+import PillButton from 'atoms/PillButton'
 import Header from 'components/Header'
 import ScreenLayout from 'layouts/ScreenLayout'
 import ContentLayout from 'layouts/ContentLayout'
@@ -13,7 +12,7 @@ const Community = () => {
     <ScreenLayout>
       <Header.Basic />
       <ContentLayout.Top>
-        {/* <CommunityNav /> */}
+        <PillButton onPress={() => auth().signOut()} text="signout" unique />
       </ContentLayout.Top>
     </ScreenLayout>
   )

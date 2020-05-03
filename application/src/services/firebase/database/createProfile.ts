@@ -12,14 +12,14 @@ const createDbUser = async (uid, profile) => {
       firstName: profile.first.value,
       lastName: profile.last.value,
       photoURL: profile.avatar.value,
-      postalCode: profile.postalCode.value
+      postalCode: profile.postalCode.value.replace(/\s/g, '')
     }
 
     await db().runTransaction(async transaction => {
       const communityDoc = await transaction.get(communityRef)
       transaction.set(userRef, formattedUser, { merge: true })
       communityDoc.exists
-        ? transaction.set(communityRef, { members: [...communityDoc.members, userRef] }, { merge: true })
+        ? transaction.set(communityRef, { members: [...communityDoc.data().members, userRef] }, { merge: true })
         : transaction.set(communityRef, { displayName: 'Ville Émard', members: [userRef] })
     })
   } catch (err) {
