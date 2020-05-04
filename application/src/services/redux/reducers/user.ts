@@ -8,11 +8,9 @@ const defaultState = {
 const user = (state = defaultState, action) => {
   switch (action.type) {
     case A.SIGN_IN:
-      return { ...state, authentication: 'success', profile: action.value }
+      return { ...state, authentication: 'success', profile: action.profile }
     case A.SIGN_OUT:
-      return { ...defaultState, authentication: 'failed' }
-    case A.UPDATE_USER_PROFILE:
-      return { ...state, profile: action.value }
+      return { ...defaultState, authentication: 'failed', profile: null }
     default:
       return state
   }

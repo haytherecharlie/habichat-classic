@@ -6,7 +6,7 @@ const createDbUser = async (uid, profile) => {
   try {
     const communityRef = db().doc(`communities/${profile.postalCode.value.substr(0, 3)}`)
     const userRef = db().doc(`users/${uid}`)
-    const formattedUser = {
+    const userData = {
       communities: [communityRef],
       displayName: `${profile.first.value} ${profile.last.value}`,
       firstName: profile.first.value,
@@ -15,12 +15,13 @@ const createDbUser = async (uid, profile) => {
       postalCode: profile.postalCode.value.replace(/\s/g, '')
     }
 
-    await db().runTransaction(async transaction => {
+    return await db().runTransaction(async transaction => {
       const communityDoc = await transaction.get(communityRef)
-      transaction.set(userRef, formattedUser, { merge: true })
-      communityDoc.exists
-        ? transaction.set(communityRef, { members: [...communityDoc.data().members, userRef] }, { merge: true })
-        : transaction.set(communityRef, { displayName: 'Ville Émard', members: [userRef] })
+      transaction.set(userRef, userData, { merge: true })
+      const communityData = communityDoc.exists
+        ? { members: [...communityDoc.data().members, userRef] }
+        : { displayName: 'Ville Émard', members: [userRef] }
+      transaction.set(communityRef, communityData, { merge: true })
     })
   } catch (err) {
     throw 'Error running create new user transaction.'

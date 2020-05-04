@@ -18,4 +18,3 @@ export const ADD_MEMBERS = 'ADD_MEMBERS'
 // User
 export const SIGN_IN = 'SIGN_IN'
 export const SIGN_OUT = 'SIGN_OUT'
-export const UPDATE_USER_PROFILE = 'UPDATE_USER_PROFILE'

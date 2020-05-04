@@ -1,9 +1,6 @@
 import * as A from '../actions'
 
-const defaultState = {
-  name: '',
-  city: ''
-}
+const defaultState = null
 
 const community = (state = defaultState, action) => {
   switch (action.type) {

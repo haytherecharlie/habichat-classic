@@ -7,9 +7,9 @@ const stateChanged = () => {
     if (currentUser) {
       const dbUser = await dbGet(`users/${currentUser.uid}`)
       if (dbUser.exists) {
-        return store.dispatch({ type: A.SIGN_IN, value: dbUser.data(), screen: 'community' })
+        return store.dispatch({ type: A.SIGN_IN, profile: dbUser.data(), screen: 'community' })
       }
-      return store.dispatch({ type: A.SIGN_IN, value: null, screen: 'create-profile' })
+      return store.dispatch({ type: A.SIGN_IN, profile: null, screen: 'create-profile' })
     }
     return store.dispatch({ type: A.SIGN_OUT })
   })
