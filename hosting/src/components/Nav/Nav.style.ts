@@ -13,7 +13,7 @@ export const Nav = styled('nav')({
   paddingTop: 5,
   [theme.LARGE_QUERY]: {
     position: 'absolute',
-    top: `calc(${theme.HEADER_HEIGHT} - 5px)`,
+    top: theme.HEADER_HEIGHT - 5,
     left: 0,
     width: `100vw`,
     flexDirection: 'column',
@@ -21,7 +21,8 @@ export const Nav = styled('nav')({
     justifyContent: 'center',
     background: theme.BACKGROUND_COLOR,
     paddingLeft: 0,
-    paddingTop: 0
+    paddingTop: 0,
+    borderBottom: `1px solid ${theme.BRAND_COLOR}`
   }
 })
 
@@ -43,6 +44,7 @@ export const Links = styled('div')({
 
 export const Locale = styled('div')({
   [theme.LARGE_QUERY]: {
-    paddingBottom: 10
+    paddingTop: 5,
+    paddingBottom: 20
   }
 })

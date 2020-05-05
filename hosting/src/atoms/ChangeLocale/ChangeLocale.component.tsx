@@ -12,11 +12,11 @@ const ChangeLocale = ({ onClick = () => null }) => {
   return (
     <S.ChangeLocale>
       <S.FlagLink onClick={() => handleClick('en')}>
-        <Text text="en" />
+        <Text size="S" text="EN" unique />
       </S.FlagLink>
       <S.Divider />
       <S.FlagLink onClick={() => handleClick('fr')}>
-        <Text text="fr" />
+        <Text size="S" text="FR" unique />
       </S.FlagLink>
     </S.ChangeLocale>
   )

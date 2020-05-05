@@ -6,7 +6,7 @@ import theme from 'assets/theme'
 const useDimensions = () => {
   const dispatch = useDispatch()
   const breakPoint = theme.LARGE_VIEW
-  
+
   useEffect(() => {
     let previous = 'mobile'
     const getSize = () => {
@@ -25,7 +25,7 @@ const useDimensions = () => {
       window.addEventListener('resize', getSize)
       return () => window.removeEventListener('resize', getSize)
     }
-  })
+  }, [dispatch, breakPoint])
 }
 
 export default useDimensions

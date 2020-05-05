@@ -3,18 +3,15 @@ import TransitionLink from 'gatsby-plugin-transition-link/AniLink'
 import theme from 'assets/theme'
 
 const linkStyle = {
-  ...theme.FOCUS_OUTLINE,
-  ...theme.HOVER_TEXT,
   border: 'none',
   padding: 10,
-  borderRadius: theme.BORDER_RADIUS,
-  fontWeight: theme.FONT_REGULAR,
-  fontSize: theme.FONT_MEDIUM,
+  borderRadius: theme.PILL_RADIUS,
+  fontSize: theme.FONT_M,
   fontFamily: theme.FONT_BODY,
   background: 'none',
   textDecoration: `none`,
   textAlign: 'center',
-  color: (p) => (p.invert ? theme.BACKGROUND_COLOR : theme.PRIMARY_COLOR),
+  color: p => (p.invert ? theme.BRAND_COLOR : theme.WHITE),
   cursor: 'pointer'
 }
 
@@ -29,9 +26,8 @@ export const ButtonLink = styled('button')({
 })
 
 export const Pill = styled('div')({
-  background: (p) => (p.invert ? theme.PRIMARY_COLOR : theme.BACKGROUND_COLOR),
+  background: p => (p.invert ? theme.WHITE : theme.BRAND_COLOR),
   width: `100%`,
-  maxWidth: 700,
-  borderRadius: theme.BORDER_RADIUS,
-  border: (p) => `2px solid ${p.invert ? theme.BACKGROUND_COLOR : theme.PRIMARY_COLOR}`
+  borderRadius: theme.PILL_RADIUS,
+  border: p => `2px solid ${p.invert ? theme.BRAND_COLOR : theme.WHITE}`
 })

@@ -41,7 +41,7 @@ module.exports = {
         languages: [`en`, `fr`],
         defaultLanguage: `en`,
         redirect: false,
-        ignoredPaths: [`/blog/`, `/recaptcha/`]
+        ignoredPaths: [`/articles/`, `/recaptcha/`, '/styleguide/']
       }
     },
     {
@@ -85,8 +85,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `blog`,
-        path: `${__dirname}/src/blog`
+        name: `articles`,
+        path: `${__dirname}/src/articles`
       }
     },
     {
@@ -135,7 +135,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
-        exclude: [`**/styleguide`, `**/recaptcha`, `**/avatars`, `**/blog/**`]
+        exclude: [`**/styleguide`, `**/recaptcha`, `**/avatars`, `**/articles/**`]
       }
     },
     {

@@ -1,11 +1,7 @@
 import styled from 'styled-components'
 import theme from 'assets/theme'
 
-export const ChangeLocale = styled('div')({
-  display: 'flex',
-  alignItems: 'flex-end',
-  justifyContent: 'flex-end'
-})
+export const ChangeLocale = styled('div')({})
 
 export const Divider = styled('div')({
   width: 1,

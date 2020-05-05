@@ -1,12 +1,7 @@
 import styled from 'styled-components'
 import theme from 'assets/theme'
 
-export const Logo = styled('div')({
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'center'
-})
+export const Logo = styled('div')({})
 
 export const Icon = styled('img')({
   height: 25,

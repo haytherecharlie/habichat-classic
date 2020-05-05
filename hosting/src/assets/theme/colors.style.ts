@@ -1,9 +1,7 @@
-// https://coolors.co/11151c-212d40-364156-7d4e57-d66853
-
 export default {
   // Background Colors
   DARK_BACKGROUND: `#14002f`,
-  LIGHT_BACKGROUND: `#14002f`,
+  LIGHT_BACKGROUND: `#EFF3F8`,
 
   // Foreground Colors
   DARK_FOREGROUND: `#000000`,
@@ -11,11 +9,11 @@ export default {
 
   // Primary Colors
   DARK_PRIMARY: `#FFFFFF`,
-  LIGHT_PRIMARY: `#000000`,
+  LIGHT_PRIMARY: `#14002f`,
 
   // Inverse Colors
-  DARK_INVERSE: `#FFFFFF`,
-  LIGHT_INVERSE: `#000000`,
+  DARK_INVERSE: `#14002f`,
+  LIGHT_INVERSE: `#FFFFFF`,
 
   // Input
   DARK_INPUT_PLACEHOLDER: `#CCCCCC`,

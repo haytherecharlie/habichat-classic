@@ -1,37 +1,34 @@
 import React from 'react'
-import types from 'prop-types'
 import Text from 'atoms/Text'
+import theme from 'assets/theme'
 import * as S from './ButtonPill.style'
 
-const ButtonPill = ({ type, invert, children, ...props }) => {
+const ButtonPill = ({ type, invert = false, text, unique = false, ...props }) => {
   return type === 'button' ? (
     <S.Pill invert={invert}>
       <S.ButtonLink invert={invert} role="button" aria-pressed="false" {...props}>
-        <Text color="inherit">{children}</Text>
+        <Text
+          size="S"
+          text={text}
+          bold
+          unique
+          style={{ textTransform: 'uppercase', color: invert ? theme.BRAND_COLOR : theme.WHITE }}
+        />
       </S.ButtonLink>
     </S.Pill>
   ) : (
     <S.Pill invert={invert}>
       <S.AniLink invert={invert} {...props}>
-        <Text color="inherit">{children}</Text>
+        <Text
+          size="S"
+          text={text}
+          bold
+          unique
+          style={{ textTransform: 'uppercase', color: invert ? theme.BRAND_COLOR : theme.WHITE }}
+        />
       </S.AniLink>
     </S.Pill>
   )
-}
-
-ButtonPill.defaultProps = {
-  type: 'button',
-  invert: false,
-  to: '/',
-  onClick: () => {}
-}
-
-ButtonPill.propTypes = {
-  type: types.oneOf(['button', 'link']),
-  invert: types.bool,
-  to: types.string,
-  onClick: types.func,
-  children: types.node.isRequired
 }
 
 export default ButtonPill

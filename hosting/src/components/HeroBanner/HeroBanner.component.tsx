@@ -18,11 +18,12 @@ const HeroBanner = () => {
         <S.Video playsInline muted autoPlay loop src={aerials} ref={video} poster={placeholder} />
         <S.Image src={habichat} alt="habichat logo" />
         <Text
-          size="h2"
+          size="XL"
           text="home-title"
-          style={{ textTransform: 'uppercase', color: '#FFF', textAlign: 'center', zIndex: 3 }}
+          style={{ textTransform: 'uppercase', color: '#FFF', textAlign: 'center', zIndex: 3, marginTop: 20 }}
+          bold
         />
-        <Text size="p" text="home-subtext" style={{ color: '#FFF', textAlign: 'center', zIndex: 3 }} />
+        <Text size="M" text="home-subtext" style={{ color: '#FFF', textAlign: 'center', zIndex: 3, marginTop: 20 }} />
       </S.Content>
     </S.HeroBanner>
   )

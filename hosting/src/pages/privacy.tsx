@@ -10,16 +10,16 @@ const Privacy = () => (
   <PageLayout>
     <SEO page="privacy" crawl={true} />
     <Header />
-    <ContentLayout.Padding>
-      <Text size="h2" text="privacy-1" />
-      <Text size="p" text="privacy-2" />
-      <Text size="p" text="privacy-3" />
-      <Text size="p" text="privacy-4" />
-      <Text size="p" text="privacy-5" />
-      <Text size="p" text="privacy-6" />
-      <Text size="p" text="privacy-7" />
-      <Text size="p" text="privacy-8" />
-      <Text size="p" text="privacy-9" />
+    <ContentLayout.Padding style={{ paddingTop: 20, paddingBottom: 20 }}>
+      <Text size="XL" text="privacy-1" bold style={{ paddingBottom: 20 }} />
+      <Text size="S" text="privacy-2" style={{ paddingBottom: 20 }} />
+      <Text size="S" text="privacy-3" style={{ paddingBottom: 20 }} />
+      <Text size="S" text="privacy-4" style={{ paddingBottom: 20 }} />
+      <Text size="S" text="privacy-5" style={{ paddingBottom: 20 }} />
+      <Text size="S" text="privacy-6" style={{ paddingBottom: 20 }} />
+      <Text size="S" text="privacy-7" style={{ paddingBottom: 20 }} />
+      <Text size="S" text="privacy-8" style={{ paddingBottom: 20 }} />
+      <Text size="S" text="privacy-9" style={{ paddingBottom: 20 }} />
     </ContentLayout.Padding>
     <Footer />
   </PageLayout>

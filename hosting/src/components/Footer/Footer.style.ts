@@ -5,7 +5,7 @@ import LogoGithub from 'react-ionicons/lib/LogoGithub'
 import theme from 'assets/theme'
 
 export const Footer = styled('header')({
-  height: 100,
+  height: theme.FOOTER_HEIGHT,
   width: `100%`,
   display: `flex`,
   alignItems: `center`,
@@ -22,20 +22,11 @@ export const Responsive = styled('span')({
   justifyContent: p => p.align || `center`
 })
 
-export const Copyright = styled('span')({
-  fontSize: 12,
-  color: theme.INVERSE_COLOR,
-  fontWeight: 500,
-  [theme.MEDIUM_QUERY]: {
-    fontSize: 12
-  }
-})
-
 const iconStyle = {
-  background: theme.INVERSE_COLOR,
+  background: theme.BRAND_COLOR,
   borderRadius: `50%`,
-  height: `18px`,
-  width: `18px`,
+  height: theme.FONT_M,
+  width: theme.FONT_M,
   padding: `5px`,
   [`&:hover`]: { opacity: 0.7 }
 }

@@ -1,34 +1,64 @@
-const path = require(`path`)
+// const path = require(`path`)
+// const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createPage } = actions
-  const blogPostTemplate = path.resolve(`src/layouts/BlogLayout/BlogLayout.component.tsx`)
-  const result = await graphql(`
-    {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
-        edges {
-          node {
-            frontmatter {
-              path
-              lang
-              date
-              title
-            }
-          }
-        }
-      }
-    }
-  `)
-  if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
-  }
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const path = node.frontmatter.path
-    createPage({
-      path,
-      component: blogPostTemplate,
-      context: {} // additional data can be passed via context
-    })
-  })
-}
+// exports.createPages = async ({ graphql, actions }) => {
+//   const { createPage } = actions
+//   const ArticleLayout = path.resolve(`./src/layouts/ArticleLayout/ArticleLayout.component.tsx`)
+//   const result = await graphql(
+//     `
+//       {
+//         allMarkdownRemark(
+//           sort: { fields: [frontmatter___date], order: DESC }
+//           limit: 1000
+//         ) {
+//           edges {
+//             node {
+//               frontmatter {
+//                 slug
+//                 description
+//                 lang
+//                 date
+//                 title
+//               }
+//             }
+//           }
+//         }
+//       }
+//     `
+//   )
+
+//   if (result.errors) {
+//     throw result.errors
+//   }
+
+//   // Create blog posts pages.
+//   const posts = result.data.allMarkdownRemark.edges
+
+//   posts.forEach((post, index) => {
+//     const previous = index === posts.length - 1 ? null : posts[index + 1].node
+//     const next = index === 0 ? null : posts[index - 1].node
+
+//     createPage({
+//       path: post.node.frontmatter.slug,
+//       component: ArticleLayout,
+//       context: {
+//         slug: post.node.frontmatter.slug,
+//         previous,
+//         next,
+//       },
+//     })
+//   })
+// }
+
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+//   const { createNodeField } = actions
+
+//   if (node.internal.type === `MarkdownRemark`) {
+//     const value = createFilePath({ node, getNode })
+//     createNodeField({
+//       name: `slug`,
+//       node,
+//       value,
+//     })
+//   }
+// }

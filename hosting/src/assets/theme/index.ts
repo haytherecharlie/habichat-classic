@@ -1,25 +1,11 @@
 import C from './colors.style'
+import D from './display.style'
+import E from './element.style'
+import F from './font.style'
 
 const DARK_MODE = true
 
-const SMALL_VIEW = 400
-const MEDIUM_VIEW = 700
-const LARGE_VIEW = 924
-
-const SMALL_QUERY = `@media only screen and (max-width: ${SMALL_VIEW}px)`
-const MEDIUM_QUERY = `@media only screen and (max-width: ${MEDIUM_VIEW}px)`
-const LARGE_QUERY = `@media only screen and (max-width: ${LARGE_VIEW}px)`
-
-// https://coolors.co/11151c-212d40-364156-7d4e57-d66853
-const FONT_LIGHT = 200
-const FONT_REGULAR = 600
-const FONT_HEAVY = 800
-
-const HELVETICA = 'helvetica'
-const COCOGOOSE = 'cocogoose'
-
 export default {
-  // Dark Mode
   DARK_MODE: DARK_MODE,
 
   // Colors
@@ -32,54 +18,30 @@ export default {
   BLACK: C.BLACK,
   BRAND_COLOR: C.BRAND_COLOR,
   OPAQUE_BRAND: C.OPAQUE_BRAND,
-
   PENDING: C.BRAND_COLOR,
   VALID: C.VALID_GREEN,
   INVALID: C.INVALID_RED,
 
-  VALID_GREEN: C.VALID_GREEN,
-  INVALID_RED: C.INVALID_RED,
+  // Display
+  SMALL_VIEW: D.SMALL_VIEW,
+  MEDIUM_VIEW: D.MEDIUM_VIEW,
+  LARGE_VIEW: D.LARGE_VIEW,
+  SMALL_QUERY: `@media only screen and (max-width: ${D.SMALL_VIEW}px)`,
+  MEDIUM_QUERY: `@media only screen and (max-width: ${D.MEDIUM_VIEW}px)`,
+  LARGE_QUERY: `@media only screen and (max-width: ${D.LARGE_VIEW}px)`,
 
-  TWITTER_COLOR: C.TWITTER_COLOR,
-  GITHUB_COLOR: C.GITHUB_COLOR,
-  LINKEDIN_COLOR: C.LINKEDIN_COLOR,
-
-  // Media Queries
-  SMALL_VIEW,
-  MEDIUM_VIEW,
-  LARGE_VIEW,
-  SMALL_QUERY,
-  MEDIUM_QUERY,
-  LARGE_QUERY,
+  // Fonts
+  FONT_BODY: F.HELVETICA,
+  FONT_TITLE: F.COCOGOOSE,
+  FONT_XS: F.FONT_XS,
+  FONT_S: F.FONT_S,
+  FONT_M: F.FONT_M,
+  FONT_L: F.FONT_L,
+  FONT_XL: F.FONT_XL,
 
   // Element Sizing
-  BORDER_RADIUS: 25,
-  SPINNER_RADIUS: 40,
-  HEADER_HEIGHT: `60px`,
-
-  // Font Family
-  FONT_BODY: HELVETICA,
-  FONT_TITLE: COCOGOOSE,
-
-  // Font Size
-  FONT_SMALL: 12,
-  FONT_MEDIUM: 14,
-  FONT_LARGE: 16,
-
-  // Font Weight
-  FONT_LIGHT,
-  FONT_REGULAR,
-  FONT_HEAVY,
-
-  SPECIAL_FONT: {
-    fontFamily: COCOGOOSE,
-    letterSpacing: -1
-  },
-
-  HOVER_TEXT: {
-    '&:hover': {
-      transition: 'font-weight .2s',
-      fontWeight: FONT_HEAVY
-    }
-  }
+  HEADER_HEIGHT: E.HEADER_HEIGHT,
+  FOOTER_HEIGHT: E.FOOTER_HEIGHT,
+  PILL_RADIUS: E.PILL_RADIUS,
+  SPINNER_RADIUS: E.SPINNER_RADIUS
 }

@@ -1,12 +1,10 @@
 import styled from 'styled-components'
 import theme from 'assets/theme'
-import { Link as iLink } from 'gatsby-plugin-locale'
+import { Link } from 'gatsby-plugin-locale'
 
-export const Link = styled(iLink)({
-  color: theme.BRAND_COLOR,
-  fontFamily: theme.FONT_BODY,
-  fontWeight: theme.FONT_REGULAR,
-  fontSize: theme.FONT_MEDIUM,
+export const LinkWrapper = styled('div')({})
+
+export const ALink = styled(Link)({
   textDecoration: `none`,
   position: 'relative',
   '&:after': {
