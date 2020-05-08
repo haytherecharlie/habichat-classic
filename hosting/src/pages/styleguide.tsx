@@ -5,6 +5,7 @@ import ChangeLocale from 'atoms/ChangeLocale'
 import Hamburger from 'atoms/Hamburger'
 import Link from 'atoms/Link'
 import Logo from 'atoms/Logo'
+import SEO from 'atoms/SEO'
 import Spinner from 'atoms/Spinner'
 import Text from 'atoms/Text'
 import Header from 'components/Header'
@@ -20,6 +21,7 @@ const StyleGuide = () => {
 
   return (
     <PageLayout>
+      <SEO page="styleguide" crawl={false} />
       <Header />
       <ContentLayout.Padding style={{ paddingTop: 20, paddingBottom: 20 }}>
         {/* BUTTONPILL COMPONENT */}

@@ -6,7 +6,7 @@ import Hamburger from 'atoms/Hamburger'
 import Nav from 'components/Nav'
 import * as S from './Header.style'
 
-const Header = () => {
+const Header = ({ locale = true }) => {
   const dispatch = useDispatch()
   const { dimensions, nav } = useSelector(s => s.app)
 
@@ -16,7 +16,7 @@ const Header = () => {
         <S.Responsive>
           <Logo />
           <Hamburger nav={nav} onClick={() => dispatch({ type: TOGGLE_NAV })} />
-          <Nav />
+          <Nav locale={locale} />
         </S.Responsive>
       </S.Header>
     )
@@ -27,7 +27,7 @@ const Header = () => {
       <S.Header>
         <S.Responsive>
           <Logo />
-          <Nav />
+          <Nav locale={locale} />
         </S.Responsive>
       </S.Header>
     )

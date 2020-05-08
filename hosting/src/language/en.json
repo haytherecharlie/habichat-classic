@@ -2,9 +2,12 @@
   "en": "EN",
   "fr": "FR",
 
-  "home-seo-title": "Habichat | Talk with your neighbours!",
+  "articles-seo-title": "Habichat | Articles",
+  "articles-seo-description": "Habichat publishes articles about community, technology and design on a regular basis in order to share our passions with the world.",
+
+  "home-seo-title": "Habichat | Chat with your neighbours!",
   "home-seo-description": "There is a lot going on in your neighbourhood, Habichat allows you to connect, share and stay informed about everything that is happening in your community.",
-  "home-title": "TALK WITH YOUR NEIGHBOURS!",
+  "home-title": "CHAT WITH YOUR NEIGHBOURS!",
   "home-subtext": "There is a lot going on in your neighborhood, Habichat allows you to connect, share and stay informed about everything that is happening in your community.",
 
   "nav-home": "Home",
@@ -25,6 +28,9 @@
 
   "recaptcha-seo-title": "Habichat | Recaptcha",
   "recaptcha-seo-description": "A turing test to tell human and bots apart.",
+
+  "styleguide-seo-title": "Habichat | Styleguide",
+  "styleguide-seo-description": "A styleguide for the Habichat Design System.",
 
   "terms-seo-title": "Habichat | Terms of Service",
   "terms-seo-description": "Our contract for acceptable use of both the Habichat website and / or mobile application.",

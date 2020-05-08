@@ -1,59 +1,45 @@
 import React from 'react'
-// import { graphql } from 'gatsby'
-// import Text from 'atoms/Text'
-// import Header from 'components/Header'
-// import Footer from 'components/Footer'
-// import ContentLayout from 'layouts/ContentLayout'
+import { graphql } from 'gatsby'
+import SEO from 'atoms/SEO'
+import ArticleList from 'components/ArticleList'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
 import PageLayout from 'layouts/PageLayout'
 
-const Articles = () => {
-  // const posts = data.allMarkdownRemark.edges
-
+const Articles = ({ data }) => {
   return (
     <PageLayout>
-      {/* <Header />
-      <ContentLayout.Top style={{ flex: 1, paddingTop: 20 }}>
-        <ContentLayout.Padding style={{ maxWidth: theme.LARGE_VIEW }}>
-          <Text
-            size="h1"
-            text="Latest Articles"
-            style={{ textAlign: 'left', width: `100%`, textTransform: 'uppercase' }}
-            unique
-          />
-          {posts.map(({ node }) => (
-            <article style={{ border: `1px solid ${theme.BRAND_COLOR}`, borderRadius: 5, padding: 10 }}>
-              <Text size="h3" text={node.frontmatter.title} style={{ textTransform: 'uppercase' }} unique />
-            </article>
-          ))}
-        </ContentLayout.Padding>
-      </ContentLayout.Top>
-      <Footer /> */}
+      <SEO page="articles" crawl={false} />
+      <Header locale={false} />
+      <ArticleList articles={data.allMarkdownRemark.edges} />
+      {/* {data.allMarkdownRemark.edges.map(({ node }) => (
+          <div
+            key={node.frontmatter.slug}
+            style={{ border: `1px solid purple`, width: `100%`, padding: 20, borderRadius: 10 }}>
+            <Text size="L" text={node.frontmatter.title} bold unique />
+          </div>
+        ))} */}
+      <Footer />
     </PageLayout>
   )
 }
 
 export default Articles
 
-// export const pageQuery = graphql`
-//   query {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-//       edges {
-//         node {
-//           excerpt
-//           frontmatter {
-//             slug
-//             lang
-//             date(formatString: "MMMM DD, YYYY")
-//             title
-//             description
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            description
+            lang
+            title
+          }
+        }
+      }
+    }
+  }
+`

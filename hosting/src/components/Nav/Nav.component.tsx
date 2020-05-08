@@ -1,31 +1,35 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import Link from 'atoms/Link'
 import ChangeLocale from 'atoms/ChangeLocale'
+import Link from 'atoms/Link'
+import Text from 'atoms/Text'
 import * as S from './Nav.style'
 
-const Nav = () => {
+const Nav = ({ locale }) => {
   const dispatch = useDispatch()
   const [open, setOpen] = useState(false)
   const { nav, dimensions } = useSelector(s => s.app)
+  const onClick = () => dispatch({ type: 'TOGGLE_NAV' })
 
   useEffect(() => {
     if (dimensions !== `desktop`) return nav ? setOpen(true) : setOpen(false)
     return setOpen(true)
   }, [dimensions, nav])
 
-  const onClick = () => dispatch({ type: 'TOGGLE_NAV' })
-
   return open ? (
     <S.Nav open={open}>
       <S.Links>
-        <Link to="/" text="nav-home" onClick={onClick} />
-        <Link to="/terms" text="nav-terms" onClick={onClick} />
-        <Link to="/privacy" text="nav-privacy" onClick={onClick} />
+        <Link href="/" onClick={onClick}>
+          <Text size="S" text="nav-home" link />
+        </Link>
+        <Link href="/terms" onClick={onClick}>
+          <Text size="S" text="nav-terms" link />
+        </Link>
+        <Link href="/privacy" onClick={onClick}>
+          <Text size="S" text="nav-privacy" link />
+        </Link>
       </S.Links>
-      <S.Locale>
-        <ChangeLocale onClick={onClick} />
-      </S.Locale>
+      <S.Locale>{locale && <ChangeLocale onClick={onClick} />}</S.Locale>
     </S.Nav>
   ) : null
 }

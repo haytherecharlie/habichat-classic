@@ -3,7 +3,7 @@ slug: '/articles/authentication-with-expo-and-firebase-phone-auth'
 description: 'Create phone authentication using react-native, expo and firebase without ejecting.'
 lang: 'en'
 date: '2020-05-05'
-title: 'Authentication with Expo and Firebase phone auth!'
+title: 'Firebase Phone Authentication Using Expo!'
 ---
 
 ```javascript

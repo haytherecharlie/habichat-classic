@@ -23,11 +23,13 @@ export const Responsive = styled('span')({
 })
 
 const iconStyle = {
-  background: theme.BRAND_COLOR,
+  border: `1px solid ${theme.BRAND_COLOR}`,
+  background: theme.PRIMARY_COLOR,
   borderRadius: `50%`,
   height: theme.FONT_M,
   width: theme.FONT_M,
   padding: `5px`,
+  margin: 5,
   [`&:hover`]: { opacity: 0.7 }
 }
 
