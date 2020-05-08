@@ -9,8 +9,7 @@ export const Nav = styled('nav')({
   flexDirection: 'row',
   alignItems: 'stretch',
   justifyContent: 'space-between',
-  paddingLeft: 50,
-  paddingTop: 5,
+  padding: `10px 0 10px 50px`,
   [theme.LARGE_QUERY]: {
     position: 'absolute',
     top: theme.HEADER_HEIGHT - 5,
@@ -20,8 +19,7 @@ export const Nav = styled('nav')({
     alignItems: 'center',
     justifyContent: 'center',
     background: theme.BACKGROUND_COLOR,
-    paddingLeft: 0,
-    paddingTop: 0,
+    padding: `10px 0`,
     borderBottom: `1px solid ${theme.BRAND_COLOR}`
   }
 })
@@ -32,19 +30,18 @@ export const Links = styled('div')({
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'space-between',
-  [theme.LARGE_QUERY]: {
+  [`@media only screen and (max-width: ${theme.LARGE_VIEW}px)`]: {
     width: `100vw`,
     flexDirection: 'column',
-    alignItems: 'space-around',
-    height: 100,
-    paddingTop: 10,
-    paddingBottom: 10
+    alignItems: 'space-around'
   }
 })
 
 export const Locale = styled('div')({
-  [theme.LARGE_QUERY]: {
-    paddingTop: 5,
-    paddingBottom: 20
+  alignItems: 'center',
+  justifyContent: 'center',
+  margin: 0,
+  [`@media only screen and (max-width: ${theme.LARGE_VIEW}px)`]: {
+    margin: `10px 0`
   }
 })

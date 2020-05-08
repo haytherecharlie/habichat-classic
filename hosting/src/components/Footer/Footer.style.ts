@@ -36,16 +36,3 @@ const iconStyle = {
 export const Twitter = styled(LogoTwitter)({ ...iconStyle })
 export const LinkedIn = styled(LogoLinkedIn)({ ...iconStyle })
 export const Github = styled(LogoGithub)({ ...iconStyle })
-
-export const SocialLinks = styled('div')({
-  display: 'flex',
-  alignItems: 'stretch',
-  justifyContent: 'space-around'
-})
-
-export const Link = styled('a')({
-  display: `flex`,
-  alignItems: `center`,
-  justifyContent: `center`,
-  padding: `5px`
-})

@@ -12,13 +12,6 @@ const Articles = ({ data }) => {
       <SEO page="articles" crawl={false} />
       <Header locale={false} />
       <ArticleList articles={data.allMarkdownRemark.edges} />
-      {/* {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div
-            key={node.frontmatter.slug}
-            style={{ border: `1px solid purple`, width: `100%`, padding: 20, borderRadius: 10 }}>
-            <Text size="L" text={node.frontmatter.title} bold unique />
-          </div>
-        ))} */}
       <Footer />
     </PageLayout>
   )

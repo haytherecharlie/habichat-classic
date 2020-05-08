@@ -20,13 +20,13 @@ const Nav = ({ locale }) => {
     <S.Nav open={open}>
       <S.Links>
         <Link href="/" onClick={onClick}>
-          <Text size="S" text="nav-home" link />
+          <Text size="S" text="nav-home" style={{ margin: `10px 0` }} link />
         </Link>
         <Link href="/terms" onClick={onClick}>
-          <Text size="S" text="nav-terms" link />
+          <Text size="S" text="nav-terms" style={{ margin: `10px 0` }} link />
         </Link>
         <Link href="/privacy" onClick={onClick}>
-          <Text size="S" text="nav-privacy" link />
+          <Text size="S" text="nav-privacy" style={{ margin: `10px 0` }} link />
         </Link>
       </S.Links>
       <S.Locale>{locale && <ChangeLocale onClick={onClick} />}</S.Locale>

@@ -1,10 +1,11 @@
 import React from 'react'
+import Text from 'atoms/Text'
 import * as S from './Logo.style'
 
 const Logo = () => {
   return (
     <S.Logo>
-      <S.Text type="h2">habichat</S.Text>
+      <Text size="XL" text="habichat" unique bold />
     </S.Logo>
   )
 }

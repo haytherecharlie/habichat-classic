@@ -22,7 +22,7 @@ const StyleGuide = () => {
   return (
     <PageLayout>
       <SEO page="styleguide" crawl={false} />
-      <Header />
+      <Header locale={false} />
       <ContentLayout.Padding style={{ paddingTop: 20, paddingBottom: 20 }}>
         {/* BUTTONPILL COMPONENT */}
         <section
@@ -31,7 +31,7 @@ const StyleGuide = () => {
             padding: 10,
             borderRadius: 10
           }}>
-          <Text size="XL" text="ButtonPill Component" style={{ textTransform: 'uppercase' }} bold unique />
+          <Text size="M" text="ButtonPill Component" style={{ textTransform: 'uppercase' }} bold unique />
           <div style={{ borderTop: `1px solid #CCC`, marginTop: 10, paddingTop: 10, flexDirection: 'column' }}>
             <ButtonPill type="button" text="Hello" invert unique />
             <ButtonPill type="button" text="Hello" unique />
@@ -46,7 +46,7 @@ const StyleGuide = () => {
             padding: 10,
             borderRadius: 10
           }}>
-          <Text size="XL" text="ChangeLocale Component" style={{ textTransform: 'uppercase' }} bold unique />
+          <Text size="M" text="ChangeLocale Component" style={{ textTransform: 'uppercase' }} bold unique />
           <div style={{ borderTop: `1px solid #CCC`, marginTop: 10, paddingTop: 10, flexDirection: 'column' }}>
             <ChangeLocale />
           </div>
@@ -60,7 +60,7 @@ const StyleGuide = () => {
             padding: 10,
             borderRadius: 10
           }}>
-          <Text size="XL" text="Hamburger Component" style={{ textTransform: 'uppercase' }} bold unique />
+          <Text size="M" text="Hamburger Component" style={{ textTransform: 'uppercase' }} bold unique />
           <div style={{ borderTop: `1px solid #CCC`, marginTop: 10, paddingTop: 10, flexDirection: 'column' }}>
             <Hamburger nav={nav} onClick={() => dispatch({ type: A.TOGGLE_NAV })} />
           </div>
@@ -74,9 +74,11 @@ const StyleGuide = () => {
             padding: 10,
             borderRadius: 10
           }}>
-          <Text size="XL" text="Link Component" style={{ textTransform: 'uppercase' }} bold unique />
+          <Text size="M" text="Link Component" style={{ textTransform: 'uppercase' }} bold unique />
           <div style={{ borderTop: `1px solid #CCC`, marginTop: 10, paddingTop: 10, flexDirection: 'column' }}>
-            <Link to="/styleguide" text="styleguide" unique />
+            <Link href="/styleguide">
+              <Text size="S" text="Styleguide" link unique />
+            </Link>
           </div>
         </section>
 
@@ -88,7 +90,7 @@ const StyleGuide = () => {
             padding: 10,
             borderRadius: 10
           }}>
-          <Text size="XL" text="Logo Component" style={{ textTransform: 'uppercase' }} bold unique />
+          <Text size="M" text="Logo Component" style={{ textTransform: 'uppercase' }} bold unique />
           <div style={{ borderTop: `1px solid #CCC`, marginTop: 10, paddingTop: 10, flexDirection: 'column' }}>
             <Logo />
           </div>
@@ -102,7 +104,7 @@ const StyleGuide = () => {
             padding: 10,
             borderRadius: 10
           }}>
-          <Text size="XL" text="Spinner Component" style={{ textTransform: 'uppercase' }} bold unique />
+          <Text size="M" text="Spinner Component" style={{ textTransform: 'uppercase' }} bold unique />
           <div style={{ borderTop: `1px solid #CCC`, marginTop: 10, paddingTop: 10, flexDirection: 'column' }}>
             <Spinner />
           </div>
@@ -116,7 +118,7 @@ const StyleGuide = () => {
             padding: 10,
             borderRadius: 10
           }}>
-          <Text size="XL" text="Text Component" style={{ textTransform: 'uppercase' }} bold unique />
+          <Text size="M" text="Text Component" style={{ textTransform: 'uppercase' }} bold unique />
           <div style={{ borderTop: `1px solid #CCC`, marginTop: 10, paddingTop: 10, flexDirection: 'column' }}>
             <Text size="XL" text="This is XL header" bold unique />
             <Text size="L" text="This is L header" bold unique />
