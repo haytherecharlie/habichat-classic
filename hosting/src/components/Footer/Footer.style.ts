@@ -26,9 +26,9 @@ const iconStyle = {
   border: `1px solid ${theme.BRAND_COLOR}`,
   background: theme.PRIMARY_COLOR,
   borderRadius: `50%`,
-  height: theme.FONT_M,
-  width: theme.FONT_M,
-  padding: `5px`,
+  height: theme.FONT_S,
+  width: theme.FONT_S,
+  padding: 5,
   margin: 5,
   [`&:hover`]: { opacity: 0.7 }
 }

@@ -26,7 +26,11 @@ export const Content = styled('div')({
 export const Image = styled('img')({
   zIndex: 3,
   height: 200,
-  width: 200
+  width: 200,
+  [`@media only screen and (max-width: ${theme.LARGE_VIEW}px)`]: {
+    height: 150,
+    width: 150
+  }
 })
 
 export const Video = styled('video')({
@@ -35,6 +39,6 @@ export const Video = styled('video')({
   position: 'absolute',
   width: `100vw`,
   objectFit: 'cover',
-  top: 0, 
+  top: 0,
   left: 0
 })

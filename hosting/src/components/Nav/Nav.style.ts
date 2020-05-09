@@ -10,7 +10,7 @@ export const Nav = styled('nav')({
   alignItems: 'stretch',
   justifyContent: 'space-between',
   padding: `10px 0 10px 50px`,
-  [theme.LARGE_QUERY]: {
+  [`@media only screen and (max-width: ${theme.LARGE_VIEW}px)`]: {
     position: 'absolute',
     top: theme.HEADER_HEIGHT - 5,
     left: 0,
