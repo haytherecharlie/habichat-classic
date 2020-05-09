@@ -3,23 +3,13 @@ import theme from 'assets/theme'
 
 const LinkStyle = {
   true: {
-    textDecoration: `none`,
-    position: 'relative',
-    cursor: 'pointer',
-    '&:after': {
-      transition: 'bottom .2s',
-      content: '""',
-      position: 'absolute',
-      bottom: 1,
-      left: 0,
-      width: `100%`,
-      height: 1,
-      background: theme.BRAND_COLOR
-    },
+    textDecoration: `underline`,
+    textDecorationColor: theme.BRAND_COLOR,
+    background: theme.BACKGROUND_COLOR,
+    transition: `text-decoration .5s, background .5s`,
     '&:hover': {
-      '&:after': {
-        bottom: -2
-      }
+      background: theme.BRAND_COLOR,
+      textDecorationColor: theme.WHITE
     }
   },
   false: {}

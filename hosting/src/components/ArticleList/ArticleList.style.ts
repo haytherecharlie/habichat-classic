@@ -27,7 +27,7 @@ export const Stripe = styled('div')({
   width: `100%`,
   background: theme.BRAND_COLOR,
   transformOrigin: `top right`,
-  zIndex: 0,
+  zIndex: 500,
   [`@media only screen and (max-width: ${theme.SMALL_VIEW}px)`]: {
     height: 80,
     transform: `skewY(7deg)`
@@ -48,6 +48,4 @@ export const Stripe = styled('div')({
 
 export const ItemWrapper = styled('div')({
   borderRadius: 5,
-  margin: `20px 0`,
-  padding: `20px 0`
 })
