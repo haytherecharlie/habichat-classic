@@ -1,10 +1,14 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+exports.onCreatePage = ({ page, actions: { deletePage } }) => {
+  if (page.context.intl.originalPath.match('/blogpost/')) deletePage(page)
+}
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogPost = path.resolve(`./src/pages/blog.tsx`)
+  const blogPost = path.resolve(`./src/pages/blogpost.tsx`)
   const result = await graphql(
     `
       {

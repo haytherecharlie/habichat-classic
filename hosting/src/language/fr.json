@@ -2,6 +2,9 @@
   "en": "EN",
   "fr": "FR",
 
+  "blog-seo-title": "Habichat | Blog",
+  "blog-seo-description": "Habichat publishes articles about community, technology and design on a regular basis in order to share our passion with the world.",
+
   "home-seo-title": "Habichat | Bavarder avec vos voisins",
   "home-seo-description": "Il se passe beaucoup de choses dans votre quartier, Habichat vous permet de vous connecter, de partager et de rester informé de tout ce qui se passe dans votre communauté.",
   "home-title": "BAVARDER AVEC VOS VOISINS!",
@@ -25,6 +28,9 @@
 
   "recaptcha-seo-title": "Habichat | Recaptcha",
   "recaptcha-seo-description": "Un test de Turing pour distinguer les humains et les robots.",
+
+  "styleguide-seo-title": "Habichat | Styleguide",
+  "styleguide-seo-description": "A styleguide for the Habichat Design System.",
 
   "terms-seo-title": "Habichat | Conditions d'utilisation",
   "terms-seo-description": "Notre contrat d'utilisation acceptable du site Web Habichat et / ou de l'application mobile.",

@@ -11,7 +11,7 @@ import PageLayout from 'layouts/PageLayout'
 const Blog = ({ data }) => {
   return (
     <PageLayout>
-      <SEO page="articles" crawl={false} />
+      <SEO page="blog" crawl={false} />
       <Header locale={false} />
       <BlogLayout>
         {data.allMarkdownRemark.edges.map(({ node }) => (

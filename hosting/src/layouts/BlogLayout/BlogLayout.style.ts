@@ -27,7 +27,7 @@ export const Stripe = styled('div')({
   width: `100%`,
   background: theme.BRAND_COLOR,
   transformOrigin: `top right`,
-  zIndex: 500,
+  zIndex: 0,
   [`@media only screen and (max-width: ${theme.SMALL_VIEW}px)`]: {
     height: 80,
     transform: `skewY(7deg)`

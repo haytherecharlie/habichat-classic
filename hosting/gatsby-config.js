@@ -41,7 +41,7 @@ module.exports = {
         languages: [`en`, `fr`],
         defaultLanguage: `en`,
         redirect: false,
-        ignoredPaths: [`/blog/`, `/recaptcha/`, '/styleguide/']
+        ignoredPaths: [`/blog/`, '/blogpost/', `/recaptcha/`, '/styleguide/']
       }
     },
     {
