@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import ChangeLocale from 'atoms/ChangeLocale'
 import Link from 'atoms/Link'
 import Text from 'atoms/Text'
 import * as S from './Nav.style'
 
 const Nav = ({ locale }) => {
-  const dispatch = useDispatch()
   const [open, setOpen] = useState(false)
   const { nav, dimensions } = useSelector(s => s.app)
-  const onClick = () => dispatch({ type: 'TOGGLE_NAV' })
 
   useEffect(() => {
     if (dimensions !== `desktop`) return nav ? setOpen(true) : setOpen(false)
@@ -19,17 +17,20 @@ const Nav = ({ locale }) => {
   return open ? (
     <S.Nav open={open}>
       <S.Links>
-        <Link href="/" onClick={onClick}>
+        <Link href="/home">
           <Text size="S" text="nav-home" style={{ margin: `10px 0` }} link />
         </Link>
-        <Link href="/terms" onClick={onClick}>
-          <Text size="S" text="nav-terms" style={{ margin: `10px 0` }} link />
+        <Link href="https://habi.chat/blog">
+          <Text size="S" text="nav-blog" style={{ margin: `10px 0` }} link />
         </Link>
-        <Link href="/privacy" onClick={onClick}>
+        <Link href="/privacy">
           <Text size="S" text="nav-privacy" style={{ margin: `10px 0` }} link />
         </Link>
+        <Link href="/terms">
+          <Text size="S" text="nav-terms" style={{ margin: `10px 0` }} link />
+        </Link>
       </S.Links>
-      <S.Locale>{locale && <ChangeLocale onClick={onClick} />}</S.Locale>
+      <S.Locale>{locale && <ChangeLocale />}</S.Locale>
     </S.Nav>
   ) : null
 }

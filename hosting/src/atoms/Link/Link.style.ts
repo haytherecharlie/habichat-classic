@@ -2,14 +2,17 @@ import styled from 'styled-components'
 import { Link } from 'gatsby-plugin-locale'
 
 export const InternalLink = styled(Link)({
-  textDecoration: 'none'
+  textDecoration: 'none',
+  cursor: 'pointer'
 })
 
 export const ExternalLink = styled('a')({
-  textDecoration: 'none'
+  textDecoration: 'none',
+  cursor: 'pointer'
 })
 
 export const ButtonLink = styled('button')({
   border: 'none',
-  background: 'transparent'
+  background: 'transparent',
+  cursor: 'pointer'
 })

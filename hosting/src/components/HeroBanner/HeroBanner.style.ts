@@ -2,9 +2,8 @@ import styled from 'styled-components'
 import theme from 'assets/theme'
 
 export const HeroBanner = styled('div')({
-  flex: 1,
   width: `100vw`,
-  minHeight: `calc(100vh - ${theme.HEADER_HEIGHT} - 100px)`,
+  height: 'calc(100vh - 60px)',
   background: theme.BACKGROUND_COLOR,
   display: 'flex',
   flexDirection: 'column',

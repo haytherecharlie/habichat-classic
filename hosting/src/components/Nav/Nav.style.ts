@@ -25,7 +25,7 @@ export const Nav = styled('nav')({
 })
 
 export const Links = styled('div')({
-  width: 300,
+  width: 350,
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',

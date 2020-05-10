@@ -6,8 +6,8 @@ import * as S from './ChangeLocale.style'
 
 const ChangeLocale = ({ onClick = () => null }) => {
   const handleClick = lang => {
-    onClick()
     changeLocale(lang)
+    onClick()
   }
 
   return (

@@ -1,13 +1,25 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import * as S from './Link.style'
 
-const Link = ({ href = null, onClick = null, children = null }) => {
+const Link = ({ href = null, onClick = () => {}, children = null }) => {
+  const dispatch = useDispatch()
+
+  const handleClick = () => {
+    dispatch({ type: 'TOGGLE_NAV' })
+    onClick()
+  }
+
   return typeof href !== 'string' ? (
-    <S.ButtonLink onClick={onClick}>{children}</S.ButtonLink>
+    <S.ButtonLink onClick={handleClick}>{children}</S.ButtonLink>
   ) : href.substr(0, 1) === '/' ? (
-    <S.InternalLink to={href}>{children}</S.InternalLink>
+    <S.InternalLink to={href} onClick={handleClick}>
+      {children}
+    </S.InternalLink>
   ) : (
-    <S.ExternalLink href={href}>{children}</S.ExternalLink>
+    <S.ExternalLink href={href} onClick={handleClick}>
+      {children}
+    </S.ExternalLink>
   )
 }
 

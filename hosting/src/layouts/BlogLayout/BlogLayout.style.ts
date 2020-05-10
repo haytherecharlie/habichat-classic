@@ -6,7 +6,8 @@ export const BlogLayout = styled('div')({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'stretch',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  paddingBottom: 100
 })
 
 export const StripeWrapper = styled('div')({
