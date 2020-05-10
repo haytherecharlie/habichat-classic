@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import theme from 'assets/theme'
 
-export const ArticleList = styled('div')({
+export const BlogLayout = styled('div')({
   flex: 1,
   display: 'flex',
   flexDirection: 'column',
@@ -44,8 +44,4 @@ export const Stripe = styled('div')({
     height: 140,
     transform: `skewY(4deg)`
   }
-})
-
-export const ItemWrapper = styled('div')({
-  borderRadius: 5,
 })
