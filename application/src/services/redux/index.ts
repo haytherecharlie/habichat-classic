@@ -1,23 +1,10 @@
-import { applyMiddleware, createStore, combineReducers } from 'redux'
-import { createLogger } from 'redux-logger'
+import { createStore, combineReducers } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
 import app from './reducers/app'
 import community from './reducers/community'
 import compose from './reducers/compose'
 import user from './reducers/user'
 
-const display = true
+const reducers = combineReducers({ app, community, compose, user })
 
-const logger = createLogger({
-  predicate: (getState, action) => {
-    console.log(getState())
-  }
-})
-
-const reducer = combineReducers({
-  app,
-  community,
-  compose,
-  user
-})
-
-export default display ? createStore(reducer, applyMiddleware(logger)) : createStore(reducer)
+export default createStore(reducers, composeWithDevTools())

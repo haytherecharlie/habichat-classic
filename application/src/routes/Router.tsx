@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import Community from 'screens/Community'
 import Error from 'screens/Error'
 import Landing from 'screens/Landing'
-import CityComingSoon from 'screens/CityComingSoon'
 import CreateProfile from 'screens/CreateProfile'
 import SignInPhone from 'screens/SignInPhone'
 import useInitialization from 'utils/hooks/useInitialization'
@@ -22,8 +21,6 @@ function Router() {
       return <SignInPhone />
     case 'create-profile':
       return <CreateProfile />
-    case 'city-coming-soon':
-      return <CityComingSoon />
     case 'error':
       return <Error />
     default:

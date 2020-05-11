@@ -20,7 +20,7 @@ const createDbUser = async (uid, profile) => {
       transaction.set(userRef, userData, { merge: true })
       const communityData = communityDoc.exists
         ? { members: [...communityDoc.data().members, userRef] }
-        : { displayName: 'Ville Émard', members: [userRef] }
+        : { displayName: 'Ville Émard', members: [userRef], posts: [] }
       transaction.set(communityRef, communityData, { merge: true })
     })
   } catch (err) {
