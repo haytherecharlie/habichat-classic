@@ -4,9 +4,10 @@ import PillButton from 'atoms/PillButton'
 import Header from 'components/Header'
 import ScreenLayout from 'layouts/ScreenLayout'
 import ContentLayout from 'layouts/ContentLayout'
+import useFetchCommunity from 'utils/hooks/useFetchCommunity'
 
 const Community = () => {
-  // const { firstName } = useSelector(s => s.user.profile)
+  useFetchCommunity()
 
   return (
     <ScreenLayout>
