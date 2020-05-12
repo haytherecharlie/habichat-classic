@@ -9,7 +9,7 @@ const useFetchCommunity = () => {
   const fetchCommunityData = async () => {
     try {
       const community = await communityRef.get()
-      console.log(community.data())
+      // console.log(community.data())
     } catch (err) {
       console.log(err)
     }

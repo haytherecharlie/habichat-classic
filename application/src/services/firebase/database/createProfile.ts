@@ -1,13 +1,17 @@
 import { auth, db } from 'services/firebase'
 import store from 'services/redux'
+import postalCodes from 'config/postal-codes.json'
 import * as A from 'services/redux/actions'
 
 const createDbUser = async (uid, profile) => {
   try {
-    const communityRef = db().doc(`communities/${profile.postalCode.value.substr(0, 3)}`)
+    const postPrefix = profile.postalCode.value.substr(0, 3)
+    const communityRef = db().doc(`communities/${postPrefix}`)
+    const postsRef = db().collection(`communities/${postPrefix}/posts`).doc()
+    const membersRef = db().collection(`communities/${postPrefix}/members`).doc(uid)
     const userRef = db().doc(`users/${uid}`)
     const userData = {
-      communities: [communityRef],
+      community: communityRef,
       displayName: `${profile.first.value} ${profile.last.value}`,
       firstName: profile.first.value,
       lastName: profile.last.value,
@@ -17,13 +21,21 @@ const createDbUser = async (uid, profile) => {
 
     return await db().runTransaction(async transaction => {
       const communityDoc = await transaction.get(communityRef)
+
+      // If community doesn't exist add display name.
+      if (!communityDoc.exists) {
+        const displayName = postalCodes[postPrefix]
+        transaction.set(communityRef, { displayName }, { merge: true })
+      }
+
+      // Add userdata to Members collection.
+      transaction.set(membersRef, { ref: userRef, active: true }, { merge: true })
+
+      // Add userdata to Users collection
       transaction.set(userRef, userData, { merge: true })
-      const communityData = communityDoc.exists
-        ? { members: [...communityDoc.data().members, userRef] }
-        : { displayName: 'Ville Émard', members: [userRef], posts: [] }
-      transaction.set(communityRef, communityData, { merge: true })
     })
   } catch (err) {
+    console.log(err)
     throw 'Error running create new user transaction.'
   }
 }
