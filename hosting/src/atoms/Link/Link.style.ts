@@ -1,9 +1,9 @@
+import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { Link } from 'gatsby-plugin-locale'
 
 export const InternalLink = styled(Link)({
   textDecoration: 'none',
-  cursor: 'pointer'
+  cursor: 'pointer',
 })
 
 export const ExternalLink = styled('a')({

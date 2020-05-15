@@ -1,5 +1,6 @@
 const path = require('path')
 const serviceAccount = require('./src/config/service-account.json')
+console.log(`${__dirname}/src/routes.js`)
 
 module.exports = {
   siteMetadata: {
@@ -20,6 +21,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-routes`,
+      options: {
+        path: `${__dirname}/gatsby-routes.js`
+      }
+    },
+    {
       resolve: 'gatsby-plugin-firebase',
       options: {
         credentials: {
@@ -35,22 +42,13 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-locale`,
-      options: {
-        path: `${__dirname}/src/language`,
-        languages: [`en`, `fr`],
-        defaultLanguage: `en`,
-        redirect: false,
-        ignoredPaths: [`/blog/`, '/blogpost/', `/recaptcha/`, '/styleguide/']
-      }
-    },
-    {
       resolve: 'gatsby-plugin-root-import',
       options: {
         assets: path.join(__dirname, 'src/assets'),
         atoms: path.join(__dirname, 'src/atoms'),
         components: path.join(__dirname, 'src/components'),
         config: path.join(__dirname, 'src/config'),
+        language: path.join(__dirname, 'src/language'),
         layouts: path.join(__dirname, 'src/layouts'),
         pages: path.join(__dirname, 'src/pages'),
         services: path.join(__dirname, 'src/services'),

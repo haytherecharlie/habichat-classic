@@ -3,7 +3,7 @@ import theme from 'assets/theme'
 
 export const HeroBanner = styled('div')({
   width: `100vw`,
-  height: 'calc(100vh - 60px)',
+  height: 'calc(100vh - 120px)',
   background: theme.BACKGROUND_COLOR,
   display: 'flex',
   flexDirection: 'column',

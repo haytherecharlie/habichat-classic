@@ -17,7 +17,7 @@ const Nav = ({ locale }) => {
   return open ? (
     <S.Nav open={open}>
       <S.Links>
-        <Link href="/home">
+        <Link href="/">
           <Text size="S" text="nav-home" style={{ margin: `10px 0` }} link />
         </Link>
         <Link href="https://habi.chat/blog">
