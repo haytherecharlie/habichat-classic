@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import Text from 'atoms/Text'
 import * as S from './Link.style'
 
 const Link = ({ href = null, onClick = () => {}, children = null }) => {

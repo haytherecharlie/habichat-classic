@@ -1,22 +1,23 @@
 import React from 'react'
-import { changeLocale } from 'gatsby-plugin-locale'
+import { navigate } from 'gatsby'
 import Link from 'atoms/Link'
 import Text from 'atoms/Text'
+import { changeLocale } from 'language/translations'
 import * as S from './ChangeLocale.style'
 
-const ChangeLocale = ({ onClick = () => null }) => {
+const ChangeLocale = ({  onClick = () => null }) => {
   const handleClick = lang => {
-    changeLocale(lang)
-    onClick()
+    console.log(changeLocale(lang))
+    // navigate(`/${lang}/`)
   }
 
   return (
     <S.ChangeLocale>
-      <Link onClick={() => handleClick('en')}>
+      <Link onClick={() => handleClick('/en')}>
         <Text size="S" text="EN" unique link />
       </Link>
       <S.Divider />
-      <Link onClick={() => handleClick('fr')}>
+      <Link onClick={() => handleClick('/fr')}>
         <Text size="S" text="FR" unique link />
       </Link>
     </S.ChangeLocale>

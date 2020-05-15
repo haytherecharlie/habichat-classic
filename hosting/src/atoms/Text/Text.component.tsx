@@ -1,14 +1,12 @@
 import React from 'react'
-import { useIntl } from 'gatsby-plugin-locale'
+import { formatMessage } from 'language/translations'
 import * as S from './Text.style'
 
 const Text = ({ size = 'M', bold = false, text = 'placeholder', style = {}, unique = false, link = false }) => {
-  const { formatMessage } = useIntl()
-
   if (size === 'XL') {
     return (
       <S.XLarge bold={bold} style={style} link={link}>
-        {unique ? text : formatMessage({ id: text })}
+        {unique ? text : formatMessage(text)}
       </S.XLarge>
     )
   }
@@ -16,7 +14,7 @@ const Text = ({ size = 'M', bold = false, text = 'placeholder', style = {}, uniq
   if (size === 'L') {
     return (
       <S.Large bold={bold} style={style} link={link}>
-        {unique ? text : formatMessage({ id: text })}
+        {unique ? text : formatMessage(text)}
       </S.Large>
     )
   }
@@ -24,7 +22,7 @@ const Text = ({ size = 'M', bold = false, text = 'placeholder', style = {}, uniq
   if (size === 'M') {
     return (
       <S.Medium bold={bold} style={style} link={link}>
-        {unique ? text : formatMessage({ id: text })}
+        {unique ? text : formatMessage(text)}
       </S.Medium>
     )
   }
@@ -32,7 +30,7 @@ const Text = ({ size = 'M', bold = false, text = 'placeholder', style = {}, uniq
   if (size === 'S') {
     return (
       <S.Small bold={bold} style={style} link={link}>
-        {unique ? text : formatMessage({ id: text })}
+        {unique ? text : formatMessage(text)}
       </S.Small>
     )
   }
@@ -40,7 +38,7 @@ const Text = ({ size = 'M', bold = false, text = 'placeholder', style = {}, uniq
   if (size === 'XS') {
     return (
       <S.XSmall bold={bold} style={style} link={link}>
-        {unique ? text : formatMessage({ id: text })}
+        {unique ? text : formatMessage(text)}
       </S.XSmall>
     )
   }
