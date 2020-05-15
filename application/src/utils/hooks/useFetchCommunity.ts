@@ -4,11 +4,12 @@ import { auth, dbGet } from 'services/firebase'
 
 const useFetchCommunity = () => {
   const [loaded, setLoaded] = useState(false)
-  const communityRef = useSelector(s => s.user.profile.communities[0])
+  const profile = useSelector(s => s.user.profile)
 
   const fetchCommunityData = async () => {
     try {
-      const community = await communityRef.get()
+      console.log(profile)
+      // const community = await communityRef.get()
       // console.log(community.data())
     } catch (err) {
       console.log(err)
