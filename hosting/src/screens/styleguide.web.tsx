@@ -22,7 +22,7 @@ const StyleGuide = () => {
   return (
     <PageLayout>
       <SEO page="styleguide" crawl={false} />
-      <Header locale={false} />
+      <Header />
       <ContentLayout.Padding style={{ paddingTop: 20, paddingBottom: 20 }}>
         {/* BUTTONPILL COMPONENT */}
         <section

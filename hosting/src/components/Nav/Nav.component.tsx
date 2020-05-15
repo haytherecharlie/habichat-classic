@@ -5,7 +5,7 @@ import Link from 'atoms/Link'
 import Text from 'atoms/Text'
 import * as S from './Nav.style'
 
-const Nav = ({ locale }) => {
+const Nav = () => {
   const [open, setOpen] = useState(false)
   const { nav, dimensions } = useSelector(s => s.app)
 
@@ -20,7 +20,7 @@ const Nav = ({ locale }) => {
         <Link href="/">
           <Text size="S" text="nav-home" style={{ margin: `10px 0` }} link />
         </Link>
-        <Link href="https://habi.chat/blog">
+        <Link href="/blog">
           <Text size="S" text="nav-blog" style={{ margin: `10px 0` }} link />
         </Link>
         <Link href="/privacy">
@@ -30,7 +30,9 @@ const Nav = ({ locale }) => {
           <Text size="S" text="nav-terms" style={{ margin: `10px 0` }} link />
         </Link>
       </S.Links>
-      <S.Locale>{locale && <ChangeLocale />}</S.Locale>
+      <S.Locale>
+        <ChangeLocale />
+      </S.Locale>
     </S.Nav>
   ) : null
 }
