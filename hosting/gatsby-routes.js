@@ -18,5 +18,7 @@ module.exports = [
   { path: '/fr/styleguide', component: path.resolve(`src/screens/styleguide.web.tsx`) },
   // Terms . Web
   { path: '/terms', component: path.resolve(`src/screens/terms.web.tsx`) },
-  { path: '/fr/terms', component: path.resolve(`src/screens/terms.web.tsx`) }
+  { path: '/fr/terms', component: path.resolve(`src/screens/terms.web.tsx`) },
+  // Testing . Web
+  { path: '/dashboard', component: path.resolve(`src/screens/dashboard.admin.tsx`) },
 ]
