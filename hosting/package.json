@@ -3,7 +3,7 @@
   "scripts": {
     "build": "gatsby build",
     "deploy": "firebase deploy --only hosting",
-    "dev": "gatsby develop",
+    "dev": "gatsby develop --host localhost --port 8000",
     "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
     "serve": "gatsby serve -p 3000"
   },

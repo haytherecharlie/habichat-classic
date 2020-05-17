@@ -93,7 +93,7 @@ const CommunityPosts = () => {
 const Dashboard = () => {
   return (
     <PageLayout>
-      <SEO page="privacy" crawl={true} />
+      <SEO page="dashboard" crawl={false} />
       <Header />
       <ContentLayout.Padding style={{ paddingTop: 20, paddingBottom: 20 }}>
         {/* <BuildCommunity /> */}

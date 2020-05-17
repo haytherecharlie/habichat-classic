@@ -1,13 +1,11 @@
 const path = require('path')
 const serviceAccount = require('./src/config/service-account.json')
-console.log(`${__dirname}/src/routes.js`)
 
 module.exports = {
   siteMetadata: {
     title: `Habichat`,
     description: `The #1 application for communicating with your neighbours.`,
     author: `Charles Hay`,
-    siteUrl: `https://habi.chat`,
     social: {
       twitter: `habichat1`
     }
@@ -133,7 +131,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
-        exclude: [`**/styleguide`, `**/recaptcha`, `**/avatars`, `**/blog/**`]
+        exclude: [`**/avatars`, `**/blog/**`, `**/dashboard`, `**/recaptcha`, `**/styleguide`]
       }
     },
     {
@@ -141,7 +139,7 @@ module.exports = {
       options: {
         host: 'https://habi.chat',
         sitemap: 'https://habi.chat/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/', disallow: ['*/recaptcha', '*/styleguide/'] }]
+        policy: [{ userAgent: '*', allow: '/', disallow: [`*/avatars`, `*/dashboard`, `*/recaptcha`, `*/styleguide`] }]
       }
     },
     {
