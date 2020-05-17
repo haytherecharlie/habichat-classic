@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import SEO from 'atoms/SEO'
 import Text from 'atoms/Text'
 import Header from 'components/Header'
@@ -6,9 +7,8 @@ import Footer from 'components/Footer'
 import ContentLayout from 'layouts/ContentLayout'
 import PageLayout from 'layouts/PageLayout'
 import theme from 'assets/theme'
-import { db } from 'services/firebase'
 import postalCodes from 'config/postal-codes.json'
-import { asyncCollectionToDocs } from 'utils/helpers'
+import asyncLoadCommunity from 'services/firebase/api/loadCommunity'
 
 /**
  * Build community based on letter
@@ -50,24 +50,14 @@ import { asyncCollectionToDocs } from 'utils/helpers'
  */
 const SearchPostalCodes = () => {
   const postalRef = useRef(null)
+  const dispatch = useDispatch()
 
   const searchPostalCode = async () => {
     try {
-      const code = postalRef.current.value.substr(0, 3).toUpperCase()
-      if (!postalCodes[code]) throw new Error('invalid postal code')
-      const getCommunityDoc = db().doc(`communities/${code}`)
-      const getMembersCollection = db().collection(`communities/${code}/members`).limit(50)
-      const getPostsCollection = db().collection(`communities/${code}/posts`).limit(50)
-      const [communityDoc, membersCollection, postsCollection] = await Promise.all([getCommunityDoc.get(), getMembersCollection.get(), getPostsCollection.get()])
-      const community = communityDoc.data()
-      const members = await asyncCollectionToDocs(membersCollection, 'userRef')
-      const posts = await asyncCollectionToDocs(postsCollection, 'messageRef')
-
-      console.log('community: ', {
-        ...community, 
-        members, 
-        posts
-      })
+      const postalCode = postalRef.current.value.substr(0, 3).toUpperCase()
+      if (!postalCodes[postalCode]) throw new Error('invalid postal code')
+      const data = await asyncLoadCommunity(postalCode)
+      dispatch({ type: 'INIT_COMMUNITY', ...data })
     } catch (err) {
       console.log(err.message)
     }
@@ -76,12 +66,28 @@ const SearchPostalCodes = () => {
   return (
     <div style={{ border: `1px solid ${theme.BRAND_COLOR}`, padding: 10, margin: `5px 0`, flexDirection: 'column' }}>
       <Text size="L" text="postal code" bold unique />
-      <input ref={postalRef} defaultValue="H4E"/>
+      <input ref={postalRef} defaultValue="H4E" />
       <button type="button" onClick={searchPostalCode} style={{ background: theme.BRAND_COLOR }}>
         Submit
       </button>
     </div>
   )
+}
+
+const CommunityPosts = () => {
+  const { app, community, members, posts } = useSelector(s => s)
+  return app.status === 'success' ? (
+    <div style={{ border: `1px solid ${theme.BRAND_COLOR}`, padding: 10, margin: `5px 0`, flexDirection: 'column' }}>
+      <Text size="XL" text={community.displayName} bold unique />
+      {Object.entries(posts).map(([id, post]) => (
+        <div key={id} style={{ border: `1px solid ${theme.BRAND_COLOR}`, padding: 10, margin: `5px 0`, flexDirection: 'column' }}>
+          <Text size="M" text={members[post.userID].displayName} unique/>
+          <img src={members[post.userID].photoURL} width="50" height="50" alt="display profile"/>
+          <Text size="M" text={post.bodyText} unique/>
+        </div>
+      ))}
+    </div>
+  ) : null
 }
 
 const Dashboard = () => {
@@ -92,6 +98,7 @@ const Dashboard = () => {
       <ContentLayout.Padding style={{ paddingTop: 20, paddingBottom: 20 }}>
         {/* <BuildCommunity /> */}
         <SearchPostalCodes />
+        <CommunityPosts />
       </ContentLayout.Padding>
       <Footer />
     </PageLayout>

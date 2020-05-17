@@ -1,16 +1,19 @@
-import * as A from '../actions'
+import * as A from 'services/redux/actions'
 
-const dState = {
+const defaultState = {
+  status: 'pending',
   dimensions: 'mobile',
   nav: false
 }
 
-const reducer = (state = dState, action) => {
+const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case A.SET_DIMENSIONS:
       return { ...state, dimensions: action.value }
     case A.TOGGLE_NAV:
       return { ...state, nav: !state.nav }
+    case A.INIT_COMMUNITY:
+      return { ...state, status: action.status}
     default:
       return state
   }
