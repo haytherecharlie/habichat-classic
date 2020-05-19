@@ -4,6 +4,7 @@ import SEO from 'atoms/SEO'
 import Text from 'atoms/Text'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
+import PostCard from 'components/PostCard'
 import ContentLayout from 'layouts/ContentLayout'
 import PageLayout from 'layouts/PageLayout'
 import theme from 'assets/theme'
@@ -75,17 +76,11 @@ const SearchPostalCodes = () => {
 }
 
 const CommunityPosts = () => {
-  const { app, community, members, posts } = useSelector(s => s)
+  const { app, community, posts } = useSelector(s => s)
   return app.status === 'success' ? (
     <div style={{ border: `1px solid ${theme.BRAND_COLOR}`, padding: 10, margin: `5px 0`, flexDirection: 'column' }}>
       <Text size="XL" text={community.displayName} bold unique />
-      {Object.entries(posts).map(([id, post]) => (
-        <div key={id} style={{ border: `1px solid ${theme.BRAND_COLOR}`, padding: 10, margin: `5px 0`, flexDirection: 'column' }}>
-          <Text size="M" text={members[post.userID].displayName} unique/>
-          <img src={members[post.userID].photoURL} width="50" height="50" alt="display profile"/>
-          <Text size="M" text={post.bodyText} unique/>
-        </div>
-      ))}
+      {Object.entries(posts).map(([id, post]) => <PostCard key={id} post={post} />)}
     </div>
   ) : null
 }
