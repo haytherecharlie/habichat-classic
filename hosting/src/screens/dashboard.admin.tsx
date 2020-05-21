@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import SEO from 'atoms/SEO'
 import Text from 'atoms/Text'
@@ -64,6 +64,10 @@ const SearchPostalCodes = () => {
     }
   }
 
+  useEffect(() => {
+    searchPostalCode()
+  }, [])
+
   return (
     <div style={{ border: `1px solid ${theme.BRAND_COLOR}`, padding: 10, margin: `5px 0`, flexDirection: 'column' }}>
       <Text size="L" text="postal code" bold unique />
@@ -78,9 +82,11 @@ const SearchPostalCodes = () => {
 const CommunityPosts = () => {
   const { app, community, posts } = useSelector(s => s)
   return app.status === 'success' ? (
-    <div style={{ border: `1px solid ${theme.BRAND_COLOR}`, padding: 10, margin: `5px 0`, flexDirection: 'column' }}>
+    <div style={{ margin: `5px 0`, flexDirection: 'column' }}>
       <Text size="XL" text={community.displayName} bold unique />
-      {Object.entries(posts).map(([id, post]) => <PostCard key={id} post={post} />)}
+      {Object.entries(posts).map(([id, post]) => (
+        <PostCard key={id} post={post} />
+      ))}
     </div>
   ) : null
 }
