@@ -3,11 +3,12 @@ const serviceAccount = require('./src/config/service-account.json')
 
 module.exports = {
   siteMetadata: {
+    siteUrl: 'https://habi.chat',
     title: `Habichat`,
     description: `The #1 application for communicating with your neighbours.`,
     author: `Charles Hay`,
     social: {
-      twitter: `habichat1`
+      twitter: `habi_chat`
     }
   },
   plugins: [
@@ -15,7 +16,6 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-transition-link`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

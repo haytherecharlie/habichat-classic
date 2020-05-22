@@ -33,8 +33,12 @@ const StyleGuide = () => {
           }}>
           <Text size="M" text="ButtonPill Component" style={{ textTransform: 'uppercase' }} bold unique />
           <div style={{ borderTop: `1px solid #CCC`, marginTop: 10, paddingTop: 10, flexDirection: 'column' }}>
-            <ButtonPill type="button" text="Hello" invert unique />
-            <ButtonPill type="button" text="Hello" unique />
+            <Link type="button" onClick={() => alert('habichat!')}>
+              <ButtonPill text="Inverted Button" invert unique />
+            </Link>
+            <Link type="button" onClick={() => alert('habichat!')}>
+              <ButtonPill text="Regular Button" unique />
+            </Link>
           </div>
         </section>
 
@@ -76,8 +80,11 @@ const StyleGuide = () => {
           }}>
           <Text size="M" text="Link Component" style={{ textTransform: 'uppercase' }} bold unique />
           <div style={{ borderTop: `1px solid #CCC`, marginTop: 10, paddingTop: 10, flexDirection: 'column' }}>
-            <Link href="/styleguide">
-              <Text size="S" text="Styleguide" link unique />
+            <Link type="internal" href="/dashboard">
+              <Text size="S" text="Internal Link" link unique />
+            </Link>
+            <Link type="external" href="https://charleshay.com">
+              <Text size="S" text="External Link" link unique />
             </Link>
           </div>
         </section>

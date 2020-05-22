@@ -16,7 +16,7 @@ const Header = ({ locale = true }) => {
         <S.Responsive>
           <Logo />
           <Hamburger nav={nav} onClick={() => dispatch({ type: TOGGLE_NAV })} />
-          <Nav locale={locale} />
+          <Nav />
         </S.Responsive>
       </S.Header>
     )
@@ -27,7 +27,7 @@ const Header = ({ locale = true }) => {
       <S.Header>
         <S.Responsive>
           <Logo />
-          <Nav locale={locale} />
+          <Nav />
         </S.Responsive>
       </S.Header>
     )

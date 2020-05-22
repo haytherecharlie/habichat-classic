@@ -10,12 +10,10 @@ import PageLayout from 'layouts/PageLayout'
 const Blog = ({ data }) => {
   return (
     <PageLayout>
-      <SEO page="blog" crawl={false} />
+      <SEO page="blog" crawl={true} />
       <Header />
       <BlogLayout>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <BlogPost frontmatter={node.frontmatter} html={node.html} />
-        ))}
+        {data.allMarkdownRemark.edges.map(({ node }) => <BlogPost frontmatter={node.frontmatter} html={node.html} />)}
       </BlogLayout>
       <Footer />
     </PageLayout>

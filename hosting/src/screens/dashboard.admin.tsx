@@ -55,7 +55,7 @@ const SearchPostalCodes = () => {
 
   const searchPostalCode = async () => {
     try {
-      const postalCode = postalRef.current.value.substr(0, 3).toUpperCase()
+      const postalCode = 'H4E' //postalRef.current.value.substr(0, 3).toUpperCase()
       if (!postalCodes[postalCode]) throw new Error('invalid postal code')
       const data = await asyncLoadCommunity(postalCode)
       dispatch({ type: 'INIT_COMMUNITY', ...data })
@@ -69,12 +69,14 @@ const SearchPostalCodes = () => {
   }, [])
 
   return (
-    <div style={{ border: `1px solid ${theme.BRAND_COLOR}`, padding: 10, margin: `5px 0`, flexDirection: 'column' }}>
-      <Text size="L" text="postal code" bold unique />
+    <div 
+    // style={{ border: `1px solid ${theme.BRAND_COLOR}`, padding: 10, margin: `5px 0`, flexDirection: 'column' }}
+    >
+      {/* <Text size="L" text="postal code" bold unique />
       <input ref={postalRef} defaultValue="H4E" />
       <button type="button" onClick={searchPostalCode} style={{ background: theme.BRAND_COLOR }}>
         Submit
-      </button>
+      </button> */}
     </div>
   )
 }

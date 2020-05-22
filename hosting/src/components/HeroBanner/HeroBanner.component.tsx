@@ -1,8 +1,5 @@
 import React, { useEffect, useRef } from 'react'
 import enable from 'iphone-inline-video'
-import habichat from 'assets/images/habichat.png'
-import aerials from 'assets/videos/aerials.mp4'
-import placeholder from 'assets/videos/aerials.jpg'
 import Text from 'atoms/Text'
 import * as S from './HeroBanner.style'
 
@@ -15,8 +12,16 @@ const HeroBanner = () => {
   return (
     <S.HeroBanner>
       <S.Content>
-        <S.Video playsInline muted autoPlay loop src={aerials} ref={video} poster={placeholder} />
-        <S.Image src={habichat} alt="habichat logo" />
+        <S.Video
+          playsInline
+          muted
+          autoPlay
+          loop
+          src={require('assets/videos/aerials.mp4')}
+          ref={video}
+          poster={'assets/videos/aerials.jpg'}
+        />
+        <S.Image src={require('assets/images/habichat.png')} alt="habichat logo" />
         <Text
           size="XL"
           text="home-title"

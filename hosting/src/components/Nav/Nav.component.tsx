@@ -17,16 +17,16 @@ const Nav = () => {
   return open ? (
     <S.Nav open={open}>
       <S.Links>
-        <Link href="/">
+        <Link type="internal" href="/">
           <Text size="S" text="nav-home" style={{ margin: `10px 0` }} link />
         </Link>
-        <Link href="/blog">
+        <Link type="internal" href="/blog">
           <Text size="S" text="nav-blog" style={{ margin: `10px 0` }} link />
         </Link>
-        <Link href="/privacy">
+        <Link type="internal" href="/privacy">
           <Text size="S" text="nav-privacy" style={{ margin: `10px 0` }} link />
         </Link>
-        <Link href="/terms">
+        <Link type="internal" href="/terms">
           <Text size="S" text="nav-terms" style={{ margin: `10px 0` }} link />
         </Link>
       </S.Links>

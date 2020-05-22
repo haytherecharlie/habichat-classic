@@ -5,7 +5,7 @@ import HeroBanner from 'components/HeroBanner'
 import Footer from 'components/Footer'
 import PageLayout from 'layouts/PageLayout'
 
-const Index = ({ data }) => {
+const Index = () => {
   return (
     <PageLayout>
       <SEO page="home" crawl={true} />

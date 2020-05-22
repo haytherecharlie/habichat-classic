@@ -1,37 +1,37 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { useLocation } from '@reach/router'
 import { formatMessage } from 'language/translations'
 
 const SEO = ({ page, crawl }) => {
-  const { pathname } = useLocation()
+  const { origin = "https://habi.chat", pathname } = useLocation()
 
   return (
     <Helmet>
       <html lang={formatMessage('active-lang')} />
-      <base href="https://habi.chat/" />
+      <base href={origin} />
 
       {/* Primary Meta Tags */}
       <title>{formatMessage(`${page}-seo-title`)}</title>
       <meta name="title" content={formatMessage(`${page}-seo-title`)} />
       <meta name="description" content={formatMessage(`${page}-seo-description`)} />
-      <link rel="canonical" href={`https://habi.chat${pathname}`} />
+      <link rel="canonical" href={`${origin}${pathname}`} />
       <meta name="robots" content={crawl ? 'index, follow' : 'noindex, follow'} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`https://habi.chat${pathname}`} />
+      <meta property="og:url" content={`${origin}${pathname}`} />
       <meta property="og:title" content={formatMessage(`${page}-seo-title`)} />
       <meta property="og:description" content={formatMessage(`${page}-seo-description`)} />
-      <meta property="og:image" content="https://habi.chat/social/og-image.jpg" />
+      <meta property="og:image" content="${origin}/social/og-image.jpg" />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={`https://habi.chat${pathname}`} />
+      <meta property="twitter:url" content={`${origin}${pathname}`} />
       <meta property="twitter:title" content={formatMessage(`${page}-seo-title`)} />
       <meta property="twitter:description" content={formatMessage(`${page}-seo-description`)} />
-      <meta property="twitter:image" content="https://habi.chat/social/og-image.jpg" />
+      <meta property="twitter:image" content={`${origin}/social/og-image.jpg`} />
 
       {/* Favicons */}
       <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png" />

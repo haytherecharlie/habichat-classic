@@ -9,5 +9,5 @@ export const Divider = styled('div')({
   width: 1,
   height: `100%`,
   background: theme.BRAND_COLOR,
-  margin: `0 3px`
+  margin: `0 5px`
 })

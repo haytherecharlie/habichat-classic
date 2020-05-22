@@ -1,6 +1,8 @@
 const path = require('path')
 
 module.exports = [
+  // 404 . Web
+  { path: '/404/', component: path.resolve(`src/screens/404.web.tsx`) },
   // Blog . Web
   { path: '/blog', component: path.resolve(`src/screens/blog.web.tsx`) },
   { path: '/fr/blog', component: path.resolve(`src/screens/blog.web.tsx`) },
@@ -20,5 +22,5 @@ module.exports = [
   { path: '/terms', component: path.resolve(`src/screens/terms.web.tsx`) },
   { path: '/fr/terms', component: path.resolve(`src/screens/terms.web.tsx`) },
   // Testing . Web
-  { path: '/dashboard', component: path.resolve(`src/screens/dashboard.admin.tsx`) },
+  { path: '/dashboard', component: path.resolve(`src/screens/dashboard.admin.tsx`) }
 ]

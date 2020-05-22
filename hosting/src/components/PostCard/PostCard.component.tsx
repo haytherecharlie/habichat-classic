@@ -18,13 +18,23 @@ const PostCard = ({ post }) => {
         <Text size="S" text={members[post.userID].displayName} bold unique />
         <Text size="S" text={post.bodyText} style={{ marginTop: 5, fontWeight: 300 }} unique />
         <S.CommentsPane>
-          <Link onClick={() => console.log('WOWO')}>
-            <ChatBubbles fontSize={theme.FONT_S} color={theme.BRAND_COLOR} />
-            <Text size="XS" text="10 Comments" style={{ marginLeft: 2, color: theme.BRAND_COLOR, fontWeight: 600 }} unique />
+          <Link type="button" onClick={() => console.log('WOWO')}>
+            <ChatBubbles fontSize={`${theme.FONT_S}px`} color={theme.BRAND_COLOR} />
+            <Text
+              size="XS"
+              text="10 Comments"
+              style={{ marginLeft: 2, color: theme.BRAND_COLOR, fontWeight: 600 }}
+              unique
+            />
           </Link>
-          <Link onClick={() => console.log('WOWO')}>
-            <Reply fontSize={theme.FONT_M} color={theme.BRAND_COLOR} />
-            <Text size="XS" text="Write Reply" style={{ marginLeft: 2, color: theme.BRAND_COLOR, fontWeight: 600 }} unique />
+          <Link type="button" onClick={() => console.log('WOWO')}>
+            <Reply fontSize={`${theme.FONT_M}px`} color={theme.BRAND_COLOR} />
+            <Text
+              size="XS"
+              text="Write Reply"
+              style={{ marginLeft: 2, color: theme.BRAND_COLOR, fontWeight: 600 }}
+              unique
+            />
           </Link>
         </S.CommentsPane>
       </S.RightCard>
