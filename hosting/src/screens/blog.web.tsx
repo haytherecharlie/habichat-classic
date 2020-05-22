@@ -1,21 +1,15 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import SEO from 'atoms/SEO'
 import BlogPost from 'components/BlogPost'
-import Header from 'components/Header'
-import Footer from 'components/Footer'
 import BlogLayout from 'layouts/BlogLayout'
 import PageLayout from 'layouts/PageLayout'
 
 const Blog = ({ data }) => {
   return (
-    <PageLayout>
-      <SEO page="blog" crawl={true} />
-      <Header />
-      <BlogLayout>
-        {data.allMarkdownRemark.edges.map(({ node }) => <BlogPost frontmatter={node.frontmatter} html={node.html} />)}
-      </BlogLayout>
-      <Footer />
+    <PageLayout page="blog" crawl={true}>
+      {data.allMarkdownRemark.edges.map(({ node }, id) => (
+        <BlogPost key={id} frontmatter={node.frontmatter} html={node.html} />
+      ))}
     </PageLayout>
   )
 }

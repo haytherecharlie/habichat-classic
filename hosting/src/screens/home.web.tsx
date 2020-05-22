@@ -1,19 +1,13 @@
 import React from 'react'
-import SEO from 'atoms/SEO'
-import Header from 'components/Header'
 import HeroBanner from 'components/HeroBanner'
-import Footer from 'components/Footer'
 import PageLayout from 'layouts/PageLayout'
 
-const Index = () => {
+const Home = () => {
   return (
-    <PageLayout>
-      <SEO page="home" crawl={true} />
-      <Header />
+    <PageLayout page="home" crawl={true} style={{ maxWidth: `100vw`, paddingLeft: 0, paddingRight: 0 }}>
       <HeroBanner />
-      <Footer />
     </PageLayout>
   )
 }
 
-export default Index
+export default Home

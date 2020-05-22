@@ -5,8 +5,9 @@ import Text from 'atoms/Text'
 import { changeLocale } from 'language/translations'
 import * as S from './ChangeLocale.style'
 
-const ChangeLocale = () => {
+const ChangeLocale = ({ onClick }) => {
   const handleClick = lang => {
+    onClick()
     navigate(changeLocale(lang))
   }
 

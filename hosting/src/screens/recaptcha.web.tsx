@@ -1,14 +1,15 @@
 import React from 'react'
-import SEO from 'atoms/SEO'
 import Captcha from 'atoms/Captcha'
-import TopLayout from 'layouts/TopLayout'
+import SEO from 'atoms/SEO'
+import GlobalStyle from 'assets/theme/global.style'
 
 const Recaptcha = () => {
   return (
-    <TopLayout>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
       <SEO page="recaptcha" crawl={false} />
+      <GlobalStyle />
       <Captcha />
-    </TopLayout>
+    </div>
   )
 }
 

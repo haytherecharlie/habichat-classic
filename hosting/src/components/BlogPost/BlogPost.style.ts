@@ -3,7 +3,7 @@ import theme from 'assets/theme'
 
 export const Article = styled('article')({
   boxSizing: 'border-box',
-  padding: `1rem`,
+  padding: `1rem 0`,
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -12,7 +12,6 @@ export const Article = styled('article')({
   '& > p': {
     marginTop: 5,
     fontSize: theme.FONT_XS,
-    fontWeight: 300
   }
 })
 
@@ -23,7 +22,7 @@ export const Body = styled('div')({
   color: `#fff`,
   '& > p': {
     textAlign: 'left',
-    fontWeight: 200,
+    fontSize: theme.FONT_S,
     '& > a': {
       color: `#CCC`
     }

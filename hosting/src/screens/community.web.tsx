@@ -1,11 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import qs from 'query-string'
-import SEO from 'atoms/SEO'
-import Header from 'components/Header'
-import Footer from 'components/Footer'
 import PostCard from 'components/PostCard'
-import ContentLayout from 'layouts/ContentLayout'
 import PageLayout from 'layouts/PageLayout'
 import postalCodes from 'config/postal-codes.json'
 import asyncLoadCommunity from 'services/firebase/api/loadCommunity'
@@ -29,15 +25,10 @@ const Community = ({ location }) => {
   }, [])
 
   return (
-    <PageLayout>
-      <SEO page="community" crawl={false} />
-      <Header />
-      <ContentLayout.Padding style={{ paddingTop: 5, paddingBottom: 5 }}>
-        {Object.entries(posts).map(([id, post]) => (
-          <PostCard key={id} post={{ ...post, id }} />
-        ))}
-      </ContentLayout.Padding>
-      <Footer />
+    <PageLayout page="community" crawl={false}>
+      {Object.entries(posts).map(([id, post]) => (
+        <PostCard key={id} post={{ ...post, id }} />
+      ))}
     </PageLayout>
   )
 }

@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import theme from 'assets/theme'
 
 export const HeroBanner = styled('div')({
-  width: `100vw`,
   height: 'calc(100vh - 120px)',
   background: theme.BACKGROUND_COLOR,
   display: 'flex',
@@ -14,7 +13,6 @@ export const HeroBanner = styled('div')({
 
 export const Content = styled('div')({
   zIndex: 2,
-  width: `100%`,
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -35,8 +33,8 @@ export const Image = styled('img')({
 export const Video = styled('video')({
   zIndex: 1,
   height: `100%`,
+  width: `100%`,
   position: 'absolute',
-  width: `100vw`,
   objectFit: 'cover',
   top: 0,
   left: 0
