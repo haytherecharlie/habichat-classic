@@ -3,7 +3,6 @@ import theme from 'assets/theme'
 
 export const PostCard = styled('div')({
   margin: `5px 0`,
-  flex: 1,
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'stretch',
@@ -12,8 +11,8 @@ export const PostCard = styled('div')({
 })
 
 export const LeftCard = styled('div')({
-  marginLeft: 25,
-  width: 25,
+  marginLeft: 20,
+  width: 20,
   borderLeft: `1px solid ${theme.BRAND_COLOR}`,
   borderTop: `1px solid ${theme.BRAND_COLOR}`,
   borderBottom: `1px solid ${theme.BRAND_COLOR}`,
@@ -39,11 +38,7 @@ export const CommentsPane = styled('div')({
   width: 200
 })
 
-export const DisplayPhoto = styled('img')({
-  height: 50,
-  width: 50,
-  border: `1px solid ${theme.BRAND_COLOR}`,
-  borderRadius: `50%`,
-  marginLeft: -25,
-  marginTop: 10
+export const TextPane = styled('div')({
+  display: 'flex',
+  flexDirection: 'column'
 })

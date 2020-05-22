@@ -1,6 +1,6 @@
 import * as A from 'services/redux/actions'
 
-const defaultState = null
+const defaultState = {}
 
 const reducer = (state = defaultState, action) => {
   switch (action.type) {

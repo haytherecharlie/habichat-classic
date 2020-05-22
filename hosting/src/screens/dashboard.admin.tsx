@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Link from 'atoms/Link'
 import SEO from 'atoms/SEO'
 import Text from 'atoms/Text'
 import Header from 'components/Header'
@@ -69,7 +70,7 @@ const SearchPostalCodes = () => {
   }, [])
 
   return (
-    <div 
+    <div
     // style={{ border: `1px solid ${theme.BRAND_COLOR}`, padding: 10, margin: `5px 0`, flexDirection: 'column' }}
     >
       {/* <Text size="L" text="postal code" bold unique />
@@ -82,12 +83,11 @@ const SearchPostalCodes = () => {
 }
 
 const CommunityPosts = () => {
-  const { app, community, posts } = useSelector(s => s)
+  const { app, posts } = useSelector(s => s)
   return app.status === 'success' ? (
-    <div style={{ margin: `5px 0`, flexDirection: 'column' }}>
-      <Text size="XL" text={community.displayName} bold unique />
+    <div style={{ margin: 0, flexDirection: 'column' }}>
       {Object.entries(posts).map(([id, post]) => (
-        <PostCard key={id} post={post} />
+        <PostCard key={id} post={{ ...post, id }} />
       ))}
     </div>
   ) : null
@@ -98,7 +98,7 @@ const Dashboard = () => {
     <PageLayout>
       <SEO page="dashboard" crawl={false} />
       <Header />
-      <ContentLayout.Padding style={{ paddingTop: 20, paddingBottom: 20 }}>
+      <ContentLayout.Padding style={{ paddingTop: 5, paddingBottom: 5 }}>
         {/* <BuildCommunity /> */}
         <SearchPostalCodes />
         <CommunityPosts />

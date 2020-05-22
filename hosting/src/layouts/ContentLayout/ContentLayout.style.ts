@@ -24,8 +24,8 @@ export const Top = styled('div')(({ style }) => ({
 }))
 
 export const Padding = styled('div')({
-  paddingLeft: 20,
-  paddingRight: 20,
+  paddingLeft: 10,
+  paddingRight: 10,
   width: `100%`,
   maxWidth: theme.LARGE_VIEW,
   marginLeft: 'auto',

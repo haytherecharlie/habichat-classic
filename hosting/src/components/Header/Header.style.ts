@@ -8,7 +8,6 @@ export const Header = styled('header')({
   left: 0,
   width: `100vw`,
   height: theme.HEADER_HEIGHT,
-  background: theme.BACKGROUND_COLOR,
   borderBottom: `1px solid ${theme.BRAND_COLOR}`,
   borderTop: `5px solid ${theme.BRAND_COLOR}`,
   display: 'flex',
@@ -25,5 +24,5 @@ export const Responsive = styled('div')({
   flexDirection: 'row',
   alignItems: `center`,
   justifyContent: p => p.justify || `space-between`,
-  padding: `0 1rem`
+  padding: `0 10px`
 })

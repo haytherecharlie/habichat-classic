@@ -6,6 +6,9 @@ module.exports = [
   // Blog . Web
   { path: '/blog', component: path.resolve(`src/screens/blog.web.tsx`) },
   { path: '/fr/blog', component: path.resolve(`src/screens/blog.web.tsx`) },
+  // Community . Web
+  { path: '/community', component: path.resolve(`src/screens/community.web.tsx`) },
+  { path: '/fr/community', component: path.resolve(`src/screens/community.web.tsx`) },
   // Home . Web
   { path: '/', component: path.resolve(`src/screens/home.web.tsx`) },
   { path: '/fr', component: path.resolve(`src/screens/home.web.tsx`) },

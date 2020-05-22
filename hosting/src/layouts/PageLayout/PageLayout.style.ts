@@ -11,5 +11,5 @@ export const Wrapper = styled('div')({
   alignItems: 'flesx-start',
   justifyContent: 'flex-start',
   paddingTop: theme.HEADER_HEIGHT,
-  background: theme.BACKGROUND_COLOR
+  background: theme.BACKGROUND_COLOR,
 })
