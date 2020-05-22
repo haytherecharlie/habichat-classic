@@ -22,7 +22,7 @@ export const Main = styled('main')(P => ({
   flexDirection: 'column',
   alignItems: 'stretch',
   justifyContent: 'flex-start',
-  paddingRight: P.fullWidth ? 0 : 15,
-  paddingLeft: P.fullWidth ? 0 : 15,
+  paddingRight: 15,
+  paddingLeft: 15,
   ...P.style
 }))

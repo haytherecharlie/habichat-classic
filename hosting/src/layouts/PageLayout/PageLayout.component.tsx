@@ -14,7 +14,7 @@ const PageLayout = ({ children, page, crawl, style = {} }) => {
       <GlobalStyle />
       <SEO page={page} crawl={crawl} />
       <Header />
-      <S.Main top={top} style={style}>
+      <S.Main style={style}>
         {children}
       </S.Main>
       <Footer />
