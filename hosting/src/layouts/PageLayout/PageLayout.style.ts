@@ -15,6 +15,7 @@ export const PageLayout = styled('div')({
 })
 
 export const Main = styled('main')(P => ({
+  position: 'relative',
   width: `100%`,
   maxWidth: theme.LARGE_VIEW,
   flex: 1,

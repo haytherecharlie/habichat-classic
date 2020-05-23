@@ -13,13 +13,13 @@ const PostCard = ({ post }) => {
   return (
     <S.PostCard>
       <S.LeftCard>
-        <Avatar src={members[post.userID].photoURL} alt="display profile" style={{ margin: `10px 0 0 -20px` }} />
+        <Avatar src={members[post.userID].photoURL} alt="display profile" style={{ margin: `15px 0 0 -20px` }} />
       </S.LeftCard>
       <S.RightCard>
         <Link type="internal" href={`/thread?p=${post.id}`}>
           <S.TextPane>
-            <Text size="S" text={members[post.userID].displayName} bold unique />
-            <Text size="S" text={post.bodyText} style={{ marginTop: 5, fontWeight: 300 }} unique />
+            <Text size="M" text={members[post.userID].displayName} bold unique />
+            <Text size="M" text={post.bodyText} style={{ marginTop: 5, fontWeight: 300 }} unique />
           </S.TextPane>
         </Link>
         <S.CommentsPane>
