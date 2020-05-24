@@ -11,4 +11,4 @@ const community = async (req, res) => {
   }
 }
 
-export default dbCacheTest
+export default community
