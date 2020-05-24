@@ -6,11 +6,8 @@ export const ComposePost = styled('div')({
   alignItems: 'stretch',
   justifyContent: 'center',
   width: `100%`,
-  marginTop: -5,
-  paddingTop: 20,
-  paddingBottom: 10,
+  paddingTop: 5,
   paddingLeft: 1,
-  borderBottom: `1px solid ${theme.BRAND_COLOR}`,
   marginBottom: 15
 })
 
@@ -33,10 +30,11 @@ export const Input = styled('textarea')({
   color: `#FFF`,
   fontFamily: theme.FONT_BODY,
   fontSize: theme.FONT_M,
+  fontWeight: 300,
   resize: `none`,
   '&::placeholder': {
-    color: theme.OPAQUE_BRAND,
-    fontWeight: 400
+    color: `rgba(255, 255, 255, 0.7)`,
+    fontWeight: 300
   },
   '&:focus': {
     outline: 'none'

@@ -7,22 +7,30 @@ import * as S from './ComposePost.style'
 
 const ComposePost = ({ user }) => {
   const textMaxLength = 750
+  const startingRows = 1
   const inputRef = useRef(null)
   const [inputTxt, setInputTxt] = useState('')
   const [remainder, setRemainder] = useState(0)
+  const [capitalize, setCapitalize] = useState(true)
   const [charCount, setCharCount] = useState(textMaxLength)
-  const [rows, setRows] = useState(2)
+  const [rows, setRows] = useState(startingRows)
 
-  const limitReturns = () => {
+  const onChange = e => {
     const inputEl = inputRef.current
-    setCharCount(textMaxLength - inputEl.value.length)
+    const value = inputEl.value.replace(/(\r\n|\n|\r)/gm, '')
+    setCharCount(textMaxLength - value.length)
     setRows((inputEl.scrollHeight - remainder) / 20)
-    setInputTxt(inputEl.value.replace(/(\r\n|\n|\r)/gm, ''))
+    setInputTxt(capitalize ? value.substr(0, 1).toUpperCase() : value)
+    setCapitalize(false)
   }
 
   const triggerResize = () => {
-    setRows(2)
+    setRows(startingRows)
     setRows((inputRef.current.scrollHeight - remainder) / 20)
+  }
+
+  const handleKeyDown = e => {
+    if (e.key === 'Enter') e.preventDefault()
   }
 
   useEffect(() => {
@@ -33,24 +41,24 @@ const ComposePost = ({ user }) => {
 
   return (
     <S.ComposePost>
-      <S.Pane style={{ width: 50 }}>
-        <Avatar src={user.profile.photoURL} alt="Profile Picture" />
+      <S.Pane style={{ width: 50, justifyContent: 'center', paddingTop: 7 }}>
+        <Avatar src={user.profile.photoURL} alt="Profile Picture" style={{ height: 30, width: 30 }} />
       </S.Pane>
       <S.Pane style={{ flex: 1, flexDirection: 'column' }}>
         <S.TextArea>
           <S.Input
             ref={inputRef}
-            placeholder="Share something..."
-            cols="20"
+            placeholder="Write a reply..."
             rows={rows}
             wrap="hard"
             maxLength={textMaxLength}
             value={inputTxt}
-            onChange={limitReturns}
+            onChange={onChange}
+            onKeyDown={handleKeyDown}
           />
         </S.TextArea>
         <S.Pane style={{ flex: 1, justifyContent: `flex-end` }}>
-          <Link type="button" onClick={() => {}} style={{ marginTop: 10 }}>
+          <Link type="button" onClick={() => {}} style={{ marginTop: 10, marginBottom: 10 }}>
             <ButtonPill>
               <Text size="XS" text="Submit" bold unique style={{ letterSpacing: 0 }} />
             </ButtonPill>

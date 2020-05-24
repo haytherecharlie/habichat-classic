@@ -28,10 +28,10 @@ const Community = ({ location }) => {
 
   return (
     <PageLayout page="community" crawl={false} style={{ marginTop: 5 }}>
-      {user.authenticated && <ComposePost user={user} />}
       {Object.entries(posts).map(([id, post]) => (
         <PostCard key={id} post={{ ...post, id }} />
       ))}
+      {user.authenticated && <ComposePost user={user} />}
       <Link type="button" onClick={() => console.log('hello')}></Link>
     </PageLayout>
   )
