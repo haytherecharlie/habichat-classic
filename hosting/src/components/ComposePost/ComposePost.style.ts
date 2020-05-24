@@ -18,6 +18,8 @@ export const Pane = styled('div')(P => ({
 
 export const TextArea = styled('div')({
   flex: 1,
+  display: 'flex',
+  alignItems: 'flex-start',
   border: `1px solid ${theme.BRAND_COLOR}`,
   padding: 10,
   borderRadius: theme.CARD_RADIUS

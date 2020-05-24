@@ -60,7 +60,7 @@ const ComposePost = ({ user }) => {
         <S.Pane style={{ flex: 1, justifyContent: `flex-end` }}>
           <Link type="button" onClick={() => {}} style={{ marginTop: 10, marginBottom: 10 }}>
             <ButtonPill>
-              <Text size="XS" text="Submit" bold unique style={{ letterSpacing: 0 }} />
+              <Text size="XS" text="SEND" bold unique style={{ letterSpacing: 0 }} />
             </ButtonPill>
           </Link>
         </S.Pane>

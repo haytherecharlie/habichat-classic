@@ -12,6 +12,12 @@
     "trailingSlash": true,
     "cleanUrls": true,
     "appAssociation": "AUTO",
+    "rewrites": [
+      {
+        "source": "/api/**",
+        "function": "api"
+      }
+    ],
     "headers": [
       {
         "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
@@ -45,7 +51,7 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "max-age=300"
+            "value": "max-age=604800"
           }
         ]
       }
