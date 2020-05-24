@@ -1,5 +1,9 @@
 import { db } from 'services/firebase'
 
+interface UserRef {
+  get: Function
+}
+
 const asyncLoadCommunity = async (req, res) => {
   try {
     // Postal Code from req
@@ -29,12 +33,15 @@ const asyncLoadCommunity = async (req, res) => {
 const asyncGetPostsAndMembers = async postsCollection => {
   try {
     // Get Message Refs from the Posts Collection
-    const messageRefs = await Promise.all(
+    const messageRefs: Array<Object> = await Promise.all(
       postsCollection.docs.map(postDoc => db().doc(`messages/${postDoc.data().messageID}`).get())
     )
 
     // Extract Messages and User References from Message References.
-    const { messages, userRefs } = messageRefs.reduce((acc, msgRef) => extractMessageAndUserRef(acc, msgRef), { messages: {}, userRefs: {} })
+    const { messages, userRefs } = messageRefs.reduce((acc, msgRef) => extractMessageAndUserRef(acc, msgRef), {
+      messages: {},
+      userRefs: {}
+    })
 
     // Get Unique User Documents
     const users = await asyncFetchUsers(userRefs)
@@ -46,7 +53,7 @@ const asyncGetPostsAndMembers = async postsCollection => {
   }
 }
 
-export const asyncFetchUsers = async userRefs => {
+export const asyncFetchUsers = async (userRefs: UserRef) => {
   try {
     // Iterate User References
     return Object.values(userRefs).reduce(async (acc, userRef) => {
