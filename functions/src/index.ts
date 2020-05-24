@@ -1,15 +1,13 @@
-import './utils/modules'
+import './utils/helpers/modules'
 import { https } from 'firebase-functions'
-const express = require('express')
-const cors = require('cors')
+import express from 'express'
+import cors from 'cors'
+import community from 'controllers/community'
 
 const app = express()
 app.use(cors({ origin: true }))
 
-app.get('/api/:id', (req, res) => {
-  console.log('THIS CALL IS #: ', req.params.id)
-  res.set('Cache-Control', 'public, max-age=300, s-maxage=600')
-  res.status(200).send(req.params.id)
-})
+// routes
+app.get('/api/community/:id', community)
 
 exports.api = https.onRequest(app)
