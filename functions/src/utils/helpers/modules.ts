@@ -1,5 +1,6 @@
-import * as ModuleAlias from 'module-alias'
-import * as path from 'path'
+require('dotenv').config()
+const ModuleAlias = require('module-alias')
+const path = require('path')
 
 ModuleAlias.addAliases({
   config: path.join(__dirname, '../../config'),
