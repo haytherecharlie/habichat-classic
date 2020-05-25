@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import BlogPost from 'components/BlogPost'
-import BlogLayout from 'layouts/BlogLayout'
 import PageLayout from 'layouts/PageLayout'
 
 const Blog = ({ data }) => {

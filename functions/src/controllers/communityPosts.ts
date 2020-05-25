@@ -4,27 +4,23 @@ interface UserRef {
   get: Function
 }
 
-const community = async (req, res) => {
+const communityPosts = async (req, res) => {
   try {
     // Postal Code from req
     const { cid } = req.params
 
     // References
-    const communityRef = db().doc(`communities/${cid}`)
     const postsRef = db().collection(`communities/${cid}/posts`).limit(50)
 
     // Fetch Community Doc and Posts Collection from Refs.
-    const [communityDoc, postsCollection] = await Promise.all([communityRef.get(), postsRef.get()])
-
-    // Get Community Data
-    const community = communityDoc.data()
+    const postsCollection = await postsRef.get()
 
     // Extract Posts (Messages) and Members (Users) from Posts Collection.
     const { posts, members } = await asyncGetPostsAndMembers(postsCollection)
 
     // return community, posts and members
     res.set('Cache-Control', 'public, max-age=300, s-maxage=600')
-    return res.status(200).json({ status: 'success', data: { community, posts, members } })
+    return res.status(200).json({ status: 'success', data: { posts, members } })
   } catch (err) {
     return res.status(400).json({ status: 'error', data: err })
   }
@@ -91,4 +87,4 @@ const extractMessageAndUserRef = (acc, msgRef) => {
   }
 }
 
-export default community
+export default communityPosts
