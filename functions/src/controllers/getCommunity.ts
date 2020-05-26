@@ -4,25 +4,32 @@ interface UserRef {
   get: Function
 }
 
-const communityPosts = async (req, res) => {
+const community = async (req, res) => {
   try {
     // Postal Code from req
     const { cid } = req.params
 
     // References
+    const communityRef = db().doc(`communities/${cid}`)
     const postsRef = db().collection(`communities/${cid}/posts`).limit(50)
 
     // Fetch Community Doc and Posts Collection from Refs.
-    const postsCollection = await postsRef.get()
+    const [communityDoc, postsCollection] = await Promise.all([communityRef.get(), postsRef.get()])
+
+    // Get Community Data
+    const community = communityDoc.data()
+
+    // If there's no community throw error.
+    if (!community) throw new Error('community not found.')
 
     // Extract Posts (Messages) and Members (Users) from Posts Collection.
     const { posts, members } = await asyncGetPostsAndMembers(postsCollection)
 
     // return community, posts and members
-    res.set('Cache-Control', 'public, max-age=300, s-maxage=600')
-    return res.status(200).json({ status: 'success', data: { posts, members } })
+    return res.status(200).json({ status: 'success', data: { community, posts, members } })
   } catch (err) {
-    return res.status(400).json({ status: 'error', data: err })
+    console.log(err.message)
+    return res.status(400).json({ status: 'error', data: err.message })
   }
 }
 
@@ -30,8 +37,13 @@ const asyncGetPostsAndMembers = async postsCollection => {
   try {
     // Get Message Refs from the Posts Collection
     const messageRefs: Array<Object> = await Promise.all(
-      postsCollection.docs.map(postDoc => db().doc(`messages/${postDoc.data().messageID}`).get())
+      postsCollection.docs.map(postDoc => {
+        return db().doc(`messages/${postDoc.data().messageID}`).get()
+      })
     )
+
+    // If no message refs
+    if (!messageRefs.length) throw new Error('error fetching docs from collection')
 
     // Extract Messages and User References from Message References.
     const { messages, userRefs } = messageRefs.reduce((acc, msgRef) => extractMessageAndUserRef(acc, msgRef), {
@@ -87,4 +99,4 @@ const extractMessageAndUserRef = (acc, msgRef) => {
   }
 }
 
-export default communityPosts
+export default community

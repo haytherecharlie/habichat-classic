@@ -9,6 +9,7 @@ import Text from 'atoms/Text'
 import * as S from './PostCard.style'
 
 const PostCard = ({ post }) => {
+  console.log(post)
   const members = useSelector(s => s.members)
   return (
     <S.PostCard>
@@ -16,7 +17,7 @@ const PostCard = ({ post }) => {
         <Avatar src={members[post.userID].photoURL} alt="display profile" style={{ margin: `15px 0 0 -20px` }} />
       </S.LeftCard>
       <S.RightCard>
-        <Link type="internal" href={`/thread?p=${post.id}`}>
+        <Link type="internal" href={`/community/${post.cid}/post/${post.pid}`}>
           <S.TextPane>
             <Text size="M" text={members[post.userID].displayName} bold unique />
             <Text size="M" text={post.bodyText} style={{ marginTop: 5, fontWeight: 300 }} unique />
@@ -27,8 +28,8 @@ const PostCard = ({ post }) => {
             <ChatBubbles fontSize={`${theme.FONT_S}px`} color={theme.BRAND_COLOR} />
             <Text
               size="XS"
-              text="10 Comments"
-              style={{ marginLeft: 2, color: theme.BRAND_COLOR, fontWeight: 600 }}
+              text={`${post.replies} Comments`}
+              style={{ marginLeft: 3, color: theme.BRAND_COLOR, fontWeight: 600 }}
               unique
             />
           </Link>
@@ -37,7 +38,7 @@ const PostCard = ({ post }) => {
             <Text
               size="XS"
               text="Write Reply"
-              style={{ marginLeft: 2, color: theme.BRAND_COLOR, fontWeight: 600 }}
+              style={{ marginLeft: 3, color: theme.BRAND_COLOR, fontWeight: 600 }}
               unique
             />
           </Link>

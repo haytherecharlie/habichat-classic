@@ -15,6 +15,7 @@
     "paths": {
       "config/*": ["./src/config/*"],
       "controllers/*": ["./src/controllers/*"],
+      "middleware/*": ["./src/middleware/*"],
       "services/*": ["./src/services/*"],
       "utils/*": ["./src/utils/*"]
     }

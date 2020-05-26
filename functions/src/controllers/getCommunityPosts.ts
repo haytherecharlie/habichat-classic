@@ -1,34 +1,45 @@
 import { db } from 'services/firebase'
 
-const asyncLoadCommunity = async postalCode => {
+interface UserRef {
+  get: Function
+}
+
+const communityPosts = async (req, res) => {
   try {
+    // Postal Code from req
+    const { cid } = req.params
+
     // References
-    const communityRef = db().doc(`communities/${postalCode}`)
-    const postsRef = db().collection(`communities/${postalCode}/posts`).limit(50)
+    const postsRef = db().collection(`communities/${cid}/posts`).limit(50)
 
     // Fetch Community Doc and Posts Collection from Refs.
-    const [communityDoc, postsCollection] = await Promise.all([communityRef.get(), postsRef.get()])
+    const postsCollection = await postsRef.get()
 
-    // Get Community Data
-    const community = communityDoc.data()
+    console.log(postsCollection.size)
 
     // Extract Posts (Messages) and Members (Users) from Posts Collection.
     const { posts, members } = await asyncGetPostsAndMembers(postsCollection)
 
     // return community, posts and members
-    return { community, posts, members, status: 'success' }
+    res.set('Cache-Control', 'public, max-age=300, s-maxage=600')
+    return res.status(200).json({ status: 'success', data: { posts, members } })
   } catch (err) {
-    console.log(err.message)
+    return res.status(400).json({ status: 'error', data: err })
   }
 }
 
 const asyncGetPostsAndMembers = async postsCollection => {
   try {
     // Get Message Refs from the Posts Collection
-    const messageRefs = await Promise.all(postsCollection.docs.map(postDoc => db().doc(`messages/${postDoc.data().messageID}`).get()))
+    const messageRefs: Array<Object> = await Promise.all(
+      postsCollection.docs.map(postDoc => db().doc(`messages/${postDoc.data().messageID}`).get())
+    )
 
     // Extract Messages and User References from Message References.
-    const { messages, userRefs } = messageRefs.reduce((acc, msgRef) => extractMessageAndUserRef(acc, msgRef), { messages: {}, userRefs: {} })
+    const { messages, userRefs } = messageRefs.reduce((acc, msgRef) => extractMessageAndUserRef(acc, msgRef), {
+      messages: {},
+      userRefs: {}
+    })
 
     // Get Unique User Documents
     const users = await asyncFetchUsers(userRefs)
@@ -36,16 +47,14 @@ const asyncGetPostsAndMembers = async postsCollection => {
     // Return Posts (Messages) and Members (Users)
     return { posts: messages, members: users }
   } catch (err) {
-    console.error('error fetching docs from collection')
-    throw err
+    throw new Error('error fetching docs from collection')
   }
 }
 
-export const asyncFetchUsers = async userRefs => {
+export const asyncFetchUsers = async (userRefs: UserRef) => {
   try {
     // Iterate User References
     return Object.values(userRefs).reduce(async (acc, userRef) => {
-
       // Get User Document
       const userDoc = await userRef.get()
 
@@ -58,29 +67,26 @@ export const asyncFetchUsers = async userRefs => {
       // return accumulator
       return acc
     }, {})
-  } catch(err) {
-    console.error('error fetching users from references')
-    throw err
+  } catch (err) {
+    throw new Error('error fetching users from references')
   }
 }
 
 const extractMessageAndUserRef = (acc, msgRef) => {
   try {
-
     // Get Message Document and User Reference
     const msgDoc = msgRef.data()
     const userID = msgDoc.userID
-    
+
     // Assign messages and userRefs
     acc.messages[msgRef.id] = msgDoc
     acc.userRefs[userID] = db().doc(`users/${userID}`)
 
     // Return Accumulator
     return acc
-  } catch(err) {
-    console.error('error extracting message data and user references.')
-    throw err
+  } catch (err) {
+    throw new Error('error extracting message data and user references.')
   }
 }
 
-export default asyncLoadCommunity
+export default communityPosts
