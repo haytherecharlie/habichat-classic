@@ -3,10 +3,10 @@ import theme from 'assets/theme'
 
 export const Article = styled('article')({
   boxSizing: 'border-box',
-  padding: `1rem 0`,
+  padding: `2rem 0 1rem 0`,
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center',
+  alignItems: 'flex-start',
   justifyContent: 'flex-start',
   maxWidth: theme.LARGE_VIEW,
   '& > p': {

@@ -13,6 +13,5 @@ So I decided to do something about it - it just so happens that I'm a software d
 I want habichat to connect communities together across Canada but first, I need to test things on a smaller scale. So I'm asking residents of Montreal and specifically Ville Émard to help me gain some valuable market research. If you're someone who lives in the area, you are a digital connector, and you'd like to help collaborate together - please join our [Slack Channel](http://slack.habi.chat/) 
  or shoot over an [Email](mailto:hello@habi.chat). I can't wait to see what amazing things we come up with. 
 
-Robert Charles Hay
+Charles Hay
 <br>Founder, habichat
-

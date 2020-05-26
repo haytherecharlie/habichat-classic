@@ -10,6 +10,6 @@ I found an interesting whitepaper today explaining the functionality of a peer t
 
 Today I reorganized our Google Cloud infrastructure to exist in Montreal datacenters (because I want to keep all information within Canada). This means that I had to relegate the cloud functions to the nether realm. I don't think this should be a problem and will help keep pricing down as I will need to worry about one less Google service being billed. How does a developer even protect themselves from someone spamming a cloud function? I know I can protect the response with a token validating middleware, but the function is still invoked even if the credentials fail... whats to stop a malicious party from just spamming the endpoint? ... maybe getting rid of those things was a good call for more than one reason.
 
-Robert Charles Hay
+Charles Hay
 <br>Founder, habichat
 
