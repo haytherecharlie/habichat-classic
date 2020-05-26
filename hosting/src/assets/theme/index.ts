@@ -26,6 +26,7 @@ export default {
   SMALL_VIEW: D.SMALL_VIEW,
   MEDIUM_VIEW: D.MEDIUM_VIEW,
   LARGE_VIEW: D.LARGE_VIEW,
+  MEDIA_QUERY: (minMax, size) => `@media only screen and (${minMax}-width: ${size}px)`,
   SMALL_QUERY: `@media only screen and (max-width: ${D.SMALL_VIEW}px)`,
   MEDIUM_QUERY: `@media only screen and (max-width: ${D.MEDIUM_VIEW}px)`,
   LARGE_QUERY: `@media only screen and (max-width: ${D.LARGE_VIEW}px)`,

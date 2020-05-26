@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import enable from 'iphone-inline-video'
+import theme from 'assets/theme'
 import Text from 'atoms/Text'
 import * as S from './HeroBanner.style'
 
@@ -12,23 +13,16 @@ const HeroBanner = () => {
   return (
     <S.HeroBanner>
       <S.Content>
-        <S.Video
-          playsInline
-          muted
-          autoPlay
-          loop
-          src={require('assets/videos/aerials.mp4')}
-          ref={video}
-          poster={'assets/videos/aerials.jpg'}
-        />
-        <S.Image src={require('assets/images/habichat.png')} alt="habichat logo" />
+        <S.Video playsInline muted autoPlay loop src="/video/aerials.mp4" ref={video} poster="image/aerials.jpg" />
+        <S.Image src="image/habichat.png" alt="habichat logo" />
         <Text
           size="XL"
           text="home-title"
-          style={{ textTransform: 'uppercase', color: '#FFF', textAlign: 'center', zIndex: 3, marginTop: 20 }}
+          style={{ color: '#FFF', textAlign: 'center', zIndex: 3, marginTop: 20, fontSize: 25 }}
           bold
         />
         <Text size="M" text="home-subtext" style={{ color: '#FFF', textAlign: 'center', zIndex: 3, marginTop: 20 }} />
+        <S.BouncingArrow fontSize={`50px`} color={theme.WHITE} style={{zIndex: 200}} />
       </S.Content>
     </S.HeroBanner>
   )

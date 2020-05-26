@@ -10,9 +10,6 @@ export const ButtonLink = styled('button')(P => ({
   background: 'transparent',
   cursor: 'pointer',
   padding: 0,
-  '&:focus': {
-    outline: 'none'
-  },
   ...P.style
 }))
 

@@ -1,8 +1,9 @@
 import styled from 'styled-components'
+import DownArrow from 'react-ionicons/lib/IosArrowDown'
 import theme from 'assets/theme'
 
 export const HeroBanner = styled('div')({
-  height: 'calc(100vh - 120px)',
+  height: 'calc(100vh - 60px)',
   background: theme.BACKGROUND_COLOR,
   display: 'flex',
   flexDirection: 'column',
@@ -38,4 +39,20 @@ export const Video = styled('video')({
   objectFit: 'cover',
   top: 0,
   left: 0
+})
+
+export const BouncingArrow = styled(DownArrow)({
+  position: 'absolute',
+  bottom: 0,
+  width: 50,
+  height: 50,
+  animation: `bounce 1s infinite alternate`,
+  '@keyframes bounce': {
+    from: {
+      transform: `translateY(0px)`
+    },
+    to: {
+      transform: `translateY(-15px)`
+    }
+  }
 })

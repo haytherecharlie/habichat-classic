@@ -1,9 +1,8 @@
 import { createGlobalStyle } from 'styled-components'
-import cocogoose from 'assets/fonts/cocogoose.otf'
 import theme from 'assets/theme'
 
 const GlobalStyle = createGlobalStyle({
-  '@font-face': { fontFamily: 'cocogoose', src: `url(${cocogoose}); url(${cocogoose}) format("ttf")` },
+  '@font-face': { fontFamily: 'cocogoose', src: `url('/font/cocogoose.otf'); url('/font/cocogoose.otf') format("ttf")` },
   dl: { marginBottom: '1rem' },
   h1: { marginBottom: '0' },
   h2: { marginBottom: '0' },
