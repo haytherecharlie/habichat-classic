@@ -8,4 +8,4 @@ import user from './reducers/user'
 
 const reducer = combineReducers({ app, community, members, posts, user })
 
-export default preloadedState => createStore(reducer, preloadedState, composeWithDevTools())
+export default createStore(reducer, composeWithDevTools())

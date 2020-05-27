@@ -1,7 +1,9 @@
+import store from 'services/redux'
+
 const getCommunity = async cid => {
   try {
-    const req = await fetch(`https://habi.chat/community/${cid}`)
-    return await req.json()
+    console.log(store.getState())
+    return { status: 'success', data: `community/${cid}` }
   } catch (err) {
     throw new Error()
   }

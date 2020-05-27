@@ -54,17 +54,6 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-react-redux`,
-      options: {
-        pathToCreateStoreModule: `${__dirname}/src/services/redux`,
-        serialize: {
-          space: 0,
-          isJSON: true,
-          unsafe: false
-        }
-      }
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown`,
