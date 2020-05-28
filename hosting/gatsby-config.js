@@ -101,7 +101,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
-        exclude: [`**/avatars`, `**/blog/**`, `**/dashboard`, `**/recaptcha`, `**/styleguide`]
+        exclude: [`**/avatars`, `**/dashboard`, `/app/community`, `/app/post`, `**/styleguide`]
       }
     },
     {
@@ -109,7 +109,13 @@ module.exports = {
       options: {
         host: 'https://habi.chat',
         sitemap: 'https://habi.chat/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/', disallow: [`*/avatars`, `*/dashboard`, `*/recaptcha`, `*/styleguide`] }]
+        policy: [
+          {
+            userAgent: '*',
+            allow: '/',
+            disallow: [`*/app/community`, `*/app/post`, `*/avatars`, `*/dashboard`, `*/recaptcha`, `*/styleguide`]
+          }
+        ]
       }
     },
     {
