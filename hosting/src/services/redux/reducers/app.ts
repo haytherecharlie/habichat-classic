@@ -12,8 +12,6 @@ const reducer = (state = defaultState, action) => {
       return { ...state, dimensions: action.value }
     case A.TOGGLE_NAV:
       return { ...state, nav: !state.nav }
-    case A.INIT_COMMUNITY:
-      return { ...state, status: action.status}
     default:
       return state
   }

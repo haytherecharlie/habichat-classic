@@ -1,10 +1,10 @@
 import { createStore, combineReducers } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import app from './reducers/app'
-import community from './reducers/community'
-import members from './reducers/members'
-import posts from './reducers/posts'
-import user from './reducers/user'
+import app from 'services/redux/reducers/app'
+import community from 'services/redux/reducers/community'
+import members from 'services/redux/reducers/members'
+import posts from 'services/redux/reducers/posts'
+import user from 'services/redux/reducers/user'
 
 const reducer = combineReducers({ app, community, members, posts, user })
 

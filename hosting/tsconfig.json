@@ -4,16 +4,10 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": "./",
     "paths": {
-      "assets/*": ["./src/assets/*"],
-      "atoms/*": ["./src/atoms/*"],
-      "components/*": ["./src/components/*"],
+      "api/*": ["./src/api/*"],
       "config/*": ["./src/config/*"],
-      "language/*": ["./src/language/*"],
-      "layouts/*": ["./src/layouts/*"],
-      "routes/*": ["./src/routes/*"],
-      "screens/*": ["./src/screens/*"],
       "services/*": ["./src/services/*"],
-      "utils/*": ["./src/utils/*"]
+      "ui/*": ["./src/ui/*"]
     },
     "allowJs": true,
     "skipLibCheck": true, // doesn't care about typings files for libraries

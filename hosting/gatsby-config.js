@@ -42,22 +42,17 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
-        assets: path.join(__dirname, 'src/assets'),
-        atoms: path.join(__dirname, 'src/atoms'),
-        components: path.join(__dirname, 'src/components'),
+        api: path.join(__dirname, 'src/api'),
         config: path.join(__dirname, 'src/config'),
-        language: path.join(__dirname, 'src/language'),
-        layouts: path.join(__dirname, 'src/layouts'),
-        pages: path.join(__dirname, 'src/pages'),
         services: path.join(__dirname, 'src/services'),
-        utils: path.join(__dirname, 'src/utils')
+        ui: path.join(__dirname, 'src/ui')
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown`,
-        path: `${__dirname}/src/markdown`
+        path: `${__dirname}/src/ui/markdown`
       }
     },
     {

@@ -1,19 +1,19 @@
 const { resolve } = require('path')
 
 exports.onCreatePage = async ({ page: { path }, actions: { createPage } }) => {
-  if (path.match(/^\/community/)) {
+  if (path.match(/^\/app\/community/)) {
     createPage({
-      path: '/community',
-      matchPath: '/community/:cid',
-      component: resolve(`src/screens/community.web.tsx`)
+      path: '/app/community',
+      matchPath: '/app/community/:cid',
+      component: resolve(`src/ui/screens/community.app.tsx`)
     })
   }
 
-  if (path.match(/^\/post/)) {
+  if (path.match(/^\/app\/post/)) {
     createPage({
-      path: '/post',
-      matchPath: '/community/:cid/post/:pid',
-      component: resolve(`src/screens/post.web.tsx`)
+      path: '/app/post',
+      matchPath: '/app/community/:cid/post/:pid',
+      component: resolve(`src/ui/screens/post.app.tsx`)
     })
   }
 }
