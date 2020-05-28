@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import theme from 'ui/assets/theme'
 
 export const ChangeLocale = styled('div')({
+  margin: '0 auto',
   height: theme.FONT_L
 })
 

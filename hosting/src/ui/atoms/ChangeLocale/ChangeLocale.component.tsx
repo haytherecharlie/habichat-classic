@@ -14,11 +14,11 @@ const ChangeLocale = ({ onClick }) => {
   return (
     <S.ChangeLocale>
       <Link type="button" onClick={() => handleClick('/en')}>
-        <Text size="S" text="EN" unique link />
+        <Text size="XS" text="EN" unique link />
       </Link>
       <S.Divider />
       <Link type="button" onClick={() => handleClick('/fr')}>
-        <Text size="S" text="FR" unique link />
+        <Text size="XS" text="FR" unique link />
       </Link>
     </S.ChangeLocale>
   )

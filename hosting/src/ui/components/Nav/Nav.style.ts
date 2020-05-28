@@ -38,10 +38,16 @@ export const Links = styled('div')({
 })
 
 export const Locale = styled('div')({
+  width: 150,
+  flexDirection: 'row',
   alignItems: 'center',
-  justifyContent: 'center',
+  justifyContent: 'space-between',
   margin: 0,
   [`@media only screen and (max-width: ${theme.LARGE_VIEW}px)`]: {
-    margin: `10px 0`
+    height: 65,
+    margin: `10px 0`,
+    flexDirection: 'column',
+    alignItems: 'stretch',
+    justifyContent: 'space-between',
   }
 })

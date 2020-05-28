@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import ButtonPill from 'ui/atoms/ButtonPill'
 import ChangeLocale from 'ui/atoms/ChangeLocale'
 import Link from 'ui/atoms/Link'
 import Text from 'ui/atoms/Text'
@@ -35,6 +36,11 @@ const Nav = () => {
       </S.Links>
       <S.Locale>
         <ChangeLocale onClick={onClick} />
+        <Link type="internal" href="/app/authenticate" onClick={onClick}>
+          <ButtonPill style={{ padding: `7px 15px`, flex: 1 }}>
+            <Text size="XS" text="SIGN IN" bold unique />
+          </ButtonPill>
+        </Link>
       </S.Locale>
     </S.Nav>
   ) : null
