@@ -4,7 +4,7 @@ import { useLocation } from '@reach/router'
 import { formatMessage } from 'ui/language/translations'
 
 const SEO = ({ page, crawl }) => {
-  const { origin = "https://habi.chat", pathname } = useLocation()
+  const { origin = 'https://habi.chat', pathname } = useLocation()
 
   return (
     <Helmet>
@@ -15,23 +15,29 @@ const SEO = ({ page, crawl }) => {
       <title>{formatMessage(`${page}-seo-title`)}</title>
       <meta name="title" content={formatMessage(`${page}-seo-title`)} />
       <meta name="description" content={formatMessage(`${page}-seo-description`)} />
-      <link rel="canonical" href={`${origin}${pathname}`} />
+      <link rel="canonical" href={`https://habi.chat${pathname}`} />
       <meta name="robots" content={crawl ? 'index, follow' : 'noindex, follow'} />
+      <meta
+        name="keywords"
+        content="Meet my neighbours, Meet neighbours app, Community communication, Neighborhood meeting, Neighbourhood forum, App to meet neighbors, Neighborhood communication, Meet with your neighbours, Speak with neighbours online, Ask your neighbours, How to meet neighbors in Toronto, Neighbours advice, Neighbours communication , Meet people in my neighborhood, Neighbourhood chat, Website to meet neighbors, Meet people who live next door"
+      />
+      <meta name="author" content="Habichat" />
+      <meta name="publisher" content="Habichat" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`${origin}${pathname}`} />
+      <meta property="og:url" content={`https://habi.chat${pathname}`} />
       <meta property="og:title" content={formatMessage(`${page}-seo-title`)} />
       <meta property="og:description" content={formatMessage(`${page}-seo-description`)} />
-      <meta property="og:image" content="${origin}/social/og-image.jpg" />
+      <meta property="og:image" content="https://habi.chat/social/og-image.jpg" />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={`${origin}${pathname}`} />
+      <meta property="twitter:url" content={`https://habi.chat${pathname}`} />
       <meta property="twitter:title" content={formatMessage(`${page}-seo-title`)} />
       <meta property="twitter:description" content={formatMessage(`${page}-seo-description`)} />
-      <meta property="twitter:image" content={`${origin}/social/og-image.jpg`} />
+      <meta property="twitter:image" content={`https://habi.chat/social/og-image.jpg`} />
 
       {/* Favicons */}
       <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png" />

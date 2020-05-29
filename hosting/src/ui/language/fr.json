@@ -1,23 +1,29 @@
 {
   "active-lang": "fr",
 
-  "blog-seo-title": "Habichat | Blog",
-  "blog-seo-description": "Habichat publishes articles about community, technology and design on a regular basis in order to share our passion with the world.",
+  "404-seo-title": "Habichat | 404",
+  "404-seo-description": "The page you have requested is not found",
+
+  "blog-seo-title": "Habichat | Our Latest Blog Posts",
+  "blog-seo-description": "Habichat regularly publishes blog posts about our brand, research and development, upcoming events, and our views on important matters.",
+
+  "community-seo-title": "Habichat | Community",
+  "community-seo-description": "Welcome to the community! Find out what's going on in your neighbourhood.",
 
   "dashboard-seo-title": "Habichat | Admin Dashboard",
   "dashboard-seo-description": "Testing grounds for community app.",
 
-  "home-seo-title": "Habichat | Bavarder avec vos voisins",
-  "home-seo-description": "Il se passe beaucoup de choses dans votre quartier, Habichat vous permet de vous connecter, de partager et de rester informé de tout ce qui se passe dans votre communauté.",
-  "home-title": "Bavarder Avec Vos Voisins!",
-  "home-subtext": "Il se passe beaucoup de choses dans votre quartier, Habichat vous permet de vous connecter, de partager et de rester informé de tout ce qui se passe dans votre communauté.",
-  "home-onboard-1-title": "Les médias sociaux vous connectent aux personnes qui vivent dans un monde éloigné ...",
-  "home-onboard-1-body": "C'est incroyable que nous puissions rester en contact avec la famille et les amis qui vivent dans d'autres pays, le monde est devenu un endroit plus accessible grâce aux médias sociaux et à Internet.",
-  "home-onboard-2-title": "...habichat vous relie aux gens qui vivent à côté!",
-  "home-onboard-2-body": "Habichat facilite la planification d'événements locaux, se faire de nouveaux amis, vendre des articles, demander des conseils, trouver des services locaux et se tenir informé de tout ce qui se passe dans votre quartier.",
-  "home-onboard-3-title": "Bienvenue dans le quartier!",
-  "home-onboard-3-body": "Cliquez ci-dessous pour commencer!",
-  "home-onboard-button": "COMMENCER À RECHERCHER DES COMMUNAUTÉS",
+  "landing-seo-title": "Habichat | Bavarder avec vos voisins",
+  "landing-seo-description": "Habichat est le réseau social du Canada - c'est le site où vous pouvez rester en contact avec vos voisins et communiquer avec les gens à proximité.",
+  "landing-title": "Bavarder Avec Vos Voisins!",
+  "landing-subtext": "Il se passe beaucoup de choses dans votre quartier, Habichat vous permet de vous connecter, de partager et de rester informé de tout ce qui se passe dans votre communauté.",
+  "landing-onboard-1-title": "Les médias sociaux vous connectent aux personnes qui vivent dans un monde éloigné ...",
+  "landing-onboard-1-body": "C'est incroyable que nous puissions rester en contact avec la famille et les amis qui vivent dans d'autres pays, le monde est devenu un endroit plus accessible grâce aux médias sociaux et à Internet.",
+  "landing-onboard-2-title": "...habichat vous relie aux gens qui vivent à côté!",
+  "landing-onboard-2-body": "Habichat facilite la planification d'événements locaux, se faire de nouveaux amis, vendre des articles, demander des conseils, trouver des services locaux et se tenir informé de tout ce qui se passe dans votre quartier.",
+  "landing-onboard-3-title": "Bienvenue dans le quartier!",
+  "landing-onboard-3-body": "Cliquez ci-dessous pour commencer!",
+  "landing-onboard-button": "COMMENCER À RECHERCHER DES COMMUNAUTÉS",
 
   "nav-blog": "Blog",
   "nav-home": "D'accueil",
@@ -25,7 +31,7 @@
   "nav-privacy": "La Confidentialité",
 
   "privacy-seo-title": "Habichat | Politique de confidentialité",
-  "privacy-seo-description": "Comment Habichat recueille, utilise, divulgue et gère vos données.",
+  "privacy-seo-description": "Comment Habichat recueille, utilise, divulgue et gère vos données. Veuillez lire attentivement ces informations - Habichat croit en la transparence et au droit à la vie privée.",
   "privacy-1": "Politique de confidentialité",
   "privacy-2": "Votre vie privée est importante pour nous. La politique d'Habichat est de respecter votre vie privée concernant toute information que nous pouvons collecter auprès de vous sur notre site Web, https://habi.chat et notre application.",
   "privacy-3": "Nous ne demandons des informations personnelles que lorsque nous en avons vraiment besoin pour vous fournir un service. Nous le collectons par des moyens justes et légaux, avec votre connaissance et votre consentement. Nous vous informons également pourquoi nous les collectons et comment ils seront utilisés.",
@@ -43,7 +49,7 @@
   "styleguide-seo-description": "A styleguide for the Habichat Design System.",
 
   "terms-seo-title": "Habichat | Conditions d'utilisation",
-  "terms-seo-description": "Notre contrat d'utilisation acceptable du site Web Habichat et / ou de l'application mobile.",
+  "terms-seo-description": "Afin de protéger notre propriété et la vôtre, veuillez lire notre contrat d'utilisation acceptable du site Web Habichat qui définit l'accord accepté pour l'utilisation de notre site.",
   "terms-1": "Conditions d'utilisation",
   "terms-2": "1. Conditions:",
   "terms-3": "En accédant à l'Habichat d'application iOS ou Android ou au site Web à https://habi.chat, vous acceptez d'être lié par ces conditions de service, toutes les lois et réglementations applicables, et acceptez que vous êtes responsable du respect des toutes les lois locales applicables. Si vous n'êtes pas d'accord avec l'une de ces conditions, il vous est interdit d'utiliser ou d'accéder à ce site. Les éléments contenus dans ce site Web sont protégés par le droit d'auteur et les marques applicables.",

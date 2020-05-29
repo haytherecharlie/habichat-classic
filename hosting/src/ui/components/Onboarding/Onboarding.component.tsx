@@ -9,8 +9,8 @@ const Onboarding = () => {
     <S.Onboarding>
       <S.Row>
         <S.Column>
-          <Text size="XL" text="home-onboard-1-title" bold style={{ marginBottom: 20, textAlign: 'center' }} />
-          <Text size="M" text="home-onboard-1-body" style={{ marginBottom: 20, textAlign: 'center' }} />
+          <Text size="XL" text="landing-onboard-1-title" bold style={{ marginBottom: 20, textAlign: 'center' }} />
+          <Text size="M" text="landing-onboard-1-body" style={{ marginBottom: 20, textAlign: 'center' }} />
         </S.Column>
         <S.Column>
           <S.Image src="/image/onboard-city.png" alt="global city" />
@@ -23,8 +23,8 @@ const Onboarding = () => {
             <S.Image src="/image/onboard-window.png" alt="apartment window" />
           </S.Column>
           <S.Column>
-            <Text size="XL" text="home-onboard-2-title" bold style={{ textAlign: 'center', marginBottom: 20 }} />
-            <Text size="M" text="home-onboard-2-body" style={{ marginBottom: 20, textAlign: 'center' }} />
+            <Text size="XL" text="landing-onboard-2-title" bold style={{ textAlign: 'center', marginBottom: 20 }} />
+            <Text size="M" text="landing-onboard-2-body" style={{ marginBottom: 20, textAlign: 'center' }} />
           </S.Column>
         </S.Row>
         <S.SkewedDown />
@@ -34,15 +34,15 @@ const Onboarding = () => {
           <S.Image src="/image/onboard-wave.png" alt="neighbours waving" />
         </S.Column>
         <S.Column style={{ alignItems: 'center' }}>
-          <Text size="XL" text="home-onboard-3-title" bold style={{ textAlign: 'center', marginBottom: 20 }} />
-          <Text size="M" text="home-onboard-3-body" style={{ marginBottom: 20, textAlign: 'center' }} />
+          <Text size="XL" text="landing-onboard-3-title" bold style={{ textAlign: 'center', marginBottom: 20 }} />
+          <Text size="M" text="landing-onboard-3-body" style={{ marginBottom: 20, textAlign: 'center' }} />
           <Link href="/community/H4E">
             <ButtonPill>
               <Text
                 size="M"
-                text="home-onboard-button"
+                text="landing-onboard-button"
                 bold
-                style={{ textAlign: 'center', margin: `5px 10px` }}
+                style={{ textAlign: 'center', margin: `10px 15px` }}
               />
             </ButtonPill>
           </Link>

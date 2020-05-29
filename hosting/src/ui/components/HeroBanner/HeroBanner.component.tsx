@@ -17,11 +17,11 @@ const HeroBanner = () => {
         <S.Image src="image/habichat.png" alt="habichat logo" />
         <Text
           size="XL"
-          text="home-title"
+          text="landing-title"
           style={{ color: '#FFF', textAlign: 'center', zIndex: 3, marginTop: 20, fontSize: 25 }}
           bold
         />
-        <Text size="M" text="home-subtext" style={{ color: '#FFF', textAlign: 'center', zIndex: 3, marginTop: 20 }} />
+        <Text size="M" text="landing-subtext" style={{ color: '#FFF', textAlign: 'center', zIndex: 3, marginTop: 20 }} />
         <S.BouncingArrow fontSize={`50px`} color={theme.WHITE} style={{zIndex: 200}} />
       </S.Content>
     </S.HeroBanner>

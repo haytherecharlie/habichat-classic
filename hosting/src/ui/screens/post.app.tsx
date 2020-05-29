@@ -28,7 +28,7 @@ const Post = ({ cid, pid, navigate }) => {
   // }, [])
 
   return (
-    <PageLayout loading={false} page="post" crawl={false} style={{ marginTop: 5 }}>
+    <PageLayout loading={false} page="community" crawl={false} style={{ marginTop: 5 }}>
       {posts[pid] && <PostCard key={pid} post={{ ...posts[pid], pid, cid }} />}
     </PageLayout>
   )
