@@ -32,6 +32,7 @@
     "iphone-inline-video": "^2.2.2",
     "prismjs": "^1.20.0",
     "prop-types": "^15.7.2",
+    "ramda.pathor": "^0.26.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",

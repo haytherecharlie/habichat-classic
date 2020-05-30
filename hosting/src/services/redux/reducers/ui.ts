@@ -1,13 +1,12 @@
 import * as A from 'services/redux/actions'
 
 const defaultState = {
-  status: 'pending',
   dimensions: 'mobile',
   language: null,
   nav: false
 }
 
-const reducer = (state = defaultState, action) => {
+const uiReducer = (state = defaultState, action) => {
   switch (action.type) {
     case A.DIMENSIONS:
       return { ...state, dimensions: action.value }
@@ -20,4 +19,4 @@ const reducer = (state = defaultState, action) => {
   }
 }
 
-export default reducer
+export default uiReducer
