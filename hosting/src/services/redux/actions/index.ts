@@ -1,6 +1,7 @@
 // App Actions
-export const SET_DIMENSIONS = 'SET_DIMENSIONS'
-export const TOGGLE_NAV = 'TOGGLE_NAV'
+export const DIMENSIONS = 'DIMENSIONS'
+export const LANGUAGE = 'LANGUAGE'
+export const NAV = 'NAV'
 
 // Community Actions
-export const INIT_COMMUNITY = 'INIT_COMMUNITY'
+export const INIT_APP = 'INIT_APP'

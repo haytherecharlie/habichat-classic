@@ -23,7 +23,7 @@ export const Row = styled('div')({
   margin: `0 auto`,
   maxWidth: theme.LARGE_VIEW,
   padding: `0px 20px`,
-  [theme.MEDIA_QUERY('max', theme.MEDIUM_VIEW)]: {
+  [theme.MEDIA_QUERY('max-width', theme.MEDIUM_VIEW)]: {
     flexDirection: 'column',
     '&:first-child': {
       flexDirection: 'column-reverse'
@@ -38,12 +38,12 @@ export const Column = styled('div')(P => ({
   alignItems: 'flex-start',
   justifyContent: 'center',
   padding: `0 20px`,
-  [theme.MEDIA_QUERY('min', theme.MEDIUM_VIEW)]: {
+  [theme.MEDIA_QUERY('min-width', theme.MEDIUM_VIEW)]: {
     '&:nth-child(2)': {
       alignItems: 'flex-end'
     }
   },
-  [theme.MEDIA_QUERY('max', theme.MEDIUM_VIEW)]: {
+  [theme.MEDIA_QUERY('max-width', theme.MEDIUM_VIEW)]: {
     alignItems: 'center'
   },
   ...P.style

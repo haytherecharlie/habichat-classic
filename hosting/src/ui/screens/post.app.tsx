@@ -17,7 +17,7 @@ const Post = ({ cid, pid, navigate }) => {
   //     const { status, data } = await habiFetch(`/community/${cid}/post/${pid}`)
   //     if (status !== 'success') throw new Error(data)
   //     setLoading(false)
-  //     return dispatch({ type: 'INIT_COMMUNITY', ...data })
+  //     return dispatch({ type: 'INIT_APP', ...data })
   //   } catch (err) {
   //     navigate('/404/')
   //   }

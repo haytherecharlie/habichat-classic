@@ -13,7 +13,7 @@ import * as A from 'services/redux/actions'
 
 const StyleGuide = () => {
   const dispatch = useDispatch()
-  const { nav } = useSelector(s => s.app)
+  const { nav } = useSelector(s => s.ui)
 
   return (
     <PageLayout page="styleguide" crawl={false} style={{ paddingTop: 20, paddingBottom: 20 }}>
@@ -59,7 +59,7 @@ const StyleGuide = () => {
         }}>
         <Text size="M" text="Hamburger Component" style={{ textTransform: 'uppercase' }} bold unique />
         <div style={{ borderTop: `1px solid #CCC`, marginTop: 10, paddingTop: 10, flexDirection: 'column' }}>
-          <Hamburger nav={nav} onClick={() => dispatch({ type: A.TOGGLE_NAV })} />
+          <Hamburger nav={nav} onClick={() => dispatch({ type: A.NAV })} />
         </div>
       </section>
 

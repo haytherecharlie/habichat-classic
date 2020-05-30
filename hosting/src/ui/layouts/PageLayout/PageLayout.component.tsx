@@ -5,10 +5,12 @@ import Spinner from 'ui/atoms/Spinner'
 import Header from 'ui/components/Header'
 import Footer from 'ui/components/Footer'
 import useDimensions from 'ui/hooks/useDimensions'
+import useLanguage from 'ui/hooks/useLanguage'
 import * as S from './PageLayout.style'
 
 const PageLayout = ({ children, page, crawl, style = {}, loading = false }) => {
   useDimensions()
+  useLanguage()
 
   return (
     <S.PageLayout>

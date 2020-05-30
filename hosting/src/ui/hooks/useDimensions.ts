@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { SET_DIMENSIONS } from 'services/redux/actions'
+import { DIMENSIONS } from 'services/redux/actions'
 import theme from 'ui/assets/theme'
 
 const useDimensions = () => {
@@ -12,11 +12,11 @@ const useDimensions = () => {
     const getSize = () => {
       if (window.innerWidth > breakPoint && previous !== 'desktop') {
         previous = 'desktop'
-        return dispatch({ type: SET_DIMENSIONS, value: 'desktop' })
+        return dispatch({ type: DIMENSIONS, value: 'desktop' })
       }
       if (window.innerWidth < breakPoint && previous !== 'mobile') {
         previous = 'mobile'
-        return dispatch({ type: SET_DIMENSIONS, value: 'mobile' })
+        return dispatch({ type: DIMENSIONS, value: 'mobile' })
       }
     }
 

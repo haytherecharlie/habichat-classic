@@ -9,14 +9,14 @@ import * as S from './Nav.style'
 const Nav = () => {
   const dispatch = useDispatch()
   const [open, setOpen] = useState(false)
-  const { nav, dimensions } = useSelector(s => s.app)
+  const { nav, dimensions } = useSelector(s => s.ui)
 
   useEffect(() => {
     if (dimensions !== `desktop`) return nav ? setOpen(true) : setOpen(false)
     return setOpen(true)
   }, [dimensions, nav])
 
-  const onClick = () => dispatch({ type: 'TOGGLE_NAV' })
+  const onClick = () => dispatch({ type: 'NAV' })
 
   return open ? (
     <S.Nav open={open}>

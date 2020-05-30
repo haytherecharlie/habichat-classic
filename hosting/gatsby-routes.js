@@ -1,6 +1,18 @@
 const path = require('path')
 
 module.exports = [
+  /* ---- Admin ---- */
+  // Dashbaord
+  { path: '/dashboard', component: path.resolve(`src/ui/screens/dashboard.admin.tsx`) },
+  // Styleguide
+  { path: '/styleguide', component: path.resolve(`src/ui/screens/styleguide.web.tsx`) },
+  { path: '/fr/styleguide', component: path.resolve(`src/ui/screens/styleguide.web.tsx`) },
+
+  /* ---- App ---- */
+  // Community
+  { path: '/app/community', component: path.resolve(`src/ui/screens/community.app.tsx`) },
+  // Post
+  { path: '/app/post', component: path.resolve(`src/ui/screens/post.app.tsx`) },
 
   /* ---- Web ---- */
   // Landing
@@ -16,20 +28,7 @@ module.exports = [
   { path: '/terms', component: path.resolve(`src/ui/screens/terms.web.tsx`) },
   { path: '/fr/terms', component: path.resolve(`src/ui/screens/terms.web.tsx`) },
 
-  /* ---- App ---- */
-  // Community
-  { path: '/app/community', component: path.resolve(`src/ui/screens/community.app.tsx`) },
-  // Post
-  { path: '/app/post', component: path.resolve(`src/ui/screens/post.app.tsx`) },
-
   /* ---- Universal ---- */
   // 404
-  { path: '/404/', component: path.resolve(`src/ui/screens/404.web.tsx`) },
-  // Styleguide
-  { path: '/styleguide', component: path.resolve(`src/ui/screens/styleguide.web.tsx`) },
-  { path: '/fr/styleguide', component: path.resolve(`src/ui/screens/styleguide.web.tsx`) },
-
-
-  // Dashboard
-  // { path: '/dashboard', component: path.resolve(`src/ui/screens/dashboard.admin.tsx`) }
+  { path: '/404/', component: path.resolve(`src/ui/screens/404.web.tsx`) }
 ]

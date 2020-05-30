@@ -3,13 +3,14 @@ import DownArrow from 'react-ionicons/lib/IosArrowDown'
 import theme from 'ui/assets/theme'
 
 export const HeroBanner = styled('div')({
-  height: 'calc(100vh - 60px)',
+  height: 'calc(100vh - 120px)',
   background: theme.BACKGROUND_COLOR,
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  position: 'relative'
+  position: 'relative',
+  overflow: 'hidden'
 })
 
 export const Content = styled('div')({
@@ -38,7 +39,8 @@ export const Video = styled('video')({
   position: 'absolute',
   objectFit: 'cover',
   top: 0,
-  left: 0
+  left: 0,
+  filter: `blur(5px)`
 })
 
 export const BouncingArrow = styled(DownArrow)({
