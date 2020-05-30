@@ -8,9 +8,6 @@ module.exports = [
   { path: '/styleguide', component: path.resolve(`src/ui/screens/styleguide.web.tsx`) },
   { path: '/fr/styleguide', component: path.resolve(`src/ui/screens/styleguide.web.tsx`) },
 
-  /* ---- API ---- */
-  { path: '/api/community', component: path.resolve(`src/api/client/getCommunityDoc.api.tsx`) },
-
   /* ---- App ---- */
   // Community
   { path: '/app/community', component: path.resolve(`src/ui/screens/community.app.tsx`) },
