@@ -14,7 +14,7 @@ const PostCard = ({ post }) => {
         <Avatar src={post.userInfo.photoURL} alt="display profile" style={{ margin: `15px 0 0 -20px` }} />
       </S.LeftCard>
       <S.RightCard>
-        <Link type="internal" href={`/community/${post.cid}/post/${post.pid}`}>
+        <Link type="internal" href={`/app/community/${post.cid}/post/${post.pid}`}>
           <S.TextPane>
             <Text size="M" text={post.userInfo.displayName} bold unique />
             <Text size="M" text={post.bodyText} style={{ marginTop: 5, fontWeight: 300 }} unique />
