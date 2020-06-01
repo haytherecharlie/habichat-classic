@@ -6,9 +6,10 @@ export const ComposePost = styled('div')({
   alignItems: 'stretch',
   justifyContent: 'center',
   width: `100%`,
-  paddingTop: 5,
-  paddingLeft: 1,
-  marginBottom: 15
+  paddingTop: 10,
+  marginTop: 5,
+  marginBottom: 15,
+  borderTop: `1px solid ${theme.BRAND_COLOR}`,
 })
 
 export const Pane = styled('div')(P => ({
@@ -21,7 +22,7 @@ export const TextArea = styled('div')({
   display: 'flex',
   alignItems: 'flex-start',
   border: `1px solid ${theme.BRAND_COLOR}`,
-  padding: 10,
+  padding: `7px 10px`,
   borderRadius: theme.CARD_RADIUS
 })
 
@@ -31,7 +32,7 @@ export const Input = styled('textarea')({
   background: 'transparent',
   color: `#FFF`,
   fontFamily: theme.FONT_BODY,
-  fontSize: theme.FONT_M,
+  fontSize: theme.FONT_S,
   fontWeight: 300,
   resize: `none`,
   '&::placeholder': {

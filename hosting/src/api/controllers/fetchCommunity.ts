@@ -1,13 +1,13 @@
 import pathOr from 'ramda.pathor'
-import getCommunity from 'api/utils/getCommunity'
-import getPosts from 'api/utils/getPosts'
+import readCommunity from 'api/utils/readCommunity'
+import readPosts from 'api/utils/readPosts'
 import store from 'services/redux'
 
 const fetchCommunity = async cid => {
   try {
     const timestamp = pathOr(undefined, ['communities', 'postsInfo', 'latestPost', 'timestamp'], store.getState())
-    const community = await getCommunity(cid)
-    const posts = await getPosts(cid, timestamp)
+    const community = await readCommunity(cid)
+    const posts = await readPosts(cid, timestamp)
     return store.dispatch({ type: 'COMMUNITY', cid, community, posts })
   } catch (err) {
     console.error(err)

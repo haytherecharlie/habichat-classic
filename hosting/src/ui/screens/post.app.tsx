@@ -2,7 +2,9 @@ import React, { useEffect } from 'react'
 import pathOr from 'ramda.pathor'
 import { useSelector } from 'react-redux'
 import { fetchPostAndReplies } from 'api/routes'
+import Compose from 'ui/components/ComposePost'
 import PostCard from 'ui/components/PostCard'
+import ReplyCard from 'ui/components/ReplyCard'
 import PageLayout from 'ui/layouts/PageLayout'
 
 const Post = ({ pid, cid }) => {
@@ -16,7 +18,14 @@ const Post = ({ pid, cid }) => {
   return (
     <PageLayout loading={!post} page="community" crawl={false} style={{ marginTop: 5 }}>
       {post && <PostCard key={pid} post={{ ...post, pid, cid }} />}
-      {replies && Object.entries(replies).map(([key, reply]) => <div key={key}>{reply.bodyText}</div>)}
+      {replies && Object.entries(replies).map(([key, reply]) => <ReplyCard key={key} reply={reply} />)}
+      <Compose
+        pid={pid}
+        cid={cid}
+        userID="exmPKxLrWMf0RTQFB4hb"
+        displayName="CharlieHay"
+        photoURL="https://habi.chat/avatars/beyonce_knowles.jpeg"
+      />
     </PageLayout>
   )
 }

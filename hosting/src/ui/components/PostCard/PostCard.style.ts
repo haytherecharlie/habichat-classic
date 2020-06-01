@@ -7,7 +7,6 @@ export const PostCard = styled('div')({
   flexDirection: 'row',
   alignItems: 'stretch',
   justifyContent: 'stretch',
-  minHeight: 75
 })
 
 export const LeftCard = styled('div')({

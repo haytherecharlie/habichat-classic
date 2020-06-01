@@ -36,7 +36,7 @@ const Nav = () => {
       </S.Links>
       <S.Locale>
         <ChangeLocale onClick={onClick} />
-        <Link type="internal" href="/app/authenticate" onClick={onClick}>
+        <Link type="internal" href="/app/community/H4E/post/g8T5vc9VrjFOmBQoG1Tw" onClick={onClick}>
           <ButtonPill style={{ padding: `7px 15px`, flex: 1 }}>
             <Text size="XS" text="SIGN IN" bold unique />
           </ButtonPill>

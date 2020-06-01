@@ -11,6 +11,12 @@ const postsReducer = (state = defaultState, action) => {
       return pathOr(false, [action.cid], state)
         ? { ...state, [action.cid]: { ...state[action.cid], [action.pid]: action.data } }
         : { ...state, [action.cid]: { [action.pid]: action.data } }
+    case A.REPLY:
+      const replies = { ...state[action.cid][action.pid].replies, ...action.reply }
+      return {
+        ...state,
+        [action.cid]: { ...state[action.cid], [action.pid]: { ...state[action.cid][action.pid], replies } }
+      }
     default:
       return state
   }
