@@ -10,9 +10,9 @@ module.exports = [
 
   /* ---- App ---- */
   // Community
-  { path: '/app/community', component: path.resolve(`src/ui/screens/community.app.tsx`) },
+  { path: '/community', component: path.resolve(`src/ui/screens/community.app.tsx`) },
   // Post
-  { path: '/app/post', component: path.resolve(`src/ui/screens/post.app.tsx`) },
+  { path: '/post', component: path.resolve(`src/ui/screens/post.app.tsx`) },
 
   /* ---- Web ---- */
   // Landing

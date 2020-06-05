@@ -8,7 +8,7 @@ import Link from 'ui/atoms/Link'
 import Text from 'ui/atoms/Text'
 import * as S from './PostCard.style'
 
-const PostCard = ({ cid, pid, post }) => {
+const PostCard = ({ post }) => {
   const photoURL = pathOr('', ['metadata', 'author', 'photoURL'], post)
   const displayName = pathOr('', ['metadata', 'author', 'displayName'], post)
   const text = pathOr('', ['text'], post)
@@ -20,7 +20,7 @@ const PostCard = ({ cid, pid, post }) => {
         <Avatar src={photoURL} alt="display profile" style={{ height: 35, width: 35, margin: `8px 0 0 -20px` }} />
       </S.LeftCard>
       <S.RightCard>
-        <Link type="internal" href={`/app/community/${cid}/post/${pid}`}>
+        <Link type="internal" href={`/post/${post.pid}`}>
           <S.TextPane>
             <Text size="S" text={displayName} bold unique />
             <Text size="S" text={text} style={{ marginTop: 5, fontWeight: 300 }} unique />
