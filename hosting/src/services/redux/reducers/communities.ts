@@ -5,7 +5,7 @@ const defaultState = null
 const communitiesReducer = (state = defaultState, action) => {
   switch (action.type) {
     case A.COMMUNITY:
-      return { ...state, [action.cid]: action.community }
+      return { ...state, [action.cid]: action.value }
     default:
       return state
   }

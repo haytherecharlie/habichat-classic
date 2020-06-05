@@ -1,3 +1,2 @@
-export { default as fetchAddReply } from 'api/controllers/fetchAddReply'
-export { default as fetchCommunity } from 'api/controllers/fetchCommunity'
-export { default as fetchPostAndReplies } from 'api/controllers/fetchPostAndReplies'
+export { default as fetchPosts } from 'api/controllers/fetchPosts'
+export { default as streamCommunity } from 'api/controllers/streamCommunity'

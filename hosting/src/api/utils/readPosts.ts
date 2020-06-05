@@ -1,14 +1,18 @@
 import { db } from 'services/firebase'
 
-const getPosts = async (cid, minAge = undefined) => {
+const getPosts = async (postsArr, acc = {}) => {
   try {
-    const postsReq = minAge
-      ? await db().collection(`communities/${cid}/posts`).where('timestamp', '>', minAge).orderBy('timestamp').limit(50).get()
-      : await db().collection(`communities/${cid}/posts`).orderBy('timestamp').limit(50).get()
-    return postsReq.docs.reduce((obj, doc) => ({ ...obj, [doc.id]: doc.data() }), {})
+    const postRequests = postsArr.map((p) => createPostRequests(p, acc))
+    await Promise.all(postRequests)
+    return acc
   } catch (err) {
     throw err
   }
+}
+
+const createPostRequests = async (pid, acc) => {
+  const doc = await db().doc(`posts/${pid}`).get().catch(() => acc[pid] = undefined)
+  return acc[doc.id] = doc.data()
 }
 
 export default getPosts
