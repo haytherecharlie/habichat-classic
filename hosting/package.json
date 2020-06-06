@@ -8,6 +8,7 @@
     "serve": "gatsby serve -p 3000"
   },
   "dependencies": {
+    "animate.css": "^4.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "dotenv": "^8.2.0",
     "firebase": "^7.14.5",
