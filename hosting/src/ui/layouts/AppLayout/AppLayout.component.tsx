@@ -8,7 +8,7 @@ import useDimensions from 'ui/hooks/useDimensions'
 import useLanguage from 'ui/hooks/useLanguage'
 import * as S from './AppLayout.style'
 
-const AppLayout = ({ children, page, crawl, style = {}, loading = false }) => {
+const AppLayout = ({ children, page, crawl, style = {}, loading = false, addButton = false }) => {
   useDimensions()
   useLanguage()
 
@@ -24,7 +24,7 @@ const AppLayout = ({ children, page, crawl, style = {}, loading = false }) => {
       ) : (
         <S.Main style={style}>{children}</S.Main>
       )}
-      <AppFooter />
+      <AppFooter addButton={addButton} />
     </S.AppLayout>
   )
 }

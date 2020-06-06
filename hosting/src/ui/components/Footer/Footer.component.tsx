@@ -1,6 +1,7 @@
 import React from 'react'
 import theme from 'ui/assets/theme'
 import Link from 'ui/atoms/Link'
+import NewPostButton from 'ui/atoms/NewPostButton'
 import Text from 'ui/atoms/Text'
 import * as S from './Footer.style'
 
@@ -29,10 +30,11 @@ export const WebFooter = () => {
   )
 }
 
-export const AppFooter = () => {
+export const AppFooter = ({ addButton = false }) => {
   return (
     <S.Footer style={{ position: 'fixed', bottom: 0, left: 0 }}>
-      <S.Responsive align="flex-start" flex={1}>
+      <S.Responsive style={{ justifyContent: 'center', flex: 1, margin: `0 auto` }}>
+        {addButton && <NewPostButton />}
         <Text size="XS" text="This is where ads will go." unique />
       </S.Responsive>
     </S.Footer>

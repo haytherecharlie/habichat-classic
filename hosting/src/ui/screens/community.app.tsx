@@ -8,7 +8,7 @@ const Community = ({ cid }) => {
   const community = useCommunity(cid)
 
   return (
-    <AppLayout loading={!community} page="community" crawl={false} style={{ marginTop: 5 }}>
+    <AppLayout loading={!community} page="community" crawl={false} style={{ marginTop: 5 }} addButton={true}>
       <NewPostsPill cid={cid} />
       {community && <CommunityPosts cid={cid} />}
     </AppLayout>

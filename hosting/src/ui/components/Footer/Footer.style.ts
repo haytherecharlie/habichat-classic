@@ -17,6 +17,7 @@ export const Footer = styled('header')(P => ({
 }))
 
 export const Responsive = styled('span')(P => ({
+  position: 'relative',
   maxWidth: theme.LARGE_VIEW,
   flex: 1,
   display: `flex`,
