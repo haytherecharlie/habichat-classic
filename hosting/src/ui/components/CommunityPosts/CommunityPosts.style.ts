@@ -6,5 +6,5 @@ export const CommunityPosts = styled("div")({
   display: "flex",
   flexDirection: 'column',
   alignItems: "stretch",
-  justifyContent: "flex-start"
+  justifyContent: "flex-start",
 })

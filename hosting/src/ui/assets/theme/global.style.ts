@@ -2,7 +2,10 @@ import { createGlobalStyle } from 'styled-components'
 import theme from 'ui/assets/theme'
 
 const GlobalStyle = createGlobalStyle({
-  '@font-face': { fontFamily: 'cocogoose', src: `url('/font/cocogoose.otf'); url('/font/cocogoose.otf') format("ttf")` },
+  '@font-face': {
+    fontFamily: 'cocogoose',
+    src: `url('/font/cocogoose.otf'); url('/font/cocogoose.otf') format("ttf")`
+  },
   dl: { marginBottom: '1rem' },
   h1: { marginBottom: '0' },
   h2: { marginBottom: '0' },
@@ -15,6 +18,9 @@ const GlobalStyle = createGlobalStyle({
   pre: { MsOverflowStyle: 'scrollbar', flex: 1 },
   ul: { marginBottom: '1rem' },
   address: { fontStyle: 'normal' },
+  html: {
+    backgroundColor: theme.BACKGROUND_COLOR
+  },
   body: {
     margin: '0',
     fontFamily:

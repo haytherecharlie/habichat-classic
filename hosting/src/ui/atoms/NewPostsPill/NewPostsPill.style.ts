@@ -3,7 +3,7 @@ import theme from 'ui/assets/theme'
 
 export const Wrapper = styled('div')({
   position: `fixed`,
-  top: 70,
+  top: 72,
   left: `50%`,
   transform: `translate(-50%, 0)`,
   display: 'flex',

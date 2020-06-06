@@ -25,6 +25,12 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: `ca-pub-1410569287706137`
+      },
+    },
+    {
       resolve: 'gatsby-plugin-firebase',
       options: {
         credentials: {
