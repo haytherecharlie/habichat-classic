@@ -4,27 +4,37 @@ import Link from 'ui/atoms/Link'
 import Text from 'ui/atoms/Text'
 import * as S from './Footer.style'
 
-const Footer = () => {
+export const WebFooter = () => {
   const date = new Date()
 
   return (
     <S.Footer>
-      <S.Responsive align="flex-start" flex={2}>
-        <Text size="XS" text={`© ${date.getFullYear()} habichat`} unique />
-      </S.Responsive>
-      <S.Responsive align="flex-end" flex={1}>
-        <Link type="external" href="https://twitter.com/habichat1">
-          <S.Twitter color={theme.BACKGROUND_COLOR} fontSize="10" />
-        </Link>
-        <Link type="external" href="https://github.com/habichat">
-          <S.Github color={theme.BACKGROUND_COLOR} fontSize="10" />
-        </Link>
-        <Link type="external" href="https://www.linkedin.com/company/habichat">
-          <S.LinkedIn color={theme.BACKGROUND_COLOR} fontSize="10" />
-        </Link>
+      <S.Responsive style={{ margin: `0 auto` }}>
+        <S.Responsive style={{ justifyContent: 'flex-start', flex: 2 }}>
+          <Text size="XS" text={`© ${date.getFullYear()} habichat`} unique />
+        </S.Responsive>
+        <S.Responsive style={{ justifyContent: 'flex-end', flex: 1, marginRight: -5 }}>
+          <Link type="external" href="https://twitter.com/habichat1">
+            <S.Twitter color={theme.BACKGROUND_COLOR} fontSize="10" />
+          </Link>
+          <Link type="external" href="https://github.com/habichat">
+            <S.Github color={theme.BACKGROUND_COLOR} fontSize="10" />
+          </Link>
+          <Link type="external" href="https://www.linkedin.com/company/habichat">
+            <S.LinkedIn color={theme.BACKGROUND_COLOR} fontSize="10" />
+          </Link>
+        </S.Responsive>
       </S.Responsive>
     </S.Footer>
   )
 }
 
-export default Footer
+export const AppFooter = () => {
+  return (
+    <S.Footer style={{ position: 'fixed', bottom: 0, left: 0 }}>
+      <S.Responsive align="flex-start" flex={1}>
+        <Text size="XS" text="This is where ads will go." unique />
+      </S.Responsive>
+    </S.Footer>
+  )
+}

@@ -1,3 +1,1 @@
-import Footer from './Footer.component'
-
-export default Footer
+export { WebFooter, AppFooter } from './Footer.component'

@@ -3,7 +3,7 @@ import GlobalStyle from 'ui/assets/theme/global.style'
 import SEO from 'ui/atoms/SEO'
 import Spinner from 'ui/atoms/Spinner'
 import Header from 'ui/components/Header'
-import Footer from 'ui/components/Footer'
+import { AppFooter } from 'ui/components/Footer'
 import useDimensions from 'ui/hooks/useDimensions'
 import useLanguage from 'ui/hooks/useLanguage'
 import * as S from './AppLayout.style'
@@ -24,6 +24,7 @@ const AppLayout = ({ children, page, crawl, style = {}, loading = false }) => {
       ) : (
         <S.Main style={style}>{children}</S.Main>
       )}
+      <AppFooter />
     </S.AppLayout>
   )
 }

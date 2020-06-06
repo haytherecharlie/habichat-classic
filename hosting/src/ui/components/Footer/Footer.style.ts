@@ -4,7 +4,7 @@ import LogoLinkedIn from 'react-ionicons/lib/LogoLinkedIn'
 import LogoGithub from 'react-ionicons/lib/LogoGithub'
 import theme from 'ui/assets/theme'
 
-export const Footer = styled('header')({
+export const Footer = styled('header')(P => ({
   height: theme.FOOTER_HEIGHT,
   width: `100%`,
   display: `flex`,
@@ -12,15 +12,19 @@ export const Footer = styled('header')({
   justifyContent: `stretch`,
   background: theme.BACKGROUND_COLOR,
   padding: `0 15px`,
-  borderTop: `1px solid ${theme.BRAND_COLOR}`
-})
+  borderTop: `1px solid ${theme.BRAND_COLOR}`,
+  ...P.style
+}))
 
-export const Responsive = styled('span')({
-  flex: p => p.flex || 1,
+export const Responsive = styled('span')(P => ({
+  maxWidth: theme.LARGE_VIEW,
+  flex: 1,
   display: `flex`,
+  flexDirection: 'row',
   alignItems: `center`,
-  justifyContent: p => p.align || `center`
-})
+  justifyContent: `center`,
+  ...P.style
+}))
 
 const iconStyle = {
   border: `1px solid ${theme.BRAND_COLOR}`,
