@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import { useLocation } from '@reach/router'
+import { ga } from 'services/firebase'
 import { formatMessage } from 'ui/language/translations'
 
 const SEO = ({ page, crawl }) => {
   const { origin = 'https://habi.chat', pathname } = useLocation()
+
+  useEffect(() => {
+    if (origin === 'https://habi.chat') {
+      ga().logEvent(`Page Visit: ${pathname}`)
+    }
+  }, [])
 
   return (
     <Helmet>
