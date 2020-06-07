@@ -14,7 +14,7 @@ export const HamburgerMenu = styled('button')({
 const defaultLineStyle = {
   width: `100%`,
   height: `3px`,
-  background: theme.WHITE,
+  background: theme.PRIMARY_COLOR,
   borderRadius: `5px`,
   position: `absolute`,
   opacity: 1

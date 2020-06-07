@@ -18,9 +18,6 @@ const GlobalStyle = createGlobalStyle({
   pre: { MsOverflowStyle: 'scrollbar', flex: 1 },
   ul: { marginBottom: '1rem' },
   address: { fontStyle: 'normal' },
-  html: {
-    backgroundColor: theme.BACKGROUND_COLOR
-  },
   body: {
     margin: '0',
     fontFamily:
@@ -68,7 +65,11 @@ const GlobalStyle = createGlobalStyle({
     WebkitTextSizeAdjust: '100%',
     MsTextSizeAdjust: '100%',
     MsOverflowStyle: 'scrollbar',
-    WebkitTapHighlightColor: 'transparent'
+    WebkitTapHighlightColor: 'transparent',
+    backgroundColor: theme.BACKGROUND_COLOR
+  },
+  'video::-internal-media-controls-overlay-cast-button': {
+    display: 'none'
   },
   ms_viewport: { width: 'device-width' },
   tabindex___1___focus: { outline: '0!important' },
