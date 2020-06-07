@@ -13,7 +13,16 @@ const HeroBanner = () => {
   return (
     <S.HeroBanner>
       <S.Content>
-        <S.Video playsInline muted autoPlay loop src="/video/aerials.mp4" ref={video} poster="image/aerials.jpg" />
+        <S.Video
+          disableRemotePlayback
+          playsInline
+          muted
+          autoPlay
+          loop
+          src="/video/aerials.mp4"
+          ref={video}
+          poster="image/aerials.jpg"
+        />
         <S.Image src="image/habichat.png" alt="habichat logo" />
         <Text
           size="XL"
@@ -21,8 +30,12 @@ const HeroBanner = () => {
           style={{ color: '#FFF', textAlign: 'center', zIndex: 3, marginTop: 20, fontSize: 25 }}
           bold
         />
-        <Text size="M" text="landing-subtext" style={{ color: '#FFF', textAlign: 'center', zIndex: 3, marginTop: 20 }} />
-        <S.BouncingArrow fontSize={`50px`} color={theme.WHITE} style={{zIndex: 200}} />
+        <Text
+          size="M"
+          text="landing-subtext"
+          style={{ color: '#FFF', textAlign: 'center', zIndex: 3, marginTop: 20 }}
+        />
+        <S.BouncingArrow fontSize={`50px`} color={theme.WHITE} style={{ zIndex: 200 }} />
       </S.Content>
     </S.HeroBanner>
   )
