@@ -12,5 +12,6 @@ export const REPLY = 'REPLY'
 // UI Actions
 export const DIMENSIONS = 'DIMENSIONS'
 export const LANGUAGE = 'LANGUAGE'
+export const MODAL = 'MODAL'
 export const NAV = 'NAV'
 

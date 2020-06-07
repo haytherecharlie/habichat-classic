@@ -5,6 +5,7 @@ import LogoGithub from 'react-ionicons/lib/LogoGithub'
 import theme from 'ui/assets/theme'
 
 export const Footer = styled('header')(P => ({
+  zIndex: 100,
   height: theme.FOOTER_HEIGHT,
   width: `100%`,
   display: `flex`,
@@ -16,16 +17,22 @@ export const Footer = styled('header')(P => ({
   ...P.style
 }))
 
-export const Responsive = styled('span')(P => ({
-  position: 'relative',
-  maxWidth: theme.LARGE_VIEW,
-  flex: 1,
-  display: `flex`,
-  flexDirection: 'row',
-  alignItems: `center`,
-  justifyContent: `center`,
-  ...P.style
-}))
+export const NewPostButton = styled('div')({
+  cursor: 'pointer',
+  position: 'absolute',
+  background: theme.BRAND_COLOR,
+  borderRadius: `50%`,
+  bottom: `${theme.FOOTER_HEIGHT + 20}px`,
+  right: 0,
+  padding: 20,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  '&:hover': {
+    animation: `pulse`,
+    animationDuration: `1s`
+  }
+})
 
 const iconStyle = {
   border: `1px solid ${theme.BRAND_COLOR}`,

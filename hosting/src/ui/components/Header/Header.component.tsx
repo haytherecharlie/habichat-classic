@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { NAV } from 'services/redux/actions'
 import Link from 'ui/atoms/Link'
 import Logo from 'ui/atoms/Logo'
+import Responsive from 'ui/atoms/Responsive'
 import Hamburger from 'ui/atoms/Hamburger'
 import Nav from 'ui/components/Nav'
 import * as S from './Header.style'
@@ -14,13 +15,13 @@ const Header = () => {
   if (dimensions === 'mobile') {
     return (
       <S.Header>
-        <S.Responsive>
+        <Responsive>
           <Link href="/">
             <Logo />
           </Link>
           <Hamburger nav={nav} onClick={() => dispatch({ type: NAV })} />
           <Nav />
-        </S.Responsive>
+        </Responsive>
       </S.Header>
     )
   }
@@ -28,12 +29,12 @@ const Header = () => {
   if (dimensions === 'desktop') {
     return (
       <S.Header>
-        <S.Responsive>
+        <Responsive>
           <Link href="/">
             <Logo />
           </Link>
           <Nav />
-        </S.Responsive>
+        </Responsive>
       </S.Header>
     )
   }

@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle({
   hr: { boxSizing: 'content-box', height: '0' },
   input: { margin: '0', fontFamily: 'inherit', fontSize: 'inherit', lineHeight: 'inherit' },
   textarea: { resize: 'vertical' },
-  div: { display: 'flex', boxSizing: 'border-box' },
+  div: { display: 'flex', boxSizing: 'border-box', '-webkit-overflow-scrolling': 'touch' },
   article: { display: 'block' },
   aside: { display: 'block' },
   dialog: { display: 'block' },

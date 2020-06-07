@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 import DownArrow from 'react-ionicons/lib/IosArrowDown'
 import theme from 'ui/assets/theme'
+import colors from 'ui/assets/theme/colors.style'
 
 export const HeroBanner = styled('div')({
   height: 'calc(100vh - 120px)',
-  background: theme.BACKGROUND_COLOR,
+  background: colors.DARK_BACKGROUND,
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',

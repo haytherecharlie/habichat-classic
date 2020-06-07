@@ -1,14 +1,18 @@
-import pathOr from 'ramda.pathor'
 import { useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { pathOr } from 'ramda'
 import { streamCommunity } from 'api/routes'
 
 const useCommunity = cid => {
+  const dispatch = useDispatch()
   const community = useSelector(s => pathOr(undefined, ['communities', cid], s))
 
   useEffect(() => {
     const listener = streamCommunity(cid)
-    return () => listener()
+    return () => {
+      listener()
+      dispatch({ type: 'MODAL', value: null })
+    }
   }, [])
 
   return community
