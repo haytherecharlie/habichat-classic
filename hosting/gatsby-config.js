@@ -33,16 +33,6 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-firebase',
       options: {
-        features: {
-          auth: true,
-          database: false,
-          firestore: true,
-          storage: true,
-          messaging: false,
-          functions: false,
-          performance: true,
-          analytics: true
-        },
         credentials: {
           apiKey: serviceAccount.apiKey,
           authDomain: serviceAccount.authDomain,
