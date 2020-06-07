@@ -1,5 +1,4 @@
 import React from 'react'
-import theme from 'ui/assets/theme'
 import Text from 'ui/atoms/Text'
 import * as S from './Logo.style'
 
