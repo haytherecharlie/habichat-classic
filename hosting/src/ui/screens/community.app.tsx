@@ -4,8 +4,9 @@ import CommunityPosts from 'ui/components/CommunityPosts'
 import useCommunity from 'ui/hooks/useCommunity'
 import AppLayout from 'ui/layouts/AppLayout'
 
-const Community = ({ location, navigate }) => {
-  const { cid, community } = useCommunity(location, navigate)
+const Community = ({ cid }) => {
+  console.log(cid)
+  const community = useCommunity(cid)
   const displayName = pathOr(undefined, ['displayName'], community)
 
   return (

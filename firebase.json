@@ -9,6 +9,12 @@
     "trailingSlash": true,
     "cleanUrls": true,
     "appAssociation": "AUTO",
+    "rewrites": [
+      {
+        "source": "/community/:cid",
+        "destination": "/community/index.html"
+      }
+    ],
     "headers": [
       {
         "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
