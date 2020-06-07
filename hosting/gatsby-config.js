@@ -1,5 +1,4 @@
 const path = require('path')
-const serviceAccount = require('./src/config/service-account.json')
 
 module.exports = {
   siteMetadata: {
@@ -28,21 +27,6 @@ module.exports = {
       resolve: `gatsby-plugin-google-adsense`,
       options: {
         publisherId: `ca-pub-1410569287706137`
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-firebase',
-      options: {
-        credentials: {
-          apiKey: serviceAccount.apiKey,
-          authDomain: serviceAccount.authDomain,
-          databaseURL: serviceAccount.databaseURL,
-          projectId: serviceAccount.projectId,
-          storageBucket: serviceAccount.storageBucket,
-          messagingSenderId: serviceAccount.messagingSenderId,
-          appId: serviceAccount.appId,
-          measurementId: serviceAccount.measurementId
-        }
       }
     },
     {

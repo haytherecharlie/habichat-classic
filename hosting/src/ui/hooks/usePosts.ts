@@ -6,10 +6,7 @@ import { fetchPosts } from 'api/routes'
 const usePosts = cid => {
   const reduxPosts = useSelector(s => pathOr([], ['posts'], s))
   const postIDs = useSelector(s => pathOr(undefined, ['communities', cid, 'postIDs'], s))
-  const posts = Object.keys(postIDs).reduce((acc, id) => {
-    acc[id] = reduxPosts[id]
-    return acc
-  }, {})
+  const posts = Object.keys(postIDs).reduce((acc, id) => ({ ...acc, [id]: reduxPosts[id] }), {})
 
   useEffect(() => {
     fetchPosts(cid)

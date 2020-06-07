@@ -8,9 +8,7 @@ const SEO = ({ page, crawl }) => {
   const { origin = 'https://habi.chat', pathname } = useLocation()
 
   useEffect(() => {
-    if (origin === 'https://habi.chat') {
-      ga().logEvent(`Page Visit: ${pathname}`)
-    }
+    if (origin === 'https://habi.chat') ga().logEvent(`page_view`)
   }, [])
 
   return (

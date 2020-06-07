@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = [
   /* ---- Admin ---- */
-  // Dashbaord
+  // Dashboard
   { path: '/dashboard', component: path.resolve(`src/ui/screens/dashboard.admin.tsx`) },
   // Styleguide
   { path: '/styleguide', component: path.resolve(`src/ui/screens/styleguide.web.tsx`) },
