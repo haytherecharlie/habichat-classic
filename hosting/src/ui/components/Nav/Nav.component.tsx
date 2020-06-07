@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import theme from 'ui/assets/theme'
 import ButtonPill from 'ui/atoms/ButtonPill'
 import ChangeLocale from 'ui/atoms/ChangeLocale'
 import Link from 'ui/atoms/Link'
@@ -38,7 +39,7 @@ const Nav = () => {
         <ChangeLocale onClick={onClick} />
         <Link type="internal" href="/community/H4E/" onClick={onClick}>
           <ButtonPill style={{ padding: `7px 15px`, flex: 1 }}>
-            <Text size="XS" text="SIGN IN" bold unique />
+            <Text size="XS" text="SIGN IN" style={{ color: '#FFF' }} bold unique />
           </ButtonPill>
         </Link>
       </S.Locale>

@@ -3,7 +3,7 @@ import D from 'ui/assets/theme/display.style'
 import E from 'ui/assets/theme/element.style'
 import F from 'ui/assets/theme/font.style'
 
-const DARK_MODE = true
+const DARK_MODE = false
 
 export default {
   DARK_MODE: DARK_MODE,
@@ -11,7 +11,7 @@ export default {
   // Colors
   BACKGROUND_COLOR: DARK_MODE ? C.DARK_BACKGROUND : C.LIGHT_BACKGROUND,
   FOREGROUND_COLOR: DARK_MODE ? C.DARK_FOREGROUND : C.LIGHT_FOREGROUND,
-  PRIMARY_COLOR: DARK_MODE ? C.DARK_PRIMARY : C.LIGHT_PRIMARY,
+  PRIMARY_COLOR: DARK_MODE ? C.DARK_PRIMARY : C.BRAND_COLOR,
   INVERSE_COLOR: DARK_MODE ? C.DARK_INVERSE : C.LIGHT_INVERSE,
   INPUT_PLACEHOLDER: DARK_MODE ? C.DARK_INPUT_PLACEHOLDER : C.LIGHT_INPUT_PLACEHOLDER,
   WHITE: C.WHITE,

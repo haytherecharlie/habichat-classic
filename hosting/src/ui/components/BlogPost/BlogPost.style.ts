@@ -12,6 +12,7 @@ export const Article = styled('article')({
   '& > p': {
     marginTop: 5,
     fontSize: theme.FONT_XS,
+    color: theme.PRIMARY_COLOR
   }
 })
 
@@ -23,8 +24,9 @@ export const Body = styled('div')({
   '& > p': {
     textAlign: 'left',
     fontSize: theme.FONT_S,
+    color: theme.PRIMARY_COLOR,
     '& > a': {
-      color: `#CCC`
+      color: theme.PRIMARY_COLOR
     }
   }
 })
