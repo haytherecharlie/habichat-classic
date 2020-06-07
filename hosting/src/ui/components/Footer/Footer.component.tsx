@@ -1,5 +1,7 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { pathOr } from 'ramda'
+import { navigate } from '@reach/router'
+import { useDispatch, useSelector } from 'react-redux'
 import AddIcon from 'react-ionicons/lib/MdAdd'
 import theme from 'ui/assets/theme'
 import Link from 'ui/atoms/Link'
@@ -34,11 +36,18 @@ export const WebFooter = () => {
 
 export const AppFooter = ({ addButton = false }) => {
   const dispatch = useDispatch()
+  const modal = useSelector(s => pathOr(null, ['ui', 'modal'], s))
+  const authenticated = useSelector(s => pathOr(null, ['account', 'authenticated'], s))
+
+  const clickNewPost = () => {
+    return authenticated ? dispatch({ type: 'MODAL', value: 'new-post' }) : navigate('/login')
+  }
+
   return (
     <S.Footer style={{ position: 'fixed', bottom: 0, left: 0 }}>
       <Responsive style={{ justifyContent: 'center', flex: 1, margin: `0 auto` }}>
-        {addButton && (
-          <Link type="button" onClick={() => dispatch({ type: 'MODAL', value: 'new-post' })}>
+        {addButton && !modal && (
+          <Link type="button" onClick={clickNewPost}>
             <S.NewPostButton>
               <AddIcon color="#FFF" fontSize="20px" />
             </S.NewPostButton>
