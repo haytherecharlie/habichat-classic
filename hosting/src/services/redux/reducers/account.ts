@@ -8,6 +8,7 @@ const avatars = [
 
 const defaultState = {
   authenticated: true,
+  communityID: 'H4E',
   displayName: `TestingUser_${Math.floor(Math.random() * 100)}`,
   photoURL: avatars[Math.floor(Math.random() * 3)],
   userID: 'exmPKxLrWMf0RTQFB4hb'

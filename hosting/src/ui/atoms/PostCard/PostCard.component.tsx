@@ -22,7 +22,7 @@ const PostCard = ({ post }) => {
   } = post
 
   const handleButtonPress = () => (downclick = new Date().getTime())
-  const handleButtonRelease = () => (new Date().getTime() - downclick < 200 ? navigate(`/post/${post.id}`) : null)
+  const handleButtonRelease = () => (new Date().getTime() - downclick < 120 ? navigate(`/post/${post.id}`) : null)
   const formatTimestamp = time => {
     return typeof time === 'object'
       ? formatDistance(
@@ -58,7 +58,7 @@ const PostCard = ({ post }) => {
                 <tbody>
                   <tr>
                     <td>
-                      <Text size="S" text={text} style={{ margin: '5px 0 7px 0', fontWeight: 300 }} unique />
+                      <Text size="S" text={text} style={{ margin: '7px 0 7px 0', fontWeight: 400 }} unique />
                     </td>
                   </tr>
                 </tbody>
