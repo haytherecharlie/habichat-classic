@@ -49,7 +49,7 @@ const PostCard = ({ post }) => {
               <S.Col>
                 <Text size="S" text={displayName} bold unique />
               </S.Col>
-              <S.Col style={{ flex: 0, minWidth: 100, alignItems: 'flex-end' }}>
+              <S.Col style={{ flex: 0, minWidth: 115, alignItems: 'flex-end' }}>
                 <Text size="XS" text={formatTimestamp(updatedAt)} unique />
               </S.Col>
             </S.Row>
