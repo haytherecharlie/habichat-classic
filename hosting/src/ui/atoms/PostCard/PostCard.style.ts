@@ -8,7 +8,7 @@ export const PostCard = styled('div')({
   alignItems: 'stretch',
   justifyContent: 'stretch',
   animation: 'slideInLeft',
-  animationDuration: `.3s`,
+  animationDuration: `.3s`
 })
 
 export const LeftCard = styled('div')({
@@ -32,14 +32,35 @@ export const RightCard = styled('div')({
   borderBottomRightRadius: theme.CARD_RADIUS
 })
 
-export const CommentsPane = styled('div')({
+export const Row = styled('div')(P => ({
   display: 'flex',
-  justifyContent: 'space-between',
-  marginTop: 8,
-  width: 200
+  flexDirection: 'row',
+  alignItems: 'stretch',
+  justifyContent: 'stretch',
+  '&:nth-child(2)': {},
+  ...P.style
+}))
+
+export const Col = styled('div')(P => ({
+  flex: 1,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'stretch',
+  justifyContent: 'stretch',
+  '&:nth-child(2)': {},
+  ...P.style
+}))
+
+export const CommentButton = styled('div')({
+  flex: 1,
+  display: 'flex',
+  minWidth: 100
 })
 
-export const TextPane = styled('div')({
+export const ServerCheck = styled('div')({
+  flex: 1,
   display: 'flex',
-  flexDirection: 'column'
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+  opacity: 0.5
 })
