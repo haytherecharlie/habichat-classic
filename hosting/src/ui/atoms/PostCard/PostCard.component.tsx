@@ -1,4 +1,5 @@
-import React, { useRef } from 'react'
+import React from 'react'
+import { formatDistance } from 'date-fns'
 import { navigate } from 'gatsby'
 import CheckMark from 'react-ionicons/lib/MdCheckmark'
 import CheckMarks from 'react-ionicons/lib/MdDoneAll'
@@ -16,11 +17,21 @@ const PostCard = ({ post }) => {
     author: { displayName = '', photoURL = '' },
     replies = '',
     text = '',
+    updatedAt = { seconds: 0 },
     server = false
   } = post
 
   const handleButtonPress = () => (downclick = new Date().getTime())
   const handleButtonRelease = () => (new Date().getTime() - downclick < 200 ? navigate(`/post/${post.id}`) : null)
+  const formatTimestamp = time => {
+    return typeof time === 'object'
+      ? formatDistance(
+          new Date(time.hasOwnProperty('_seconds') ? time._seconds * 1000 : time.seconds * 1000),
+          new Date().getTime(),
+          { addSuffix: true }
+        )
+      : 'just now'
+  }
 
   return (
     <S.PostCard>
@@ -33,13 +44,14 @@ const PostCard = ({ post }) => {
             onTouchStart={handleButtonPress}
             onTouchEnd={handleButtonRelease}
             onMouseDown={handleButtonPress}
-            onMouseUp={handleButtonRelease}
-            >
+            onMouseUp={handleButtonRelease}>
             <S.Row>
               <S.Col>
                 <Text size="S" text={displayName} bold unique />
               </S.Col>
-              <S.Col style={{ flex: 0 }}>Date</S.Col>
+              <S.Col style={{ flex: 0, minWidth: 100, alignItems: 'flex-end' }}>
+                <Text size="XS" text={formatTimestamp(updatedAt)} unique />
+              </S.Col>
             </S.Row>
             <S.Row>
               <Text size="S" text={text} style={{ marginTop: 5, fontWeight: 300 }} unique />
@@ -83,15 +95,6 @@ const PostCard = ({ post }) => {
             </S.Col>
           </S.Row>
         </S.Col>
-        {/* <S.TextPane
-
-          
-          
-        </S.TextPane>
-        <S.CommentsPane>
-
-
-        </S.CommentsPane> */}
       </S.RightCard>
     </S.PostCard>
   )

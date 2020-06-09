@@ -62,5 +62,5 @@ export const ServerCheck = styled('div')({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-end',
-  opacity: 0.5
+  opacity: 0.3
 })
