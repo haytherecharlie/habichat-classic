@@ -16,8 +16,8 @@ const Community = ({ cid }) => {
       crawl={false}
       style={{ marginTop: 5 }}
       addButton={typeof community !== 'undefined'}>
+      <ComposePost cid={cid} />
       {displayName && <CommunityPosts cid={cid} />}
-      <ComposePost />
     </AppLayout>
   )
 }

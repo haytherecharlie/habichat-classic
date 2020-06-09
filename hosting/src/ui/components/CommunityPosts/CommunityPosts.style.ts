@@ -7,4 +7,5 @@ export const CommunityPosts = styled("div")({
   flexDirection: 'column',
   alignItems: "stretch",
   justifyContent: "flex-start",
+  paddingBottom: theme.FOOTER_HEIGHT + 90
 })

@@ -4,12 +4,13 @@ import { useSelector } from 'react-redux'
 import { fetchPosts } from 'api/routes'
 
 const usePosts = cid => {
-  const reduxPosts = useSelector(s => pathOr([], ['posts'], s))
-  const postIDs = useSelector(s => pathOr(undefined, ['communities', cid, 'postIDs'], s))
-  const posts = Object.keys(postIDs).reduce((acc, id) => ({ ...acc, [id]: reduxPosts[id] }), {})
+  const posts = useSelector(s => pathOr({}, ['posts', cid], s))
 
   useEffect(() => {
-    fetchPosts(cid)
+    const listener = fetchPosts(cid)
+    return () => {
+      listener()
+    }
   }, [])
 
   return posts

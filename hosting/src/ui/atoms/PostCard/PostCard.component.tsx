@@ -9,10 +9,10 @@ import Text from 'ui/atoms/Text'
 import * as S from './PostCard.style'
 
 const PostCard = ({ post }) => {
-  const photoURL = pathOr('', ['metadata', 'author', 'photoURL'], post)
-  const displayName = pathOr('', ['metadata', 'author', 'displayName'], post)
+  const photoURL = pathOr('', ['author', 'photoURL'], post)
+  const displayName = pathOr('', ['author', 'displayName'], post)
   const text = pathOr('', ['text'], post)
-  const replyCount = 12
+  const replies = pathOr('', ['replies'], post)
 
   return (
     <S.PostCard>
@@ -31,7 +31,7 @@ const PostCard = ({ post }) => {
             <ChatBubbles fontSize={`${theme.FONT_S}px`} color={theme.BRAND_COLOR} />
             <Text
               size="XS"
-              text={`${replyCount} Comments`}
+              text={`${replies} Comments`}
               style={{ marginLeft: 3, color: theme.BRAND_COLOR, fontWeight: 600 }}
               unique
             />

@@ -1,18 +1,14 @@
-import pathOr from 'ramda.pathor'
-import readPosts from 'api/utils/readPosts'
-import readPostsNotInRedux from 'api/utils/readPostsNotInRedux'
+import { db } from 'services/firebase'
 import store from 'services/redux'
 
-const fetchPosts = async (cid, start = 0, end = 50) => {
-  // check newPosts
-  const newPosts = pathOr([], ['communities', cid, 'newPosts'], store.getState())
-
-  if (newPosts.length) {
-    // fetch newPosts
-    const postsObj = await readPosts(newPosts)
-
-    // save in store
-    return store.dispatch({ type: 'POSTS', cid, value: postsObj })
+const fetchPosts = cid => {
+  try {
+    return db().collection('/posts').where('communityID', '==', cid.toUpperCase()).orderBy('createdAt', 'desc').limit(50).onSnapshot(snapshot => {
+      return store.dispatch({ type: 'POSTS', cid, posts: snapshot.docs.reduce((acc, doc) => ({ ...acc, [doc.id]: doc.data() }), {}) })
+    })
+  } catch (err) {
+    console.error(err)
+    throw err
   }
 }
 

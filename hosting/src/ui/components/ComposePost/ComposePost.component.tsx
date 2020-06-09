@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { fetchCreatePost } from 'api/routes'
 import ButtonPill from 'ui/atoms/ButtonPill'
 import Link from 'ui/atoms/Link'
 import Modal from 'ui/atoms/Modal'
@@ -8,9 +9,14 @@ import Text from 'ui/atoms/Text'
 import TextInput from 'ui/atoms/TextInput'
 import * as S from './ComposePost.style'
 
-const ComposePost = () => {
+const ComposePost = ({ cid }) => {
   const dispatch = useDispatch()
   const [text, setText] = useState('')
+
+  const createPost = async () => {
+    fetchCreatePost(cid, text)
+    dispatch({ type: 'MODAL', value: null })
+  }
 
   const cancelPost = () => {
     dispatch({ type: 'MODAL', value: null })
@@ -27,7 +33,7 @@ const ComposePost = () => {
               <Text size="XS" text="CANCEL" bold unique />
             </ButtonPill>
           </Link>
-          <Link type="button" onClick={() => console.log('Post')}>
+          <Link type="button" onClick={createPost}>
             <ButtonPill style={{ padding: 8, width: 80 }}>
               <Text size="XS" text="POST" style={{ color: '#FFF' }} bold unique />
             </ButtonPill>
