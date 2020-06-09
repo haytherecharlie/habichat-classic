@@ -2,7 +2,6 @@ import React from 'react'
 import { pathOr } from 'ramda'
 import { navigate } from '@reach/router'
 import { useDispatch, useSelector } from 'react-redux'
-import AddIcon from 'react-ionicons/lib/MdAdd'
 import theme from 'ui/assets/theme'
 import Link from 'ui/atoms/Link'
 import Responsive from 'ui/atoms/Responsive'
@@ -49,7 +48,7 @@ export const AppFooter = ({ addButton = false }) => {
         {addButton && !modal && (
           <Link type="button" onClick={clickNewPost}>
             <S.NewPostButton>
-              <AddIcon color="#FFF" fontSize="20px" />
+              <img src="/image/create-post.png" height="20px" alt=""/>
             </S.NewPostButton>
           </Link>
         )}

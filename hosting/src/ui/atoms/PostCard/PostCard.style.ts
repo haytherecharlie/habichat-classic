@@ -7,6 +7,8 @@ export const PostCard = styled('div')({
   flexDirection: 'row',
   alignItems: 'stretch',
   justifyContent: 'stretch',
+  animation: 'slideInLeft',
+  animationDuration: `.3s`,
 })
 
 export const LeftCard = styled('div')({
