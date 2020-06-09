@@ -54,10 +54,16 @@ const PostCard = ({ post }) => {
               </S.Col>
             </S.Row>
             <S.Row>
-              <Text size="S" text={text} style={{ marginTop: 5, fontWeight: 300 }} unique />
+              <table style={{ tableLayout: 'fixed', width: '100%', wordWrap: 'break-word' }}>
+                <tr>
+                  <td>
+                    <Text size="S" text={text} style={{ margin: '5px 0 7px 0', fontWeight: 300 }} unique />
+                  </td>
+                </tr>
+              </table>
             </S.Row>
           </S.Col>
-          <S.Row style={{ marginTop: 8 }}>
+          <S.Row style={{ marginTop: 0 }}>
             <S.Col style={{ flex: 0 }}>
               <S.CommentButton>
                 <Link type="button" onClick={() => console.log('WOWO')}>

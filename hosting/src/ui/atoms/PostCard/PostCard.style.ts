@@ -37,7 +37,6 @@ export const Row = styled('div')(P => ({
   flexDirection: 'row',
   alignItems: 'stretch',
   justifyContent: 'stretch',
-  '&:nth-child(2)': {},
   ...P.style
 }))
 
@@ -47,7 +46,6 @@ export const Col = styled('div')(P => ({
   flexDirection: 'column',
   alignItems: 'stretch',
   justifyContent: 'stretch',
-  '&:nth-child(2)': {},
   ...P.style
 }))
 
@@ -60,7 +58,7 @@ export const CommentButton = styled('div')({
 export const ServerCheck = styled('div')({
   flex: 1,
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'flex-end',
   justifyContent: 'flex-end',
   opacity: 0.3
 })
