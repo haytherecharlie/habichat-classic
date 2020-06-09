@@ -10,10 +10,7 @@
     "cleanUrls": true,
     "appAssociation": "AUTO",
     "rewrites": [
-      {
-        "source": "/community/:cid",
-        "destination": "/community/index.html"
-      }
+      { "source": "/community/:cid", "destination": "/community/index.html" }
     ],
     "headers": [
       {

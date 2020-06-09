@@ -3,7 +3,6 @@ import theme from 'ui/assets/theme'
 
 export const TextInput = styled('textarea')({
   boxSizing: 'border-box',
-  height: 116,
   width: `100%`,
   display: 'flex',
   alignItems: 'flex-start',

@@ -18,18 +18,20 @@ const TextInput = ({ rows = 5, text = null, setText = null, placeholder = 'Say s
   const handleKeyDown = e => (e.key === 'Enter' ? e.preventDefault() : null)
 
   return (
-    <S.TextInput
-      autoFocus
-      style={style}
-      ref={inputRef}
-      placeholder={placeholder}
-      rows={rows}
-      wrap="hard"
-      maxLength={textMaxLength}
-      value={text}
-      onChange={onChange}
-      onKeyDown={handleKeyDown}
-    />
+    <div style={{ width: `100%` }}>
+      <S.TextInput
+        autoFocus
+        style={style}
+        ref={inputRef}
+        placeholder={placeholder}
+        rows="5"
+        wrap="hard"
+        maxLength={textMaxLength}
+        value={text}
+        onChange={onChange}
+        onKeyDown={handleKeyDown}
+      />
+    </div>
   )
 }
 

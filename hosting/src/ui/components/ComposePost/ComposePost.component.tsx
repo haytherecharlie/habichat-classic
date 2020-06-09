@@ -25,9 +25,9 @@ const ComposePost = ({ cid }) => {
 
   return (
     <Modal name="new-post">
-      <Responsive style={{ flex: 0, flexDirection: 'column', justifyContent: 'stretch', margin: `10px auto` }}>
+      <Responsive style={{ flex: 1, flexDirection: 'column', justifyContent: 'stretch', margin: `10px auto` }}>
         <TextInput text={text} setText={setText} placeholder="Write a new post..." />
-        <Responsive style={{ flex: `0`, justifyContent: 'flex-end', padding: `10px 0` }}>
+        <Responsive style={{ flex: `1`, justifyContent: 'flex-end', alignItems: 'flex-start', padding: `10px 0` }}>
           <Link type="button" onClick={cancelPost} style={{ marginRight: 10 }}>
             <ButtonPill invert style={{ padding: 8, width: 80 }}>
               <Text size="XS" text="CANCEL" bold unique />
