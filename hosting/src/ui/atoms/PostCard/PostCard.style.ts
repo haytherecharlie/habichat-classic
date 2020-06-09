@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 import theme from 'ui/assets/theme'
 
-export const PostCard = styled('div')({
+export const PostCard = styled('article')({
   margin: `5px 0`,
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'stretch',
   justifyContent: 'stretch',
-  animation: 'slideInLeft',
-  animationDuration: `.3s`
+  animation: 'zoomIn',
+  animationDuration: `.75s`
 })
 
 export const LeftCard = styled('div')({

@@ -34,7 +34,7 @@ const PostCard = ({ post }) => {
   }
 
   return (
-    <S.PostCard>
+    <S.PostCard role="article" data-focusable="true">
       <S.LeftCard>
         <Avatar src={photoURL} alt="display profile" style={{ height: 35, width: 35, margin: `8px 0 0 -20px` }} />
       </S.LeftCard>
@@ -55,11 +55,13 @@ const PostCard = ({ post }) => {
             </S.Row>
             <S.Row>
               <table style={{ tableLayout: 'fixed', width: '100%', wordWrap: 'break-word' }}>
-                <tr>
-                  <td>
-                    <Text size="S" text={text} style={{ margin: '5px 0 7px 0', fontWeight: 300 }} unique />
-                  </td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td>
+                      <Text size="S" text={text} style={{ margin: '5px 0 7px 0', fontWeight: 300 }} unique />
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </S.Row>
           </S.Col>
@@ -93,9 +95,9 @@ const PostCard = ({ post }) => {
             <S.Col>
               <S.ServerCheck>
                 {server ? (
-                  <CheckMarks fontSize={15} color={theme.BRAND_COLOR} />
+                  <CheckMarks fontSize="12px" color={theme.BRAND_COLOR} />
                 ) : (
-                  <CheckMark fontSize={15} color={theme.BRAND_COLOR} />
+                  <CheckMark fontSize="12px" color={theme.BRAND_COLOR} />
                 )}
               </S.ServerCheck>
             </S.Col>
