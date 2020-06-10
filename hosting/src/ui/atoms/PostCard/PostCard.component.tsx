@@ -22,7 +22,11 @@ const PostCard = ({ post }) => {
   } = post
 
   const handleButtonPress = () => (downclick = new Date().getTime())
-  const handleButtonRelease = () => (new Date().getTime() - downclick < 120 ? navigate(`/post/${post.id}`) : null)
+  const handleButtonRelease = () => {
+    const diff = new Date().getTime() - downclick
+    return (diff > 50 && diff < 150) ? navigate(`/post/${post.id}`) : null
+  }
+
   const formatTimestamp = time => {
     return typeof time === 'object'
       ? formatDistance(

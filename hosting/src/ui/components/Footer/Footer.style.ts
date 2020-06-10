@@ -31,6 +31,9 @@ export const NewPostButton = styled('div')({
   '&:hover': {
     animation: `pulse`,
     animationDuration: `1s`
+  },
+  '&:focus': {
+    outlineWidth: '1px'
   }
 })
 

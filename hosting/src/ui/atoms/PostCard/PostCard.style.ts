@@ -6,9 +6,7 @@ export const PostCard = styled('article')({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'stretch',
-  justifyContent: 'stretch',
-  animation: 'zoomIn',
-  animationDuration: `.75s`
+  justifyContent: 'stretch'
 })
 
 export const LeftCard = styled('div')({
