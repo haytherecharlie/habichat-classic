@@ -14,8 +14,8 @@ module.exports = [
   /* ---- Dashboard ---- */
   { path: '/dashboard', component: resolve(`src/ui/pages/dashboard.tsx`) },
 
-  /* ---- Post ---- */
-  { matchPath: '/community/:cid/post/:pid', path: '/post', component: resolve(`src/ui/pages/post.tsx`) },
+  /* ---- Replies ---- */
+  { matchPath: '/community/:cid/:pid', path: '/replies', component: resolve(`src/ui/pages/replies.tsx`) },
 
   /* ---- Privacy ---- */
   { path: '/privacy', component: resolve(`src/ui/pages/privacy.tsx`) },

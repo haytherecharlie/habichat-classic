@@ -9,6 +9,7 @@ export const CREATE_POST = 'CREATE_POST'
 
 // Post Actions
 export const REPLY = 'REPLY'
+export const REPLIES = 'REPLIES'
 
 // UI Actions
 export const DIMENSIONS = 'DIMENSIONS'

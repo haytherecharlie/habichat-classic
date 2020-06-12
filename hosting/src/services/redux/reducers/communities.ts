@@ -7,7 +7,7 @@ const communitiesReducer = (state = defaultState, action) => {
     case A.COMMUNITY:
       return { ...state, [action.cid]: action.value }
     case A.POSTS:
-      return { ...state, [action.cid]: { ...state[action.cid], newPosts: [] } }
+      return { ...state, [action.cid]: { ...state[action.cid] } }
     default:
       return state
   }
