@@ -14,7 +14,8 @@ export const AppLayout = styled('div')({
 })
 
 export const Main = styled('main')(P => ({
-  paddingTop: theme.HEADER_HEIGHT,
+  paddingTop: theme.HEADER_HEIGHT + 10,
+  paddingBottom: theme.FOOTER_HEIGHT + 10,
   position: 'relative',
   width: `100%`,
   maxWidth: theme.LARGE_VIEW,
