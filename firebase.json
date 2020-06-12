@@ -17,7 +17,7 @@
       { "source": "/styleguide", "destination": "/styleguide/index.html" },
       { "source": "/terms", "destination": "/terms/index.html" },
       { "source": "/404", "destination": "/404/index.html" },
-      { "source": "/:cid*", "destination": "/community/index.html" }
+      { "source": "/*", "destination": "/router/index.html" }
     ],
     "headers": [
       { "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] },
