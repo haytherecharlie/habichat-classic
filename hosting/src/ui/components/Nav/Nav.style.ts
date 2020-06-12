@@ -41,10 +41,10 @@ export const Locale = styled('div')({
   width: 150,
   flexDirection: 'row',
   alignItems: 'center',
-  justifyContent: 'space-between',
+  justifyContent: 'flex-end',
   margin: 0,
   [`@media only screen and (max-width: ${theme.LARGE_VIEW}px)`]: {
-    height: 65,
+    height: 25,
     margin: `10px 0`,
     flexDirection: 'column',
     alignItems: 'stretch',

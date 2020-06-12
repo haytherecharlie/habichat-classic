@@ -1,12 +1,9 @@
 import React from 'react'
 import { Router } from '@reach/router'
-import useCommunity from 'ui/hooks/useCommunity'
-import AppLayout from 'ui/layouts/AppLayout'
 import Posts from 'ui/pages/posts'
 import Replies from 'ui/pages/replies'
 
-const AppRouter = ({ cid }) => {
-  const [community] = useCommunity(cid)
+const AppRouter = () => {
 
   return (
     <Router basepath="/">
