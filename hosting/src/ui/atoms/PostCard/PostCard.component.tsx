@@ -23,11 +23,11 @@ const PostCard = ({ post, hideButtons = false }) => {
     updatedAt = { seconds: 0 }
   } = post
 
-  const handleButtonPress = () => (downclick = new Date().getTime())
-  const handleButtonRelease = () => {
-    const diff = new Date().getTime() - downclick
-    return diff > 50 && diff < 150 ? navigate(`community/${communityID}/${pid}`) : null
-  }
+  // const handleButtonPress = () => (downclick = new Date().getTime())
+  // const handleButtonRelease = () => {
+  //   const diff = new Date().getTime() - downclick
+  //   return diff > 50 && diff < 150 ? navigate(`/${communityID}/${pid}`) : null
+  // }
 
   const formatTimestamp = time => {
     return typeof time === 'object'
@@ -47,10 +47,11 @@ const PostCard = ({ post, hideButtons = false }) => {
       <S.RightCard>
         <S.Col>
           <S.Col
-            onTouchStart={handleButtonPress}
-            onTouchEnd={handleButtonRelease}
-            onMouseDown={handleButtonPress}
-            onMouseUp={handleButtonRelease}>
+          // onTouchStart={handleButtonPress}
+          // onTouchEnd={handleButtonRelease}
+          // onMouseDown={handleButtonPress}
+          // onMouseUp={handleButtonRelease}
+          >
             <S.Row>
               <S.Col>
                 <Text size="S" text={displayName} bold unique />
@@ -60,15 +61,17 @@ const PostCard = ({ post, hideButtons = false }) => {
               </S.Col>
             </S.Row>
             <S.Row>
-              <table style={{ tableLayout: 'fixed', width: '100%', wordWrap: 'break-word' }}>
-                <tbody>
-                  <tr>
-                    <td>
-                      <Text size="S" text={text} style={{ margin: '7px 0 7px 0', fontWeight: 400 }} unique />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <Link type="internal" href={`/${communityID}/${pid}`}>
+                <table style={{ tableLayout: 'fixed', width: '100%', wordWrap: 'break-word' }}>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <Text size="S" text={text} style={{ margin: '7px 0 7px 0', fontWeight: 400 }} unique />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </Link>
             </S.Row>
           </S.Col>
           {!hideButtons && (

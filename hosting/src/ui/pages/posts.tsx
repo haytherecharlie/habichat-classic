@@ -4,7 +4,7 @@ import ComposePost from 'ui/components/ComposePost'
 import useCommunity from 'ui/hooks/useCommunity'
 import AppLayout from 'ui/layouts/AppLayout'
 
-const Community = ({ cid }) => {
+const Posts = ({ cid }) => {
   const [community, posts] = useCommunity(cid)
 
   return (
@@ -20,4 +20,4 @@ const Community = ({ cid }) => {
   )
 }
 
-export default Community
+export default Posts

@@ -10,8 +10,14 @@
     "cleanUrls": true,
     "appAssociation": "AUTO",
     "rewrites": [
-      { "source": "/community/:cid", "destination": "/community/index.html" },
-      { "source": "/community/:cid/:pid", "destination": "/replies/index.html" }
+      { "source": "/", "destination": "/index.html" },
+      { "source": "/blog", "destination": "/blog/index.html" },
+      { "source": "/dashboard", "destination": "/dashboard/index.html" },
+      { "source": "/privacy", "destination": "/privacy/index.html" },
+      { "source": "/styleguide", "destination": "/styleguide/index.html" },
+      { "source": "/terms", "destination": "/terms/index.html" },
+      { "source": "/404", "destination": "/404/index.html" },
+      { "source": "/:cid*", "destination": "/community/index.html" }
     ],
     "headers": [
       { "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] },

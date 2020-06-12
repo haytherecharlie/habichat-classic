@@ -36,7 +36,7 @@ const Onboarding = () => {
         <S.Column style={{ alignItems: 'center' }}>
           <Text size="M" text="landing-onboard-3-title" bold style={{ textAlign: 'center', marginBottom: 10 }} />
           <Text size="S" text="landing-onboard-3-body" style={{ marginBottom: 15, textAlign: 'center' }} />
-          <Link href="/community/H4E">
+          <Link href="/">
             <ButtonPill>
               <Text
                 size="S"
