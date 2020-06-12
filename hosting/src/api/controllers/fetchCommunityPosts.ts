@@ -1,10 +1,10 @@
-import getCommunityDoc from 'api/utils/getCommunityDoc'
-import streamCommunityPosts from 'api/utils/streamCommunityPosts'
+import getCommunity from 'api/utils/getCommunity'
+import streamPosts from 'api/utils/streamPosts'
 
 const fetchCommunityPosts = async cid => {
   try {
-    await getCommunityDoc(cid)
-    return streamCommunityPosts(cid)
+    await getCommunity(cid)
+    return streamPosts(cid)
   } catch (err) {
     console.error(err)
     throw err
