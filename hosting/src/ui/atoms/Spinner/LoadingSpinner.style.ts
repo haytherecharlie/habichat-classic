@@ -2,8 +2,9 @@ import styled from 'styled-components'
 import theme from 'ui/assets/theme'
 
 export const Spinner = styled('svg')({
+  margin: 'auto',
   viewBox: '0 0 50 50',
-  animation: `rotate 2s linear infinite`,
+  animation: `rotate 1s linear infinite`,
   width: theme.SPINNER_RADIUS,
   height: theme.SPINNER_RADIUS,
   '@keyframes rotate': {
@@ -13,8 +14,8 @@ export const Spinner = styled('svg')({
   },
   '@keyframes dash': {
     '0%': {
-      strokeDasharray: `1, 150`,
-      strokeDashoffset: `0`
+      strokeDasharray: `90, 150`,
+      strokeDashoffset: -35
     },
     '50%': {
       strokeDasharray: `90, 150`,
@@ -22,7 +23,7 @@ export const Spinner = styled('svg')({
     },
     '100%': {
       strokeDasharray: `90, 150`,
-      strokeDashoffset: -124
+      strokeDashoffset: -35
     }
   }
 })
