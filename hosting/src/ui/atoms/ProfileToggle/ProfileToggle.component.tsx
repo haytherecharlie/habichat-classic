@@ -1,19 +1,12 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
-import ButtonPill from 'ui/atoms/ButtonPill'
+import Avatar from 'ui/atoms/Avatar'
 import Link from 'ui/atoms/Link'
-import Text from 'ui/atoms/Text'
 import * as S from './ProfileToggle.style'
 
 const ProfileToggle = () => {
-  const dispatch = useDispatch()
-  const onClick = () => dispatch({ type: 'NAV' })
-
   return (
-    <Link type="internal" href="/" onClick={onClick}>
-      <ButtonPill style={{ padding: `7px 15px`, flex: 1 }}>
-        <Text size="XS" text="LOG IN" style={{ color: '#FFF' }} bold unique />
-      </ButtonPill>
+    <Link type="internal" href="/">
+      <Avatar src="/image/profile.png" alt="profile" style={{ height: 25, width: 25, border: 'none' }} />
     </Link>
   )
 }

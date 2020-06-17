@@ -34,7 +34,7 @@ const Nav = () => {
         </Link>
       </S.Links>
       <S.Locale>
-        <ChangeLocale onClick={onClick} />
+        <ChangeLocale />
       </S.Locale>
     </S.Nav>
   ) : null

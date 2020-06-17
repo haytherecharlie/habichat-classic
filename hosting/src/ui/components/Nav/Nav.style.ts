@@ -38,7 +38,7 @@ export const Links = styled('div')({
 })
 
 export const Locale = styled('div')({
-  width: 150,
+  width: 100,
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'flex-end',
