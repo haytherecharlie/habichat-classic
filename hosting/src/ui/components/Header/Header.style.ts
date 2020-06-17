@@ -15,3 +15,9 @@ export const Header = styled('header')({
   alignItems: `stretch`,
   justifyContent: 'center'
 })
+
+export const Column = styled('div')(style => ({
+  flex: 1,
+  display: 'flex',
+  ...style
+}))

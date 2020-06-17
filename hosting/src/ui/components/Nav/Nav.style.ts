@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import theme from 'ui/assets/theme'
 
 export const Nav = styled('nav')({
-  zIndex: 100,
+  zIndex: 10,
   flex: 1,
   display: 'flex',
   width: `100%`,
@@ -48,6 +48,6 @@ export const Locale = styled('div')({
     margin: `10px 0`,
     flexDirection: 'column',
     alignItems: 'stretch',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
   }
 })

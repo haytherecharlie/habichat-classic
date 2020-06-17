@@ -5,41 +5,51 @@ import * as S from './Text.style'
 const Text = ({ size = 'M', bold = false, text = 'placeholder', style = {}, unique = false, link = false }) => {
   if (size === 'XL') {
     return (
-      <S.XLarge bold={bold} style={style} link={link}>
-        {unique ? text : formatMessage(text)}
-      </S.XLarge>
+      <S.Text style={{ paddingTop: 5 }}>
+        <S.XLarge bold={bold} style={style} link={link}>
+          {unique ? text : formatMessage(text)}
+        </S.XLarge>
+      </S.Text>
     )
   }
 
   if (size === 'L') {
     return (
-      <S.Large bold={bold} style={style} link={link}>
-        {unique ? text : formatMessage(text)}
-      </S.Large>
+      <S.Text style={{ paddingTop: 3 }}>
+        <S.Large bold={bold} style={style} link={link}>
+          {unique ? text : formatMessage(text)}
+        </S.Large>
+      </S.Text>
     )
   }
 
   if (size === 'M') {
     return (
-      <S.Medium bold={bold} style={style} link={link}>
-        {unique ? text : formatMessage(text)}
-      </S.Medium>
+      <S.Text style={{ paddingTop: 2 }}>
+        <S.Medium bold={bold} style={style} link={link}>
+          {unique ? text : formatMessage(text)}
+        </S.Medium>
+      </S.Text>
     )
   }
 
   if (size === 'S') {
     return (
-      <S.Small bold={bold} style={style} link={link}>
-        {unique ? text : formatMessage(text)}
-      </S.Small>
+      <S.Text style={{ paddingTop: 2 }}>
+        <S.Small bold={bold} style={style} link={link}>
+          {unique ? text : formatMessage(text)}
+        </S.Small>
+      </S.Text>
     )
   }
 
   if (size === 'XS') {
     return (
-      <S.XSmall bold={bold} style={style} link={link}>
-        {unique ? text : formatMessage(text)}
-      </S.XSmall>
+      <S.Text style={{ paddingTop: 2 }}>
+        <S.XSmall bold={bold} style={style} link={link}>
+          {unique ? text : formatMessage(text)}
+        </S.XSmall>
+      </S.Text>
     )
   }
 }

@@ -1,23 +1,11 @@
+import { pathOr } from 'ramda'
 import en from 'ui/language/en.json'
 import fr from 'ui/language/fr.json'
+import store from 'services/redux'
 
-const locales = [{ path: 'fr', file: fr }, { path: '', file: en }]
+const locales = { fr, en }
 
 export const formatMessage = id => {
-  if (typeof window !== 'undefined') {
-    const locale = locales.find(({ path }) => window.location.pathname.split('/')[1].includes(path))
-    return locale.file[id]
-  }
-  return en[id]
-}
-
-export const changeLocale = lang => {
-  if (typeof window !== 'undefined') {
-    const pathname = window.location.pathname
-    const splitPath = pathname.split('/')
-    const newLang = lang !== '/en' ? lang : ""
-    const newPath = splitPath[1].length === 2 ? `${newLang}${pathname.substring(3)}` : `${newLang}${pathname}`
-    return newPath
-  }
-  return null
+  const language = pathOr('en', ['ui', 'language'], store.getState())
+  return locales[language][id]
 }
