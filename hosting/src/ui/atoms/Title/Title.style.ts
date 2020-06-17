@@ -6,7 +6,7 @@ export const Title = styled('div')(style => ({
 }))
 
 export const H1 = styled('h1')(P => ({
-  verticalAlign: 'sub',
+  verticalAlign: 'bottom',
   lineHeight: theme.FONT_XL + 5 + 'px',
   fontSize: theme.FONT_XL + 'px',
   fontWeight: 500,

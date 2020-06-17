@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import enable from 'iphone-inline-video'
 import theme from 'ui/assets/theme'
 import Text from 'ui/atoms/Text'
+import Title from 'ui/atoms/Title'
 import * as S from './HeroBanner.style'
 
 const HeroBanner = () => {
@@ -24,8 +25,8 @@ const HeroBanner = () => {
           poster="image/aerials.jpg"
         />
         <S.Image src="image/habichat.png" alt="habichat logo" />
-        <Text
-          size="XL"
+        <Title
+          size="h2"
           text="landing-title"
           style={{ color: '#FFF', textAlign: 'center', zIndex: 3, marginTop: 20, fontSize: 25 }}
           bold

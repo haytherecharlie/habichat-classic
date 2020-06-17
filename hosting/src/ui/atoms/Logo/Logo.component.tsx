@@ -7,7 +7,13 @@ const Logo = ({ type = null, style = {} }) => {
     case 'logomark':
       return <S.Logomark src="/image/habichat.png" alt="habichat logo" style={style} />
     case 'logotype':
-      return <Text size="XL" text="habichat" unique bold style={{ letterSpacing: -1, ...style }} />
+      return (
+        <S.Logotype style={{ paddingTop: 5 }}>
+          <S.Habichat style={{ letterSpacing: -1 }} bold>
+            habichat
+          </S.Habichat>
+        </S.Logotype>
+      )
     default:
       return (
         <S.CombinationMark style={style}>
