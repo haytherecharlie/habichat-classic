@@ -4,12 +4,12 @@ import Link from 'ui/atoms/Link'
 import Text from 'ui/atoms/Text'
 import * as S from './ChangeLocale.style'
 
-const ChangeLocale = ({ onClick = () => {} }) => {
+const ChangeLocale = () => {
   const dispatch = useDispatch()
 
   const changeLocale = language => {
     dispatch({ type: 'LANGUAGE', language })
-    onClick()
+    return window.location.reload()
   }
 
   return (

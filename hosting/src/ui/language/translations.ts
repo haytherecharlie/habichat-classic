@@ -1,7 +1,7 @@
 import { pathOr } from 'ramda'
 import en from 'ui/language/en.json'
 import fr from 'ui/language/fr.json'
-import store from 'services/redux'
+import { store } from 'services/redux'
 
 const locales = { fr, en }
 

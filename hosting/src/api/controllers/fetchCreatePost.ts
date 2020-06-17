@@ -1,6 +1,6 @@
 import { pathOr } from 'ramda'
 import { db, ts } from 'services/firebase'
-import store from 'services/redux'
+import { store } from 'services/redux'
 
 const fetchCreatePost = async (cid, text) => {
   try {

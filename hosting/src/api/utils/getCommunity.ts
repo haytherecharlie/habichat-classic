@@ -1,5 +1,5 @@
 import { db } from 'services/firebase'
-import store from 'services/redux'
+import { store } from 'services/redux'
 
 const getCommunityDoc = async cid => {
   try {
