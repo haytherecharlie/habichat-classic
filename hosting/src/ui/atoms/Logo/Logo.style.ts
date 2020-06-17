@@ -7,5 +7,5 @@ export const Logomark = styled('img')({
 
 export const CombinationMark = styled('div')({
   display: 'flex',
-  justifyContent: 'center'
+  alignItems: 'center'
 })

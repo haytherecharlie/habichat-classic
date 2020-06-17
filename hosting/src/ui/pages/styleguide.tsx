@@ -108,6 +108,8 @@ const StyleGuide = () => {
         }}>
         <Text size="M" text="Logo Component" style={{ textTransform: 'uppercase' }} bold unique />
         <div style={{ borderTop: `1px solid #CCC`, marginTop: 10, paddingTop: 10, flexDirection: 'column' }}>
+          <Logo type="logomark" />
+          <Logo type="logotype" />
           <Logo type="combomark" />
         </div>
       </section>
