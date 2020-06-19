@@ -20,7 +20,7 @@ export const AppHeader = () => {
           <Text size="XS" text="Ville-Émard, Montréal, QC H4E" style={{ marginTop: -4 }} bold unique />
         </S.Column>
         <S.Column style={{ flex: 0, paddingRight: 5, justifyContent: 'flex-end', alignItems: 'center' }}>
-          <ProfileToggle style={{ height: 35, width: 35 }} />
+          <ProfileToggle style={{ height: 30, width: 30 }} />
         </S.Column>
       </Responsive>
     </S.AppHeader>
