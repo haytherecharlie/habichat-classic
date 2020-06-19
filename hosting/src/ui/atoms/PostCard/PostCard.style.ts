@@ -9,12 +9,15 @@ export const PostCard = styled('article')({
   justifyContent: 'stretch'
 })
 
-export const LeftCard = styled('div')({
+export const Card = styled('div')({
+  background: theme.CLEAN_BACKGROUND,
+  borderRadius: theme.CARD_RADIUS,
   marginLeft: 20,
-  width: 20,
-  borderLeft: `1px solid ${theme.BRAND_COLOR}`,
-  borderTop: `1px solid ${theme.BRAND_COLOR}`,
-  borderBottom: `1px solid ${theme.BRAND_COLOR}`,
+  boxShadow: `0 2px 2px rgba(0,0,0,0.2)`
+})
+
+export const LeftCard = styled('div')({
+  background: 'orange',
   borderTopLeftRadius: theme.CARD_RADIUS,
   borderBottomLeftRadius: theme.CARD_RADIUS
 })
@@ -23,9 +26,6 @@ export const RightCard = styled('div')({
   flex: 1,
   flexDirection: 'column',
   padding: 10,
-  borderRight: `1px solid ${theme.BRAND_COLOR}`,
-  borderTop: `1px solid ${theme.BRAND_COLOR}`,
-  borderBottom: `1px solid ${theme.BRAND_COLOR}`,
   borderTopRightRadius: theme.CARD_RADIUS,
   borderBottomRightRadius: theme.CARD_RADIUS
 })

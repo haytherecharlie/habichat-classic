@@ -17,6 +17,19 @@ export const Footer = styled('header')(P => ({
   ...P.style
 }))
 
+export const AppFooter = styled('header')(P => ({
+  zIndex: 100,
+  height: 0,
+  width: `100%`,
+  display: `flex`,
+  alignItems: `center`,
+  justifyContent: `stretch`,
+  background: theme.BACKGROUND_COLOR,
+  padding: `0 15px`,
+  borderTop: `1px solid ${theme.BRAND_COLOR}`,
+  ...P.style
+}))
+
 export const NewPostButton = styled('div')({
   cursor: 'pointer',
   position: 'absolute',

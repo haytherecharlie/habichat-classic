@@ -43,7 +43,7 @@ export const AppFooter = ({ addButton = false }) => {
   }
 
   return (
-    <S.Footer style={{ position: 'fixed', bottom: 0, left: 0 }}>
+    <S.AppFooter style={{ position: 'fixed', bottom: 0, left: 0 }}>
       <Responsive style={{ justifyContent: 'center', flex: 1, margin: `0 auto` }}>
         {addButton && !modal && (
           <Link type="button" onClick={clickNewPost}>
@@ -52,8 +52,7 @@ export const AppFooter = ({ addButton = false }) => {
             </S.NewPostButton>
           </Link>
         )}
-        <Text size="XS" text="This is where ads will go." unique />
       </Responsive>
-    </S.Footer>
+    </S.AppFooter>
   )
 }

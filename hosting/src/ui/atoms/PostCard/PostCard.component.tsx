@@ -1,6 +1,5 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { formatDistance } from 'date-fns'
-import { navigate } from 'gatsby'
 import CheckMark from 'react-ionicons/lib/MdCheckmark'
 import CheckMarks from 'react-ionicons/lib/MdDoneAll'
 import Reply from 'react-ionicons/lib/IosRedo'
@@ -12,7 +11,6 @@ import Text from 'ui/atoms/Text'
 import * as S from './PostCard.style'
 
 const PostCard = ({ post, hideButtons = false }) => {
-  let downclick = 0
   const {
     author: { displayName = '', photoURL = '' },
     communityID,
@@ -22,12 +20,6 @@ const PostCard = ({ post, hideButtons = false }) => {
     text = '',
     updatedAt = { seconds: 0 }
   } = post
-
-  // const handleButtonPress = () => (downclick = new Date().getTime())
-  // const handleButtonRelease = () => {
-  //   const diff = new Date().getTime() - downclick
-  //   return diff > 50 && diff < 150 ? navigate(`/${communityID}/${pid}`) : null
-  // }
 
   const formatTimestamp = time => {
     return typeof time === 'object'
@@ -41,80 +33,76 @@ const PostCard = ({ post, hideButtons = false }) => {
 
   return (
     <S.PostCard role="article" data-focusable="true">
-      <S.LeftCard>
+      <S.Card>
         <Avatar src={photoURL} alt="display profile" style={{ height: 35, width: 35, margin: `8px 0 0 -20px` }} />
-      </S.LeftCard>
-      <S.RightCard>
-        <S.Col>
-          <S.Col
-          // onTouchStart={handleButtonPress}
-          // onTouchEnd={handleButtonRelease}
-          // onMouseDown={handleButtonPress}
-          // onMouseUp={handleButtonRelease}
-          >
-            <S.Row>
-              <S.Col>
-                <Text size="S" text={displayName} bold unique />
-              </S.Col>
-              <S.Col style={{ flex: 0, minWidth: 115, alignItems: 'flex-end' }}>
-                <Text size="XS" text={formatTimestamp(updatedAt)} unique />
-              </S.Col>
-            </S.Row>
-            <S.Row>
-              <Link type="internal" href={`/${communityID}/${pid}`}>
-                <table style={{ tableLayout: 'fixed', width: '100%', wordWrap: 'break-word' }}>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <Text size="S" text={text} style={{ margin: '7px 0 7px 0', fontWeight: 400 }} unique />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </Link>
-            </S.Row>
+        <S.LeftCard></S.LeftCard>
+        <S.RightCard>
+          <S.Col>
+            <S.Col>
+              <S.Row>
+                <S.Col>
+                  <Text size="S" text={displayName} bold unique />
+                </S.Col>
+                <S.Col style={{ flex: 0, minWidth: 115, alignItems: 'flex-end' }}>
+                  <Text size="XS" text={formatTimestamp(updatedAt)} unique />
+                </S.Col>
+              </S.Row>
+              <S.Row>
+                <Link type="internal" href={`/${communityID}/${pid}`}>
+                  <table style={{ tableLayout: 'fixed', width: '100%', wordWrap: 'break-word' }}>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <Text size="S" text={text} style={{ margin: '7px 0 7px 0', fontWeight: 400 }} unique />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </Link>
+              </S.Row>
+            </S.Col>
+            {!hideButtons && (
+              <S.Row style={{ marginTop: 0 }}>
+                <S.Col style={{ flex: 0 }}>
+                  <S.CommentButton>
+                    <Link type="button" onClick={() => console.log('WOWO')}>
+                      <ChatBubbles fontSize={`${theme.FONT_S}px`} color={theme.BRAND_COLOR} />
+                      <Text
+                        size="XS"
+                        text={`${replies} Comments`}
+                        style={{ marginLeft: 3, color: theme.BRAND_COLOR, fontWeight: 600 }}
+                        unique
+                      />
+                    </Link>
+                  </S.CommentButton>
+                </S.Col>
+                <S.Col style={{ flex: 0 }}>
+                  <S.CommentButton>
+                    <Link type="button" onClick={() => console.log('WOWO')}>
+                      <Reply fontSize={`${theme.FONT_M}px`} color={theme.BRAND_COLOR} />
+                      <Text
+                        size="XS"
+                        text="Write Reply"
+                        style={{ marginLeft: 3, color: theme.BRAND_COLOR, fontWeight: 600 }}
+                        unique
+                      />
+                    </Link>
+                  </S.CommentButton>
+                </S.Col>
+                <S.Col>
+                  <S.ServerCheck>
+                    {server ? (
+                      <CheckMarks fontSize="12px" color={theme.BRAND_COLOR} />
+                    ) : (
+                      <CheckMark fontSize="12px" color={theme.BRAND_COLOR} />
+                    )}
+                  </S.ServerCheck>
+                </S.Col>
+              </S.Row>
+            )}
           </S.Col>
-          {!hideButtons && (
-            <S.Row style={{ marginTop: 0 }}>
-              <S.Col style={{ flex: 0 }}>
-                <S.CommentButton>
-                  <Link type="button" onClick={() => console.log('WOWO')}>
-                    <ChatBubbles fontSize={`${theme.FONT_S}px`} color={theme.BRAND_COLOR} />
-                    <Text
-                      size="XS"
-                      text={`${replies} Comments`}
-                      style={{ marginLeft: 3, color: theme.BRAND_COLOR, fontWeight: 600 }}
-                      unique
-                    />
-                  </Link>
-                </S.CommentButton>
-              </S.Col>
-              <S.Col style={{ flex: 0 }}>
-                <S.CommentButton>
-                  <Link type="button" onClick={() => console.log('WOWO')}>
-                    <Reply fontSize={`${theme.FONT_M}px`} color={theme.BRAND_COLOR} />
-                    <Text
-                      size="XS"
-                      text="Write Reply"
-                      style={{ marginLeft: 3, color: theme.BRAND_COLOR, fontWeight: 600 }}
-                      unique
-                    />
-                  </Link>
-                </S.CommentButton>
-              </S.Col>
-              <S.Col>
-                <S.ServerCheck>
-                  {server ? (
-                    <CheckMarks fontSize="12px" color={theme.BRAND_COLOR} />
-                  ) : (
-                    <CheckMark fontSize="12px" color={theme.BRAND_COLOR} />
-                  )}
-                </S.ServerCheck>
-              </S.Col>
-            </S.Row>
-          )}
-        </S.Col>
-      </S.RightCard>
+        </S.RightCard>
+      </S.Card>
     </S.PostCard>
   )
 }
