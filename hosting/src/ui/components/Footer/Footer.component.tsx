@@ -48,10 +48,25 @@ export const AppFooter = ({ addButton = false }) => {
         {addButton && !modal && (
           <Link type="button" onClick={clickNewPost}>
             <S.NewPostButton>
-              <img src="/image/create-post.png" height="20px" alt=""/>
+              <img src="/image/create-post.png" height="20px" alt="compose new post" />
             </S.NewPostButton>
           </Link>
         )}
+        <div
+          style={{
+            background: '#FFF',
+            width: `100%`,
+            maxWidth: 600,
+            height: `70%`,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: `0px 30px`,
+            border: `1px solid rgba(0,0,0,0.4)`
+          }}>
+          <Text size="M" text="ICI, C'EST PEPSI" bold unique style={{ color: '#00366e' }} />
+          <img src="/image/pepsi-ad.png" style={{ height: 35, width: 35 }} alt="pepsi ad" />
+        </div>
       </Responsive>
     </S.AppFooter>
   )

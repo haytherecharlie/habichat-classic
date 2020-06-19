@@ -15,13 +15,7 @@ const AppLayout = ({ children, page, crawl, style = {}, loading = false, addButt
     <S.AppLayout>
       <GlobalStyle />
       <SEO page={page} crawl={crawl} />
-      {loading ? (
-        <S.Main style={{ alignItems: 'center', justifyContent: 'center' }}>
-          <Spinner />
-        </S.Main>
-      ) : (
-        <S.Main style={style}>{children}</S.Main>
-      )}
+      <S.Main style={style}>{children}</S.Main>
       <AppFooter addButton={addButton} />
     </S.AppLayout>
   )

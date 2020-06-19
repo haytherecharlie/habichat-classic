@@ -18,13 +18,13 @@ export const Footer = styled('header')(P => ({
 }))
 
 export const AppFooter = styled('header')(P => ({
-  zIndex: 100,
-  height: 0,
+  zIndex: 10000,
+  height: theme.FOOTER_HEIGHT,
   width: `100%`,
   display: `flex`,
   alignItems: `center`,
   justifyContent: `stretch`,
-  background: theme.BACKGROUND_COLOR,
+  background: `rgba(255, 255, 255, 0.8)`,
   padding: `0 15px`,
   borderTop: `1px solid ${theme.BRAND_COLOR}`,
   ...P.style
@@ -41,6 +41,7 @@ export const NewPostButton = styled('div')({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  boxShadow: `0 2px 2px rgba(0,0,0,0.4)`,
   '&:hover': {
     animation: `pulse`,
     animationDuration: `1s`
