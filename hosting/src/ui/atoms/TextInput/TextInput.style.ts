@@ -7,17 +7,17 @@ export const TextInput = styled('textarea')({
   display: 'flex',
   alignItems: 'flex-start',
   border: `1px solid ${theme.BRAND_COLOR}`,
+  background: theme.CLEAN_BACKGROUND,
   padding: `7px 10px`,
   borderRadius: theme.CARD_RADIUS,
-  background: 'transparent',
   color: theme.PRIMARY_COLOR,
   fontFamily: theme.FONT_BODY,
   fontSize: theme.FONT_M,
-  fontWeight: 300,
+  fontWeight: 400,
   resize: `none`,
   '&::placeholder': {
     color: theme.PRIMARY_COLOR,
-    fontWeight: 300
+    fontWeight: 400
   },
   '&:focus': {
     outline: 'none'

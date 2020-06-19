@@ -18,7 +18,7 @@ export const Nav = styled('nav')({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    background: theme.BACKGROUND_COLOR,
+    background: theme.DIRTY_BACKGROUND,
     padding: `10px 0`,
     borderBottom: `1px solid ${theme.BRAND_COLOR}`
   }

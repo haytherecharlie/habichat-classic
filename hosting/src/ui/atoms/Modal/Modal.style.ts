@@ -10,7 +10,7 @@ export const Modal = styled('div')(P => ({
   top: 0,
   height: `100%`,
   width: `100%`,
-  background: theme.BACKGROUND_COLOR,
+  background: theme.DIRTY_BACKGROUND,
   flex: 1,
   display: 'flex',
   flexDirection: 'column',

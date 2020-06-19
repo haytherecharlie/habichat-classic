@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle({
     fontFamily:
       "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'",
     color: theme.PRIMARY_COLOR,
-    backgroundColor: theme.BACKGROUND_COLOR
+    backgroundColor: theme.DIRTY_BACKGROUND
   },
   '#gatsby-focus-wrapper': {
     minHeight: `100vh`,
@@ -66,7 +66,7 @@ const GlobalStyle = createGlobalStyle({
     MsTextSizeAdjust: '100%',
     MsOverflowStyle: 'scrollbar',
     WebkitTapHighlightColor: 'transparent',
-    backgroundColor: theme.BACKGROUND_COLOR
+    backgroundColor: theme.DIRTY_BACKGROUND
   },
   'video::-internal-media-controls-overlay-cast-button': {
     display: 'none'

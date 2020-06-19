@@ -11,7 +11,7 @@ export const PageLayout = styled('div')({
   alignItems: 'center',
   justifyContent: 'flex-start',
   paddingTop: theme.HEADER_HEIGHT,
-  background: theme.BACKGROUND_COLOR
+  background: theme.DIRTY_BACKGROUND
 })
 
 export const Main = styled('main')(P => ({

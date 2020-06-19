@@ -11,7 +11,7 @@ export const Footer = styled('header')(P => ({
   display: `flex`,
   alignItems: `center`,
   justifyContent: `stretch`,
-  background: theme.BACKGROUND_COLOR,
+  background: theme.DIRTY_BACKGROUND,
   padding: `0 15px`,
   borderTop: `1px solid ${theme.BRAND_COLOR}`,
   ...P.style

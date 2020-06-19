@@ -19,13 +19,13 @@ export const WebFooter = () => {
         </Responsive>
         <Responsive style={{ justifyContent: 'flex-end', flex: 1, marginRight: -5 }}>
           <Link type="external" href="https://twitter.com/habichat1">
-            <S.Twitter color={theme.BACKGROUND_COLOR} fontSize="10" />
+            <S.Twitter color={theme.DIRTY_BACKGROUND} fontSize="10" />
           </Link>
           <Link type="external" href="https://github.com/habichat">
-            <S.Github color={theme.BACKGROUND_COLOR} fontSize="10" />
+            <S.Github color={theme.DIRTY_BACKGROUND} fontSize="10" />
           </Link>
           <Link type="external" href="https://www.linkedin.com/company/habichat">
-            <S.LinkedIn color={theme.BACKGROUND_COLOR} fontSize="10" />
+            <S.LinkedIn color={theme.DIRTY_BACKGROUND} fontSize="10" />
           </Link>
         </Responsive>
       </Responsive>

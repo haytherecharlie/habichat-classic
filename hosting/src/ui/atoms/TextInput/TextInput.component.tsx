@@ -5,12 +5,10 @@ const TextInput = ({ rows = 5, text = null, setText = null, placeholder = 'Say s
   const textMaxLength = 750
   const inputRef = useRef(null)
   const [capitalize, setCapitalize] = useState(true)
-  // const [charCount, setCharCount] = useState(textMaxLength)
 
   const onChange = () => {
     const inputEl = inputRef.current
     const value = inputEl.value.replace(/(\r\n|\n|\r)/gm, '')
-    // setCharCount(textMaxLength - value.length)
     setText(capitalize ? value.substr(0, 1).toUpperCase() : value)
     setCapitalize(false)
   }

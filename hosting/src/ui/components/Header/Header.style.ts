@@ -3,7 +3,7 @@ import theme from 'ui/assets/theme'
 
 export const Header = styled('header')({
   zIndex: 8000,
-  background: theme.BACKGROUND_COLOR,
+  background: theme.DIRTY_BACKGROUND,
   position: 'fixed',
   top: 0,
   left: 0,
