@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "habichat-16f46"
+    "default": "habichat-16f46",
+    "staging": "habichat-staging-606cc"
   }
 }

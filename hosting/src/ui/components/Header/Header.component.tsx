@@ -17,7 +17,7 @@ export const AppHeader = () => {
         <S.Column
           style={{ flex: 1, paddingLeft: 5, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
           <Logo />
-          <Text size="XS" text="Ville-Émard, Montréal, QC H4E" style={{ marginTop: 0 }} bold unique />
+          <Text size="XS" text="Ville-Émard, Montréal, QC H4E" style={{ marginTop: 2 }} bold unique />
         </S.Column>
         <S.Column style={{ flex: 0, paddingRight: 5, justifyContent: 'flex-end', alignItems: 'center' }}>
           <ProfileToggle style={{ height: 30, width: 30 }} />
