@@ -7,9 +7,9 @@ export const Logomark = styled('img')({
   marginTop: -2
 })
 
-export const CombinationMark = styled('div')({
-  display: 'flex',
-  alignItems: 'center'
+export const CombinationMark = styled('img')({
+  height: 25,
+  width: 'auto'
 })
 
 export const Logotype = styled('div')(style => ({

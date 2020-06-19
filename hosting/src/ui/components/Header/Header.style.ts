@@ -13,7 +13,7 @@ export const AppHeader = styled('header')({
   display: 'flex',
   alignItems: `center`,
   justifyContent: 'center',
-  boxShadow: `0 0px 2px rgba(0,0,0,0.2)`
+  // boxShadow: `0 0px 2px rgba(0,0,0,0.2)`
 })
 
 export const Header = styled('header')({

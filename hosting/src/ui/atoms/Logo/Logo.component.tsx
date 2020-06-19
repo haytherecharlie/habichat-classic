@@ -15,12 +15,7 @@ const Logo = ({ type = null, style = {} }) => {
         </S.Logotype>
       )
     default:
-      return (
-        <S.CombinationMark style={style}>
-          <S.Logomark src="/image/small-logo.png" alt="habichat logo" />
-          <Text size="XL" text="habichat" unique bold style={{ letterSpacing: -1 }} />
-        </S.CombinationMark>
-      )
+      return <S.CombinationMark src="/image/combomark.png" alt="habichat" />
   }
 }
 
