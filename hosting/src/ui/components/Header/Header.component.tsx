@@ -7,10 +7,18 @@ import ProfileToggle from 'ui/atoms/ProfileToggle'
 import Responsive from 'ui/atoms/Responsive'
 import Hamburger from 'ui/atoms/Hamburger'
 import Nav from 'ui/components/Nav'
-
 import * as S from './Header.style'
 
-const Header = () => {
+export const AppHeader = () => {
+  return (
+    <S.AppHeader>
+      <Logo type="logotype" />
+      <ProfileToggle style={{ height: 35, width: 35 }} />
+    </S.AppHeader>
+  )
+}
+
+export const Header = () => {
   const dispatch = useDispatch()
   const { dimensions, nav } = useSelector(s => s.ui)
 
