@@ -6,7 +6,10 @@ export const PostCard = styled('article')({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'stretch',
-  justifyContent: 'stretch'
+  justifyContent: 'stretch',
+  '&:last-child': {
+    marginBottom: 100
+  }
 })
 
 export const Card = styled('div')({

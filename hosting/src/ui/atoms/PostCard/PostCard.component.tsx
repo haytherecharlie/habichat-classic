@@ -1,5 +1,4 @@
 import React from 'react'
-import { formatDistance } from 'date-fns'
 import CheckMark from 'react-ionicons/lib/MdCheckmark'
 import CheckMarks from 'react-ionicons/lib/MdDoneAll'
 import Reply from 'react-ionicons/lib/IosRedo'
@@ -8,6 +7,7 @@ import theme from 'ui/assets/theme'
 import Avatar from 'ui/atoms/Avatar'
 import Link from 'ui/atoms/Link'
 import Text from 'ui/atoms/Text'
+import formatTimestamp from 'ui/helpers/formatTimestamp'
 import * as S from './PostCard.style'
 
 const PostCard = ({ post, hideButtons = false }) => {
@@ -20,16 +20,6 @@ const PostCard = ({ post, hideButtons = false }) => {
     text = '',
     updatedAt = { seconds: 0 }
   } = post
-
-  const formatTimestamp = time => {
-    return typeof time === 'object'
-      ? formatDistance(
-          new Date(time.hasOwnProperty('_seconds') ? time._seconds * 1000 : time.seconds * 1000),
-          new Date().getTime(),
-          { addSuffix: true }
-        )
-      : 'just now'
-  }
 
   return (
     <S.PostCard role="article" data-focusable="true">
@@ -53,7 +43,12 @@ const PostCard = ({ post, hideButtons = false }) => {
                     <tbody>
                       <tr>
                         <td>
-                          <Text size="S" text={text} style={{ color: '#261643', margin: '0px 0 7px 0', fontWeight: 400 }} unique />
+                          <Text
+                            size="S"
+                            text={text}
+                            style={{ color: '#261643', margin: '0px 0 7px 0', fontWeight: 400 }}
+                            unique
+                          />
                         </td>
                       </tr>
                     </tbody>
