@@ -13,6 +13,16 @@ export const AppHeader = styled('header')({
   display: 'flex',
   alignItems: `center`,
   justifyContent: 'center',
+  '&:after': {
+    position: 'fixed',
+    content: "''",
+    width: `100vw`,
+    height: 10,
+    background: `-webkit-linear-gradient(bottom, rgba(255,255,255,0), #F8F8F8)`,
+    backgroundSize: 'contain',
+    top: theme.HEADER_HEIGHT,
+    left: 0
+  }
   // boxShadow: `0 0px 2px rgba(0,0,0,0.2)`
 })
 
