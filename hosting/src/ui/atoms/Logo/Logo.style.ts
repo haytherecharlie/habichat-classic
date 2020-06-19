@@ -2,8 +2,9 @@ import styled from 'styled-components'
 import theme from 'ui/assets/theme'
 
 export const Logomark = styled('img')({
-  height: 23,
-  width: 23,
+  height: 24,
+  width: 24,
+  marginTop: -2
 })
 
 export const CombinationMark = styled('div')({

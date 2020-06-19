@@ -64,7 +64,7 @@ export const AppFooter = ({ addButton = false }) => {
             padding: `0px 30px`,
             border: `1px solid rgba(0,0,0,0.4)`
           }}>
-          <Text size="M" text="ICI, C'EST PEPSI" bold unique style={{ color: '#00366e' }} />
+          <Text size="M" text="ICI, C'EST PEPSI" bold unique style={{ color: '#00366e', letterSpacing: -1 }} />
           <img src="/image/pepsi-ad.png" style={{ height: 35, width: 35 }} alt="pepsi ad" />
         </div>
       </Responsive>

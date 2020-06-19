@@ -53,7 +53,7 @@ const PostCard = ({ post, hideButtons = false }) => {
                     <tbody>
                       <tr>
                         <td>
-                          <Text size="S" text={text} style={{ color: '#261643', margin: '5px 0 7px 0', fontWeight: 400 }} unique />
+                          <Text size="S" text={text} style={{ color: '#261643', margin: '0px 0 7px 0', fontWeight: 400 }} unique />
                         </td>
                       </tr>
                     </tbody>

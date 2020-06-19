@@ -12,8 +12,7 @@ export const AppHeader = styled('header')({
   borderTop: `5px solid ${theme.BRAND_COLOR}`,
   display: 'flex',
   alignItems: `center`,
-  justifyContent: 'space-between',
-  padding: `0 15px`,
+  justifyContent: 'center',
   boxShadow: `0 0px 2px rgba(0,0,0,0.2)`
 })
 

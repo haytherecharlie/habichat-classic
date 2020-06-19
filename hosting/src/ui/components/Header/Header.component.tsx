@@ -1,19 +1,28 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NAV } from 'services/redux/actions'
+import Hamburger from 'ui/atoms/Hamburger'
 import Link from 'ui/atoms/Link'
 import Logo from 'ui/atoms/Logo'
 import ProfileToggle from 'ui/atoms/ProfileToggle'
 import Responsive from 'ui/atoms/Responsive'
-import Hamburger from 'ui/atoms/Hamburger'
+import Text from 'ui/atoms/Text'
 import Nav from 'ui/components/Nav'
 import * as S from './Header.style'
 
 export const AppHeader = () => {
   return (
     <S.AppHeader>
-      <Logo type="logotype" />
-      <ProfileToggle style={{ height: 35, width: 35 }} />
+      <Responsive>
+        <S.Column
+          style={{ flex: 1, paddingLeft: 5, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
+          <Logo />
+          <Text size="XS" text="Ville-Émard, Montréal, QC H4E" style={{ marginTop: -4 }} bold unique />
+        </S.Column>
+        <S.Column style={{ flex: 0, paddingRight: 5, justifyContent: 'flex-end', alignItems: 'center' }}>
+          <ProfileToggle style={{ height: 35, width: 35 }} />
+        </S.Column>
+      </Responsive>
     </S.AppHeader>
   )
 }
