@@ -16,7 +16,7 @@ const Posts = ({ cid }) => {
       crawl={false}
       style={{ marginTop: 5 }}
       addButton={typeof community !== 'undefined'}>
-      <Neighbours />
+      <Neighbours cid={cid} />
       <Text size="M" text="Community Posts" style={{ marginTop: 5 }} bold unique />
       {posts && Object.entries(posts).map(([pid, post]) => post && <PostCard key={pid} post={{ ...post, pid }} />)}
       <ComposePost cid={cid} />

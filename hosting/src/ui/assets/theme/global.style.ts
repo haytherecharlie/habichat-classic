@@ -23,7 +23,8 @@ const GlobalStyle = createGlobalStyle({
     fontFamily:
       "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'",
     color: theme.PRIMARY_COLOR,
-    backgroundColor: theme.DIRTY_BACKGROUND
+    backgroundColor: theme.DIRTY_BACKGROUND,
+    overflowX: 'hidden'
   },
   '#gatsby-focus-wrapper': {
     minHeight: `100vh`,

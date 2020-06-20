@@ -5,11 +5,11 @@ import SEO from 'ui/atoms/SEO'
 import Spinner from 'ui/atoms/Spinner'
 import { Header } from 'ui/components/Header'
 import { WebFooter } from 'ui/components/Footer'
-import usePageLayout from 'ui/hooks/usePageLayout'
+import useLayout from 'ui/hooks/useLayout'
 import * as S from './PageLayout.style'
 
 const PageLayout = ({ children, page, crawl, style = {} }) => {
-  usePageLayout()
+  useLayout()
   const { loading } = useSelector(s => s.ui)
 
   return (

@@ -26,8 +26,5 @@ module.exports = [
   { path: '/404', component: resolve(`src/ui/pages/404.tsx`) },
 
   /* ---- Posts ---- */
-  { matchPath: '/:cid', path: '/router', component: resolve(`src/ui/pages/App.tsx`) },
-
-  /* ---- Replies ---- */
   { matchPath: '/:cid/*', path: '/router', component: resolve(`src/ui/pages/App.tsx`) }
 ]

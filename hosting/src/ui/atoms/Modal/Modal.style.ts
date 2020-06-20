@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import theme from 'ui/assets/theme'
 
 export const Modal = styled('div')(P => ({
-  animation: 'fadeIn',
+  animation: P.effect,
   animationDuration: `.3s`,
   zIndex: 1000,
   position: 'fixed',

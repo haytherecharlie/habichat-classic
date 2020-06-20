@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import theme from 'ui/assets/theme'
 
-const usePageLayout = () => {
+const useLayout = () => {
   const dispatch = useDispatch()
   const breakPoint = theme.LARGE_VIEW
   const { language } = useSelector(s => s.ui)
@@ -47,4 +47,4 @@ const usePageLayout = () => {
   }, [])
 }
 
-export default usePageLayout
+export default useLayout
