@@ -22,7 +22,7 @@ export default {
   // Other Colors
   WHITE: `#FFFFFF`,
   BLACK: `#000000`,
-  BRAND_COLOR: `#191D38`,
+  BRAND_COLOR: `#222222`,
   OPAQUE_BRAND: `rgba(96,57,169, 0.5)`,
   TWITTER_COLOR: `#1A91DA`,
   GITHUB_COLOR: `#562676`,

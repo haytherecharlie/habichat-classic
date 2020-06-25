@@ -1,16 +1,16 @@
 import { pathOr } from 'ramda'
 import firebase from 'firebase/app'
-import serviceAccount from 'config/service-account.json'
+import firebaseApp from 'config/firebase-app.json'
 
 firebase.initializeApp({
-  apiKey: serviceAccount.apiKey,
-  authDomain: serviceAccount.authDomain,
-  databaseURL: serviceAccount.databaseURL,
-  projectId: serviceAccount.projectId,
-  storageBucket: serviceAccount.storageBucket,
-  messagingSenderId: serviceAccount.messagingSenderId,
-  appId: serviceAccount.appId,
-  measurementId: serviceAccount.measurementId
+  apiKey: firebaseApp.apiKey,
+  authDomain: firebaseApp.authDomain,
+  databaseURL: firebaseApp.databaseURL,
+  projectId: firebaseApp.projectId,
+  storageBucket: firebaseApp.storageBucket,
+  messagingSenderId: firebaseApp.messagingSenderId,
+  appId: firebaseApp.appId,
+  measurementId: firebaseApp.measurementId
 })
 
 export const auth = pathOr(undefined, ['auth'], firebase)
