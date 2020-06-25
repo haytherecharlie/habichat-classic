@@ -9,10 +9,11 @@ export const AppLayout = styled('div')({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'flex-start',
-  background: `#F8F8F8`
+  background: `#f5f2f7`
 })
 
 export const Main = styled('main')(P => ({
+  paddingTop: theme.HEADER_HEIGHT,
   paddingBottom: theme.FOOTER_HEIGHT + 10,
   position: 'relative',
   width: `100%`,

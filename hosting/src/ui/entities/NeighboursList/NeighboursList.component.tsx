@@ -1,4 +1,5 @@
 import React from 'react'
+import theme from 'ui/assets/theme'
 import Title from 'ui/atoms/Title'
 import NeighbourCard from 'ui/components/NeighbourCard'
 import useNeighbours from 'ui/hooks/useNeighbours'
@@ -12,11 +13,11 @@ const NeighboursList = ({ cid }) => {
       photoURL: 'https://habi.chat/avatars/brad_pitt.jpeg'
     },
     '12423': {
-      displayName: 'Béyonce👸🏾',
+      displayName: 'Béyonce',
       photoURL: 'https://habi.chat/avatars/beyonce_knowles.jpeg'
     },
     '12523': {
-      displayName: 'Jennifer💪🏽',
+      displayName: 'Jennifer',
       photoURL: 'https://habi.chat/avatars/jennifer_lopez.jpeg'
     },
     '12623': {
@@ -31,7 +32,7 @@ const NeighboursList = ({ cid }) => {
 
   return (
     <S.Neighbours>
-      <Title size="h3" text="NEIGHBOURS" style={{ paddingLeft: 10 }} bold unique />
+      <Title size="h3" text="YOUR NEIGHBOURS" style={{ paddingLeft: 10 }} bold unique />
       <S.ScrollList>
         {Object.entries(neighbours).map(([id, info]) => (
           <NeighbourCard key={id} id={id} {...info} />

@@ -15,7 +15,7 @@ const Logo = ({ type = null, style = {} }) => {
         </S.Logotype>
       )
     default:
-      return <S.CombinationMark src="/image/combomark.png" alt="habichat" />
+      return <S.CombinationMark src="/image/logo-bright.png" alt="habichat" />
   }
 }
 

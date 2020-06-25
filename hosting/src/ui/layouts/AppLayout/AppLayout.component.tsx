@@ -13,7 +13,7 @@ const AppLayout = ({ children, page, crawl, style = {}, loading = false, addButt
     <S.AppLayout>
       <GlobalStyle />
       <SEO page={page} crawl={crawl} />
-      {/* <AppHeader /> */}
+      <AppHeader />
       <S.Main style={style}>{children}</S.Main>
       <AppFooter addButton={addButton} />
     </S.AppLayout>

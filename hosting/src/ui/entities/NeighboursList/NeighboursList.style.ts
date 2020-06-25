@@ -6,13 +6,12 @@ export const Neighbours = styled('div')({
   flexDirection: 'column',
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
-  marginTop: 5
+  marginTop: 10
 })
 
 export const ScrollList = styled('div')({
-  marginTop: 5,
   minHeight: 65,
   width: `100%`,
   overflowX: 'scroll',
-  padding: `5px 0px 15px 0px`
+  padding: `10px 0px 15px 0px`
 })
