@@ -1,17 +1,6 @@
 {
   "projects": {
-    "default": "habichat-265d9"
-  },
-  "targets": {
-    "habichat-265d9": {
-      "hosting": {
-        "prod": [
-          "habichat-265d9"
-        ],
-        "beta": [
-          "beta-habichat-7e78a"
-        ]
-      }
-    }
+    "default": "habichat-16f46",
+    "staging": "habichat-staging-606cc"
   }
 }

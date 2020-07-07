@@ -3,66 +3,41 @@
     "rules": "firebase.db.rules",
     "indexes": "firebase.db.json"
   },
-  "hosting": [
-    {
-      "target": "prod",
-      "public": "hosting/public",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "trailingSlash": true,
-      "cleanUrls": true,
-      "appAssociation": "AUTO",
-      "rewrites": [
-        { "source": "/", "destination": "/index.html" },
-        { "source": "/blog", "destination": "/blog/index.html" },
-        { "source": "/dashboard", "destination": "/dashboard/index.html" },
-        { "source": "/privacy", "destination": "/privacy/index.html" },
-        { "source": "/styleguide", "destination": "/styleguide/index.html" },
-        { "source": "/terms", "destination": "/terms/index.html" },
-        { "source": "/404", "destination": "/404/index.html" },
-        { "source": "/*", "destination": "/router/index.html" }
-      ],
-      "headers": [
-        { "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] },
-        { "source": "**/*.@(js|css)", "headers": [{ "key": "Cache-Control", "value": "max-age=604800" }] },
-        { "source": "**/*.@(jpg|jpeg|gif|png)", "headers": [{ "key": "Cache-Control", "value": "max-age=604800" }] },
-        { "source": "404.html", "headers": [{ "key": "Cache-Control", "value": "max-age=604800" }] }
-      ]
-    },
-    {
-      "target": "beta",
-      "public": "hosting/public",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "trailingSlash": true,
-      "cleanUrls": true,
-      "appAssociation": "AUTO",
-      "rewrites": [
-        { "source": "/", "destination": "/index.html" },
-        { "source": "/blog", "destination": "/blog/index.html" },
-        { "source": "/dashboard", "destination": "/dashboard/index.html" },
-        { "source": "/privacy", "destination": "/privacy/index.html" },
-        { "source": "/styleguide", "destination": "/styleguide/index.html" },
-        { "source": "/terms", "destination": "/terms/index.html" },
-        { "source": "/404", "destination": "/404/index.html" },
-        { "source": "/*", "destination": "/router/index.html" }
-      ],
-      "headers": [
-        { "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] },
-        { "source": "**/*.@(js|css)", "headers": [{ "key": "Cache-Control", "value": "max-age=604800" }] },
-        { "source": "**/*.@(jpg|jpeg|gif|png)", "headers": [{ "key": "Cache-Control", "value": "max-age=604800" }] },
-        { "source": "404.html", "headers": [{ "key": "Cache-Control", "value": "max-age=604800" }] }
-      ]
-    }
-  ],
+  "hosting": {
+    "public": "hosting/public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "trailingSlash": true,
+    "cleanUrls": true,
+    "appAssociation": "AUTO",
+    "rewrites": [
+      { "source": "/", "destination": "/index.html" },
+      { "source": "/blog", "destination": "/blog/index.html" },
+      { "source": "/dashboard", "destination": "/dashboard/index.html" },
+      { "source": "/privacy", "destination": "/privacy/index.html" },
+      { "source": "/styleguide", "destination": "/styleguide/index.html" },
+      { "source": "/terms", "destination": "/terms/index.html" },
+      { "source": "/404", "destination": "/404/index.html" },
+      { "source": "/*", "destination": "/router/index.html" }
+    ],
+    "headers": [
+      { "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] },
+      { "source": "**/*.@(js|css)", "headers": [{ "key": "Cache-Control", "value": "max-age=604800" }] },
+      { "source": "**/*.@(jpg|jpeg|gif|png)", "headers": [{ "key": "Cache-Control", "value": "max-age=604800" }] },
+      { "source": "404.html", "headers": [{ "key": "Cache-Control", "value": "max-age=604800" }] }
+    ]
+  },
   "storage": {
     "rules": "firebase.hd.rules"
   },
   "emulators": {
     "firestore": {
-      "port": "7000"
+      "port": 8080
+    },
+    "hosting": {
+      "port": 5000
     },
     "ui": {
-      "enabled": true,
-      "port": "7001"
+      "enabled": true
     }
   }
 }

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import theme from 'ui/assets/theme'
 
-export const BlogEntry = styled('article')({
+export const Article = styled('article')({
   boxSizing: 'border-box',
   padding: `2rem 0 1rem 0`,
   display: 'flex',

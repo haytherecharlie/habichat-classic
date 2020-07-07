@@ -4,6 +4,7 @@ import theme from 'ui/assets/theme'
 export const AppLayout = styled('div')({
   width: `100vw`,
   minWidth: 300,
+  height: `100%`,
   minHeight: `100vh`,
   display: 'flex',
   flexDirection: 'column',
@@ -13,6 +14,7 @@ export const AppLayout = styled('div')({
 })
 
 export const Main = styled('main')(P => ({
+  paddingTop: theme.HEADER_HEIGHT,
   paddingBottom: theme.FOOTER_HEIGHT + 10,
   position: 'relative',
   width: `100%`,
@@ -22,5 +24,7 @@ export const Main = styled('main')(P => ({
   flexDirection: 'column',
   alignItems: 'stretch',
   justifyContent: 'flex-start',
+  paddingRight: 15,
+  paddingLeft: 15,
   ...P.style
 }))

@@ -1,16 +1,17 @@
 import React from 'react'
+import Text from 'ui/atoms/Text'
 import Title from 'ui/atoms/Title'
-import * as S from './BlogEntry.style'
+import * as S from './BlogPost.style'
 
-const BlogEntry = ({ frontmatter, html }) => {
+const BlogPost = ({ frontmatter, html }) => {
   return (
-    <S.BlogEntry key={frontmatter.slug}>
+    <S.Article key={frontmatter.slug}>
       <Title size="h2" text={frontmatter.title} style={{}} bold unique />
       <Title size="h4" text={frontmatter.author} unique />
       <Title size="h4" text={frontmatter.date} bold unique />
       <S.Body dangerouslySetInnerHTML={{ __html: html }} />
-    </S.BlogEntry>
+    </S.Article>
   )
 }
 
-export default BlogEntry
+export default BlogPost

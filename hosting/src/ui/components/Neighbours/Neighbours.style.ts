@@ -1,18 +1,24 @@
 import styled from 'styled-components'
-import theme from 'ui/assets/theme'
+import theme from 'assets/styles/theme.style'
 
 export const Neighbours = styled('div')({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
-  marginTop: 5
+  margin: `5px 0 10px 0`
 })
 
 export const ScrollList = styled('div')({
-  marginTop: 5,
-  minHeight: 65,
   width: `100%`,
   overflowX: 'scroll',
-  padding: `5px 0px 15px 0px`
+  padding: `5px 0`
+})
+
+export const Neighbour = styled('div')({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginRight: 15
 })

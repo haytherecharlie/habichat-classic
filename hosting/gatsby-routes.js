@@ -4,8 +4,6 @@ module.exports = [
   /* ---- Landing ---- */
   { path: '/', component: resolve(`src/ui/pages/App.tsx`) },
 
-  { path: '/auth', component: resolve(`src/ui/pages/Auth.tsx`) },
-
   /* ---- Blog ---- */
   { path: '/blog', component: resolve(`src/ui/pages/Blog.tsx`) },
 
@@ -14,12 +12,15 @@ module.exports = [
 
   /* ---- Privacy ---- */
   { path: '/privacy', component: resolve(`src/ui/pages/Privacy.tsx`) },
+  // { path: '/fr/privacy', component: resolve(`src/ui/pages/privacy.tsx`) },
 
   /* ---- Styleguide ---- */
   { path: '/styleguide', component: resolve(`src/ui/pages/Styleguide.tsx`) },
+  // { path: '/fr/styleguide', component: resolve(`src/ui/pages/styleguide.tsx`) },
 
   /* ---- Terms ---- */
   { path: '/terms', component: resolve(`src/ui/pages/Terms.tsx`) },
+  // { path: '/fr/terms', component: resolve(`src/ui/pages/terms.tsx`) },
 
   /* ---- 404 ---- */
   { path: '/404', component: resolve(`src/ui/pages/404.tsx`) },
