@@ -3,20 +3,13 @@ import theme from 'ui/assets/theme'
 
 export const PostCard = styled('div')({
   width: `100%`,
+  minHeight: 100,
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'stretch',
   justifyContent: 'stretch',
+  padding: 10,
   margin: `10px 0`
-})
-
-export const TiCard = styled('div')({
-  flex: 1,
-  background: theme.WHITE,
-  padding: `10px 10px 15px 30px`,
-  marginLeft: -30,
-  borderRadius: theme.CARD_RADIUS,
-  boxShadow: `0 2px 5px rgba(25, 1, 47, 0.1)`
 })
 
 export const TextInfo = styled('div')({
@@ -60,6 +53,5 @@ export const Media = styled('div')({
 })
 
 export const Discussion = styled('div')({
-  marginTop: 10,
-  width: `100%`
+  background: 'blue'
 })

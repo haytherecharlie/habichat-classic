@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NAV } from 'services/redux/actions'
-import theme from 'ui/assets/theme'
 import Hamburger from 'ui/atoms/Hamburger'
 import Link from 'ui/atoms/Link'
 import Logo from 'ui/atoms/Logo'
@@ -16,11 +15,11 @@ export const AppHeader = () => {
     <S.AppHeader>
       <Responsive>
         <S.Column
-          style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
+          style={{ flex: 1, paddingLeft: 5, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
           <Logo />
-          <Text size="XS" text="VILLE-ÉMARD, MONTRÉAL, QC H4E" style={{ marginTop: 0, color: theme.PRIMARY_COLOR }} bold unique />
+          <Text size="XS" text="Ville-Émard, Montréal, QC H4E" style={{ marginTop: 2 }} bold unique />
         </S.Column>
-        <S.Column style={{ flex: 0, justifyContent: 'flex-end', alignItems: 'center' }}>
+        <S.Column style={{ flex: 0, paddingRight: 5, justifyContent: 'flex-end', alignItems: 'center' }}>
           <ProfileToggle style={{ height: 30, width: 30 }} />
         </S.Column>
       </Responsive>

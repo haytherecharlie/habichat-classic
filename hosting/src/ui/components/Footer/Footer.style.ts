@@ -33,8 +33,7 @@ export const AppFooter = styled('header')(P => ({
 export const NewPostButton = styled('div')({
   cursor: 'pointer',
   position: 'absolute',
-  background: `-webkit-radial-gradient(${theme.HABICHAT_INDIGO}, ${theme.HABICHAT_PURPLE})`,
-  backgroundColor: theme.HABICHAT_PURPLE,
+  background: theme.BRAND_COLOR,
   borderRadius: `50%`,
   bottom: `${theme.FOOTER_HEIGHT + 20}px`,
   right: 0,

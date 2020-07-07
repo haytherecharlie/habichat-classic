@@ -12,10 +12,23 @@ export const PostsList = styled('div')({
 })
 
 export const ScrollList = styled('div')({
-  marginTop: 5,
+  borderTopLeftRadius: 30,
+  borderTopRightRadius: 30,
+  marginTop: 10,
+  paddingTop: 20,
   flex: 1,
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
-  justifyContent: 'flex-start'
+  justifyContent: 'flex-start',
+  boxShadow: `0 -2px 5px rgba(0,0,0,0.1)`,
+  '&:before': {
+    content: '""',
+    display: 'inline-block',
+    margin: '-5px auto 0 auto',
+    height: 3,
+    borderRadius: 2,
+    width: 30,
+    background: '#DEDEDE'
+  }
 })

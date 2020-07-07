@@ -13,11 +13,11 @@ const Posts = ({ cid }) => {
       loading={false}
       page="community"
       crawl={false}
-      addButton
+      // addButton={typeof community !== 'undefined'}
       >
       <NeighboursList cid={cid} />
       <PostsList />
-      <ComposePost cid={cid} />
+      {/* <ComposePost cid={cid} /> */}
     </AppLayout>
   )
 }

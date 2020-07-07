@@ -10,35 +10,24 @@ const PostCard = ({ pid, author, text }) => {
     <S.PostCard>
       <S.TextInfo>
         <S.TiLeft>
-          <Avatar src={author.photoURL} alt="avatar" style={{ zIndex: 300, marginTop: 10 }} />
+          <Avatar src={author.photoURL} alt="avatar" />
         </S.TiLeft>
-        <S.TiCard>
-          <S.TiMiddle>
-            <S.Author>
-              <Title size="h4" text={author.displayName} style={{ fontWeight: 900, letterSpacing: 0 }} bold unique />
-              <Title size="h4" text={`@${author.displayName}`} style={{ marginLeft: 5, color: `#777` }} unique />
-            </S.Author>
-            <S.Body>
-              <Text size="S" text={text} style={{ color: `#444` }} unique />
-            </S.Body>
-            <S.Discussion>
-              <img src="/image/arrow-up-outline.png" height="15px" />
-              <Text size="XS" text="12" style={{ color: '#444', marginLeft: 3, marginRight: 25 }} unique />
-              <img src="/image/arrow-down-outline.png" height="15px" />
-              <Text size="XS" text="12" style={{ color: '#444', marginLeft: 3, marginRight: 25 }} unique />
-              <img src="/image/comment-outline.png" height="15px" />
-              <Text size="XS" text="12" style={{ color: '#444', marginLeft: 3, marginRight: 25 }} unique />
-              <img src="/image/share-outline.png" height="15px" />
-              <Text size="XS" text="12" style={{ color: '#444', marginLeft: 3, marginRight: 25 }} unique />
-            </S.Discussion>
-          </S.TiMiddle>
-          <S.TiRight>
-            <Title size="h5" text={`4h`} style={{ marginRight: 5, marginBottom: 10, color: `#999` }} unique />
-            <Elipsis size="20px" color="#999" />
-          </S.TiRight>
-        </S.TiCard>
+        <S.TiMiddle>
+          <S.Author>
+            <Title size="h4" text={author.displayName} style={{ fontWeight: 900 }} unique />
+            <Title size="h4" text={`@${author.displayName}`} style={{ marginLeft: 5, color: `#777` }} unique />
+          </S.Author>
+          <S.Body>
+            <Text size="S" text={text} style={{ color: `#777` }} unique />
+          </S.Body>
+        </S.TiMiddle>
+        <S.TiRight>
+          <Title size="h5" text={`4h`} style={{ marginRight: 5, marginBottom: 10, color: `#CCCCCC` }} unique />
+          <Elipsis size="20px" color="#CCC" />
+        </S.TiRight>
       </S.TextInfo>
       <S.Media />
+      <S.Discussion />
     </S.PostCard>
   )
 }
