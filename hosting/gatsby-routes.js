@@ -2,7 +2,7 @@ const { resolve } = require('path')
 
 module.exports = [
   /* ---- Landing ---- */
-  { path: '/', component: resolve(`src/ui/pages/App.tsx`) },
+  { path: '/', component: resolve(`src/ui/pages/Landing.tsx`) },
 
   /* ---- Blog ---- */
   { path: '/blog', component: resolve(`src/ui/pages/Blog.tsx`) },
