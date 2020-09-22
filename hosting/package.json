@@ -5,8 +5,7 @@
     "deploy": "firebase deploy --only hosting",
     "dev": "gatsby develop -H 0.0.0.0 -p 8000 -o",
     "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
-    "serve": "gatsby serve -p 3000",
-    "stage": "firebase deploy -P staging --only hosting"
+    "serve": "gatsby serve -p 3000"
   },
   "dependencies": {
     "animate.css": "^4.1.0",
