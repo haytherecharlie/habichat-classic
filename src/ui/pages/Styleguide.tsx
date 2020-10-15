@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import theme from 'ui/assets/theme'
-import Avatar from 'ui/atoms/Avatar'
 import ButtonPill from 'ui/atoms/ButtonPill'
 import ChangeLocale from 'ui/atoms/ChangeLocale'
 import Hamburger from 'ui/atoms/Hamburger'
@@ -9,7 +8,6 @@ import Link from 'ui/atoms/Link'
 import Logo from 'ui/atoms/Logo'
 import Spinner from 'ui/atoms/Spinner'
 import Text from 'ui/atoms/Text'
-import Title from 'ui/atoms/Title'
 import PageLayout from 'ui/layouts/PageLayout'
 import * as A from 'services/redux/actions'
 
@@ -19,19 +17,6 @@ const StyleGuide = () => {
 
   return (
     <PageLayout page="styleguide" crawl={false} style={{ paddingTop: 20, paddingBottom: 20 }}>
-      {/* AVATAR COMPONENT */}
-      <section
-        style={{
-          border: `1px solid ${theme.BRAND_COLOR}`,
-          padding: 10,
-          borderRadius: 10
-        }}>
-        <Title size="h2" text="Avatar Component" style={{ textTransform: 'uppercase' }} bold unique />
-        <div style={{ borderTop: `1px solid #CCC`, marginTop: 10, paddingTop: 10, flexDirection: 'column' }}>
-          <Avatar src="/avatars/will_smith.jpeg" alt="avatar" />
-        </div>
-      </section>
-
       {/* BUTTONPILL COMPONENT */}
       <section
         style={{

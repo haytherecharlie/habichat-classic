@@ -1,1 +1,1 @@
-export { Header, AppHeader } from './Header.component'
+export { Header } from './Header.component'

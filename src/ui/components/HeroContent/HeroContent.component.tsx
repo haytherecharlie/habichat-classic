@@ -26,14 +26,8 @@ const HeroContent = () => {
 
         <S.Row style={{ flexDirection: 'row' }}>
           <Link href="/register">
-            <ButtonPill style={{ padding: 10, width: 140, margin: 10 }}>
-              <Text size="S" style={{ color: '#FFF' }} text="REGISTER" bold unique />
-            </ButtonPill>
-          </Link>
-
-          <Link href="https://app.habi.chat">
-            <ButtonPill invert style={{ padding: 10, width: 140, margin: 10 }}>
-              <Text size="S" text="SIGN IN" bold unique />
+            <ButtonPill style={{ padding: 10, minWidth: 200, margin: 10 }}>
+              <Text size="S" style={{ color: '#FFF' }} text="JOIN THE COMMUNITY" bold unique />
             </ButtonPill>
           </Link>
         </S.Row>
