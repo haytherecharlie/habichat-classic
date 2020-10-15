@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: */app/community
+Disallow: */app/post
+Disallow: */avatars
+Disallow: */dashboard
+Disallow: */recaptcha
+Disallow: */styleguide
+Sitemap: https://habi.chat/sitemap.xml
+Host: https://habi.chat
