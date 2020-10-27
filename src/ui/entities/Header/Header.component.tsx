@@ -5,7 +5,7 @@ import Hamburger from 'ui/atoms/Hamburger'
 import Link from 'ui/atoms/Link'
 import Logo from 'ui/atoms/Logo'
 import Responsive from 'ui/atoms/Responsive'
-import Nav from 'ui/components/Nav'
+import DropDownNav from 'ui/components/DropDownNav'
 import * as S from './Header.style'
 
 export const Header = () => {
@@ -19,7 +19,7 @@ export const Header = () => {
           <Link href="/">
             <Logo type="logotype" />
           </Link>
-          <Nav />
+          <DropDownNav />
         </Responsive>
       </S.Header>
     )
@@ -34,7 +34,7 @@ export const Header = () => {
         <S.Column style={{ flex: 1, display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
           <Hamburger nav={nav} onClick={() => dispatch({ type: NAV })} />
         </S.Column>
-        <Nav />
+        <DropDownNav />
       </Responsive>
     </S.Header>
   )

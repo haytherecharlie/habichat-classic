@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import theme from 'ui/assets/theme'
 
-export const Nav = styled('nav')({
+export const DropDownNav = styled('nav')({
   zIndex: 10,
   flex: 1,
   display: 'flex',

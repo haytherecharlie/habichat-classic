@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import enable from 'iphone-inline-video'
-import HeroContent from 'ui/components/HeroContent'
+import LoginForm from 'ui/components/LoginForm'
 import * as S from './Hero.style'
 
 const Hero = () => {
@@ -22,7 +22,7 @@ const Hero = () => {
         ref={video}
         poster="image/aerials.jpg"
       />
-      <HeroContent />
+      <LoginForm />
     </S.HeroBanner>
   )
 }

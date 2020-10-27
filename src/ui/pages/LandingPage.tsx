@@ -1,6 +1,6 @@
 import React from 'react'
 import Hero from 'ui/entities/Hero'
-import Onboarding from 'ui/components/Onboarding'
+import Onboarding from 'ui/entities/Onboarding'
 import PageLayout from 'ui/layouts/PageLayout'
 
 const Landing = () => {

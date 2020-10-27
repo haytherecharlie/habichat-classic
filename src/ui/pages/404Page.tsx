@@ -1,10 +1,9 @@
 import React from 'react'
-import theme from 'ui/assets/theme'
 import Link from 'ui/atoms/Link'
 import Text from 'ui/atoms/Text'
 import PageLayout from 'ui/layouts/PageLayout'
 
-const _404 = () => {
+const _404Page = () => {
   return (
     <PageLayout page="404" crawl={false} style={{ alignItems: 'center', justifyContent: 'center' }}>
       <img src="/image/spilt-milk.png" style={{ width: `80%`, maxWidth: 400, margin: '0 auto' }} alt="spilt milk" />
@@ -22,4 +21,4 @@ const _404 = () => {
   )
 }
 
-export default _404
+export default _404Page

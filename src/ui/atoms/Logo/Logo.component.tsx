@@ -1,5 +1,4 @@
 import React from 'react'
-import Text from 'ui/atoms/Text'
 import * as S from './Logo.style'
 
 const Logo = ({ type = null, style = {} }) => {
@@ -8,14 +7,14 @@ const Logo = ({ type = null, style = {} }) => {
       return <S.Logomark src="/image/habichat.png" alt="habichat logo" style={style} />
     case 'logotype':
       return (
-        <S.Logotype style={{ paddingTop: 5 }}>
-          <S.Habichat style={{ letterSpacing: -1 }} bold>
+        <S.Logotype style={{ paddingTop: 5, ...style }}>
+          <S.Habichat style={{ letterSpacing: -1, ...style }} bold>
             habichat
           </S.Habichat>
         </S.Logotype>
       )
     default:
-      return <S.CombinationMark src="/image/combomark.png" alt="habichat" />
+      return <S.CombinationMark style={style} src="/image/combomark.png" alt="habichat" />
   }
 }
 
