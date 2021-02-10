@@ -4,7 +4,7 @@
     "indexes": "firebase.db.json"
   },
   "hosting": {
-    "public": "public",
+    "public": "hosting/public",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "trailingSlash": true,
     "cleanUrls": true,
