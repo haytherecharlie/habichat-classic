@@ -2,7 +2,7 @@
   "name": "hosting",
   "scripts": {
     "build": "gatsby build",
-    "deploy": "firebase use default && firebase deploy --only hosting",
+    "deploy": "firebase deploy --only hosting",
     "dev": "gatsby develop -H 0.0.0.0 -p 8000 -o",
     "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
     "serve": "gatsby serve -p 3000",
@@ -37,8 +37,6 @@
     "prop-types": "^15.7.2",
     "query-string": "^6.13.0",
     "ramda": "^0.27.0",
-    "ramda.or": "^0.26.1",
-    "ramda.pathor": "^0.26.1",
     "react": "^16.13.1",
     "react-autocomplete": "^1.8.1",
     "react-dom": "^16.13.1",

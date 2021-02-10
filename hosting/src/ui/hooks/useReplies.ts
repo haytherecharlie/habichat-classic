@@ -1,4 +1,4 @@
-import pathOr from 'ramda.pathor'
+import { pathOr } from 'ramda'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchCommunityPostReplies } from 'api/routes'

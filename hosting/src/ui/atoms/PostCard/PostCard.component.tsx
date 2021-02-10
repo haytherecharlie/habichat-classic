@@ -38,7 +38,7 @@ const PostCard = ({ post, hideButtons = false }) => {
                 </S.Col>
               </S.Row>
               <S.Row>
-                <Link type="internal" href={`/${communityID}/${pid}`}>
+                {/* <Link type="internal" href={`/${communityID}/${pid}`}> */}
                   <table style={{ tableLayout: 'fixed', width: '100%', wordWrap: 'break-word' }}>
                     <tbody>
                       <tr>
@@ -53,14 +53,14 @@ const PostCard = ({ post, hideButtons = false }) => {
                       </tr>
                     </tbody>
                   </table>
-                </Link>
+                {/* </Link> */}
               </S.Row>
             </S.Col>
             {!hideButtons && (
               <S.Row style={{ marginTop: 0 }}>
                 <S.Col style={{ flex: 0 }}>
                   <S.CommentButton>
-                    <Link type="button" onClick={() => console.log('WOWO')}>
+                    {/* <Link type="button" onClick={() => alert('Please feel free to contact me at charlie.hay@outlook.com')}> */}
                       <ChatBubbles fontSize={`${theme.FONT_S}px`} color={theme.BRAND_COLOR} />
                       <Text
                         size="XS"
@@ -68,12 +68,12 @@ const PostCard = ({ post, hideButtons = false }) => {
                         style={{ marginLeft: 3, color: theme.BRAND_COLOR, fontWeight: 600 }}
                         unique
                       />
-                    </Link>
+                    {/* </Link> */}
                   </S.CommentButton>
                 </S.Col>
                 <S.Col style={{ flex: 0 }}>
                   <S.CommentButton>
-                    <Link type="button" onClick={() => console.log('WOWO')}>
+                    {/* <Link type="button" onClick={() => alert('Please feel free to contact me at charlie.hay@outlook.com')}> */}
                       <Reply fontSize={`${theme.FONT_M}px`} color={theme.BRAND_COLOR} />
                       <Text
                         size="XS"
@@ -81,7 +81,7 @@ const PostCard = ({ post, hideButtons = false }) => {
                         style={{ marginLeft: 3, color: theme.BRAND_COLOR, fontWeight: 600 }}
                         unique
                       />
-                    </Link>
+                    {/* </Link> */}
                   </S.CommentButton>
                 </S.Col>
                 <S.Col>

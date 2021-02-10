@@ -4,10 +4,10 @@ module.exports = {
   siteMetadata: {
     siteUrl: 'https://habi.chat',
     title: `Habichat`,
-    description: `The #1 application for communicating with your neighbours.`,
-    author: `Charles Hay`,
+    description: `A Twitter clone created by Charlie Hay`,
+    author: `Charlie Hay`,
     social: {
-      twitter: `habi_chat`
+      twitter: `rcharleshay`
     }
   },
   plugins: [
