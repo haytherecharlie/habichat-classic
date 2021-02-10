@@ -12,8 +12,8 @@ const Neighbours = ({ cid }) => {
       <Text size="M" text="Your Neighbours" bold unique />
       <S.ScrollList>
         {neighbours &&
-          neighbours.map(({ displayName, photoURL }) => (
-            <S.Neighbour>
+          neighbours.map(({ key, displayName, photoURL }) => (
+            <S.Neighbour key={key}>
               <Avatar src={photoURL} alt="Brad Pitt" />
               <Text size="XS" text={displayName} unique />
             </S.Neighbour>

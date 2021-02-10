@@ -21,7 +21,7 @@ export const WebFooter = () => {
           <Link type="external" href="https://twitter.com/rcharleshay">
             <S.Twitter color={theme.DIRTY_BACKGROUND} fontSize="10" />
           </Link>
-          <Link type="external" href="https://github.com/rcharleshay">
+          <Link type="external" href="https://github.com/rcharleshay/habichat">
             <S.Github color={theme.DIRTY_BACKGROUND} fontSize="10" />
           </Link>
           <Link type="external" href="https://www.linkedin.com/in/rcharleshay">

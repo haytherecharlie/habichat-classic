@@ -7,10 +7,9 @@ const useNeighbours = cid => {
   const posts = useSelector(s => pathOr({}, ['posts', cid], s))
 
   useEffect(() => {
-    const postObj = Object.values(posts)
-    console.log(postObj)
+    const postObj = Object.entries(posts)
     if (postObj.length)
-      return setNeighbours(postObj.reduce((acc, post) => ({ ...acc, [post.userID]: { ...post.author } }), {}))
+      return setNeighbours(postObj.reduce((acc, [key, post]) => ({ ...acc, [key]: { ...post.author, key } }), {}))
   }, [posts])
 
   return Object.values(neighbours)
