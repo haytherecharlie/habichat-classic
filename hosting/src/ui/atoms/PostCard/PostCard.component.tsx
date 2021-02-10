@@ -64,7 +64,7 @@ const PostCard = ({ post, hideButtons = false }) => {
                       <ChatBubbles fontSize={`${theme.FONT_S}px`} color={theme.BRAND_COLOR} />
                       <Text
                         size="XS"
-                        text={`${replies} Comments`}
+                        text={`${replies} Replies`}
                         style={{ marginLeft: 3, color: theme.BRAND_COLOR, fontWeight: 600 }}
                         unique
                       />
