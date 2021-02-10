@@ -15,16 +15,16 @@ export const WebFooter = () => {
     <S.Footer>
       <Responsive style={{ margin: `0 auto` }}>
         <Responsive style={{ justifyContent: 'flex-start', flex: 2 }}>
-          <Text size="XS" text={`© ${date.getFullYear()} habichat`} unique />
+          <Text size="XS" text={`© ${date.getFullYear()} I would love to work at Twitter!`} unique />
         </Responsive>
         <Responsive style={{ justifyContent: 'flex-end', flex: 1, marginRight: -5 }}>
-          <Link type="external" href="https://twitter.com/habichat1">
+          <Link type="external" href="https://twitter.com/rcharleshay">
             <S.Twitter color={theme.DIRTY_BACKGROUND} fontSize="10" />
           </Link>
-          <Link type="external" href="https://github.com/habichat">
+          <Link type="external" href="https://github.com/rcharleshay">
             <S.Github color={theme.DIRTY_BACKGROUND} fontSize="10" />
           </Link>
-          <Link type="external" href="https://www.linkedin.com/company/habichat">
+          <Link type="external" href="https://www.linkedin.com/in/rcharleshay">
             <S.LinkedIn color={theme.DIRTY_BACKGROUND} fontSize="10" />
           </Link>
         </Responsive>

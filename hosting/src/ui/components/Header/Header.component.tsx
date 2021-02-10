@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { NAV } from 'services/redux/actions'
 import Hamburger from 'ui/atoms/Hamburger'
 import Link from 'ui/atoms/Link'
+import ButtonPill from 'ui/atoms/ButtonPill'
 import Logo from 'ui/atoms/Logo'
 import ProfileToggle from 'ui/atoms/ProfileToggle'
 import Responsive from 'ui/atoms/Responsive'
@@ -15,12 +16,28 @@ export const AppHeader = () => {
     <S.AppHeader>
       <Responsive>
         <S.Column
-          style={{ flex: 1, paddingLeft: 5, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
+          style={{
+            flex: 1,
+            paddingLeft: 5,
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'flex-start'
+          }}>
           <Logo />
-          <Text size="XS" text="Ville-Émard, Montréal, QC H4E" style={{ marginTop: 2 }} bold unique />
+          <Text size="XS" text="Toronto, ON, Canada" style={{ marginTop: 2 }} bold unique />
         </S.Column>
-        <S.Column style={{ flex: 0, paddingRight: 5, justifyContent: 'flex-end', alignItems: 'center' }}>
-          <ProfileToggle style={{ height: 30, width: 30 }} />
+        <S.Column style={{ flex: `0 0 90px`, paddingRight: 5, justifyContent: 'flex-end', alignItems: 'center' }}>
+          <Link href="/">
+            <ButtonPill>
+              <Text
+                size="XS"
+                text="Log Out"
+                unique
+                bold
+                style={{ color: '#FFF', textAlign: 'center', margin: `12px 15px 10px 15px` }}
+              />
+            </ButtonPill>
+          </Link>
         </S.Column>
       </Responsive>
     </S.AppHeader>
@@ -44,7 +61,17 @@ export const Header = () => {
             </Link>
           </S.Column>
           <S.Column style={{ justifyContent: 'flex-end', alignItems: 'center' }}>
-            <ProfileToggle />
+            <Link href="/H4E">
+              <ButtonPill>
+                <Text
+                  size="XS"
+                  text="Log In"
+                  unique
+                  bold
+                  style={{ color: '#FFF', textAlign: 'center', margin: `12px 15px 10px 15px` }}
+                />
+              </ButtonPill>
+            </Link>
           </S.Column>
           <Nav />
         </Responsive>
@@ -60,7 +87,17 @@ export const Header = () => {
             <Logo type="logotype" />
           </Link>
           <Nav />
-          <ProfileToggle />
+          <Link href="/H4E">
+            <ButtonPill>
+              <Text
+                size="XS"
+                text="Log In"
+                unique
+                bold
+                style={{ color: '#FFF', textAlign: 'center', margin: `12px 15px 10px 15px` }}
+              />
+            </ButtonPill>
+          </Link>
         </Responsive>
       </S.Header>
     )

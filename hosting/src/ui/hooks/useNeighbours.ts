@@ -8,6 +8,7 @@ const useNeighbours = cid => {
 
   useEffect(() => {
     const postObj = Object.values(posts)
+    console.log(postObj)
     if (postObj.length)
       return setNeighbours(postObj.reduce((acc, post) => ({ ...acc, [post.userID]: { ...post.author } }), {}))
   }, [posts])
