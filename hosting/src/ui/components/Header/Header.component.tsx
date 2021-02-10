@@ -5,7 +5,6 @@ import Hamburger from 'ui/atoms/Hamburger'
 import Link from 'ui/atoms/Link'
 import ButtonPill from 'ui/atoms/ButtonPill'
 import Logo from 'ui/atoms/Logo'
-import ProfileToggle from 'ui/atoms/ProfileToggle'
 import Responsive from 'ui/atoms/Responsive'
 import Text from 'ui/atoms/Text'
 import Nav from 'ui/components/Nav'
@@ -48,37 +47,6 @@ export const Header = () => {
   const dispatch = useDispatch()
   const { dimensions, nav } = useSelector(s => s.ui)
 
-  if (dimensions === 'mobile') {
-    return (
-      <S.Header>
-        <Responsive>
-          <S.Column style={{ justifyContent: 'flex-start', alignItems: 'center' }}>
-            <Hamburger nav={nav} onClick={() => dispatch({ type: NAV })} />
-          </S.Column>
-          <S.Column style={{ justifyContent: 'center', alignItems: 'center' }}>
-            <Link href="/">
-              <Logo type="logotype" />
-            </Link>
-          </S.Column>
-          <S.Column style={{ justifyContent: 'flex-end', alignItems: 'center' }}>
-            <Link href="/H4E">
-              <ButtonPill>
-                <Text
-                  size="XS"
-                  text="Log In"
-                  unique
-                  bold
-                  style={{ color: '#FFF', textAlign: 'center', margin: `12px 15px 10px 15px` }}
-                />
-              </ButtonPill>
-            </Link>
-          </S.Column>
-          <Nav />
-        </Responsive>
-      </S.Header>
-    )
-  }
-
   if (dimensions === 'desktop') {
     return (
       <S.Header>
@@ -102,6 +70,35 @@ export const Header = () => {
       </S.Header>
     )
   }
+
+  return (
+    <S.Header>
+      <Responsive>
+        <S.Column style={{ justifyContent: 'flex-start', alignItems: 'center' }}>
+          <Hamburger nav={nav} onClick={() => dispatch({ type: NAV })} />
+        </S.Column>
+        <S.Column style={{ justifyContent: 'center', alignItems: 'center' }}>
+          <Link href="/">
+            <Logo type="logotype" />
+          </Link>
+        </S.Column>
+        <S.Column style={{ justifyContent: 'flex-end', alignItems: 'center' }}>
+          <Link href="/H4E">
+            <ButtonPill>
+              <Text
+                size="XS"
+                text="Log In"
+                unique
+                bold
+                style={{ color: '#FFF', textAlign: 'center', margin: `12px 15px 10px 15px` }}
+              />
+            </ButtonPill>
+          </Link>
+        </S.Column>
+        <Nav />
+      </Responsive>
+    </S.Header>
+  )
 }
 
 export default Header
