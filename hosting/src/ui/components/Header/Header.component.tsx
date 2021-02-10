@@ -15,13 +15,7 @@ export const AppHeader = () => {
     <S.AppHeader>
       <Responsive>
         <S.Column
-          style={{
-            flex: 1,
-            paddingLeft: 5,
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'flex-start'
-          }}>
+          style={{ flex: 1, paddingLeft: 5, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
           <Logo />
           <Text size="XS" text="Ville-Émard, Montréal, QC H4E" style={{ marginTop: 2 }} bold unique />
         </S.Column>
@@ -37,7 +31,28 @@ export const Header = () => {
   const dispatch = useDispatch()
   const { dimensions, nav } = useSelector(s => s.ui)
 
-  if (dimensions === 'desktop')
+  if (dimensions === 'mobile') {
+    return (
+      <S.Header>
+        <Responsive>
+          <S.Column style={{ justifyContent: 'flex-start', alignItems: 'center' }}>
+            <Hamburger nav={nav} onClick={() => dispatch({ type: NAV })} />
+          </S.Column>
+          <S.Column style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <Link href="/">
+              <Logo type="logotype" />
+            </Link>
+          </S.Column>
+          <S.Column style={{ justifyContent: 'flex-end', alignItems: 'center' }}>
+            <ProfileToggle />
+          </S.Column>
+          <Nav />
+        </Responsive>
+      </S.Header>
+    )
+  }
+
+  if (dimensions === 'desktop') {
     return (
       <S.Header>
         <Responsive>
@@ -45,24 +60,11 @@ export const Header = () => {
             <Logo type="logotype" />
           </Link>
           <Nav />
+          <ProfileToggle />
         </Responsive>
       </S.Header>
     )
-  return (
-    <S.Header>
-      <Responsive>
-        <S.Column style={{ justifyContent: 'flex-start', alignItems: 'center' }}>
-          <Hamburger nav={nav} onClick={() => dispatch({ type: NAV })} />
-        </S.Column>
-        <S.Column style={{ justifyContent: 'center', alignItems: 'center' }}>
-          <Link href="/">
-            <Logo type="logotype" />
-          </Link>
-        </S.Column>
-        <Nav />
-      </Responsive>
-    </S.Header>
-  )
+  }
 }
 
 export default Header
