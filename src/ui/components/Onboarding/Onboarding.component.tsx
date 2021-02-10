@@ -1,6 +1,8 @@
 import React from 'react'
+import Link from 'ui/atoms/Link'
 import Text from 'ui/atoms/Text'
 import Title from 'ui/atoms/Title'
+import ButtonPill from 'ui/atoms/ButtonPill'
 import * as S from './Onboarding.style'
 
 const Onboarding = () => {

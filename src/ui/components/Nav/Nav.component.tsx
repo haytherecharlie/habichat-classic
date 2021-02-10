@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import ChangeLocale from 'ui/atoms/ChangeLocale'
 import Link from 'ui/atoms/Link'
 import Text from 'ui/atoms/Text'
-import * as S from './DropDownNav.style'
+import * as S from './Nav.style'
 
-const DropDownNav = () => {
+const Nav = () => {
   const dispatch = useDispatch()
   const [open, setOpen] = useState(false)
   const { nav, dimensions } = useSelector(s => s.ui)
@@ -18,7 +18,7 @@ const DropDownNav = () => {
   const onClick = () => dispatch({ type: 'NAV' })
 
   return open ? (
-    <S.DropDownNav open={open}>
+    <S.Nav open={open}>
       <S.Links>
         <Link type="internal" href="/" onClick={onClick}>
           <Text size="S" text="nav-home" style={{ margin: `10px 0` }} link />
@@ -36,8 +36,8 @@ const DropDownNav = () => {
       <S.Locale>
         <ChangeLocale />
       </S.Locale>
-    </S.DropDownNav>
+    </S.Nav>
   ) : null
 }
 
-export default DropDownNav
+export default Nav

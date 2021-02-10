@@ -1,21 +1,19 @@
 import styled from 'styled-components'
 import theme from 'ui/assets/theme'
 
-export const Logomark = styled('img')(P => ({
-  height: 120,
-  width: `auto`,
-  marginTop: -2,
-  ...P.style
-}))
+export const Logomark = styled('img')({
+  height: 24,
+  width: 24,
+  marginTop: -2
+})
 
-export const CombinationMark = styled('img')(P => ({
-  height: `auto`,
-  width: `80%`,
-  ...P.style
-}))
+export const CombinationMark = styled('img')({
+  height: 25,
+  width: 'auto'
+})
 
-export const Logotype = styled('div')(P => ({
-  ...P.style
+export const Logotype = styled('div')(style => ({
+  ...style
 }))
 
 export const Habichat = styled('h1')(P => ({

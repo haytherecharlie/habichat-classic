@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
-const useBlogPosts = () => {
+const useBlogEntries = () => {
   return useStaticQuery(graphql`
     query {
       allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -21,4 +21,4 @@ const useBlogPosts = () => {
   `)
 }
 
-export default useBlogPosts
+export default useBlogEntries
