@@ -1,6 +1,6 @@
-<img src="https://raw.githubusercontent.com/rcharleshay/habichat/master/hosting/static/image/combomark.png?token=ACN2EKRGJAVJXOBSQ7Z54SDAFSE74" width="500px" alt="habichat logo">
+<img src="https://raw.githubusercontent.com/rcharleshay/habichat/master/hosting/static/image/combomark.png?token=ACN2EKRGJAVJXOBSQ7Z54SDAFSE74" width="400px" alt="habichat logo">
 
----### TABLE OF CONTENTS
+### TABLE OF CONTENTS
 
 | Topic                       | Date       | Created By  |
 | --------------------------- | ---------- | ----------- |
